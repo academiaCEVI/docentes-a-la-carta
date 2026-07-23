@@ -299,6 +299,14 @@ footer.app .legal{line-height:1.6}
 .consejo-nota{display:block;font-size:.72rem;color:var(--text-soft);margin-top:4px}
 #btn-ver-mias{display:block;width:100%;border:none;background:var(--blue-logo);color:#fff;border-radius:12px;padding:14px 0;font-size:.92rem;font-weight:700;box-shadow:0 4px 16px rgba(9,66,109,.18);cursor:pointer;margin:2px 0 6px}
 #btn-ver-mias:hover{background:var(--blue-dark)}
+/* chips de acceso rápido a especialidades y fichas explicativas de bolsa */
+.chips-esp{display:flex;gap:8px;overflow-x:auto;padding:10px 0 4px;-webkit-overflow-scrolling:touch}
+.chips-esp button{border:1px solid var(--gray-border);background:#fff;color:var(--text-main);border-radius:999px;padding:8px 14px;font-size:.78rem;font-weight:700;white-space:nowrap;cursor:pointer;flex:none}
+.chips-esp button[aria-pressed="true"]{background:var(--blue-logo);border-color:var(--blue-logo);color:#fff}
+.bolsa-filas{display:flex;flex-direction:column;gap:8px;margin:4px 0 10px}
+.bolsa-fila{display:flex;gap:12px;align-items:center;background:var(--gray-bg);border-radius:12px;padding:10px 14px}
+.bf-num{font-family:'DM Mono',monospace;font-size:1.05rem;color:var(--blue-dark);min-width:76px;text-align:center;flex:none}
+.bf-txt{font-size:.82rem;color:var(--text-main);line-height:1.45}
 .mes-barras{display:flex;align-items:flex-end;gap:6px;height:130px;max-width:560px;margin:14px 0 4px}
 .mes-barras .mes{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;height:100%;gap:3px}
 .mes-barras .mes .valor{font-family:'DM Mono',monospace;font-size:.68rem;color:var(--blue-dark)}
@@ -411,7 +419,7 @@ details.acordeon[open]>summary::before{transform:rotate(90deg)}
   /* ---- cabecera clara del diseño de la PWA ---- */
   #hero-cevi{background:var(--gray-bg)}
   header.app{padding:16px 16px 0}
-  header.app h1 svg{width:min(230px,62vw)}
+  header.app h1 svg{width:min(310px,82vw)}
   header.app h1 svg>path{fill:#09426d}
   header.app h1 svg>circle:first-of-type{fill:#fff}
   header.app h1 svg>polyline{stroke:#1a5f9a}
@@ -569,6 +577,7 @@ details.acordeon[open]>summary::before{transform:rotate(90deg)}
     <label class="lbl-esp">Especialidad
       <select id="plan-esp" aria-label="Elegir especialidad para ver su curso"></select>
     </label>
+    <div id="plan-chips" class="chips-esp" role="group" aria-label="Especialidades con más plazas"></div>
     <div id="plan-detalle"></div>
     <details class="acordeon">
       <summary>Hasta dónde llegó la bolsa</summary>
@@ -1752,6 +1761,17 @@ function renderStatsDetalle() {
     <div id="calc-res" class="calc-res oculto" role="status"></div>
   </div>`);
 
+  // ---- sin posición guardada, solo el perfil: el resto aparece al rellenarla ----
+  if (!guardado.pos) {
+    partes.push(`<p class="comp-sub">Introduce tu bolsa y tu posición: con eso te enseñamos la probabilidad,
+      las cifras de tu especialidad y un consejo a medida.</p>`);
+    caja.innerHTML = partes.join('');
+    initCalculadora(e);
+    renderStatsIdioma(e);
+    renderStatsSemana(e);
+    return;
+  }
+
   // ---- el modelo ----
   if (reordenada) {
     partes.push(`<div class="op-tarjeta"><p class="nota-honesta" style="margin:0 0 10px">
@@ -2052,6 +2072,17 @@ function initPlanifica() {
         localStorage.setItem('cevi_plan_esp', $('#plan-esp').value);
         renderPlanDetalle();
       };
+      // acceso rápido visual: las especialidades con más plazas del curso
+      const top = [...PLAN.por_especialidad].sort((x, y) => y.plazas_total - x.plazas_total).slice(0, 6);
+      $('#plan-chips').innerHTML = top.map(t =>
+        `<button type="button" data-clave="${esc(claveDe(t))}" aria-pressed="false">${esc(etiquetaPlan(t))} · ${fmtNum(t.plazas_total)}</button>`).join('');
+      $('#plan-chips').onclick = ev => {
+        const btnChip = ev.target.closest('button[data-clave]');
+        if (!btnChip) return;
+        $('#plan-esp').value = btnChip.dataset.clave;
+        localStorage.setItem('cevi_plan_esp', btnChip.dataset.clave);
+        renderPlanDetalle();
+      };
       $('#btn-planifica').classList.remove('oculto');
       $('#tab-datos').classList.remove('oculto');
       $('#btn-planifica').onclick = abrirPlanifica;
@@ -2082,6 +2113,7 @@ function cerrarPlanifica() {
 function renderPlanDetalle() {
   const e = entradaPlan($('#plan-esp').value);
   if (!e) { $('#plan-detalle').innerHTML = ''; return; }
+  $$('#plan-chips button').forEach(ch => ch.setAttribute('aria-pressed', String(ch.dataset.clave === claveDe(e))));
   // estacionalidad: el dato estrella
   const maxMes = Math.max(...MESES_CURSO.map(([m]) => e.por_mes[m] || 0), 1);
   const picos = MESES_CURSO.filter(([m]) => (e.por_mes[m] || 0) === maxMes && maxMes > 0)
@@ -2167,18 +2199,23 @@ function renderPlanBolsa(e) {
       <strong>no son comparables</strong> con tu posición del curso que viene. Fíjate en la
       estacionalidad, el volumen y la competencia, que sí orientan.</p>`);
   }
-  // tres fichas visuales: máximo con fecha, agotamiento y bolsa de reserva
+  // fichas autoexplicativas: número grande a la izquierda, explicación al lado
   // (tipo 91 en los listados: «Bolsa de Reserva», apdo. 7.1.2 de la Orden 32/2018)
   if (e.bolsa_max) {
-    const fc = f => fmtFecha(f).slice(0, 5); // dd/mm
-    partes.push(`<div class="op-tiles">
-      <div><div class="v">nº ${fmtNum(e.bolsa_max.posicion)}</div><div class="l">llegó hasta · ${fc(e.bolsa_max.fecha)}</div></div>
-      <div><div class="v">${e.ordinaria_sin_disponibles_desde ? fc(e.ordinaria_sin_disponibles_desde) : '✓'}</div><div class="l">${e.ordinaria_sin_disponibles_desde ? 'sin disponibles desde' : 'nunca se agotó'}</div></div>
-      <div><div class="v">${e.bolsa_reserva_max ? 'nº ' + fmtNum(e.bolsa_reserva_max.posicion) : '—'}</div><div class="l">${e.bolsa_reserva_max ? `reserva · ${fc(e.bolsa_reserva_max.fecha)}${e.reserva_sin_disponibles_desde ? ' · agotada' : ''}` : 'bolsa de reserva'}</div></div>
+    partes.push(`<div class="bolsa-filas">
+      <div class="bolsa-fila"><div class="bf-num">nº ${fmtNum(e.bolsa_max.posicion)}</div>
+        <div class="bf-txt"><strong>El punto más lejano</strong> al que llegó la bolsa ordinaria en todo el curso.
+        Fue el ${fmtFecha(e.bolsa_max.fecha)}.</div></div>
+      <div class="bolsa-fila"><div class="bf-num">${e.ordinaria_sin_disponibles_desde ? fmtFecha(e.ordinaria_sin_disponibles_desde).slice(0, 5) : '✓'}</div>
+        <div class="bf-txt">${e.ordinaria_sin_disponibles_desde
+          ? `<strong>Se quedó sin aspirantes disponibles</strong> el ${fmtFecha(e.ordinaria_sin_disponibles_desde)}: todos los de la bolsa estaban trabajando o en «no disponible».`
+          : '<strong>Nunca se agotó:</strong> todas las semanas quedó gente disponible en la bolsa ordinaria.'}</div></div>
+      ${e.bolsa_reserva_max ? `<div class="bolsa-fila"><div class="bf-num">nº ${fmtNum(e.bolsa_reserva_max.posicion)}</div>
+        <div class="bf-txt"><strong>La bolsa de reserva</strong> (empieza a contar desde el 1) llegó hasta aquí,
+        el ${fmtFecha(e.bolsa_reserva_max.fecha)}.${e.reserva_sin_disponibles_desde ? ` También llegó a agotarse el ${fmtFecha(e.reserva_sin_disponibles_desde)}.` : ''}</div></div>` : ''}
     </div>`);
     partes.push(`<p class="comp-sub">La bolsa <strong>no avanza como una cola</strong>: cada semana la plaza va al mejor
-      número disponible que la pida; las adjudicaciones tras el máximo fueron para gente con posición anterior que volvió
-      a estar disponible.${e.ordinaria_sin_disponibles_desde ? ' «Sin disponibles» = todos trabajando o en «no disponible», no que se adjudicara hasta el final.' : ''}
+      número que esté disponible y la pida, por eso el punto más lejano suele darse en septiembre.
       ${e.bolsa_reordenada_26_27 ? 'Es la foto del curso pasado.' : 'Referencia orientativa, nunca una garantía.'}</p>`);
   } else if (!e.bolsa_reordenada_26_27) {
     partes.push('<p>Sin adjudicaciones de bolsa ordinaria registradas para esta especialidad ese curso.</p>');
