@@ -440,6 +440,8 @@ details.acordeon[open]>summary::before{transform:rotate(90deg)}
   #pill-cuenta.cerrado{background:#dde3ea;color:var(--text-soft)}
   #orden{border:1px solid var(--gray-border);border-radius:999px;background:#fff;padding:8px 12px;font-size:.78rem;font-weight:600;color:var(--text-main)}
   #btn-csv{display:none} /* exportar vive en Mi lista; en móvil solo estorba */
+  #pie-panel .fila-exportar{flex-wrap:wrap}
+  #pie-panel #btn-correo{flex:1 1 100%}
   #cabecera-lista{top:0}
 }
 </style>
@@ -653,6 +655,7 @@ details.acordeon[open]>summary::before{transform:rotate(90deg)}
     <div class="fila-exportar">
       <button id="btn-copiar">📋 Copiar</button>
       <button id="btn-imprimir">🖨 Imprimir / PDF</button>
+      <button id="btn-correo" class="solo-movil">✉️ Enviarme la lista</button>
     </div>
   </div>
   </aside>
@@ -1297,6 +1300,16 @@ $('#btn-copiar').onclick = async () => {
   try { await navigator.clipboard.writeText(textoPeticiones()); $('#btn-copiar').textContent = '✓ Copiada'; }
   catch (e) { prompt('Copia tu lista:', textoPeticiones()); }
   setTimeout(() => $('#btn-copiar').textContent = '📋 Copiar', 1800);
+};
+/* enviarse la lista por correo: abre la app de correo del móvil con todo
+   redactado (sin backend: la app no envía nada por sí misma) */
+$('#btn-correo').onclick = () => {
+  if (!peticiones.length) return;
+  const asunto = `Mi lista de peticiones — semana del ${fmtFecha(((DATA && DATA.cierre_plazo) || '').slice(0, 10))}`;
+  const cuerpo = `Mi lista ordenada de peticiones (Docentes a la carta):\n\n${textoPeticiones()}\n\n` +
+    'Recuerda: la solicitud solo cuenta si la registras en la aplicación oficial de la JCCM antes de las 10:00 del viernes.\n' +
+    'https://academiacevi.github.io/docentes-a-la-carta/';
+  location.href = `mailto:?subject=${encodeURIComponent(asunto)}&body=${encodeURIComponent(cuerpo)}`;
 };
 $('#btn-imprimir').onclick = () => {
   if (!peticiones.length) return;
