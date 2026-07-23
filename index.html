@@ -299,10 +299,7 @@ footer.app .legal{line-height:1.6}
 .consejo-nota{display:block;font-size:.72rem;color:var(--text-soft);margin-top:4px}
 #btn-ver-mias{display:block;width:100%;border:none;background:var(--blue-logo);color:#fff;border-radius:12px;padding:14px 0;font-size:.92rem;font-weight:700;box-shadow:0 4px 16px rgba(9,66,109,.18);cursor:pointer;margin:2px 0 6px}
 #btn-ver-mias:hover{background:var(--blue-dark)}
-/* chips de acceso rápido a especialidades y fichas explicativas de bolsa */
-.chips-esp{display:flex;gap:8px;overflow-x:auto;padding:10px 0 4px;-webkit-overflow-scrolling:touch}
-.chips-esp button{border:1px solid var(--gray-border);background:#fff;color:var(--text-main);border-radius:999px;padding:8px 14px;font-size:.78rem;font-weight:700;white-space:nowrap;cursor:pointer;flex:none}
-.chips-esp button[aria-pressed="true"]{background:var(--blue-logo);border-color:var(--blue-logo);color:#fff}
+/* fichas explicativas de bolsa */
 .bolsa-filas{display:flex;flex-direction:column;gap:8px;margin:4px 0 10px}
 .bolsa-fila{display:flex;gap:12px;align-items:center;background:var(--gray-bg);border-radius:12px;padding:10px 14px}
 .bf-num{font-family:'DM Mono',monospace;font-size:1.05rem;color:var(--blue-dark);min-width:76px;text-align:center;flex:none}
@@ -577,7 +574,6 @@ details.acordeon[open]>summary::before{transform:rotate(90deg)}
     <label class="lbl-esp">Especialidad
       <select id="plan-esp" aria-label="Elegir especialidad para ver su curso"></select>
     </label>
-    <div id="plan-chips" class="chips-esp" role="group" aria-label="Especialidades con más plazas"></div>
     <div id="plan-detalle"></div>
     <details class="acordeon">
       <summary>Hasta dónde llegó la bolsa</summary>
@@ -2072,17 +2068,6 @@ function initPlanifica() {
         localStorage.setItem('cevi_plan_esp', $('#plan-esp').value);
         renderPlanDetalle();
       };
-      // acceso rápido visual: las especialidades con más plazas del curso
-      const top = [...PLAN.por_especialidad].sort((x, y) => y.plazas_total - x.plazas_total).slice(0, 6);
-      $('#plan-chips').innerHTML = top.map(t =>
-        `<button type="button" data-clave="${esc(claveDe(t))}" aria-pressed="false">${esc(etiquetaPlan(t))} · ${fmtNum(t.plazas_total)}</button>`).join('');
-      $('#plan-chips').onclick = ev => {
-        const btnChip = ev.target.closest('button[data-clave]');
-        if (!btnChip) return;
-        $('#plan-esp').value = btnChip.dataset.clave;
-        localStorage.setItem('cevi_plan_esp', btnChip.dataset.clave);
-        renderPlanDetalle();
-      };
       $('#btn-planifica').classList.remove('oculto');
       $('#tab-datos').classList.remove('oculto');
       $('#btn-planifica').onclick = abrirPlanifica;
@@ -2113,7 +2098,6 @@ function cerrarPlanifica() {
 function renderPlanDetalle() {
   const e = entradaPlan($('#plan-esp').value);
   if (!e) { $('#plan-detalle').innerHTML = ''; return; }
-  $$('#plan-chips button').forEach(ch => ch.setAttribute('aria-pressed', String(ch.dataset.clave === claveDe(e))));
   // estacionalidad: el dato estrella
   const maxMes = Math.max(...MESES_CURSO.map(([m]) => e.por_mes[m] || 0), 1);
   const picos = MESES_CURSO.filter(([m]) => (e.por_mes[m] || 0) === maxMes && maxMes > 0)
