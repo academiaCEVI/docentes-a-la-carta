@@ -41,7 +41,7 @@ header.app{background:transparent;border-bottom:none;padding:28px 16px 0;display
 /* Logo de marca inline (SVG con texto: debe heredar Montserrat de la página).
    Zona de seguridad y mínimo de 180px según marca/USO-DE-MARCA.md. */
 header.app h1{margin:0;line-height:0}
-header.app h1 svg{width:min(330px,80vw);height:auto;display:block}
+header.app h1 svg{width:min(380px,80vw);height:auto;display:block}
 header.app .sub{font-size:.72rem;color:#8fc3ec;text-transform:uppercase;letter-spacing:.14em;font-weight:600;margin-top:8px}
 header.app .meta-derecha{margin-left:auto;text-align:right;font-size:.78rem;color:rgba(255,255,255,.7)}
 header.app .meta-derecha strong{color:#fff}
@@ -324,12 +324,12 @@ footer.app .legal{line-height:1.6}
 }
 .stats-cabecera{display:flex;align-items:center;gap:8px}
 .stats-cabecera h2{flex:1;color:var(--blue-dark);font-size:1.05rem;font-weight:800}
-#btn-cerrar-stats{border:none;background:none;font-size:1.5rem;line-height:1;color:var(--text-soft)}
+#btn-cerrar-stats,#btn-cerrar-plan{border:none;background:none;font-size:1.5rem;line-height:1;color:var(--text-soft);cursor:pointer}
 .nota-honesta{background:var(--blue-light);border-left:4px solid var(--blue-logo);border-radius:0 var(--radius) var(--radius) 0;padding:9px 12px;font-size:.8rem;color:var(--blue-dark);margin:10px 0}
 .lbl-esp{font-size:.78rem;font-weight:700;color:var(--text-soft);display:flex;flex-direction:column;gap:4px;max-width:420px}
 #btn-ir-plan{border:1.5px solid var(--blue-logo);background:#fff;color:var(--blue-logo);font-weight:700;border-radius:var(--radius);padding:9px 14px;font-size:.86rem;margin:6px 0 4px;cursor:pointer}
 #btn-ir-plan:hover{background:var(--blue-light)}
-#stats-esp{border:1px solid var(--gray-border);border-radius:var(--radius);padding:8px 10px;font-weight:600;color:var(--text-main)}
+#stats-esp,#plan-esp{border:1px solid var(--gray-border);border-radius:var(--radius);padding:8px 10px;font-weight:600;color:var(--text-main);background:#fff}
 #stats-detalle{margin-top:12px}
 .comp-grande{font-size:1.85rem;font-weight:800;color:var(--blue-dark);line-height:1.15}
 .comp-sub{color:var(--text-soft);font-size:.88rem;margin-top:2px}
@@ -416,7 +416,10 @@ details.acordeon[open]>summary::before{transform:rotate(90deg)}
   /* ---- cabecera clara del diseño de la PWA ---- */
   #hero-cevi{background:var(--gray-bg)}
   header.app{padding:16px 16px 0}
-  header.app h1 svg{width:min(310px,82vw)}
+  header.app h1 svg{width:min(350px,90vw)}
+  /* orden rápido arriba a la derecha, como en el diseño */
+  #btn-orden{display:inline-block;margin-left:auto;align-self:flex-start;border:1px solid var(--gray-border);background:#fff;color:var(--blue-logo);border-radius:999px;padding:9px 14px;font-size:.75rem;font-weight:700;white-space:nowrap;cursor:pointer}
+  #orden{display:none} /* en móvil ordena el botón de arriba */
   header.app h1 svg>path{fill:#09426d}
   header.app h1 svg>circle:first-of-type{fill:#fff}
   header.app h1 svg>polyline{stroke:#1a5f9a}
@@ -424,8 +427,8 @@ details.acordeon[open]>summary::before{transform:rotate(90deg)}
   header.app .sub{color:#2980b9;margin-top:4px}
   /* las pestañas inferiores ya dan acceso a ¿Opciones? y Datos */
   #btn-stats,#btn-planifica{display:none}
-  #segmentador{background:var(--blue-light);border-radius:999px;padding:4px;gap:4px;margin:12px 16px 0}
-  #segmentador button{flex:1;text-align:center;border-bottom:none;padding:11px 0;border-radius:999px;font-size:.82rem;color:var(--blue-logo)}
+  #segmentador{background:var(--blue-light);border-radius:999px;padding:3px;gap:3px;margin:10px 16px 0}
+  #segmentador button{flex:1;text-align:center;border-bottom:none;padding:8px 0;border-radius:999px;font-size:.76rem;color:var(--blue-logo)}
   #segmentador button[aria-pressed="true"]{background:var(--blue-logo);color:#fff;border-bottom-color:transparent}
   #barra-plazo{display:none} /* en móvil la cuenta atrás vive en la píldora amarilla */
   #contador{font-size:1.3rem;font-weight:800;color:var(--blue-dark);letter-spacing:-.01em;flex:1 1 auto}
@@ -461,8 +464,9 @@ details.acordeon[open]>summary::before{transform:rotate(90deg)}
         <text x="122" y="94" font-family="Montserrat, sans-serif" font-size="13.5" font-weight="500" fill="#ffffff" opacity=".7">un servicio de Academia CEVI</text>
       </svg>
     </h1>
-    <div class="sub">Elige tus sustituciones a la carta</div>
+    <div class="sub">Selecciona y ordena tus peticiones</div>
   </div>
+  <button id="btn-orden" class="solo-movil" aria-label="Cambiar el orden de las plazas">⇅ Publicación</button>
   <button id="btn-stats" class="oculto" aria-expanded="false" aria-controls="seccion-stats">🎯 ¿Tengo opciones?</button>
   <button id="btn-planifica" class="oculto" aria-expanded="false" aria-controls="seccion-planifica">📊 Estadísticas curso 25/26</button>
   <div class="meta-derecha">
@@ -473,7 +477,7 @@ details.acordeon[open]>summary::before{transform:rotate(90deg)}
 
 <nav id="segmentador" aria-label="Grupo de cuerpos">
   <button data-grupo="" aria-pressed="true">Todas</button>
-  <button data-grupo="EEMM" aria-pressed="false">Secundaria y resto (EEMM)</button>
+  <button data-grupo="EEMM" aria-pressed="false" title="Secundaria, FP, EOI, conservatorios y resto de cuerpos">EEMM</button>
   <button data-grupo="Maestros" aria-pressed="false">Maestros</button>
 </nav>
 </div>
@@ -645,7 +649,6 @@ details.acordeon[open]>summary::before{transform:rotate(90deg)}
       <button id="btn-copiar">📋 Copiar</button>
       <button id="btn-imprimir">🖨 Imprimir / PDF</button>
     </div>
-    <a class="btn-whatsapp" href="https://wa.me/34623184934?text=Hola%20CEVI%2C%20tengo%20dudas%20con%20el%20orden%20de%20mis%20peticiones%20de%20sustituciones." target="_blank" rel="noopener">💬 ¿Dudas con el orden? Escríbenos</a>
   </div>
   </aside>
 </main>
@@ -1563,6 +1566,21 @@ $('#tab-datos').onclick = () => { cambiarTab('lista'); abrirPlanifica(); marcarT
 $('#vc-lista').onclick = () => cambiarTab('lista');
 $('#vc-mapa').onclick = () => cambiarTab('mapa');
 $('#btn-volver-lista').onclick = () => cambiarTab('lista');
+
+/* botón de orden rápido de la cabecera móvil: cicla y sincroniza con el
+   selector de escritorio (que es quien de verdad manda en el estado) */
+const ORDENES_RAPIDOS = [['', '⇅ Publicación'], ['proximidad', '⇅ Cercanía'], ['duracion', '⇅ Duración']];
+function pintarBtnOrden() {
+  const par = ORDENES_RAPIDOS.find(([v]) => v === $('#orden').value) || ORDENES_RAPIDOS[0];
+  $('#btn-orden').textContent = par[1];
+}
+$('#btn-orden').onclick = () => {
+  const i = ORDENES_RAPIDOS.findIndex(([v]) => v === $('#orden').value);
+  $('#orden').value = ORDENES_RAPIDOS[(i + 1) % ORDENES_RAPIDOS.length][0];
+  $('#orden').dispatchEvent(new Event('change'));
+  pintarBtnOrden();
+};
+pintarBtnOrden();
 
 /* ================= AVISOS =================
    Hay varios formularios (banda tras el listado y estados vacíos):
