@@ -1,0 +1,16 @@
+{
+  "name": "Docentes a la carta",
+  "short_name": "Docentes",
+  "description": "Elige tus sustituciones a la carta: plazas docentes semanales de Castilla-La Mancha, competencia real y lista de peticiones. Un servicio de Academia CEVI.",
+  "lang": "es",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "theme_color": "#09426d",
+  "background_color": "#f5f7fa",
+  "icons": [
+    { "src": "marca/icono-app-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "marca/icono-app-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "marca/icono-app-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
