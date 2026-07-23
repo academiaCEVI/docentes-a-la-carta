@@ -407,7 +407,11 @@ details.acordeon[open]>summary::before{transform:rotate(90deg)}
   .btn-estrella:hover{color:#fff}
   .btn-estrella[aria-pressed="true"]{background:var(--blue-dark);color:#fff}
   #btn-volver-lista{display:none}
-  body.tab-mapa #btn-volver-lista{display:block;position:fixed;top:12px;left:50%;transform:translateX(-50%);z-index:900;border:none;background:#fff;color:var(--blue-logo);font-weight:800;border-radius:999px;padding:10px 18px;font-size:.85rem;box-shadow:0 4px 16px rgba(9,66,109,.28)}
+  body.tab-mapa #btn-volver-lista{display:block;position:fixed;top:12px;left:12px;z-index:900;border:none;background:#fff;color:var(--blue-logo);font-weight:800;border-radius:999px;padding:10px 16px;font-size:.82rem;box-shadow:0 4px 16px rgba(9,66,109,.28)}
+  #btn-radio-mapa{display:none}
+  body.tab-mapa #btn-radio-mapa{display:block;position:fixed;top:12px;right:12px;z-index:900;border:none;background:#fff;color:var(--blue-logo);font-weight:800;border-radius:999px;padding:10px 14px;font-size:.82rem;max-width:55vw;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;box-shadow:0 4px 16px rgba(9,66,109,.28)}
+  /* el popover de localidad se sirve encima del mapa */
+  body.tab-mapa #pop-radio:not(.oculto){position:fixed;top:62px;left:12px;right:12px;z-index:1300;background:#fff;border-radius:16px;box-shadow:0 12px 40px rgba(9,66,109,.3);padding:14px}
   #panel-mas-filtros.abierto{position:fixed;inset:0;z-index:1400;border:none;border-radius:0;overflow:auto;padding:18px;align-content:flex-start}
   #panel-mas-filtros.abierto select,#panel-mas-filtros.abierto input{max-width:none;width:100%}
   #panel-mas-filtros.abierto .chips-filtro{width:100%}
@@ -623,6 +627,7 @@ details.acordeon[open]>summary::before{transform:rotate(90deg)}
   <section id="col-mapa" aria-label="Mapa de plazas">
     <button id="btn-expandir" aria-label="Ampliar mapa a pantalla completa" title="Ampliar mapa">⛶</button>
     <button id="btn-volver-lista" class="solo-movil" aria-label="Volver al listado">≡ Ver lista</button>
+    <button id="btn-radio-mapa" class="solo-movil" aria-expanded="false" aria-controls="pop-radio" aria-label="Elegir tu localidad de referencia">📍 Tu localidad</button>
     <div id="map"></div>
   </section>
   <aside id="panel-peticiones" aria-label="Mi lista de peticiones">
@@ -998,6 +1003,13 @@ function estadoVacioHTML() {
    en escala de azules CEVI. Las coordenadas de pines, círculo y distancias
    son geográficas reales — solo cambia el fondo. */
 let map, cluster, circulo, marcaOrigen, capaProvincias, limitesCLM;
+// tu localidad en el mapa: el pin de la marca (mismo dibujo que el logo)
+const PIN_ORIGEN = `<svg viewBox="12 20 88 112" width="34" height="42" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="filter:drop-shadow(0 3px 5px rgba(9,66,109,.45))">
+  <path d="M56 26 C34 26 16 44 16 66 C16 94 56 128 56 128 C56 128 96 94 96 66 C96 44 78 26 56 26 Z" fill="#09426d" stroke="#ffffff" stroke-width="4"/>
+  <circle cx="56" cy="64" r="24" fill="#ffffff"/>
+  <polyline points="44,64 53,74 70,52" fill="none" stroke="#1a5f9a" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="88" cy="34" r="8" fill="#f4c400"/>
+</svg>`;
 const marcadores = new Map();
 // Tonos de la escala --blue-light → --blue-logo, separados y asignados
 // para que ninguna provincia vecina quede pegada a otra igual.
@@ -1161,7 +1173,7 @@ function renderMapa(res) {
   const o = origenActual();
   if (o) {
     circulo = L.circle([o.lat, o.lon], { radius: state.km * 1000, color: '#1a5f9a', weight: 1.5, fillColor: '#2980b9', fillOpacity: .08 }).addTo(map);
-    marcaOrigen = L.marker([o.lat, o.lon], { icon: L.divIcon({ className: '', html: '<div style="font-size:22px;line-height:1">📍</div>', iconSize: [22, 22], iconAnchor: [11, 22] }), interactive: false }).addTo(map);
+    marcaOrigen = L.marker([o.lat, o.lon], { icon: L.divIcon({ className: '', html: PIN_ORIGEN, iconSize: [34, 42], iconAnchor: [17, 41] }), interactive: false, title: o.nombre }).addTo(map);
     map.fitBounds(circulo.getBounds(), { padding: [24, 24] });
   }
 }
@@ -1379,6 +1391,7 @@ function volcarEstadoAControles() {
   const o = origenActual();
   $('#btn-radio').classList.toggle('activo', !!o);
   $('#btn-radio').textContent = o ? `📍 ${o.nombre} · ${state.km} km` : '📍 Buscar cerca de mí';
+  $('#btn-radio-mapa').textContent = o ? `📍 ${o.nombre} · ${state.km} km` : '📍 Tu localidad';
   $('#input-radio').value = o ? o.nombre : '';
   $('#ctrl-km').classList.toggle('oculto', !o);
   $('#btn-quitar-radio').classList.toggle('oculto', !o);
@@ -1462,8 +1475,10 @@ function initControles() {
     if (abrir && !origenActual()) $('#input-radio').focus();
   };
   $('#btn-radio').onclick = () => conmutarPopRadio($('#pop-radio').classList.contains('oculto'));
+  // el mismo control, invocado desde la vista de mapa en móvil
+  $('#btn-radio-mapa').onclick = () => conmutarPopRadio($('#pop-radio').classList.contains('oculto'));
   document.addEventListener('click', e => {
-    if (!e.target.closest('.radio-wrap')) conmutarPopRadio(false);
+    if (!e.target.closest('.radio-wrap') && !e.target.closest('#btn-radio-mapa')) conmutarPopRadio(false);
   });
   autocompletar($('#ac-radio'), m => {
     state.origen = m.ine;
@@ -1475,6 +1490,7 @@ function initControles() {
     state.km = KMS[+e.target.value];
     $('#salida-km').textContent = state.km + ' km';
     $('#btn-radio').textContent = origenActual() ? `📍 ${origenActual().nombre} · ${state.km} km` : '📍 Buscar cerca de mí';
+    $('#btn-radio-mapa').textContent = origenActual() ? `📍 ${origenActual().nombre} · ${state.km} km` : '📍 Tu localidad';
     alCambiar();
   };
   $('#btn-quitar-radio').onclick = () => {
