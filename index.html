@@ -279,6 +279,26 @@ footer.app .legal{line-height:1.6}
 .stat-oscura{background:var(--blue-dark);border-radius:16px;padding:16px 18px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;text-align:center;margin:4px 0 10px}
 .stat-oscura .v{font-family:'DM Mono',monospace;font-size:1.35rem;color:#fff}
 .stat-oscura .l{font-size:.62rem;color:#8fc3ec;font-weight:600;letter-spacing:.08em;text-transform:uppercase;margin-top:2px}
+/* ¿Tengo opciones? — modelo de probabilidad visual (diseño PWA) */
+.sellos-modelo{display:flex;gap:8px;flex-wrap:wrap;margin:2px 0 10px}
+.op-tarjeta{background:#fff;border:1px solid var(--gray-border);border-radius:16px;padding:14px 16px;margin:0 0 10px;box-shadow:0 4px 20px rgba(9,66,109,.07)}
+.op-tarjeta.op-modelo{border-top:3px solid var(--blue-logo)}
+.op-titulo-mini{font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--text-soft);margin-bottom:8px}
+.perfil-chips{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.pchip{background:var(--blue-light);color:var(--blue-dark);border-radius:999px;padding:8px 14px;font-size:.8rem;font-weight:700}
+.pchip-btn{background:#fff;border:1px solid var(--gray-border);color:var(--text-soft);cursor:pointer;font-weight:600}
+.op-fila{display:flex;gap:14px;align-items:center}
+.op-anillo{width:78px;height:78px;border-radius:50%;display:grid;place-items:center;flex:none}
+.op-anillo>div{width:58px;height:58px;border-radius:50%;background:#fff;display:grid;place-items:center;font-size:.8rem;font-weight:800;color:var(--blue-dark);text-align:center;line-height:1.1;padding:4px}
+.op-titular{font-size:.95rem;font-weight:700;color:var(--blue-dark)}
+.op-tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:12px}
+.op-tiles>div{background:var(--gray-bg);border-radius:12px;padding:10px 6px;text-align:center}
+.op-tiles .v{font-family:'DM Mono',monospace;font-size:1.02rem;color:var(--blue-dark);white-space:nowrap}
+.op-tiles .l{font-size:.6rem;color:var(--text-soft);font-weight:600;text-transform:uppercase;letter-spacing:.04em;margin-top:2px}
+.consejo{background:var(--blue-light);border-radius:16px;padding:13px 16px;font-size:.85rem;color:var(--blue-dark);line-height:1.55;margin:0 0 10px}
+.consejo-nota{display:block;font-size:.72rem;color:var(--text-soft);margin-top:4px}
+#btn-ver-mias{display:block;width:100%;border:none;background:var(--blue-logo);color:#fff;border-radius:12px;padding:14px 0;font-size:.92rem;font-weight:700;box-shadow:0 4px 16px rgba(9,66,109,.18);cursor:pointer;margin:2px 0 6px}
+#btn-ver-mias:hover{background:var(--blue-dark)}
 .mes-barras{display:flex;align-items:flex-end;gap:6px;height:130px;max-width:560px;margin:14px 0 4px}
 .mes-barras .mes{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;height:100%;gap:3px}
 .mes-barras .mes .valor{font-family:'DM Mono',monospace;font-size:.68rem;color:var(--blue-dark)}
@@ -388,10 +408,27 @@ details.acordeon[open]>summary::before{transform:rotate(90deg)}
   #panel-mas-filtros.abierto .chips-filtro{width:100%}
   #panel-mas-filtros.abierto #btn-cerrar-filtros{display:block;width:100%;background:var(--blue-logo);color:#fff;border:none;border-radius:var(--radius);padding:12px;font-weight:800;font-size:1rem;margin-top:6px}
   header.app .meta-derecha{display:none}
-  /* los dos accesos informativos, a lo ancho: que se vean, no que se intuyan */
-  #btn-stats,#btn-planifica{flex:1 1 100%;padding:13px 12px;font-size:.92rem;text-align:center}
-  #btn-planifica{margin-bottom:2px}
-  #barra-plazo{font-size:.82rem;padding:6px 10px}
+  /* ---- cabecera clara del diseño de la PWA ---- */
+  #hero-cevi{background:var(--gray-bg)}
+  header.app{padding:16px 16px 0}
+  header.app h1 svg{width:min(230px,62vw)}
+  header.app h1 svg>path{fill:#09426d}
+  header.app h1 svg>circle:first-of-type{fill:#fff}
+  header.app h1 svg>polyline{stroke:#1a5f9a}
+  header.app h1 svg text{fill:#09426d}
+  header.app .sub{color:#2980b9;margin-top:4px}
+  /* las pestañas inferiores ya dan acceso a ¿Opciones? y Datos */
+  #btn-stats,#btn-planifica{display:none}
+  #segmentador{background:var(--blue-light);border-radius:999px;padding:4px;gap:4px;margin:12px 16px 0}
+  #segmentador button{flex:1;text-align:center;border-bottom:none;padding:11px 0;border-radius:999px;font-size:.82rem;color:var(--blue-logo)}
+  #segmentador button[aria-pressed="true"]{background:var(--blue-logo);color:#fff;border-bottom-color:transparent}
+  #barra-plazo{display:none} /* en móvil la cuenta atrás vive en la píldora amarilla */
+  #contador{font-size:1.3rem;font-weight:800;color:var(--blue-dark);letter-spacing:-.01em;flex:1 1 auto}
+  #pill-cuenta{display:inline-block;background:var(--yellow);color:var(--blue-dark);border-radius:999px;padding:7px 12px;font-family:'DM Mono',monospace;font-size:.78rem;font-weight:500;box-shadow:0 4px 14px rgba(9,66,109,.15);white-space:nowrap}
+  #pill-cuenta.cerrado{background:#dde3ea;color:var(--text-soft)}
+  #orden{border:1px solid var(--gray-border);border-radius:999px;background:#fff;padding:8px 12px;font-size:.78rem;font-weight:600;color:var(--text-main)}
+  #btn-csv{display:none} /* exportar vive en Mi lista; en móvil solo estorba */
+  #cabecera-lista{top:0}
 }
 </style>
 </head>
@@ -553,6 +590,7 @@ details.acordeon[open]>summary::before{transform:rotate(90deg)}
         <button id="vc-lista" aria-pressed="true">≡ Lista</button>
         <button id="vc-mapa" aria-pressed="false">🗺 Mapa</button>
       </div>
+      <span id="pill-cuenta" class="solo-movil" role="timer" aria-label="Tiempo hasta el cierre de plazo">⏱ —</span>
       <button id="btn-mapa" aria-pressed="false" aria-controls="col-mapa">🗺 Ver en mapa</button>
       <select id="orden" aria-label="Ordenar resultados">
         <option value="">Orden: publicación</option>
@@ -1274,18 +1312,21 @@ $('#btn-cta-panel').onclick = () => {
 function initCuentaAtras() {
   const cierre = new Date(DATA.cierre_plazo);
   const barra = $('#barra-plazo'), badge = $('#badge-tiempo'), texto = $('#texto-plazo');
+  const pill = $('#pill-cuenta'); // versión píldora de la cabecera móvil
   function tic() {
     const ms = cierre - new Date();
     if (ms <= 0) {
       barra.classList.add('cerrado'); barra.classList.remove('urgente');
       texto.textContent = 'Plazo cerrado. La próxima oferta se publica el jueves.';
       badge.textContent = '⏸';
+      if (pill) { pill.textContent = '⏱ cerrado'; pill.classList.add('cerrado'); }
       return;
     }
     const h = Math.floor(ms / 3.6e6), m = Math.floor(ms % 3.6e6 / 6e4);
     const dia = cierre.toLocaleDateString('es-ES', { weekday: 'long' });
     texto.textContent = `Queda${h * 60 + m === 1 ? '' : 'n'} para el cierre de plazo (${dia} ${cierre.getHours()}:${String(cierre.getMinutes()).padStart(2, '0')}):`;
     badge.textContent = h >= 48 ? `${Math.floor(h / 24)} d ${h % 24} h` : `${h} h ${String(m).padStart(2, '0')} min`;
+    if (pill) pill.textContent = '⏱ ' + badge.textContent;
     barra.classList.toggle('urgente', ms < 3 * 3.6e6);
   }
   tic();
@@ -1602,43 +1643,11 @@ function initStats() {
   if (!STATS || !STATS.por_especialidad.length) return; // sin bloque: la app funciona igual
   $('#btn-stats').classList.remove('oculto');
   $('#tab-opciones').classList.remove('oculto');
+  // ¿La semana cargada es de un curso ya cerrado? El modelo sigue funcionando,
+  // pero se sella como «referencia del curso pasado» y en Maestros (bolsa
+  // reordenada) no se dan probabilidades.
   const fechaSemana = ((DATA && (DATA.cierre_plazo || DATA.actualizado)) || '').slice(0, 10);
   STATS_EN_ESPERA = !!fechaSemana && cursoDeFecha(fechaSemana) < CURSO_MINIMO_STATS;
-  if (STATS_EN_ESPERA) {
-    $('#btn-stats').onclick = () => abrirStats();
-    $('#btn-cerrar-stats').onclick = cerrarStats;
-    $('#seccion-stats').addEventListener('click', e => { if (e.target === $('#seccion-stats')) cerrarStats(); });
-    document.addEventListener('keydown', e => {
-      if (e.key === 'Escape' && !$('#seccion-stats').classList.contains('oculto')) cerrarStats();
-    });
-    $('#seccion-stats .lbl-esp').classList.add('oculto');
-    $$('#seccion-stats details.acordeon').forEach(d => d.classList.add('oculto'));
-    $('#stats-detalle').innerHTML = `
-      <div class="comp-grande">Se activará con el curso 26/27</div>
-      <div class="comp-sub">La última semana publicada es del curso 2025/26 y las bolsas se reordenan
-        este verano con el concurso-oposición: calcular tus opciones con esos datos daría una
-        referencia engañosa, así que preferimos no dártela.</div>
-      <p class="comp-sub">Este apartado se pondrá en marcha solo, con las primeras adjudicaciones de
-        septiembre. Mientras tanto, para planificar tienes el curso pasado completo:</p>
-      <button id="btn-ir-plan" type="button">📊 Ver estadísticas del curso 25/26</button>
-      <div class="calc">
-        <h3>¿Te avisamos cuando arranque el 26/27?</h3>
-        <p class="comp-sub" style="margin-bottom:8px">Te escribimos con las primeras plazas del curso que viene cerca de ti.</p>
-        ${formAvisosHTML({})}
-      </div>`;
-    $('#btn-ir-plan').onclick = () => { cerrarStats(); abrirPlanifica(); };
-    // el índice del histórico sigue haciendo falta: alimenta «Estadísticas curso 25/26»
-    fetch('historico/index.json', { cache: 'no-store' })
-      .then(r => r.ok ? r.json() : [])
-      .catch(() => [])
-      .then(indice => {
-        const semanas = Array.isArray(indice) ? indice : (indice.semanas || []);
-        SEMANAS_HISTORICO = semanas.map(x => x.fecha || x);
-        CURSOS_HISTORICO = Array.isArray(indice) ? [] : (indice.cursos || []);
-        initPlanifica();
-      });
-    return;
-  }
   // nombres repetidos entre cuerpos → la etiqueta lleva el cuerpo
   const vistos = new Map();
   for (const e of STATS.por_especialidad) {
@@ -1697,7 +1706,8 @@ function abrirStats(clave) {
   $('#seccion-stats').scrollTop = 0;
   $('#btn-stats').setAttribute('aria-expanded', 'true');
   document.body.style.overflow = 'hidden'; // el popup es lo único que scrollea
-  if (!STATS_EN_ESPERA) { renderStatsDetalle(); renderTendencias(); }
+  renderStatsDetalle();
+  renderTendencias();
   $('#btn-cerrar-stats').focus();
 }
 function cerrarStats() {
@@ -1710,32 +1720,137 @@ function cerrarStats() {
 
 const PROVINCIAS_SIGLA = { '02': 'AB', '13': 'CR', '16': 'CU', '19': 'GU', '45': 'TO' };
 
-/* Vista "una pregunta, una respuesta": arriba solo el número, su contexto y
-   la calculadora. Todo lo demás vive en los acordeones. */
+/* ¿Tengo opciones? al estilo del diseño de la PWA: perfil en chips, anillo de
+   probabilidad, tres cifras y un consejo con datos. TODO lo que estima se
+   sella como «modelo de probabilidad» y nada se presenta como garantía.
+   En Maestros (bolsa reordenada por la oposición de 2026) NO se estima. */
 function renderStatsDetalle() {
-  if (STATS_EN_ESPERA) return; // el mensaje de espera lo pinta initStats y no se pisa
   const e = entradaStats($('#stats-esp').value);
   const caja = $('#stats-detalle');
   if (!e) { caja.innerHTML = ''; return; }
+  const fechaSemana = ((DATA && DATA.cierre_plazo) || '').slice(0, 10);
+  const pe = (typeof PLAN !== 'undefined' && PLAN) ? entradaPlan(e.cuerpo + '|' + e.especialidad) : null;
+  const guardado = JSON.parse(localStorage.getItem('cevi_bolsa') || '{}');
+  const b = pe && pe.bolsa_ordinaria;
+  const reordenada = pe ? pe.bolsa_reordenada_26_27 && STATS_EN_ESPERA : (e.cuerpo === '0597' && STATS_EN_ESPERA);
+  const partes = [];
 
-  if (!e.plazas) {
-    caja.innerHTML = `<div class="comp-grande">Sin oferta esta semana</div>
-      <div class="comp-sub">${fmtNum(e.disponibles)} personas disponibles · 0 plazas de ${esc(e.especialidad)}</div>
-      <div class="nota-corta">Indicador orientativo, no una garantía.</div>
-      <div class="calc">
-        <h3>Te avisamos en cuanto salga alguna</h3>
-        <p class="comp-sub" style="margin-bottom:8px">Esta semana no ha salido ninguna plaza de ${esc(e.especialidad)}. Te escribimos en cuanto salga alguna cerca de ti.</p>
-        ${formAvisosHTML({ esp: e.especialidad })}
-      </div>`;
+  partes.push(`<div class="sellos-modelo">
+    <span class="sello-historico">MODELO DE PROBABILIDAD</span>
+    <span class="sello-historico">${STATS_EN_ESPERA ? 'REFERENCIA: CURSO 25/26' : 'SEMANA ' + fmtFecha(fechaSemana)}</span>
+  </div>`);
+
+  // ---- tu perfil ----
+  partes.push(`<div class="op-tarjeta">
+    <div class="op-titulo-mini">Tu perfil</div>
+    <div class="perfil-chips">
+      <span class="pchip">${esc(etiquetaEntrada(e))}</span>
+      ${guardado.pos ? `<span class="pchip">Bolsa ${esc(guardado.tipo || '0')} · nº ${guardado.pos}</span>
+        <button id="btn-cambiar-pos" class="pchip pchip-btn">Editar ✎</button>` : ''}
+    </div>
+    <div id="calc-form" class="${guardado.pos ? 'oculto' : ''}">${camposCalcHTML(e, guardado)}</div>
+    <div id="calc-res" class="calc-res oculto" role="status"></div>
+  </div>`);
+
+  // ---- el modelo ----
+  if (reordenada) {
+    partes.push(`<div class="op-tarjeta"><p class="nota-honesta" style="margin:0 0 10px">
+      <strong>Maestros tiene concurso-oposición en verano de 2026:</strong> la bolsa se reordena por
+      completo y ninguna posición del curso pasado sirve para estimar probabilidades. El modelo se
+      activará con las primeras adjudicaciones del curso 26/27.</p>
+      <div class="op-tiles">
+        <div><div class="v">${e.plazas}</div><div class="l">plazas esta semana</div></div>
+        ${pe ? `<div><div class="v">${fmtNum(pe.plazas_total)}</div><div class="l">plazas curso 25/26</div></div>` : ''}
+        ${pe && pe.por_mes && Object.keys(pe.por_mes).length ? `<div><div class="v">${MES_NOMBRE[Object.entries(pe.por_mes).sort((x, y) => y[1] - x[1])[0][0]].slice(0, 3)}</div><div class="l">mes con más plazas</div></div>` : ''}
+      </div></div>`);
+  } else if (guardado.pos && b) {
+    const pos = +guardado.pos, tipo = guardado.tipo || '0';
+    let nivel, pct, frase;
+    if (tipo !== '0') {
+      const rm = pe.bolsa_reserva_max;
+      if (rm && pos <= rm.posicion) { nivel = 'Media'; pct = 45; frase = `La bolsa de reserva llegó al nº ${fmtNum(rm.posicion)} el curso pasado, por encima de tu número.`; }
+      else { nivel = 'Baja'; pct = 15; frase = rm ? `La reserva llegó como mucho al nº ${fmtNum(rm.posicion)} el curso pasado, por debajo de tu número.` : 'Apenas hubo adjudicaciones de la bolsa de reserva en esta especialidad el curso pasado.'; }
+    } else if (pos <= b.min) { nivel = 'Muy alta'; pct = 92; frase = `Tu número quedó dentro del alcance de la bolsa en todas las semanas del curso pasado (nunca bajó del nº ${fmtNum(b.min)}).`; }
+    else if (pos <= b.mediana) { nivel = 'Alta'; pct = 70; frase = `La mitad de las semanas del curso pasado la bolsa llegó más allá de tu número (mediana: nº ${fmtNum(b.mediana)}).`; }
+    else if (pos <= b.max) { nivel = 'Media'; pct = 45; frase = `La bolsa solo alcanzó tu número en las semanas fuertes (máximo: nº ${fmtNum(b.max)}${pe.bolsa_max ? ' el ' + fmtFecha(pe.bolsa_max.fecha) : ''}).`; }
+    else { nivel = 'Baja'; pct = 15; frase = `El curso pasado la bolsa nunca llegó a tu número (máximo: nº ${fmtNum(b.max)}).`; }
+    const margen = b.max - pos;
+    partes.push(`<div class="op-tarjeta op-modelo">
+      <div class="op-fila">
+        <div class="op-anillo" style="background:conic-gradient(var(--blue-logo) 0 ${pct}%,var(--blue-light) ${pct}% 100%)" role="img" aria-label="Probabilidad ${nivel}"><div>${nivel}</div></div>
+        <div class="op-texto">
+          <div class="op-titular">Probabilidad ${nivel.toLowerCase()}, según el curso 25/26</div>
+          <div class="comp-sub">${frase}</div>
+        </div>
+      </div>
+      <div class="op-tiles">
+        <div><div class="v">${e.plazas}</div><div class="l">plazas esta semana</div></div>
+        <div><div class="v">nº ${fmtNum(b.max)}</div><div class="l">llegó hasta (25/26)</div></div>
+        <div><div class="v">${margen >= 0 ? '+' : '−'}${fmtNum(Math.abs(margen))}</div><div class="l">margen sobre tu nº</div></div>
+      </div>
+      <div class="nota-corta">Es un modelo de probabilidad sobre el curso pasado: una previsión orientativa, nunca una garantía.</div>
+    </div>`);
+  } else if (!guardado.pos) {
+    partes.push(`<div class="op-tarjeta op-modelo"><div class="op-fila">
+      <div class="op-anillo" style="background:conic-gradient(var(--gray-border) 0 100%)"><div>?</div></div>
+      <div class="op-texto"><div class="op-titular">Dinos tu posición en bolsa</div>
+        <div class="comp-sub">Comparamos tu número con hasta dónde llegó la bolsa el curso 25/26 y te damos una probabilidad orientativa.</div></div>
+    </div></div>`);
   } else {
-    caja.innerHTML = `<div class="comp-grande">${fmtRatio(e.ratio)} aspirantes por plaza</div>
-      <div class="comp-sub">${fmtNum(e.disponibles)} personas disponibles · ${e.plazas} plaza${e.plazas === 1 ? '' : 's'} esta semana</div>
-      <div class="nota-corta">Indicador orientativo, no una garantía.</div>
-      ${calculadoraHTML(e)}`;
-    initCalculadora(e);
+    partes.push(`<div class="op-tarjeta"><p class="comp-sub" style="margin:0">Sin adjudicaciones de bolsa ordinaria registradas el curso pasado para ${esc(e.especialidad)}: no hay base para estimar probabilidades.</p></div>`);
   }
+
+  // ---- consejo CEVI (siempre con datos reales) ----
+  const consejo = consejoCEVI(e, pe, guardado, b);
+  if (consejo) partes.push(`<div class="consejo"><strong>Consejo CEVI:</strong> ${consejo} <span class="consejo-nota">Previsión orientativa, no una garantía.</span></div>`);
+
+  // ---- acción ----
+  if (e.plazas > 0) {
+    partes.push(`<button id="btn-ver-mias" type="button">Ver las ${e.plazas} plaza${e.plazas === 1 ? '' : 's'} de ${esc(e.especialidad)} →</button>`);
+  } else {
+    partes.push(`<div class="calc"><h3>Te avisamos en cuanto salga alguna</h3>
+      <p class="comp-sub" style="margin-bottom:8px">Esta semana no hay plazas de ${esc(e.especialidad)}. Te escribimos en cuanto salga alguna cerca de ti.</p>
+      ${formAvisosHTML({ esp: e.especialidad })}</div>`);
+  }
+
+  caja.innerHTML = partes.join('');
+  initCalculadora(e);
+  const verMias = $('#btn-ver-mias');
+  if (verMias) verMias.onclick = () => {
+    state.esp = [e.especialidad];
+    poblarControles();
+    alCambiar();
+    cerrarStats();
+    cambiarTab('lista');
+  };
   renderStatsIdioma(e);
   renderStatsSemana(e);
+}
+
+/* El consejo sale de los datos, por prioridad: ventaja de idioma esta semana,
+   cercanía al alcance del curso pasado, o estacionalidad. Nada inventado. */
+function consejoCEVI(e, pe, guardado, b) {
+  for (const [idi, n] of Object.entries(e.plazas_por_idioma || {})) {
+    if (idi === 'sin_perfil' || !n) continue;
+    const tienen = (e.disponibles_por_idioma || {})[idi] ?? 0;
+    if (e.disponibles && tienen <= Math.max(3, e.disponibles * 0.25)) {
+      return `esta semana ${n === 1 ? 'hay una plaza' : 'hay ' + n + ' plazas'} con perfil de ${esc(idi)} y solo ${tienen} de ${fmtNum(e.disponibles)} disponibles lo acreditan: si lo tienes, es tu mejor baza.`;
+    }
+  }
+  if (guardado.pos && b && (guardado.tipo || '0') === '0') {
+    const pos = +guardado.pos;
+    if (pos > b.max && pos - b.max <= Math.max(20, b.max * 0.15)) {
+      return `tu número quedó a solo ${fmtNum(pos - b.max)} del punto más lejano del curso pasado: en las semanas fuertes (septiembre, vuelta de Navidad) la bolsa podría alcanzarte.`;
+    }
+    if (pos <= b.min) {
+      return 'tu número quedó dentro del alcance de la bolsa todas las semanas del curso pasado: pide con ambición, también las plazas largas.';
+    }
+  }
+  if (pe && pe.por_mes && Object.keys(pe.por_mes).length) {
+    const mesTop = Object.entries(pe.por_mes).sort((x, y) => y[1] - x[1])[0];
+    return `el grueso de las plazas de ${esc(e.especialidad)} salió en ${MES_NOMBRE[mesTop[0]]} (${mesTop[1]} plazas): ten la lista lista esas semanas.`;
+  }
+  return null;
 }
 
 /* ▸ Desglose por perfil de idioma: el mayor factor de competencia de la app */
@@ -1779,38 +1894,6 @@ function renderStatsSemana(e) {
 }
 
 /* Calculadora: lo accionable. Si ya guardaste tu posición, respuesta directa. */
-function resultadoCalcHTML(e, tipo, pos) {
-  const llego = e.bolsa_ordinaria_llego_a;
-  if (tipo !== '0') {
-    return { bien: false, html: `La referencia que publica la app (hasta dónde llegó la bolsa) es de la <strong>bolsa ordinaria (tipo 0)</strong>. Para tu tipo de bolsa (${esc(tipo)}) aún no tenemos una referencia fiable.` };
-  }
-  if (!llego) {
-    return { bien: false, html: `Esta semana no hubo adjudicaciones de la bolsa ordinaria en ${esc(e.especialidad)}, así que no hay referencia con la que comparar tu posición.` };
-  }
-  if (pos <= llego) {
-    return { bien: true, html: `Esta semana la bolsa de ${esc(e.especialidad)} llegó a la posición <strong>${llego}</strong>. Estás en la ${pos}: <strong>por posición, entrarías</strong>. Recuerda que es orientativo — depende de qué plazas pidas.` };
-  }
-  return { bien: false, html: `Esta semana llegó a la <strong>${llego}</strong> y estás en la ${pos}. Por posición no habrías entrado. Añadir peticiones voluntarias y afines es tu mejor opción — <a href="#" id="calc-a-lista">prepara tu lista de peticiones →</a>` };
-}
-function calculadoraHTML(e) {
-  const guardado = JSON.parse(localStorage.getItem('cevi_bolsa') || '{}');
-  if (guardado.pos) {
-    // respuesta directa con lo ya guardado; el formulario queda a un clic
-    const r = resultadoCalcHTML(e, guardado.tipo || '0', guardado.pos);
-    return `<div class="calc">
-      <h3>¿Y yo, dónde estoy?</h3>
-      <div class="calc-res${r.bien ? ' bien' : ''}" role="status">${r.html}</div>
-      <div class="nota-corta">Con tu posición guardada: ${esc(guardado.tipo || '0')} · nº ${guardado.pos}
-        <button id="btn-cambiar-pos">Cambiar mi posición</button></div>
-      <div id="calc-form" class="oculto">${camposCalcHTML(e, guardado)}</div>
-    </div>`;
-  }
-  return `<div class="calc">
-    <h3>¿Y yo, dónde estoy?</h3>
-    <div id="calc-form">${camposCalcHTML(e, guardado)}</div>
-    <div id="calc-res" class="calc-res oculto" role="status"></div>
-  </div>`;
-}
 function camposCalcHTML(e, guardado) {
   const tipos = new Set(['0', ...Object.keys(e.por_tipo_bolsa || {}), '91']);
   return `<div class="campos">
@@ -1978,6 +2061,7 @@ function initPlanifica() {
         if (e.key === 'Escape' && !$('#seccion-planifica').classList.contains('oculto')) cerrarPlanifica();
       });
       renderPlanDetalle();
+      renderStatsDetalle(); // el modelo de ¿Tengo opciones? bebe del rollup recién cargado
     });
 }
 function abrirPlanifica() {
@@ -2083,40 +2167,19 @@ function renderPlanBolsa(e) {
       <strong>no son comparables</strong> con tu posición del curso que viene. Fíjate en la
       estacionalidad, el volumen y la competencia, que sí orientan.</p>`);
   }
-  // el dato principal: el punto más lejano al que llegó la ordinaria y cuándo
-  if (e.bolsa_max) {
-    partes.push(`<div class="comp-grande">Llegó hasta la posición ${fmtNum(e.bolsa_max.posicion)}</div>
-      <div class="comp-sub">de la bolsa ordinaria, el <strong>${fmtFecha(e.bolsa_max.fecha)}</strong> — el punto más lejano de todo el curso.</div>
-      <p class="comp-sub">Ojo: la bolsa <strong>no avanza como una cola</strong>. Cada semana la plaza va al
-      mejor número que esté disponible y la pida, así que el punto más lejano suele darse en septiembre,
-      cuando salen muchas plazas de golpe. Las adjudicaciones posteriores fueron para aspirantes con
-      <strong>posición anterior a esa</strong>: gente que estaba «no disponible» y cambió su situación,
-      o que terminó de trabajar y volvió a estar disponible con mejor número.</p>`);
-  }
-  // estado de las bolsas: ¿se llegó a agotar la ordinaria? ¿y la de reserva?
+  // tres fichas visuales: máximo con fecha, agotamiento y bolsa de reserva
   // (tipo 91 en los listados: «Bolsa de Reserva», apdo. 7.1.2 de la Orden 32/2018)
-  const est = [];
-  if (e.ordinaria_sin_disponibles_desde) {
-    est.push(`La bolsa ordinaria <strong>llegó a quedarse sin aspirantes disponibles</strong> el ${fmtFecha(e.ordinaria_sin_disponibles_desde)}:
-      no es que se adjudicara hasta el final, sino que todo el mundo de esa bolsa estaba trabajando o en «no disponible».`);
-    if (e.bolsa_reserva_max) {
-      est.push(`Desde entonces las plazas se cubren con la <strong>bolsa de reserva</strong> (numeración propia desde el 1),
-        que llegó como mucho a la posición <strong>${fmtNum(e.bolsa_reserva_max.posicion)}</strong> el ${fmtFecha(e.bolsa_reserva_max.fecha)}.`);
-    }
-    if (e.reserva_sin_disponibles_desde) {
-      est.push(`Y la de reserva <strong>también llegó a agotarse</strong>, el ${fmtFecha(e.reserva_sin_disponibles_desde)}.`);
-    }
-  } else if (e.bolsa_max) {
-    est.push('La bolsa ordinaria no llegó a agotarse en ninguna semana del curso.');
-    if (e.bolsa_reserva_max) {
-      est.push(`Aun así hubo adjudicaciones de la <strong>bolsa de reserva</strong> (llegó a la posición ${fmtNum(e.bolsa_reserva_max.posicion)} el ${fmtFecha(e.bolsa_reserva_max.fecha)}): la gente disponible de la ordinaria no siempre pide todas las plazas.`);
-    }
-  }
-  if (est.length) partes.push(`<p class="comp-sub">${est.join(' ')}</p>`);
   if (e.bolsa_max) {
-    partes.push(`<p class="comp-sub">${e.bolsa_reordenada_26_27
-      ? 'Es solo la foto de lo que pasó ese curso.'
-      : 'Sirve como <strong>referencia orientativa</strong> — nunca como garantía: depende de qué plazas pidiera cada persona cada semana.'}</p>`);
+    const fc = f => fmtFecha(f).slice(0, 5); // dd/mm
+    partes.push(`<div class="op-tiles">
+      <div><div class="v">nº ${fmtNum(e.bolsa_max.posicion)}</div><div class="l">llegó hasta · ${fc(e.bolsa_max.fecha)}</div></div>
+      <div><div class="v">${e.ordinaria_sin_disponibles_desde ? fc(e.ordinaria_sin_disponibles_desde) : '✓'}</div><div class="l">${e.ordinaria_sin_disponibles_desde ? 'sin disponibles desde' : 'nunca se agotó'}</div></div>
+      <div><div class="v">${e.bolsa_reserva_max ? 'nº ' + fmtNum(e.bolsa_reserva_max.posicion) : '—'}</div><div class="l">${e.bolsa_reserva_max ? `reserva · ${fc(e.bolsa_reserva_max.fecha)}${e.reserva_sin_disponibles_desde ? ' · agotada' : ''}` : 'bolsa de reserva'}</div></div>
+    </div>`);
+    partes.push(`<p class="comp-sub">La bolsa <strong>no avanza como una cola</strong>: cada semana la plaza va al mejor
+      número disponible que la pida; las adjudicaciones tras el máximo fueron para gente con posición anterior que volvió
+      a estar disponible.${e.ordinaria_sin_disponibles_desde ? ' «Sin disponibles» = todos trabajando o en «no disponible», no que se adjudicara hasta el final.' : ''}
+      ${e.bolsa_reordenada_26_27 ? 'Es la foto del curso pasado.' : 'Referencia orientativa, nunca una garantía.'}</p>`);
   } else if (!e.bolsa_reordenada_26_27) {
     partes.push('<p>Sin adjudicaciones de bolsa ordinaria registradas para esta especialidad ese curso.</p>');
   }
