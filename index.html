@@ -310,6 +310,11 @@ footer.app .legal{line-height:1.6}
 .mes-barras .mes .valor{font-family:'DM Mono',monospace;font-size:.68rem;color:var(--blue-dark)}
 .mes-barras .mes .barra{width:100%;max-width:38px;background:var(--blue-mid);border-radius:5px 5px 0 0;min-height:2px}
 .mes-barras .mes.pico .barra{background:var(--blue-dark)}
+/* agosto: la adjudicación previa (vacantes de curso completo) con trama propia */
+.mes-barras .mes.previa .barra{background:repeating-linear-gradient(45deg,var(--blue-dark) 0 5px,var(--blue-mid) 5px 10px)}
+.previa-caja{background:var(--blue-light);border-radius:16px;padding:12px 14px;margin:10px 0}
+.previa-caja .op-tiles{margin-top:8px}
+.previa-caja .op-tiles>div{background:#fff}
 .mes-barras .mes .etiqueta{font-size:.66rem;color:var(--text-soft);text-transform:uppercase}
 .plan-geo-mapa{max-width:480px}
 .plan-geo-mapa path{stroke:#fff;stroke-width:1.5}
@@ -1772,6 +1777,7 @@ function initStats() {
       const semanas = Array.isArray(indice) ? indice : (indice.semanas || []);
       SEMANAS_HISTORICO = semanas.map(x => x.fecha || x);
       CURSOS_HISTORICO = Array.isArray(indice) ? [] : (indice.cursos || []);
+      PREVIAS_LISTA = Array.isArray(indice) ? [] : (indice.previas || []);
       pintarNotaStats();
       renderTendencias();
       initPlanifica();
@@ -2104,7 +2110,26 @@ function renderTarjetaCompetencia() {
    bolsa. HISTÓRICO ≠ semana en vivo: sello visible y nota permanente.
    Regla de oro: si el cuerpo tiene oposición (bolsa_reordenada), sus
    posiciones de bolsa NO se muestran como referencia usable. */
-let CURSOS_HISTORICO = [], PLAN = null, PLAN_DUP = new Set();
+let CURSOS_HISTORICO = [], PLAN = null, PLAN_DUP = new Set(), PREVIA = null, PREVIAS_LISTA = [];
+
+/* La previa de agosto nombra las especialidades a su manera («IDIOMA
+   EXTRANJERO: INGLES» vs «Lengua Extranjera: Inglés» semanal): se casan por
+   nombre normalizado, con igualdad exacta primero y contención después. */
+function normEsp(s) {
+  return s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+    .replace(/^educacion especial,\s*/, '')
+    .replace(/^(idioma|lengua) extranjer[oa]:\s*/, '')
+    .replace(/\s*-\s*ies$/, '')
+    .trim();
+}
+function entradaPrevia(e) {
+  if (!PREVIA || !e) return null;
+  const objetivo = normEsp(e.especialidad);
+  const mismas = PREVIA.por_especialidad.filter(p => p.cuerpo === e.cuerpo);
+  return mismas.find(p => normEsp(p.especialidad) === objetivo)
+    || mismas.find(p => { const n = normEsp(p.especialidad); return n.includes(objetivo) || objetivo.includes(n); })
+    || null;
+}
 const MESES_CURSO = [['09', 'sep'], ['10', 'oct'], ['11', 'nov'], ['12', 'dic'], ['01', 'ene'],
                      ['02', 'feb'], ['03', 'mar'], ['04', 'abr'], ['05', 'may'], ['06', 'jun']];
 const MES_NOMBRE = { '09': 'septiembre', '10': 'octubre', '11': 'noviembre', '12': 'diciembre',
@@ -2162,6 +2187,13 @@ function initPlanifica() {
       });
       renderPlanDetalle();
       renderStatsDetalle(); // el modelo de ¿Tengo opciones? bebe del rollup recién cargado
+      // la adjudicación previa de agosto (vacantes de curso completo), si existe
+      if (PREVIAS_LISTA.length) {
+        fetch(`historico/previa-${PREVIAS_LISTA[PREVIAS_LISTA.length - 1]}.json`)
+          .then(r => r.ok ? r.json() : null)
+          .catch(() => null)
+          .then(p => { if (p) { PREVIA = p; renderPlanDetalle(); } });
+      }
     });
 }
 function abrirPlanifica() {
@@ -2182,15 +2214,24 @@ function cerrarPlanifica() {
 function renderPlanDetalle() {
   const e = entradaPlan($('#plan-esp').value);
   if (!e) { $('#plan-detalle').innerHTML = ''; return; }
-  // estacionalidad: el dato estrella
-  const maxMes = Math.max(...MESES_CURSO.map(([m]) => e.por_mes[m] || 0), 1);
-  const picos = MESES_CURSO.filter(([m]) => (e.por_mes[m] || 0) === maxMes && maxMes > 0)
+  // estacionalidad: el dato estrella. La previa de agosto es OTRA cosa
+  // (vacantes de curso completo) y se pinta aparte, con su propia trama.
+  const pv = entradaPrevia(e);
+  const previaTotal = pv ? pv.vacantes + pv.vacantes_itinerantes : 0;
+  const maxSemanal = Math.max(...MESES_CURSO.map(([m]) => e.por_mes[m] || 0), 1);
+  const escala = Math.max(maxSemanal, previaTotal, 1);
+  const picos = MESES_CURSO.filter(([m]) => (e.por_mes[m] || 0) === maxSemanal && maxSemanal > 0)
     .map(([m]) => MES_NOMBRE[m]);
-  const barras = MESES_CURSO.map(([m, etq]) => {
+  const barraPrevia = pv ? `<div class="mes previa">
+      <span class="valor">${fmtNum(previaTotal)}</span>
+      <div class="barra" style="height:${Math.max(2, Math.round(previaTotal / escala * 100))}%" role="img" aria-label="agosto: ${previaTotal} vacantes de curso completo en la adjudicación previa"></div>
+      <span class="etiqueta">ago*</span>
+    </div>` : '';
+  const barras = barraPrevia + MESES_CURSO.map(([m, etq]) => {
     const v = e.por_mes[m] || 0;
-    return `<div class="mes${v === maxMes && v > 0 ? ' pico' : ''}">
+    return `<div class="mes${v === maxSemanal && v > 0 ? ' pico' : ''}">
       <span class="valor">${v || ''}</span>
-      <div class="barra" style="height:${Math.round(v / maxMes * 100)}%" role="img" aria-label="${MES_NOMBRE[m]}: ${v} plazas"></div>
+      <div class="barra" style="height:${Math.round(v / escala * 100)}%" role="img" aria-label="${MES_NOMBRE[m]}: ${v} plazas"></div>
       <span class="etiqueta">${etq}</span>
     </div>`;
   }).join('');
@@ -2203,8 +2244,18 @@ function renderPlanDetalle() {
     </div>
     ${e.ratio_medio != null ? `<div class="comp-sub">Ratio medio del curso: <strong>${fmtRatio(e.ratio_medio)} aspirantes por plaza</strong>.</div>` : ''}
     <div class="nota-corta">Indicador orientativo del curso pasado, no una garantía.</div>
+    ${pv ? `<div class="previa-caja">
+      <div class="op-titulo-mini">Adjudicación de comienzo de curso · agosto</div>
+      <div class="op-tiles">
+        <div><div class="v">${fmtNum(previaTotal)}</div><div class="l">vacantes curso completo</div></div>
+        <div><div class="v">${fmtNum(pv.adjudicados)}</div><div class="l">adjudicadas</div></div>
+        <div><div class="v">${pv.orden_maximo ? 'nº ' + fmtNum(pv.orden_maximo) : '—'}</div><div class="l">orden más alto</div></div>
+      </div>
+      ${pv.por_via ? `<div class="comp-sub">Por vía: ${Object.entries(pv.por_via).map(([v, n]) => `${v === 'Oposicion' ? 'Oposición' : 'Renovación'} ${fmtNum(n)}`).join(' · ')} — son poblaciones distintas (recién aprobados vs. interinos que renuevan).</div>` : ''}
+    </div>` : ''}
     <div class="mes-barras" role="img" aria-label="Plazas por mes de ${esc(e.especialidad)} en el curso">${barras}</div>
-    ${picos.length ? `<div class="comp-sub">Las plazas de ${esc(e.especialidad)} salieron sobre todo en <strong>${picos.join(' y ')}</strong>.</div>` : ''}
+    ${pv ? '<div class="nota-corta">* ago = vacantes de curso completo de la adjudicación previa; de sep a jun, plazas semanales de sustitución. Son repartos distintos: no se suman.</div>' : ''}
+    ${picos.length ? `<div class="comp-sub">Las sustituciones semanales de ${esc(e.especialidad)} salieron sobre todo en <strong>${picos.join(' y ')}</strong>.</div>` : ''}
     ${pocas ? `<div class="calc"><h3>Pocas plazas al año: que no se te escape ninguna</h3>
       <p class="comp-sub" style="margin-bottom:8px">Esta especialidad sacó solo ${e.plazas_total} plaza${e.plazas_total === 1 ? '' : 's'} en todo el curso. Te avisamos cuando salga alguna cerca de ti.</p>
       ${formAvisosHTML({ esp: e.especialidad })}</div>` : ''}`;
@@ -2261,6 +2312,10 @@ function renderPlanGeo(e) {
 }
 function renderPlanBolsa(e) {
   const partes = [];
+  const pv = entradaPrevia(e);
+  const filaPrevia = pv && pv.orden_maximo ? `<div class="bolsa-fila"><div class="bf-num">nº ${fmtNum(pv.orden_maximo)}</div>
+    <div class="bf-txt"><strong>Adjudicación de agosto:</strong> al repartir las ${fmtNum(pv.vacantes + pv.vacantes_itinerantes)} vacantes
+    de curso completo, el orden llegó hasta aquí.</div></div>` : '';
   if (e.bolsa_reordenada_26_27) {
     partes.push(`<p class="nota-honesta"><strong>Maestros tiene concurso-oposición en verano de 2026.</strong>
       La bolsa se reordena por completo, así que las posiciones del curso pasado
@@ -2281,12 +2336,14 @@ function renderPlanBolsa(e) {
       ${e.bolsa_reserva_max ? `<div class="bolsa-fila"><div class="bf-num">nº ${fmtNum(e.bolsa_reserva_max.posicion)}</div>
         <div class="bf-txt"><strong>La bolsa de reserva</strong> (empieza a contar desde el 1) llegó hasta aquí,
         el ${fmtFecha(e.bolsa_reserva_max.fecha)}.${e.reserva_sin_disponibles_desde ? ` También llegó a agotarse el ${fmtFecha(e.reserva_sin_disponibles_desde)}.` : ''}</div></div>` : ''}
+      ${filaPrevia}
     </div>`);
     partes.push(`<p class="comp-sub">La bolsa <strong>no avanza como una cola</strong>: cada semana la plaza va al mejor
       número que esté disponible y la pida, por eso el punto más lejano suele darse en septiembre.
       ${e.bolsa_reordenada_26_27 ? 'Es la foto del curso pasado.' : 'Referencia orientativa, nunca una garantía.'}</p>`);
   } else if (!e.bolsa_reordenada_26_27) {
     partes.push('<p>Sin adjudicaciones de bolsa ordinaria registradas para esta especialidad ese curso.</p>');
+    if (filaPrevia) partes.push(`<div class="bolsa-filas">${filaPrevia}</div>`);
   }
   $('#plan-bolsa').innerHTML = partes.join('');
 }
