@@ -158,10 +158,10 @@ body.mapa-max #map{border-radius:0;border:none}
 .tarjeta .fechas{font-size:.78rem;color:var(--text-soft);margin-top:7px}
 .tarjeta .fechas .mono{font-size:.76rem}
 .tarjeta .cod{font-size:.7rem;color:var(--text-soft);margin-top:3px}
-.btn-estrella{border:none;background:transparent;color:var(--blue-logo);border-radius:999px;padding:5px 8px;font-size:.82rem;font-weight:700;white-space:nowrap;line-height:1.25}
+.btn-estrella{display:block;margin:12px 0 0 auto;border:1.5px solid var(--blue-logo);background:#fff;color:var(--blue-logo);border-radius:999px;padding:7px 16px;font-size:.82rem;font-weight:700;white-space:nowrap;line-height:1.25;cursor:pointer}
 .btn-estrella .est{font-size:1rem;line-height:1}
-.btn-estrella:hover{color:var(--blue-dark)}
-.btn-estrella[aria-pressed="true"]{background:transparent;color:var(--blue-dark)}
+.btn-estrella:hover{background:var(--blue-light);color:var(--blue-dark)}
+.btn-estrella[aria-pressed="true"]{background:var(--blue-dark);border-color:var(--blue-dark);color:#fff}
 .btn-estrella[aria-pressed="true"] .est{color:var(--yellow)}
 .sin-mapa{font-size:.72rem;color:var(--rojo)}
 
@@ -404,10 +404,9 @@ details.acordeon[open]>summary::before{transform:rotate(90deg)}
   #tabs-movil button{flex:1;border:none;background:none;padding:4px 2px;font-size:.68rem;font-weight:600;color:#8a97a8;line-height:1.3}
   #tabs-movil button .ico{display:block;font-size:1.25rem;line-height:1.35}
   #tabs-movil button[aria-pressed="true"]{color:var(--blue-logo);font-weight:800}
-  /* conmutador Lista/Mapa dentro de Plazas (píldora segmentada del diseño) */
-  .tarjeta .fila1{flex-wrap:wrap}
-  .btn-estrella{flex:1 1 100%;order:10;background:var(--blue-logo);color:#fff;border-radius:10px;padding:12px 0;margin-top:10px;font-size:.88rem;text-align:center;box-shadow:0 2px 6px rgba(9,66,109,.2)}
-  .btn-estrella:hover{color:#fff}
+  /* botón de añadir a lo ancho, debajo de toda la información de la plaza */
+  .btn-estrella{width:100%;margin:12px 0 0;border:none;background:var(--blue-logo);color:#fff;border-radius:10px;padding:12px 0;font-size:.88rem;text-align:center;box-shadow:0 2px 6px rgba(9,66,109,.2)}
+  .btn-estrella:hover{color:#fff;background:var(--blue-logo)}
   .btn-estrella[aria-pressed="true"]{background:var(--blue-dark);color:#fff}
   #btn-volver-lista{display:none}
   body.tab-mapa #btn-volver-lista{display:block;position:fixed;top:12px;left:12px;z-index:900;border:none;background:#fff;color:var(--blue-logo);font-weight:800;border-radius:999px;padding:10px 16px;font-size:.82rem;box-shadow:0 4px 16px rgba(9,66,109,.28)}
@@ -900,7 +899,6 @@ function tarjetaHTML(p) {
       ${p.competencia ? `<span class="perfil-idioma">Perfil: ${esc(p.competencia)}</span>` : ''}
       ${STATS && entradaDePlaza(p) ? `<button class="btn-comp" data-clave="${esc(p.cuerpo_cod + '|' + p.especialidad)}" aria-label="Ver competencia de ${esc(p.especialidad)}" title="¿Cuánta gente compite por esta especialidad?">📊</button>` : ''}
       ${dist}
-      <button class="btn-estrella" aria-pressed="${enLista}" aria-label="${enLista ? `Quitar de mi lista de peticiones (ahora en el puesto ${orden + 1})` : 'Añadir a mi lista de peticiones'}" title="${enLista ? 'Quitar de mi lista' : 'Añadir a mi lista'}"><span class="est">${enLista ? '★' : '☆'}</span> ${enLista ? 'Nº ' + (orden + 1) : 'Añadir'}</button>
     </div>
     <div class="centro">${esc(p.centro)} · <span class="loc">${esc(p.localidad)} (${esc(p.provincia)})</span>
       ${p.lat == null ? '<span class="sin-mapa"> · sin ubicación en el mapa</span>' : ''}</div>
@@ -915,6 +913,7 @@ function tarjetaHTML(p) {
     ${lineaIdiomaHTML(p)}
     <div class="fechas">Del <span class="mono">${fmtFecha(p.f_inicio)}</span> al <span class="mono">${fmtFecha(p.f_fin)}</span> (fin orientativo) · ${esc(p.grupo === 'Maestros' ? 'Maestros' : p.cuerpo)}</div>
     <div class="cod mono">Centro ${esc(p.centro_cod)}${p.funcion && p.funcion !== p.especialidad ? ' · ' + esc(p.funcion) : ''}${p.funcion_cod ? ' · ' + esc(p.funcion_cod) : ''}</div>
+    <button class="btn-estrella" aria-pressed="${enLista}" aria-label="${enLista ? `Quitar de mi lista de peticiones (ahora en el puesto ${orden + 1})` : 'Añadir a mi lista de peticiones'}" title="${enLista ? 'Quitar de mi lista' : 'Añadir a mi lista'}"><span class="est">${enLista ? '★' : '☆'}</span> ${enLista ? 'Nº ' + (orden + 1) + ' de mi lista · quitar' : 'Añadir a mi lista'}</button>
   </article>`;
 }
 
