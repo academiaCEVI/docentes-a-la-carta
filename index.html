@@ -310,11 +310,9 @@ footer.app .legal{line-height:1.6}
 .mes-barras .mes .valor{font-family:'DM Mono',monospace;font-size:.68rem;color:var(--blue-dark)}
 .mes-barras .mes .barra{width:100%;max-width:38px;background:var(--blue-mid);border-radius:5px 5px 0 0;min-height:2px}
 .mes-barras .mes.pico .barra{background:var(--blue-dark)}
-/* agosto: la adjudicación previa (vacantes de curso completo) con trama propia */
-.mes-barras .mes.previa .barra{background:repeating-linear-gradient(45deg,var(--blue-dark) 0 5px,var(--blue-mid) 5px 10px)}
-.previa-caja{background:var(--blue-light);border-radius:16px;padding:12px 14px;margin:10px 0}
-.previa-caja .op-tiles{margin-top:8px}
-.previa-caja .op-tiles>div{background:#fff}
+/* bloque de la adjudicación previa: sus fichas sobre fondo claro */
+#plan-previa .op-tiles{margin:10px 0}
+#plan-previa .op-tiles>div{background:var(--blue-light)}
 .mes-barras .mes .etiqueta{font-size:.66rem;color:var(--text-soft);text-transform:uppercase}
 .plan-geo-mapa{max-width:480px}
 .plan-geo-mapa path{stroke:#fff;stroke-width:1.5}
@@ -603,6 +601,10 @@ details.acordeon[open]>summary::before{transform:rotate(90deg)}
       <select id="plan-esp" aria-label="Elegir especialidad para ver su curso"></select>
     </label>
     <div id="plan-detalle"></div>
+    <details class="acordeon oculto" id="ac-previa" open>
+      <summary>Cómo arrancó el curso: la adjudicación de agosto</summary>
+      <div class="acordeon-cuerpo" id="plan-previa"></div>
+    </details>
     <details class="acordeon">
       <summary>Hasta dónde llegó la bolsa</summary>
       <div class="acordeon-cuerpo" id="plan-bolsa"></div>
@@ -2214,24 +2216,17 @@ function cerrarPlanifica() {
 function renderPlanDetalle() {
   const e = entradaPlan($('#plan-esp').value);
   if (!e) { $('#plan-detalle').innerHTML = ''; return; }
-  // estacionalidad: el dato estrella. La previa de agosto es OTRA cosa
-  // (vacantes de curso completo) y se pinta aparte, con su propia trama.
-  const pv = entradaPrevia(e);
-  const previaTotal = pv ? pv.vacantes + pv.vacantes_itinerantes : 0;
-  const maxSemanal = Math.max(...MESES_CURSO.map(([m]) => e.por_mes[m] || 0), 1);
-  const escala = Math.max(maxSemanal, previaTotal, 1);
-  const picos = MESES_CURSO.filter(([m]) => (e.por_mes[m] || 0) === maxSemanal && maxSemanal > 0)
+  // estacionalidad SEMANAL: el dato estrella. La previa de agosto NO entra
+  // aquí (regla del brief v8): vive en su propio bloque, para que nadie lea
+  // «agosto» como sustituciones.
+  const maxMes = Math.max(...MESES_CURSO.map(([m]) => e.por_mes[m] || 0), 1);
+  const picos = MESES_CURSO.filter(([m]) => (e.por_mes[m] || 0) === maxMes && maxMes > 0)
     .map(([m]) => MES_NOMBRE[m]);
-  const barraPrevia = pv ? `<div class="mes previa">
-      <span class="valor">${fmtNum(previaTotal)}</span>
-      <div class="barra" style="height:${Math.max(2, Math.round(previaTotal / escala * 100))}%" role="img" aria-label="agosto: ${previaTotal} vacantes de curso completo en la adjudicación previa"></div>
-      <span class="etiqueta">ago*</span>
-    </div>` : '';
-  const barras = barraPrevia + MESES_CURSO.map(([m, etq]) => {
+  const barras = MESES_CURSO.map(([m, etq]) => {
     const v = e.por_mes[m] || 0;
-    return `<div class="mes${v === maxSemanal && v > 0 ? ' pico' : ''}">
+    return `<div class="mes${v === maxMes && v > 0 ? ' pico' : ''}">
       <span class="valor">${v || ''}</span>
-      <div class="barra" style="height:${Math.round(v / escala * 100)}%" role="img" aria-label="${MES_NOMBRE[m]}: ${v} plazas"></div>
+      <div class="barra" style="height:${Math.round(v / maxMes * 100)}%" role="img" aria-label="${MES_NOMBRE[m]}: ${v} plazas"></div>
       <span class="etiqueta">${etq}</span>
     </div>`;
   }).join('');
@@ -2244,21 +2239,12 @@ function renderPlanDetalle() {
     </div>
     ${e.ratio_medio != null ? `<div class="comp-sub">Ratio medio del curso: <strong>${fmtRatio(e.ratio_medio)} aspirantes por plaza</strong>.</div>` : ''}
     <div class="nota-corta">Indicador orientativo del curso pasado, no una garantía.</div>
-    ${pv ? `<div class="previa-caja">
-      <div class="op-titulo-mini">Adjudicación de comienzo de curso · agosto</div>
-      <div class="op-tiles">
-        <div><div class="v">${fmtNum(previaTotal)}</div><div class="l">vacantes curso completo</div></div>
-        <div><div class="v">${fmtNum(pv.adjudicados)}</div><div class="l">adjudicadas</div></div>
-        <div><div class="v">${pv.orden_maximo ? 'nº ' + fmtNum(pv.orden_maximo) : '—'}</div><div class="l">orden más alto</div></div>
-      </div>
-      ${pv.por_via ? `<div class="comp-sub">Por vía: ${Object.entries(pv.por_via).map(([v, n]) => `${v === 'Oposicion' ? 'Oposición' : 'Renovación'} ${fmtNum(n)}`).join(' · ')} — son poblaciones distintas (recién aprobados vs. interinos que renuevan).</div>` : ''}
-    </div>` : ''}
-    <div class="mes-barras" role="img" aria-label="Plazas por mes de ${esc(e.especialidad)} en el curso">${barras}</div>
-    ${pv ? '<div class="nota-corta">* ago = vacantes de curso completo de la adjudicación previa; de sep a jun, plazas semanales de sustitución. Son repartos distintos: no se suman.</div>' : ''}
+    <div class="mes-barras" role="img" aria-label="Plazas semanales por mes de ${esc(e.especialidad)} en el curso">${barras}</div>
     ${picos.length ? `<div class="comp-sub">Las sustituciones semanales de ${esc(e.especialidad)} salieron sobre todo en <strong>${picos.join(' y ')}</strong>.</div>` : ''}
     ${pocas ? `<div class="calc"><h3>Pocas plazas al año: que no se te escape ninguna</h3>
       <p class="comp-sub" style="margin-bottom:8px">Esta especialidad sacó solo ${e.plazas_total} plaza${e.plazas_total === 1 ? '' : 's'} en todo el curso. Te avisamos cuando salga alguna cerca de ti.</p>
       ${formAvisosHTML({ esp: e.especialidad })}</div>` : ''}`;
+  renderPlanPrevia(e);
   renderPlanGeo(e);
   renderPlanBolsa(e);
 }
@@ -2288,34 +2274,80 @@ function pathsMiniMapa() {
   };
   return RUTAS_MINI;
 }
-function renderPlanGeo(e) {
+/* mini-mapa estilizado reutilizable: colorea las 5 provincias según un
+   diccionario {"02".."45": n}. Lo usan la geografía del curso y la previa. */
+function svgMapaProvincias(porProv, descripcion) {
   const mm = pathsMiniMapa();
-  const total = Object.values(e.por_provincia).reduce((s, n) => s + n, 0);
-  const maxProv = Math.max(...Object.values(e.por_provincia), 1);
+  const total = Object.values(porProv).reduce((s, n) => s + n, 0);
+  if (!total) return '';
+  const maxProv = Math.max(...Object.values(porProv), 1);
   const color = n => {
     if (!n) return '#f5f7fa';
     const t = n / maxProv; // e8f4fd → 1a5f9a
     const mez = (a, b) => Math.round(a + (b - a) * t);
     return `rgb(${mez(232, 26)},${mez(244, 95)},${mez(253, 154)})`;
   };
-  $('#plan-geo').innerHTML = !total
+  return `<svg class="plan-geo-mapa" viewBox="0 0 480 ${mm.alto}" role="img"
+      aria-label="${descripcion}: ${mm.provincias.map(p => `${p.nombre} ${porProv[p.ine.padStart(2, '0')] || porProv[p.ine] || 0}`).join(', ')}">
+      ${mm.provincias.map(p => {
+        const n = porProv[p.ine] || porProv[p.ine.padStart(2, '0')] || 0;
+        return `<path d="${p.d}" fill="${color(n)}"></path>
+          <text x="${p.ex}" y="${p.ey}" text-anchor="middle" font-size="15" font-weight="bold">${n || ''}</text>`;
+      }).join('')}
+    </svg>`;
+}
+function renderPlanGeo(e) {
+  const svg = svgMapaProvincias(e.por_provincia, 'Plazas del curso por provincia');
+  $('#plan-geo').innerHTML = !svg
     ? '<p>Sin plazas geolocalizables ese curso.</p>'
-    : `<svg class="plan-geo-mapa" viewBox="0 0 480 ${mm.alto}" role="img"
-        aria-label="Plazas del curso por provincia: ${mm.provincias.map(p => `${p.nombre} ${e.por_provincia[p.ine.padStart(2, '0')] || 0}`).join(', ')}">
-        ${mm.provincias.map(p => {
-          const n = e.por_provincia[p.ine] || e.por_provincia[p.ine.padStart(2, '0')] || 0;
-          return `<path d="${p.d}" fill="${color(n)}"></path>
-            <text x="${p.ex}" y="${p.ey}" text-anchor="middle" font-size="15" font-weight="bold">${n || ''}</text>`;
-        }).join('')}
-      </svg>
-      <p class="comp-sub">Plazas de ${esc(e.especialidad)} por provincia en todo el curso.</p>`;
+    : svg + `<p class="comp-sub">Plazas de ${esc(e.especialidad)} por provincia en todo el curso.</p>`;
+}
+
+/* «Cómo arrancó el curso»: la adjudicación previa de agosto en su BLOQUE
+   propio (regla del brief v8: jamás mezclada con lo semanal). Volúmenes al
+   frente; la vía como secundario etiquetado; el Orden, muy matizado — y en
+   Maestros oculto como referencia, con el aviso de la reordenación. */
+function renderPlanPrevia(e) {
+  const caja = $('#plan-previa');
+  if (!caja) return;
+  const pv = entradaPrevia(e);
+  $('#ac-previa').classList.toggle('oculto', !PREVIA);
+  if (!PREVIA) return;
+  if (!pv) {
+    caja.innerHTML = `<p class="comp-sub">En la adjudicación de agosto no hubo vacantes de
+      ${esc(e.especialidad)} (${esc(e.cuerpo === '0597' ? 'Maestros' : 'cuerpo ' + e.cuerpo)}).</p>`;
+    return;
+  }
+  const fechas = PREVIA.fechas || [];
+  const fecha = e.cuerpo === '0597' ? fechas[0] : fechas[fechas.length - 1];
+  const partes = [];
+  partes.push(`<p class="comp-sub">Reparto de <strong>vacantes de curso completo</strong>, previo al inicio
+    del curso${fecha ? `, adjudicado el <strong>${fmtFecha(fecha)}</strong>` : ''}.
+    <strong>No son sustituciones semanales</strong>: por eso no aparecen en el gráfico de arriba ni en el listado.</p>`);
+  partes.push(`<div class="op-tiles">
+    <div><div class="v">${fmtNum(pv.vacantes + pv.vacantes_itinerantes)}</div><div class="l">vacantes curso completo</div></div>
+    <div><div class="v">${fmtNum(pv.adjudicados)}</div><div class="l">adjudicadas</div></div>
+    <div><div class="v">${fmtNum(pv.vacantes_itinerantes)}</div><div class="l">itinerantes</div></div>
+  </div>`);
+  const svg = svgMapaProvincias(pv.por_provincia, 'Vacantes de curso completo por provincia');
+  if (svg) partes.push(svg + '<p class="comp-sub">Vacantes de curso completo por provincia.</p>');
+  if (pv.por_via) {
+    partes.push(`<p class="comp-sub">Por vía: ${Object.entries(pv.por_via)
+      .map(([v, n]) => `<strong>${v === 'Oposicion' ? 'Oposición' : 'Renovación'}</strong> ${fmtNum(n)}`)
+      .join(' · ')} — son poblaciones distintas (recién aprobados frente a interinos que renuevan).</p>`);
+  }
+  if (pv.bolsa_reordenada_26_27) {
+    partes.push(`<p class="nota-honesta">Las posiciones de bolsa de esta adjudicación <strong>no sirven de
+      referencia</strong>: Maestros tiene concurso-oposición en verano de 2026 y la bolsa se reordena por completo.</p>`);
+  } else if (pv.orden_maximo) {
+    partes.push(`<p class="nota-corta">Detalle secundario: el orden llegó como mucho al nº ${fmtNum(pv.orden_maximo)}.
+      Referencia orientativa del curso pasado, nunca una garantía.</p>`);
+  }
+  partes.push('<p class="nota-corta">Datos del curso pasado: orientan para planificar, no predicen el 26/27.</p>');
+  caja.innerHTML = partes.join('');
 }
 function renderPlanBolsa(e) {
   const partes = [];
-  const pv = entradaPrevia(e);
-  const filaPrevia = pv && pv.orden_maximo ? `<div class="bolsa-fila"><div class="bf-num">nº ${fmtNum(pv.orden_maximo)}</div>
-    <div class="bf-txt"><strong>Adjudicación de agosto:</strong> al repartir las ${fmtNum(pv.vacantes + pv.vacantes_itinerantes)} vacantes
-    de curso completo, el orden llegó hasta aquí.</div></div>` : '';
   if (e.bolsa_reordenada_26_27) {
     partes.push(`<p class="nota-honesta"><strong>Maestros tiene concurso-oposición en verano de 2026.</strong>
       La bolsa se reordena por completo, así que las posiciones del curso pasado
@@ -2336,14 +2368,12 @@ function renderPlanBolsa(e) {
       ${e.bolsa_reserva_max ? `<div class="bolsa-fila"><div class="bf-num">nº ${fmtNum(e.bolsa_reserva_max.posicion)}</div>
         <div class="bf-txt"><strong>La bolsa de reserva</strong> (empieza a contar desde el 1) llegó hasta aquí,
         el ${fmtFecha(e.bolsa_reserva_max.fecha)}.${e.reserva_sin_disponibles_desde ? ` También llegó a agotarse el ${fmtFecha(e.reserva_sin_disponibles_desde)}.` : ''}</div></div>` : ''}
-      ${filaPrevia}
     </div>`);
     partes.push(`<p class="comp-sub">La bolsa <strong>no avanza como una cola</strong>: cada semana la plaza va al mejor
       número que esté disponible y la pida, por eso el punto más lejano suele darse en septiembre.
       ${e.bolsa_reordenada_26_27 ? 'Es la foto del curso pasado.' : 'Referencia orientativa, nunca una garantía.'}</p>`);
   } else if (!e.bolsa_reordenada_26_27) {
     partes.push('<p>Sin adjudicaciones de bolsa ordinaria registradas para esta especialidad ese curso.</p>');
-    if (filaPrevia) partes.push(`<div class="bolsa-filas">${filaPrevia}</div>`);
   }
   $('#plan-bolsa').innerHTML = partes.join('');
 }
