@@ -63,6 +63,10 @@ header.app .meta-derecha strong{color:#fff}
 #segmentador .multisel>summary:hover{background:rgba(255,255,255,.24);color:#fff}
 #segmentador .multisel[open]>summary,#segmentador .multisel.activo>summary{background:#fff;color:var(--blue-logo)}
 #segmentador .multisel .opciones{min-width:290px}
+/* Más filtros vive en la misma fila que Cuerpo/Especialidad */
+#segmentador #btn-mas-filtros{border:none;background:rgba(255,255,255,.14);color:#fff;font-weight:700;font-size:.85rem;border-radius:999px;padding:9px 16px;white-space:nowrap}
+#segmentador #btn-mas-filtros:hover{background:rgba(255,255,255,.24)}
+#segmentador #btn-mas-filtros.activos{background:#fff;color:var(--blue-logo)}
 
 
 /* ---------- barra de herramientas: Especialidad + Cerca de mí + Más filtros ---------- */
@@ -449,6 +453,13 @@ details.acordeon[open]>summary::before{transform:rotate(90deg)}
   #segmentador .multisel[open]>summary,#segmentador .multisel.activo>summary{background:var(--blue-logo);border-color:var(--blue-logo);color:#fff}
   #segmentador .multisel .opciones{max-width:calc(100vw - 40px)}
   #segmentador #ms-esp .opciones{left:auto;right:0}
+  #segmentador #btn-mas-filtros{flex:0 0 auto;background:#fff;border:1px solid var(--gray-border);color:var(--text-main);font-size:.78rem;font-weight:700;padding:9px 12px}
+  #segmentador #btn-mas-filtros.activos{background:var(--blue-logo);border-color:var(--blue-logo);color:#fff}
+  /* fila 2: Cerca de mí + Perfil de idioma, píldoras homogéneas en una línea */
+  #zona-filtros{gap:8px;padding-top:8px}
+  #btn-radio,#f-idioma{background:#fff;border:1px solid var(--gray-border);color:var(--text-main);border-radius:999px;padding:9px 12px;font-size:.78rem;font-weight:700;white-space:nowrap}
+  #btn-radio.activo{background:var(--blue-logo);border-color:var(--blue-logo);color:#fff}
+  #f-idioma[aria-pressed="true"]{background:var(--blue-mid);border-color:var(--blue-mid);color:#fff}
   #barra-plazo{display:none} /* en móvil la cuenta atrás vive en la píldora amarilla */
   #contador{font-size:1.3rem;font-weight:800;color:var(--blue-dark);letter-spacing:-.01em;flex:1 1 auto}
   #pill-cuenta{display:inline-block;background:var(--yellow);color:var(--blue-dark);border-radius:999px;padding:7px 12px;font-family:'DM Mono',monospace;font-size:.78rem;font-weight:500;box-shadow:0 4px 14px rgba(9,66,109,.15);white-space:nowrap}
@@ -508,12 +519,13 @@ details.acordeon[open]>summary::before{transform:rotate(90deg)}
     <summary aria-label="Filtrar por especialidad">Especialidad: todas</summary>
     <div class="opciones" id="ops-esp"></div>
   </details>
+  <button id="btn-mas-filtros" aria-expanded="false" aria-controls="panel-mas-filtros">Más filtros <span id="n-filtros"></span></button>
 </nav>
 </div>
 
 <div id="zona-filtros">
   <div class="radio-wrap">
-    <button id="btn-radio" aria-expanded="false" aria-controls="pop-radio">📍 Buscar cerca de mí</button>
+    <button id="btn-radio" aria-expanded="false" aria-controls="pop-radio">📍 Cerca de mí</button>
     <div id="pop-radio" class="oculto">
       <span class="titulo-radio">Tu localidad y radio de búsqueda</span>
       <div class="autocomp" id="ac-radio">
@@ -528,8 +540,7 @@ details.acordeon[open]>summary::before{transform:rotate(90deg)}
       <button id="btn-quitar-radio" class="oculto" aria-label="Quitar búsqueda por cercanía">✕ Quitar búsqueda por cercanía</button>
     </div>
   </div>
-  <button id="f-idioma" aria-pressed="false" title="Si tienes un idioma acreditado, estas plazas son tu mejor baza: compite mucha menos gente">🗣 Solo con perfil de idioma</button>
-  <button id="btn-mas-filtros" aria-expanded="false" aria-controls="panel-mas-filtros">Más filtros <span id="n-filtros"></span></button>
+  <button id="f-idioma" aria-pressed="false" title="Solo plazas que piden idioma acreditado: si lo tienes, compite mucha menos gente">🗣 Perfil de idioma</button>
   <button id="btn-limpiar">Quitar filtros</button>
   <div id="panel-mas-filtros">
     <input type="search" id="f-q" placeholder="Buscar centro o localidad…" aria-label="Buscar por centro o localidad">
@@ -1301,7 +1312,7 @@ $('#lista-peticiones').addEventListener('click', e => {
 function autoordenar(criterio) {
   const o = origenActual();
   if ((criterio === 'prox' || criterio === 'mixto') && !o) {
-    alert('Para ordenar por proximidad, primero indica tu localidad con el botón "📍 Buscar cerca de mí" (arriba, junto a los filtros).');
+    alert('Para ordenar por proximidad, primero indica tu localidad con el botón "📍 Cerca de mí" (arriba, junto a los filtros).');
     return;
   }
   const d = id => { const p = plazaPorId(id); return (p && p.lat != null && o) ? haversine(o.lat, o.lon, p.lat, p.lon) : 9e9; };
@@ -1446,7 +1457,7 @@ function volcarEstadoAControles() {
   $('#f-idioma').setAttribute('aria-pressed', !!state.soloIdioma);
   const o = origenActual();
   $('#btn-radio').classList.toggle('activo', !!o);
-  $('#btn-radio').textContent = o ? `📍 ${o.nombre} · ${state.km} km` : '📍 Buscar cerca de mí';
+  $('#btn-radio').textContent = o ? `📍 ${o.nombre} · ${state.km} km` : '📍 Cerca de mí';
   $('#btn-radio-mapa').textContent = o ? `📍 ${o.nombre} · ${state.km} km` : '📍 Tu localidad';
   $('#input-radio').value = o ? o.nombre : '';
   $('#ctrl-km').classList.toggle('oculto', !o);
@@ -1551,7 +1562,7 @@ function initControles() {
   $('#rango-km').oninput = e => {
     state.km = KMS[+e.target.value];
     $('#salida-km').textContent = state.km + ' km';
-    $('#btn-radio').textContent = origenActual() ? `📍 ${origenActual().nombre} · ${state.km} km` : '📍 Buscar cerca de mí';
+    $('#btn-radio').textContent = origenActual() ? `📍 ${origenActual().nombre} · ${state.km} km` : '📍 Cerca de mí';
     $('#btn-radio-mapa').textContent = origenActual() ? `📍 ${origenActual().nombre} · ${state.km} km` : '📍 Tu localidad';
     alCambiar();
   };
