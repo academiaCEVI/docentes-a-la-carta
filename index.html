@@ -296,8 +296,6 @@ footer.app .legal{line-height:1.6}
 .op-tiles>div{background:var(--gray-bg);border-radius:12px;padding:10px 6px;text-align:center}
 .op-tiles .v{font-family:'DM Mono',monospace;font-size:1.02rem;color:var(--blue-dark);white-space:nowrap}
 .op-tiles .l{font-size:.6rem;color:var(--text-soft);font-weight:600;text-transform:uppercase;letter-spacing:.04em;margin-top:2px}
-.consejo{background:var(--blue-light);border-radius:16px;padding:13px 16px;font-size:.85rem;color:var(--blue-dark);line-height:1.55;margin:0 0 10px}
-.consejo-nota{display:block;font-size:.72rem;color:var(--text-soft);margin-top:4px}
 #btn-ver-mias{display:block;width:100%;border:none;background:var(--blue-logo);color:#fff;border-radius:12px;padding:14px 0;font-size:.92rem;font-weight:700;box-shadow:0 4px 16px rgba(9,66,109,.18);cursor:pointer;margin:2px 0 6px}
 #btn-ver-mias:hover{background:var(--blue-dark)}
 /* fichas explicativas de bolsa */
@@ -407,6 +405,9 @@ details.acordeon[open]>summary::before{transform:rotate(90deg)}
   #tabs-movil button{flex:1;border:none;background:none;padding:4px 2px;font-size:.68rem;font-weight:600;color:#8a97a8;line-height:1.3}
   #tabs-movil button .ico{display:block;font-size:1.25rem;line-height:1.35}
   #tabs-movil button[aria-pressed="true"]{color:var(--blue-logo);font-weight:800}
+  /* la distancia puede ser larga («a 62 km · ~1 h 05 min en coche»): que
+     parta de línea en vez de salirse de la tarjeta */
+  .tarjeta .dist{white-space:normal;text-align:right}
   /* botón de añadir a lo ancho, debajo de toda la información de la plaza */
   .btn-estrella{width:100%;margin:12px 0 0;border:none;background:var(--blue-logo);color:#fff;border-radius:10px;padding:12px 0;font-size:.88rem;text-align:center;box-shadow:0 2px 6px rgba(9,66,109,.2)}
   .btn-estrella:hover{color:#fff;background:var(--blue-logo)}
@@ -522,7 +523,7 @@ details.acordeon[open]>summary::before{transform:rotate(90deg)}
         <input type="range" id="rango-km" min="0" max="4" step="1" value="2" aria-label="Radio de búsqueda en kilómetros">
         <output for="rango-km" id="salida-km">50 km</output>
       </div>
-      <div class="nota-corta">El radio filtra en línea recta; los km y minutos en coche de cada plaza son una estimación sobre OpenStreetMap.</div>
+      <div class="nota-corta">Los km y el tiempo en coche son una estimación por carretera (OpenStreetMap).</div>
       <button id="btn-quitar-radio" class="oculto" aria-label="Quitar búsqueda por cercanía">✕ Quitar búsqueda por cercanía</button>
     </div>
   </div>
@@ -866,7 +867,11 @@ function filtrar(plazas = PLAZAS, st = state) {
     if (nq && !norm(p.centro + ' ' + p.localidad).includes(nq)) return false;
     if (o) {
       if (p.lat == null) return false;
-      p._dist = haversine(o.lat, o.lon, p.lat, p.lon);
+      // el radio filtra por km DE CARRETERA en cuanto la matriz del origen
+      // está cargada; mientras tanto (o sin ruta), distancia en línea recta
+      const ine = ineDePlaza(p);
+      const ruta = (RUTAS.origen === st.origen && RUTAS.datos && ine) ? RUTAS.datos[ine] : null;
+      p._dist = ruta ? ruta[0] : haversine(o.lat, o.lon, p.lat, p.lon);
       if (p._dist > st.km) return false;
     }
     return true;
@@ -894,8 +899,8 @@ function tarjetaHTML(p) {
     dist = ineDePlaza(p) === state.origen
       ? '<span class="dist">en tu localidad</span>'
       : ruta
-        ? `<span class="dist" title="Distancia y tiempo estimados por carretera (OpenStreetMap)">a ${ruta[0]} km · ~${ruta[1]} min en coche</span>`
-        : `<span class="dist" title="Distancia en línea recta">a ${Math.round(p._dist)} km en línea recta</span>`;
+        ? `<span class="dist" title="Distancia y tiempo estimados por carretera (OpenStreetMap)">a ${ruta[0]} km · ~${fmtMin(ruta[1])} en coche</span>`
+        : `<span class="dist" title="Distancia aproximada; la ruta por carretera está cargando">a ${Math.round(p._dist)} km</span>`;
   }
   const jorTxt = p.jornada_fraccion >= 1 ? 'Jornada completa'
     : /HORAS/i.test(p.jornada) ? p.jornada.toLowerCase().replace(' horas semanales', ' h/semana')
@@ -1121,7 +1126,7 @@ function conmutarMapa(visible) {
   if (mapaVisible) setTimeout(() => {
     if (!map) { intentarConstruirMapa(); return; } // se construye al ganar tamaño
     map.invalidateSize(); // imprescindible: Leaflet no sabe que acaba de hacerse visible
-    if (circulo) map.fitBounds(circulo.getBounds(), { padding: [24, 24] });
+    // con origen elegido NO se hace zoom al círculo: se ve la comunidad entera
   }, 60);
 }
 function initMapa() {
@@ -1198,7 +1203,7 @@ function renderMapa(res) {
   if (o) {
     circulo = L.circle([o.lat, o.lon], { radius: state.km * 1000, color: '#1a5f9a', weight: 1.5, fillColor: '#2980b9', fillOpacity: .08 }).addTo(map);
     marcaOrigen = L.marker([o.lat, o.lon], { icon: L.divIcon({ className: '', html: PIN_ORIGEN, iconSize: [34, 42], iconAnchor: [17, 41] }), interactive: false, title: o.nombre }).addTo(map);
-    map.fitBounds(circulo.getBounds(), { padding: [24, 24] });
+    // sin zoom automático al círculo: el mapa muestra la comunidad entera
   }
 }
 window.irATarjeta = id => {
@@ -1704,6 +1709,8 @@ const fmtNum = n => new Intl.NumberFormat('es-ES', { maximumFractionDigits: 1 })
 // Números legibles: "99 aspirantes por plaza", no "98,75". Por debajo de 10
 // se conserva un decimal (la diferencia entre 4,7 y 6,4 sí informa).
 const fmtRatio = r => new Intl.NumberFormat('es-ES', { maximumFractionDigits: r >= 10 ? 0 : 1 }).format(r);
+// minutos → «45 min» o «1 h 05 min»
+const fmtMin = m => m >= 60 ? `${Math.floor(m / 60)} h ${String(m % 60).padStart(2, '0')} min` : `${m} min`;
 
 /* Clave de estadística SIEMPRE cuerpo|especialidad: «Inglés» de Secundaria
    y «Inglés» de Maestros son bolsas distintas y no deben confundirse. */
@@ -1818,7 +1825,7 @@ function cerrarStats() {
 const PROVINCIAS_SIGLA = { '02': 'AB', '13': 'CR', '16': 'CU', '19': 'GU', '45': 'TO' };
 
 /* ¿Tengo opciones? al estilo del diseño de la PWA: perfil en chips, anillo de
-   probabilidad, tres cifras y un consejo con datos. TODO lo que estima se
+   probabilidad y tres cifras. TODO lo que estima se
    sella como «modelo de probabilidad» y nada se presenta como garantía.
    En Maestros (bolsa reordenada por la oposición de 2026) NO se estima. */
 function renderStatsDetalle() {
@@ -1851,8 +1858,8 @@ function renderStatsDetalle() {
 
   // ---- sin posición guardada, solo el perfil: el resto aparece al rellenarla ----
   if (!guardado.pos) {
-    partes.push(`<p class="comp-sub">Introduce tu bolsa y tu posición: con eso te enseñamos la probabilidad,
-      las cifras de tu especialidad y un consejo a medida.</p>`);
+    partes.push(`<p class="comp-sub">Introduce tu bolsa y tu posición: con eso te enseñamos la probabilidad
+      y las cifras de tu especialidad.</p>`);
     caja.innerHTML = partes.join('');
     initCalculadora(e);
     renderStatsIdioma(e);
@@ -1908,10 +1915,6 @@ function renderStatsDetalle() {
     partes.push(`<div class="op-tarjeta"><p class="comp-sub" style="margin:0">Sin adjudicaciones de bolsa ordinaria registradas el curso pasado para ${esc(e.especialidad)}: no hay base para estimar probabilidades.</p></div>`);
   }
 
-  // ---- consejo CEVI (siempre con datos reales) ----
-  const consejo = consejoCEVI(e, pe, guardado, b);
-  if (consejo) partes.push(`<div class="consejo"><strong>Consejo CEVI:</strong> ${consejo} <span class="consejo-nota">Previsión orientativa, no una garantía.</span></div>`);
-
   // ---- acción ----
   if (e.plazas > 0) {
     partes.push(`<button id="btn-ver-mias" type="button">Ver las ${e.plazas} plaza${e.plazas === 1 ? '' : 's'} de ${esc(e.especialidad)} →</button>`);
@@ -1935,31 +1938,6 @@ function renderStatsDetalle() {
   renderStatsSemana(e);
 }
 
-/* El consejo sale de los datos, por prioridad: ventaja de idioma esta semana,
-   cercanía al alcance del curso pasado, o estacionalidad. Nada inventado. */
-function consejoCEVI(e, pe, guardado, b) {
-  for (const [idi, n] of Object.entries(e.plazas_por_idioma || {})) {
-    if (idi === 'sin_perfil' || !n) continue;
-    const tienen = (e.disponibles_por_idioma || {})[idi] ?? 0;
-    if (e.disponibles && tienen <= Math.max(3, e.disponibles * 0.25)) {
-      return `esta semana ${n === 1 ? 'hay una plaza' : 'hay ' + n + ' plazas'} con perfil de ${esc(idi)} y solo ${tienen} de ${fmtNum(e.disponibles)} disponibles lo acreditan: si lo tienes, es tu mejor baza.`;
-    }
-  }
-  if (guardado.pos && b && (guardado.tipo || '0') === '0') {
-    const pos = +guardado.pos;
-    if (pos > b.max && pos - b.max <= Math.max(20, b.max * 0.15)) {
-      return `tu número quedó a solo ${fmtNum(pos - b.max)} del punto más lejano del curso pasado: en las semanas fuertes (septiembre, vuelta de Navidad) la bolsa podría alcanzarte.`;
-    }
-    if (pos <= b.min) {
-      return 'tu número quedó dentro del alcance de la bolsa todas las semanas del curso pasado: pide con ambición, también las plazas largas.';
-    }
-  }
-  if (pe && pe.por_mes && Object.keys(pe.por_mes).length) {
-    const mesTop = Object.entries(pe.por_mes).sort((x, y) => y[1] - x[1])[0];
-    return `el grueso de las plazas de ${esc(e.especialidad)} salió en ${MES_NOMBRE[mesTop[0]]} (${mesTop[1]} plazas): ten la lista lista esas semanas.`;
-  }
-  return null;
-}
 
 /* ▸ Desglose por perfil de idioma: el mayor factor de competencia de la app */
 function renderStatsIdioma(e) {
