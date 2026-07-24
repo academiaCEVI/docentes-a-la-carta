@@ -14,7 +14,7 @@
  */
 'use strict';
 
-const VERSION = 'docentes-v14';
+const VERSION = 'docentes-v15';
 const CACHE_SHELL = 'shell-' + VERSION;
 const CACHE_DATOS = 'datos-' + VERSION;
 const PRECACHE = [
