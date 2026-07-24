@@ -1053,18 +1053,18 @@
    "cuerpo": "0590",
    "especialidad_cod": "590222",
    "especialidad": "Procesos de Gestión Administrativa",
-   "vacantes": 244,
+   "vacantes": 122,
    "vacantes_itinerantes": 0,
    "adjudicados": 114,
    "por_caracter": {
     "Ordinaria": 114
    },
    "por_provincia": {
-    "02": 26,
-    "13": 54,
-    "16": 18,
-    "19": 32,
-    "45": 114
+    "02": 13,
+    "13": 27,
+    "16": 9,
+    "19": 16,
+    "45": 57
    },
    "por_via": {
     "Renovacion": 114
@@ -3283,10 +3283,10 @@
   }
  ],
  "totales": {
-  "vacantes": 7646,
+  "vacantes": 7524,
   "adjudicados": 6700,
   "por_cuerpo": {
-   "0590": 5345,
+   "0590": 5223,
    "0591": 213,
    "0592": 39,
    "0593": 33,

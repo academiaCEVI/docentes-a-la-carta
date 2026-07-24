@@ -2150,7 +2150,7 @@ function entradaPlan(clave) {
 function initPlanifica() {
   if (!CURSOS_HISTORICO.length || PLAN) return;
   const curso = CURSOS_HISTORICO[CURSOS_HISTORICO.length - 1].curso;
-  fetch(`historico/curso-${curso}.json`)
+  fetch(`historico/curso-${curso}.json`, { cache: 'no-store' })
     .then(r => r.ok ? r.json() : null)
     .catch(() => null)
     .then(datos => {
@@ -2191,7 +2191,7 @@ function initPlanifica() {
       renderStatsDetalle(); // el modelo de ¿Tengo opciones? bebe del rollup recién cargado
       // la adjudicación previa de agosto (vacantes de curso completo), si existe
       if (PREVIAS_LISTA.length) {
-        fetch(`historico/previa-${PREVIAS_LISTA[PREVIAS_LISTA.length - 1]}.json`)
+        fetch(`historico/previa-${PREVIAS_LISTA[PREVIAS_LISTA.length - 1]}.json`, { cache: 'no-store' })
           .then(r => r.ok ? r.json() : null)
           .catch(() => null)
           .then(p => { if (p) { PREVIA = p; renderPlanDetalle(); } });
@@ -2324,13 +2324,19 @@ function renderPlanPrevia(e) {
   partes.push(`<p class="comp-sub">Reparto de <strong>vacantes de curso completo</strong>, previo al inicio
     del curso${fecha ? `, adjudicado el <strong>${fmtFecha(fecha)}</strong>` : ''}.
     <strong>No son sustituciones semanales</strong>: por eso no aparecen en el gráfico de arriba ni en el listado.</p>`);
+  const vacTotal = pv.vacantes + pv.vacantes_itinerantes;
   partes.push(`<div class="op-tiles">
-    <div><div class="v">${fmtNum(pv.vacantes + pv.vacantes_itinerantes)}</div><div class="l">vacantes curso completo</div></div>
-    <div><div class="v">${fmtNum(pv.adjudicados)}</div><div class="l">adjudicadas</div></div>
+    <div><div class="v">${fmtNum(vacTotal)}</div><div class="l">vacantes curso completo</div></div>
+    <div><div class="v">${fmtNum(pv.adjudicados)}</div><div class="l">adjudicadas a interinos</div></div>
     <div><div class="v">${fmtNum(pv.vacantes_itinerantes)}</div><div class="l">itinerantes</div></div>
   </div>`);
+  if (vacTotal > pv.adjudicados) {
+    partes.push(`<p class="comp-sub">De las ${fmtNum(vacTotal)} vacantes, ${fmtNum(pv.adjudicados)} se adjudicaron a
+      personal interino en esta previa; las ${fmtNum(vacTotal - pv.adjudicados)} restantes no se cubrieron aquí
+      (otras vías de provisión o el reparto semanal del curso).</p>`);
+  }
   const svg = svgMapaProvincias(pv.por_provincia, 'Vacantes de curso completo por provincia');
-  if (svg) partes.push(svg + '<p class="comp-sub">Vacantes de curso completo por provincia.</p>');
+  if (svg) partes.push(svg + '<p class="comp-sub">Dónde estaban las <strong>vacantes</strong>, por provincia — son plazas ofertadas, no adjudicaciones.</p>');
   if (pv.por_via) {
     partes.push(`<p class="comp-sub">Por vía: ${Object.entries(pv.por_via)
       .map(([v, n]) => `<strong>${v === 'Oposicion' ? 'Oposición' : 'Renovación'}</strong> ${fmtNum(n)}`)
