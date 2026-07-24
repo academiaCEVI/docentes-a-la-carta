@@ -58,11 +58,12 @@ header.app .meta-derecha strong{color:#fff}
 #btn-lista-barra .cuenta{background:#09426d;color:#fff;border-radius:10px;min-width:20px;padding:0 6px;font-family:'DM Mono',monospace;font-size:.8rem;text-align:center}
 
 /* ---------- segmentador ---------- */
-#segmentador{display:flex;justify-content:flex-start;gap:24px;padding:20px 16px 0;max-width:1100px;margin:0 auto}
-#segmentador button{border:none;background:transparent;color:rgba(255,255,255,.65);font-weight:600;font-size:.9rem;padding:0 0 14px;border-bottom:2px solid transparent}
-#segmentador button:hover{color:#fff}
+#segmentador{display:flex;justify-content:flex-start;gap:10px;padding:16px 16px 20px;max-width:1100px;margin:0 auto;flex-wrap:wrap}
+#segmentador .multisel>summary{background:rgba(255,255,255,.14);color:#fff;font-weight:700;font-size:.85rem;border-radius:999px;padding:9px 16px}
+#segmentador .multisel>summary:hover{background:rgba(255,255,255,.24);color:#fff}
+#segmentador .multisel[open]>summary,#segmentador .multisel.activo>summary{background:#fff;color:var(--blue-logo)}
+#segmentador .multisel .opciones{min-width:290px}
 
-#segmentador button[aria-pressed="true"]{background:transparent;color:#fff;border-bottom-color:var(--yellow)}
 
 /* ---------- barra de herramientas: Especialidad + Cerca de mí + Más filtros ---------- */
 #zona-filtros{padding:14px 16px 4px;display:flex;flex-wrap:wrap;gap:14px;align-items:center;max-width:1100px;margin:0 auto}
@@ -438,9 +439,12 @@ details.acordeon[open]>summary::before{transform:rotate(90deg)}
   header.app .sub{color:#2980b9;margin-top:4px}
   /* las pestañas inferiores ya dan acceso a ¿Opciones? y Datos */
   #btn-stats,#btn-planifica{display:none}
-  #segmentador{background:var(--blue-light);border-radius:999px;padding:3px;gap:3px;margin:10px 16px 0}
-  #segmentador button{flex:1;text-align:center;border-bottom:none;padding:8px 0;border-radius:999px;font-size:.76rem;color:var(--blue-logo)}
-  #segmentador button[aria-pressed="true"]{background:var(--blue-logo);color:#fff;border-bottom-color:transparent}
+  #segmentador{gap:8px;margin:10px 16px 0;padding:0}
+  #segmentador .multisel{flex:1;min-width:0}
+  #segmentador .multisel>summary{display:block;text-align:center;background:#fff;border:1px solid var(--gray-border);color:var(--text-main);border-radius:999px;padding:9px 6px;font-size:.78rem;font-weight:700;overflow:hidden;text-overflow:ellipsis}
+  #segmentador .multisel[open]>summary,#segmentador .multisel.activo>summary{background:var(--blue-logo);border-color:var(--blue-logo);color:#fff}
+  #segmentador .multisel .opciones{max-width:calc(100vw - 40px)}
+  #segmentador #ms-esp .opciones{left:auto;right:0}
   #barra-plazo{display:none} /* en móvil la cuenta atrás vive en la píldora amarilla */
   #contador{font-size:1.3rem;font-weight:800;color:var(--blue-dark);letter-spacing:-.01em;flex:1 1 auto}
   #pill-cuenta{display:inline-block;background:var(--yellow);color:var(--blue-dark);border-radius:999px;padding:7px 12px;font-family:'DM Mono',monospace;font-size:.78rem;font-weight:500;box-shadow:0 4px 14px rgba(9,66,109,.15);white-space:nowrap}
@@ -491,18 +495,19 @@ details.acordeon[open]>summary::before{transform:rotate(90deg)}
   </div>
 </header>
 
-<nav id="segmentador" aria-label="Grupo de cuerpos">
-  <button data-grupo="" aria-pressed="true">Todas</button>
-  <button data-grupo="EEMM" aria-pressed="false" title="Secundaria, FP, EOI, conservatorios y resto de cuerpos">EEMM</button>
-  <button data-grupo="Maestros" aria-pressed="false">Maestros</button>
-</nav>
-</div>
-
-<div id="zona-filtros">
+<nav id="segmentador" aria-label="Filtros principales: cuerpo y especialidad">
+  <details class="multisel" id="ms-cuerpo">
+    <summary aria-label="Filtrar por cuerpo">Cuerpo: todos</summary>
+    <div class="opciones" id="ops-cuerpo"></div>
+  </details>
   <details class="multisel" id="ms-esp">
     <summary aria-label="Filtrar por especialidad">Especialidad: todas</summary>
     <div class="opciones" id="ops-esp"></div>
   </details>
+</nav>
+</div>
+
+<div id="zona-filtros">
   <div class="radio-wrap">
     <button id="btn-radio" aria-expanded="false" aria-controls="pop-radio">📍 Buscar cerca de mí</button>
     <div id="pop-radio" class="oculto">
@@ -524,7 +529,6 @@ details.acordeon[open]>summary::before{transform:rotate(90deg)}
   <button id="btn-limpiar">Quitar filtros</button>
   <div id="panel-mas-filtros">
     <input type="search" id="f-q" placeholder="Buscar centro o localidad…" aria-label="Buscar por centro o localidad">
-    <select id="f-cuerpo" aria-label="Cuerpo"><option value="">Cuerpo: todos</option></select>
     <select id="f-funcion" aria-label="Función"><option value="">Función: todas</option></select>
     <select id="f-prov" aria-label="Provincia">
       <option value="">Provincia: todas</option>
@@ -770,7 +774,7 @@ function buscarMunicipios(q, max = 8) {
 /* ================= ESTADO ================= */
 const KMS = [10, 25, 50, 75, 100];
 const state = {
-  grupo: '', cuerpo: '', esp: [], funcion: '', prov: '', loc: '',
+  cuerpos: [], esp: [], funcion: '', prov: '', loc: '',
   dur: [], jor: [], itin: '', comp: '', cob: '', q: '', soloIdioma: '',
   origen: '', km: 50, orden: ''
 };
@@ -780,11 +784,12 @@ try { peticiones = JSON.parse(localStorage.getItem('cevi_peticiones') || '[]'); 
 const guardarPeticiones = () => localStorage.setItem('cevi_peticiones', JSON.stringify(peticiones));
 
 /* ---- estado ⇄ URL ---- */
-const PARAMS = [['g','grupo'],['c','cuerpo'],['f','funcion'],['p','prov'],['l','loc'],
+const PARAMS = [['f','funcion'],['p','prov'],['l','loc'],
   ['it','itin'],['co','comp'],['cb','cob'],['q','q'],['o','origen'],['or','orden'],['pi','soloIdioma']];
 function escribirURL() {
   const u = new URLSearchParams();
   for (const [k, campo] of PARAMS) if (state[campo]) u.set(k, state[campo]);
+  if (state.cuerpos.length) u.set('cu', state.cuerpos.join('|'));
   if (state.esp.length) u.set('e', state.esp.join('|'));
   if (state.dur.length) u.set('d', state.dur.join('|'));
   if (state.jor.length) u.set('j', state.jor.join('|'));
@@ -795,6 +800,10 @@ function escribirURL() {
 function leerURL() {
   const u = new URLSearchParams(location.search);
   for (const [k, campo] of PARAMS) if (u.has(k)) state[campo] = u.get(k);
+  if (u.has('cu')) state.cuerpos = u.get('cu').split('|');
+  // enlaces antiguos: g=Maestros o c=0590 se traducen al filtro nuevo
+  else if (u.get('g') === 'Maestros') state.cuerpos = ['0597'];
+  else if (u.has('c')) state.cuerpos = [u.get('c')];
   if (u.has('e')) state.esp = u.get('e').split('|');
   if (u.has('d')) state.dur = u.get('d').split('|');
   if (u.has('j')) state.jor = u.get('j').split('|');
@@ -836,8 +845,7 @@ function filtrar(plazas = PLAZAS, st = state) {
   const o = st.origen ? MUNI_POR_INE.get(st.origen) : null;
   const nq = st.q ? norm(st.q) : '';
   return plazas.filter(p => {
-    if (st.grupo && p.grupo !== st.grupo) return false;
-    if (st.cuerpo && p.cuerpo_cod !== st.cuerpo) return false;
+    if (st.cuerpos.length && !st.cuerpos.includes(p.cuerpo_cod)) return false;
     if (st.esp.length && !st.esp.includes(p.especialidad)) return false;
     if (st.funcion && p.funcion !== st.funcion) return false;
     if (st.prov && p.provincia !== st.prov) return false;
@@ -963,7 +971,7 @@ function renderLista() {
 function numFiltrosActivos() {
   // Solo los filtros plegados en "Más filtros": especialidad y radio son
   // controles visibles y no necesitan contador.
-  return ['cuerpo','funcion','prov','loc','itin','comp','cob','q'].filter(c => state[c]).length +
+  return ['funcion','prov','loc','itin','comp','cob','q'].filter(c => state[c]).length +
     state.dur.length + state.jor.length;
 }
 /* Formulario de avisos reutilizable (banda tras el listado + estados vacíos).
@@ -1375,12 +1383,19 @@ function initCuentaAtras() {
 
 /* ================= CONTROLES ================= */
 function poblarControles() {
-  // cuerpos
-  const cuerpos = [...new Map(PLAZAS.map(p => [p.cuerpo_cod, p.cuerpo])).entries()].sort();
-  $('#f-cuerpo').innerHTML = '<option value="">Cuerpo: todos</option>' +
-    cuerpos.map(([c, n]) => `<option value="${c}">${c} — ${esc(n)}</option>`).join('');
-  // especialidades (según grupo activo)
-  const base = state.grupo ? PLAZAS.filter(p => p.grupo === state.grupo) : PLAZAS;
+  // cuerpos con oferta esta semana: los dos grandes primero, el resto por código
+  const NOMBRE_CUERPO_CORTO = { '0590': 'Secundaria (EEMM) · 0590', '0597': 'Maestros · 0597' };
+  const cuerpos = [...new Map(PLAZAS.map(p => [p.cuerpo_cod, p.cuerpo])).entries()]
+    .sort((a, b) => {
+      const peso = c => c === '0590' ? 0 : c === '0597' ? 1 : 2;
+      return peso(a[0]) - peso(b[0]) || a[0].localeCompare(b[0]);
+    });
+  state.cuerpos = state.cuerpos.filter(c => cuerpos.some(([cod]) => cod === c));
+  $('#ops-cuerpo').innerHTML = cuerpos.map(([c, n]) =>
+    `<label><input type="checkbox" value="${c}" ${state.cuerpos.includes(c) ? 'checked' : ''}> ${esc(NOMBRE_CUERPO_CORTO[c] || c + ' — ' + n)}</label>`).join('');
+  actualizarResumenCuerpo();
+  // especialidades (según los cuerpos elegidos)
+  const base = state.cuerpos.length ? PLAZAS.filter(p => state.cuerpos.includes(p.cuerpo_cod)) : PLAZAS;
   const esps = [...new Set(base.map(p => p.especialidad))].sort((a, b) => a.localeCompare(b, 'es'));
   state.esp = state.esp.filter(e => esps.includes(e));
   $('#ops-esp').innerHTML = esps.map(e =>
@@ -1399,9 +1414,18 @@ function poblarControles() {
   // formulario de la banda de avisos (tras los resultados)
   $('#banda-avisos .form-hueco').innerHTML = formAvisosHTML();
 }
+function actualizarResumenCuerpo() {
+  const ETI = { '0590': 'Secundaria (EEMM)', '0597': 'Maestros' };
+  $('#ms-cuerpo>summary').textContent = !state.cuerpos.length ? 'Cuerpo: todos'
+    : state.cuerpos.length === 1 ? (ETI[state.cuerpos[0]] || 'Cuerpo ' + state.cuerpos[0])
+    : `Cuerpo (${state.cuerpos.length})`;
+  $('#ms-cuerpo').classList.toggle('activo', !!state.cuerpos.length);
+}
 function volcarEstadoAControles() {
-  $$('#segmentador button').forEach(b => b.setAttribute('aria-pressed', b.dataset.grupo === state.grupo));
-  $('#f-cuerpo').value = state.cuerpo; $('#f-funcion').value = state.funcion;
+  $$('#ops-cuerpo input').forEach(i => { i.checked = state.cuerpos.includes(i.value); });
+  actualizarResumenCuerpo();
+  $('#ms-esp').classList.toggle('activo', !!state.esp.length);
+  $('#f-funcion').value = state.funcion;
   $('#f-prov').value = state.prov; $('#f-loc').value = state.loc;
   $('#f-itin').value = state.itin; $('#f-comp').value = state.comp; $('#f-cob').value = state.cob;
   $('#f-q').value = state.q; $('#orden').value = state.orden;
@@ -1421,21 +1445,27 @@ function volcarEstadoAControles() {
 function alCambiar() { escribirURL(); renderLista(); }
 
 function initControles() {
-  $$('#segmentador button').forEach(b => b.onclick = () => {
-    state.grupo = b.dataset.grupo;
+  // cuerpo: selección múltiple; al cambiar se recalcula la lista de especialidades
+  $('#ops-cuerpo').onchange = () => {
+    state.cuerpos = $$('#ops-cuerpo input:checked').map(i => i.value);
     poblarControles(); volcarEstadoAControles(); alCambiar();
-  });
+  };
   const enlazar = (sel, campo) => $(sel).onchange = e => { state[campo] = e.target.value; alCambiar(); };
-  enlazar('#f-cuerpo', 'cuerpo'); enlazar('#f-funcion', 'funcion'); enlazar('#f-prov', 'prov');
+  enlazar('#f-funcion', 'funcion'); enlazar('#f-prov', 'prov');
   enlazar('#f-loc', 'loc'); enlazar('#f-itin', 'itin'); enlazar('#f-comp', 'comp');
   enlazar('#f-cob', 'cob'); enlazar('#orden', 'orden');
   let t; $('#f-q').oninput = e => { clearTimeout(t); t = setTimeout(() => { state.q = e.target.value.trim(); alCambiar(); }, 200); };
   $('#ops-esp').onchange = () => {
     state.esp = $$('#ops-esp input:checked').map(i => i.value);
     $('#ms-esp>summary').textContent = state.esp.length ? `Especialidad (${state.esp.length})` : 'Especialidad: todas';
+    $('#ms-esp').classList.toggle('activo', !!state.esp.length);
     alCambiar();
   };
-  document.addEventListener('click', e => { if (!e.target.closest('#ms-esp')) $('#ms-esp').removeAttribute('open'); });
+  // clic fuera: se cierra cualquier desplegable que no sea el pulsado
+  document.addEventListener('click', e => {
+    const dentro = e.target.closest('.multisel');
+    $$('.multisel').forEach(d => { if (d !== dentro) d.removeAttribute('open'); });
+  });
   const alternarChip = (cont, campo) => $(cont).onclick = e => {
     const b = e.target.closest('button[data-v]'); if (!b) return;
     const v = b.dataset.v, i = state[campo].indexOf(v);
@@ -1520,7 +1550,8 @@ function initControles() {
   };
 }
 function limpiarFiltros() {
-  Object.assign(state, { cuerpo: '', esp: [], funcion: '', prov: '', loc: '', dur: [], jor: [], itin: '', comp: '', cob: '', q: '', soloIdioma: '' });
+  // los cuerpos elegidos se conservan: son la "vista" del aspirante, como antes el segmentador
+  Object.assign(state, { esp: [], funcion: '', prov: '', loc: '', dur: [], jor: [], itin: '', comp: '', cob: '', q: '', soloIdioma: '' });
   poblarControles(); volcarEstadoAControles();
 }
 
@@ -2057,8 +2088,8 @@ function renderTarjetaCompetencia() {
   if (!STATS || state.esp.length !== 1) { caja.classList.add('oculto'); return; }
   // el filtro de especialidad va por nombre: desambiguar por cuerpo si hace falta
   let candidatas = STATS.por_especialidad.filter(x => x.especialidad === state.esp[0] && x.plazas);
-  if (candidatas.length > 1 && state.grupo) {
-    candidatas = candidatas.filter(x => state.grupo === 'Maestros' ? x.cuerpo === '0597' : x.cuerpo !== '0597');
+  if (candidatas.length > 1 && state.cuerpos.length) {
+    candidatas = candidatas.filter(x => state.cuerpos.includes(x.cuerpo));
   }
   const e = candidatas.length === 1 ? candidatas[0] : null;
   if (!e) { caja.classList.add('oculto'); return; }
