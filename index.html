@@ -63,6 +63,10 @@ header.app .meta-derecha strong{color:#fff}
 #segmentador .multisel>summary:hover{background:rgba(255,255,255,.24);color:#fff}
 #segmentador .multisel[open]>summary,#segmentador .multisel.activo>summary{background:#fff;color:var(--blue-logo)}
 #segmentador .multisel .opciones{min-width:290px}
+/* Más filtros comparte fila con Cuerpo/Especialidad */
+#segmentador #btn-mas-filtros{border:none;background:rgba(255,255,255,.14);color:#fff;font-weight:700;font-size:.85rem;border-radius:999px;padding:9px 16px;white-space:nowrap}
+#segmentador #btn-mas-filtros:hover{background:rgba(255,255,255,.24)}
+#segmentador #btn-mas-filtros.activos{background:#fff;color:var(--blue-logo)}
 
 
 /* ---------- barra de herramientas: Especialidad + Cerca de mí + Más filtros ---------- */
@@ -429,16 +433,16 @@ details.acordeon[open]>summary::before{transform:rotate(90deg)}
   header.app .meta-derecha{display:none}
   /* Mi lista también es una pantalla: la barra inferior queda encima */
   #panel-peticiones{z-index:1200;padding-bottom:84px}
-  /* ---- cabecera clara: logo a la izquierda, Lista/Mapa a su derecha,
-     la frase debajo a lo ancho ---- */
+  /* ---- cabecera clara: logo GRANDE a la izquierda y el icono del mapa a su
+     derecha, a la misma altura; la frase debajo, centrada ---- */
   #hero-cevi{background:var(--gray-bg)}
-  header.app{gap:8px;padding:14px 12px 0;align-items:center}
+  header.app{gap:8px;padding:16px 12px 0;align-items:center}
   header.app>div:first-of-type{display:contents} /* h1 y frase pasan a ser hijos directos */
   header.app h1{order:1}
-  header.app h1 svg{width:min(198px,50vw);margin:0}
-  #vista-conmutador{order:2;margin-left:auto;background:#fff;box-shadow:0 3px 10px rgba(4,30,50,.18)}
-  #vista-conmutador button{padding:8px 11px;font-size:.76rem}
-  header.app .sub{order:3;flex:1 1 100%;margin-top:2px}
+  header.app h1 svg{width:min(296px,78vw);margin:0}
+  #btn-mapa-icono{display:grid;place-items:center;order:2;margin-left:auto;width:46px;height:46px;border:none;border-radius:999px;background:#fff;box-shadow:0 3px 10px rgba(4,30,50,.18);font-size:1.35rem;cursor:pointer}
+  #vista-conmutador{display:none} /* el icono del mapa lo sustituye */
+  header.app .sub{order:3;flex:1 1 100%;text-align:center;margin-top:4px}
   /* el orden baja a la fila del contador, bajo los filtros */
   #btn-orden{display:inline-block;border:1px solid var(--gray-border);background:#fff;color:var(--blue-logo);border-radius:999px;padding:9px 14px;font-size:.75rem;font-weight:700;white-space:nowrap;cursor:pointer}
   #orden{display:none} /* en móvil ordena el botón ⇅ */
@@ -457,12 +461,14 @@ details.acordeon[open]>summary::before{transform:rotate(90deg)}
   #segmentador{position:relative}
   #segmentador .multisel{position:static}
   #segmentador .multisel .opciones{left:0;right:0;top:calc(100% + 6px);min-width:0;max-width:none}
-  /* fila inferior: Cerca de mí + Perfil de idioma + Más filtros en una línea */
-  #zona-filtros{gap:5px;padding:8px 10px 4px}
-  #btn-radio,#f-idioma,#btn-mas-filtros{background:#fff;border:1px solid var(--gray-border);color:var(--text-main);border-radius:999px;padding:8px 6px;font-size:.7rem;font-weight:700;white-space:nowrap}
+  /* fila del segmentador: Cuerpo + Especialidad + Más filtros */
+  #segmentador #btn-mas-filtros{flex:0 0 auto;background:#fff;border:1px solid var(--gray-border);color:var(--text-main);font-size:.78rem;font-weight:700;padding:9px 12px;border-radius:999px;white-space:nowrap}
+  #segmentador #btn-mas-filtros.activos{background:var(--blue-logo);border-color:var(--blue-logo);color:#fff}
+  /* fila inferior: Cerca de mí + Perfil de idioma */
+  #zona-filtros{gap:8px;padding-top:8px}
+  #btn-radio,#f-idioma{background:#fff;border:1px solid var(--gray-border);color:var(--text-main);border-radius:999px;padding:9px 12px;font-size:.78rem;font-weight:700;white-space:nowrap}
   #btn-radio.activo{background:var(--blue-logo);border-color:var(--blue-logo);color:#fff}
   #f-idioma[aria-pressed="true"]{background:var(--blue-mid);border-color:var(--blue-mid);color:#fff}
-  #btn-mas-filtros.activos{background:var(--blue-logo);border-color:var(--blue-logo);color:#fff}
   #barra-plazo{display:none} /* en móvil la cuenta atrás vive en la píldora amarilla */
   #contador{font-size:1.3rem;font-weight:800;color:var(--blue-dark);letter-spacing:-.01em;flex:1 1 auto}
   #pill-cuenta{display:inline-block;background:var(--yellow);color:var(--blue-dark);border-radius:999px;padding:7px 12px;font-family:'DM Mono',monospace;font-size:.78rem;font-weight:500;box-shadow:0 4px 14px rgba(9,66,109,.15);white-space:nowrap}
@@ -501,6 +507,7 @@ details.acordeon[open]>summary::before{transform:rotate(90deg)}
     </h1>
     <div class="sub">Selecciona y ordena tus peticiones</div>
   </div>
+  <button id="btn-mapa-icono" class="solo-movil" aria-label="Ver las plazas en el mapa" title="Ver en mapa">🗺</button>
   <div id="vista-conmutador" class="solo-movil" role="group" aria-label="Cambiar entre lista y mapa">
     <button id="vc-lista" aria-pressed="true">≡ Lista</button>
     <button id="vc-mapa" aria-pressed="false">🗺 Mapa</button>
@@ -522,6 +529,7 @@ details.acordeon[open]>summary::before{transform:rotate(90deg)}
     <summary aria-label="Filtrar por especialidad">Especialidad: todas</summary>
     <div class="opciones" id="ops-esp"></div>
   </details>
+  <button id="btn-mas-filtros" aria-expanded="false" aria-controls="panel-mas-filtros">Más filtros <span id="n-filtros"></span></button>
 </nav>
 </div>
 
@@ -543,7 +551,6 @@ details.acordeon[open]>summary::before{transform:rotate(90deg)}
     </div>
   </div>
   <button id="f-idioma" aria-pressed="false" title="Solo plazas que piden idioma acreditado: si lo tienes, compite mucha menos gente">🗣 Perfil de idioma</button>
-  <button id="btn-mas-filtros" aria-expanded="false" aria-controls="panel-mas-filtros">Más filtros <span id="n-filtros"></span></button>
   <button id="btn-limpiar">Quitar filtros</button>
   <div id="panel-mas-filtros">
     <button id="btn-x-filtros" type="button" aria-label="Cerrar sin cambiar los filtros">×</button>
@@ -1659,6 +1666,7 @@ $('#tab-opciones').onclick = () => { cambiarTab('lista'); abrirStats(); marcarTa
 $('#tab-datos').onclick = () => { cambiarTab('lista'); abrirPlanifica(); marcarTabs('datos'); };
 $('#vc-lista').onclick = () => cambiarTab('lista');
 $('#vc-mapa').onclick = () => cambiarTab('mapa');
+$('#btn-mapa-icono').onclick = () => cambiarTab('mapa');
 $('#btn-volver-lista').onclick = () => cambiarTab('lista');
 
 /* botón de orden rápido de la cabecera móvil: cicla y sincroniza con el
