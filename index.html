@@ -319,8 +319,10 @@ footer.app .legal{line-height:1.6}
 .stats-caja{background:#fff;border:none;border-radius:var(--radius-lg);box-shadow:0 18px 60px rgba(9,42,68,.35);padding:18px 20px;max-width:820px;margin:0 auto;animation:aparecer-stats .18s ease-out}
 @keyframes aparecer-stats{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
 @media (max-width:1000px){
-  .popup-velo{padding:0}
-  .stats-caja{border-radius:0;min-height:100%;max-width:none}
+  /* en móvil las secciones son pantallas, no popups: la barra inferior
+     (z 1250) queda siempre por encima y se navega desde ella */
+  .popup-velo{padding:0;z-index:1200}
+  .stats-caja{border-radius:0;min-height:100%;max-width:none;padding-bottom:96px}
 }
 .stats-cabecera{display:flex;align-items:center;gap:8px}
 .stats-cabecera h2{flex:1;color:var(--blue-dark);font-size:1.05rem;font-weight:800}
@@ -417,6 +419,8 @@ details.acordeon[open]>summary::before{transform:rotate(90deg)}
   #panel-mas-filtros.abierto .chips-filtro{width:100%}
   #panel-mas-filtros.abierto #btn-cerrar-filtros{display:block;width:100%;background:var(--blue-logo);color:#fff;border:none;border-radius:var(--radius);padding:12px;font-weight:800;font-size:1rem;margin-top:6px}
   header.app .meta-derecha{display:none}
+  /* Mi lista también es una pantalla: la barra inferior queda encima */
+  #panel-peticiones{z-index:1200;padding-bottom:84px}
   /* ---- cabecera clara del diseño de la PWA ---- */
   #hero-cevi{background:var(--gray-bg)}
   header.app{padding:16px 16px 0}
