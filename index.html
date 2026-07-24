@@ -394,6 +394,7 @@ details.acordeon[open]>summary::before{transform:rotate(90deg)}
 
 /* ---------- responsive ---------- */
 #btn-cerrar-filtros{display:none}
+#btn-x-filtros{display:none}
 @media (max-width:1000px){
   #principal{display:block}
   #col-lista{padding:0 12px 130px}
@@ -426,13 +427,16 @@ details.acordeon[open]>summary::before{transform:rotate(90deg)}
   #panel-mas-filtros.abierto select,#panel-mas-filtros.abierto input{max-width:none;width:100%}
   #panel-mas-filtros.abierto .chips-filtro{width:100%}
   #panel-mas-filtros.abierto #btn-cerrar-filtros{display:block;width:100%;background:var(--blue-logo);color:#fff;border:none;border-radius:var(--radius);padding:12px;font-weight:800;font-size:1rem;margin-top:6px}
+  /* aspa para salir sin tocar nada */
+  #panel-mas-filtros.abierto #btn-x-filtros{display:grid;place-items:center;position:absolute;top:10px;right:12px;width:38px;height:38px;border:none;border-radius:999px;background:var(--gray-bg);color:var(--text-soft);font-size:1.45rem;line-height:1}
+  #panel-mas-filtros.abierto{padding-top:56px}
   header.app .meta-derecha{display:none}
   /* Mi lista también es una pantalla: la barra inferior queda encima */
   #panel-peticiones{z-index:1200;padding-bottom:84px}
   /* ---- cabecera clara del diseño de la PWA: TODO al eje central ---- */
   #hero-cevi{background:var(--gray-bg)}
-  header.app{flex-direction:column;align-items:center;gap:4px;padding:18px 16px 0}
-  header.app h1 svg{width:min(350px,90vw);margin:0 auto}
+  header.app{flex-direction:column;align-items:center;gap:4px;padding:18px 8px 0}
+  header.app h1 svg{width:min(390px,96vw);margin:0 auto}
   header.app .sub{text-align:center}
   /* el conmutador Lista/Mapa, centrado y protagonista */
   #vista-conmutador{margin:8px auto 0;background:#fff;box-shadow:0 3px 10px rgba(4,30,50,.18)}
@@ -451,8 +455,10 @@ details.acordeon[open]>summary::before{transform:rotate(90deg)}
   #segmentador .multisel{flex:1;min-width:0}
   #segmentador .multisel>summary{display:block;text-align:center;background:#fff;border:1px solid var(--gray-border);color:var(--text-main);border-radius:999px;padding:9px 6px;font-size:.78rem;font-weight:700;overflow:hidden;text-overflow:ellipsis}
   #segmentador .multisel[open]>summary,#segmentador .multisel.activo>summary{background:var(--blue-logo);border-color:var(--blue-logo);color:#fff}
-  #segmentador .multisel .opciones{max-width:calc(100vw - 40px)}
-  #segmentador #ms-esp .opciones{left:auto;right:0}
+  /* los desplegables se anclan a la FILA entera: nunca se salen de pantalla */
+  #segmentador{position:relative}
+  #segmentador .multisel{position:static}
+  #segmentador .multisel .opciones{left:0;right:0;top:calc(100% + 6px);min-width:0;max-width:none}
   #segmentador #btn-mas-filtros{flex:0 0 auto;background:#fff;border:1px solid var(--gray-border);color:var(--text-main);font-size:.78rem;font-weight:700;padding:9px 12px}
   #segmentador #btn-mas-filtros.activos{background:var(--blue-logo);border-color:var(--blue-logo);color:#fff}
   /* fila 2: Cerca de mí + Perfil de idioma, píldoras homogéneas en una línea */
@@ -525,7 +531,7 @@ details.acordeon[open]>summary::before{transform:rotate(90deg)}
 
 <div id="zona-filtros">
   <div class="radio-wrap">
-    <button id="btn-radio" aria-expanded="false" aria-controls="pop-radio">📍 Cerca de mí</button>
+    <button id="btn-radio" aria-expanded="false" aria-controls="pop-radio">📍 Buscar cerca de mí</button>
     <div id="pop-radio" class="oculto">
       <span class="titulo-radio">Tu localidad y radio de búsqueda</span>
       <div class="autocomp" id="ac-radio">
@@ -543,6 +549,7 @@ details.acordeon[open]>summary::before{transform:rotate(90deg)}
   <button id="f-idioma" aria-pressed="false" title="Solo plazas que piden idioma acreditado: si lo tienes, compite mucha menos gente">🗣 Perfil de idioma</button>
   <button id="btn-limpiar">Quitar filtros</button>
   <div id="panel-mas-filtros">
+    <button id="btn-x-filtros" type="button" aria-label="Cerrar sin cambiar los filtros">×</button>
     <input type="search" id="f-q" placeholder="Buscar centro o localidad…" aria-label="Buscar por centro o localidad">
     <select id="f-funcion" aria-label="Función"><option value="">Función: todas</option></select>
     <select id="f-prov" aria-label="Provincia">
@@ -720,7 +727,6 @@ details.acordeon[open]>summary::before{transform:rotate(90deg)}
       </svg>
     </div>
     <div class="endoso">
-    <div class="logo-wrap" style="align-self:flex-start"><img src="data:image/jpeg;base64,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" alt="Academia CEVI"></div>
     <div class="legal">
       Los datos proceden de los PDF publicados en el <a href="https://educa.jccm.es" target="_blank" rel="noopener">Portal de Educación de la JCCM</a> y son <strong>orientativos</strong>.
       La fecha de fin de cada sustitución no es vinculante. En caso de discrepancia, <strong>la información oficial siempre prevalece</strong>.
@@ -1312,7 +1318,7 @@ $('#lista-peticiones').addEventListener('click', e => {
 function autoordenar(criterio) {
   const o = origenActual();
   if ((criterio === 'prox' || criterio === 'mixto') && !o) {
-    alert('Para ordenar por proximidad, primero indica tu localidad con el botón "📍 Cerca de mí" (arriba, junto a los filtros).');
+    alert('Para ordenar por proximidad, primero indica tu localidad con el botón "📍 Buscar cerca de mí" (arriba, junto a los filtros).');
     return;
   }
   const d = id => { const p = plazaPorId(id); return (p && p.lat != null && o) ? haversine(o.lat, o.lon, p.lat, p.lon) : 9e9; };
@@ -1457,7 +1463,7 @@ function volcarEstadoAControles() {
   $('#f-idioma').setAttribute('aria-pressed', !!state.soloIdioma);
   const o = origenActual();
   $('#btn-radio').classList.toggle('activo', !!o);
-  $('#btn-radio').textContent = o ? `📍 ${o.nombre} · ${state.km} km` : '📍 Cerca de mí';
+  $('#btn-radio').textContent = o ? `📍 ${o.nombre} · ${state.km} km` : '📍 Buscar cerca de mí';
   $('#btn-radio-mapa').textContent = o ? `📍 ${o.nombre} · ${state.km} km` : '📍 Tu localidad';
   $('#input-radio').value = o ? o.nombre : '';
   $('#ctrl-km').classList.toggle('oculto', !o);
@@ -1529,6 +1535,7 @@ function initControles() {
   };
   $('#btn-mas-filtros').onclick = () => conmutarMasFiltros(!$('#panel-mas-filtros').classList.contains('abierto'));
   $('#btn-cerrar-filtros').onclick = () => conmutarMasFiltros(false);
+  $('#btn-x-filtros').onclick = () => conmutarMasFiltros(false);
   // CSV
   $('#btn-csv').onclick = exportarCSV;
   // mapa a pantalla completa
@@ -1562,7 +1569,7 @@ function initControles() {
   $('#rango-km').oninput = e => {
     state.km = KMS[+e.target.value];
     $('#salida-km').textContent = state.km + ' km';
-    $('#btn-radio').textContent = origenActual() ? `📍 ${origenActual().nombre} · ${state.km} km` : '📍 Cerca de mí';
+    $('#btn-radio').textContent = origenActual() ? `📍 ${origenActual().nombre} · ${state.km} km` : '📍 Buscar cerca de mí';
     $('#btn-radio-mapa').textContent = origenActual() ? `📍 ${origenActual().nombre} · ${state.km} km` : '📍 Tu localidad';
     alCambiar();
   };
