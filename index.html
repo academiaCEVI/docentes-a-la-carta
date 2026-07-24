@@ -425,13 +425,14 @@ details.acordeon[open]>summary::before{transform:rotate(90deg)}
   header.app .meta-derecha{display:none}
   /* Mi lista también es una pantalla: la barra inferior queda encima */
   #panel-peticiones{z-index:1200;padding-bottom:84px}
-  /* ---- cabecera clara del diseño de la PWA ---- */
+  /* ---- cabecera clara del diseño de la PWA: TODO al eje central ---- */
   #hero-cevi{background:var(--gray-bg)}
-  header.app{padding:16px 16px 0}
-  header.app h1 svg{width:min(350px,90vw)}
-  /* el conmutador Lista/Mapa manda: arriba a la derecha, junto al logo */
-  #vista-conmutador{margin-left:auto;align-self:flex-start;background:#fff;box-shadow:0 3px 10px rgba(4,30,50,.18)}
-  #vista-conmutador button{padding:9px 15px;font-size:.8rem}
+  header.app{flex-direction:column;align-items:center;gap:4px;padding:18px 16px 0}
+  header.app h1 svg{width:min(350px,90vw);margin:0 auto}
+  header.app .sub{text-align:center}
+  /* el conmutador Lista/Mapa, centrado y protagonista */
+  #vista-conmutador{margin:8px auto 0;background:#fff;box-shadow:0 3px 10px rgba(4,30,50,.18)}
+  #vista-conmutador button{padding:10px 24px;font-size:.86rem}
   /* el orden baja a la fila del contador, bajo los filtros */
   #btn-orden{display:inline-block;border:1px solid var(--gray-border);background:#fff;color:var(--blue-logo);border-radius:999px;padding:9px 14px;font-size:.75rem;font-weight:700;white-space:nowrap;cursor:pointer}
   #orden{display:none} /* en móvil ordena el botón ⇅ */
