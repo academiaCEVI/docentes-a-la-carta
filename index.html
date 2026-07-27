@@ -7,11 +7,14 @@
 <meta name="description" content="Elige tus sustituciones a la carta: consulta las plazas docentes semanales de Castilla-La Mancha, mide tu competencia y prepara tu lista de peticiones. Un servicio gratuito de Academia CEVI.">
 <meta name="theme-color" content="#09426d">
 <link rel="manifest" href="manifest.webmanifest">
-<link rel="icon" type="image/png" href="marca/icono-app-192.png">
+<link rel="icon" type="image/png" href="marca/favicon-64.png">
 <link rel="apple-touch-icon" href="marca/icono-app-192.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<!-- Identidad ilustrada: Baloo 2 (títulos y marca) + Nunito (cuerpo y datos).
+     DM Mono se conserva SOLO para cifras tabulares (cuenta atrás, posiciones):
+     necesitan ancho fijo para no bailar al actualizarse. -->
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Nunito:wght@400;600;700;800&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
 <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css">
 <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css">
@@ -20,12 +23,15 @@
   --blue-logo:#1a5f9a; --blue-dark:#09426d; --blue-mid:#2980b9; --blue-light:#e8f4fd;
   --blue-xdark:#1a2a3a; --gray-bg:#f5f7fa; --gray-border:#dde3ea;
   --text-main:#2d3748; --text-soft:#5a6a7e; --yellow:#f4c400; --wa-green:#25d366;
-  --rojo:#c0392b; --radius:8px; --radius-lg:12px;
+  --rojo:#c0392b; --radius:10px; --radius-lg:16px;
+  --fuente-titulos:'Baloo 2',system-ui,sans-serif;
   --sombra:0 2px 8px rgba(9,66,109,.08); --sombra-hover:0 6px 18px rgba(9,66,109,.14);
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{font-family:'Montserrat',system-ui,sans-serif;color:var(--text-main);background:var(--gray-bg);font-size:15px;line-height:1.5}
+body{font-family:'Nunito',system-ui,sans-serif;color:var(--text-main);background:var(--gray-bg);font-size:15px;line-height:1.5}
+/* títulos redondeados; los datos densos se quedan en Nunito, que es más legible */
+h1,h2,h3,.titular{font-family:var(--fuente-titulos);letter-spacing:.01em}
 .mono{font-family:'DM Mono',monospace}
 button{font-family:inherit;cursor:pointer}
 input,select{font-family:inherit;font-size:14px}
@@ -36,12 +42,13 @@ a{color:var(--blue-logo)}
 /* ---------- header ---------- */
 #hero-cevi{background:linear-gradient(135deg,#09426d,#0d5c96);color:#fff}
 header.app{background:transparent;border-bottom:none;padding:28px 16px 0;display:flex;align-items:center;gap:14px;flex-wrap:wrap;max-width:1100px;margin:0 auto}
-.logo-wrap{background:#fff;border-radius:5px;padding:6px 12px;box-shadow:var(--sombra);display:inline-flex;align-items:center}
-.logo-wrap img{height:44px;display:block}
-/* Logo de marca inline (SVG con texto: debe heredar Montserrat de la página).
-   Zona de seguridad y mínimo de 180px según marca/USO-DE-MARCA.md. */
+/* El logo de Academia CEVI NO aparece en ningún sitio (marca/USO-DE-MARCA.md):
+   el endoso es solo la línea de texto del pie. Mínimo 200px de ancho. */
 header.app h1{margin:0;line-height:0}
-header.app h1 svg{width:min(380px,80vw);height:auto;display:block}
+/* logo ilustrado: en el hero azul (escritorio) va el blanco; en el fondo claro
+   del móvil, el de color. Nunca los dos a la vez. */
+header.app h1 img{width:min(380px,80vw);height:auto;display:block}
+header.app h1 .logo-color{display:none} /* escritorio: hero azul → logo blanco */
 header.app .sub{font-size:.72rem;color:#8fc3ec;text-transform:uppercase;letter-spacing:.14em;font-weight:600;margin-top:8px}
 header.app .meta-derecha{margin-left:auto;text-align:right;font-size:.78rem;color:rgba(255,255,255,.7)}
 header.app .meta-derecha strong{color:#fff}
@@ -116,7 +123,7 @@ body:not(.mapa-visible) #col-lista{max-width:900px;margin:0 auto;padding:0 16px 
 #vista-conmutador{background:var(--blue-light);border-radius:999px;padding:3px;gap:2px}
 #vista-conmutador button{border:none;background:transparent;color:var(--blue-logo);border-radius:999px;padding:8px 14px;font-size:.78rem;font-weight:700}
 #vista-conmutador button[aria-pressed="true"]{background:var(--blue-logo);color:#fff}
-#contador{font-weight:600;color:var(--blue-dark);font-size:.95rem}
+#contador{font-family:var(--fuente-titulos);font-weight:700;color:var(--blue-dark);font-size:1rem}
 #btn-mapa{border:none;background:transparent;border-radius:var(--radius);padding:6px 4px;font-size:.82rem;font-weight:600;color:var(--blue-logo);white-space:nowrap}
 #btn-mapa:hover{color:var(--blue-dark)}
 #btn-mapa.destacado{background:var(--blue-light);color:var(--blue-dark);font-weight:700;padding:6px 12px}
@@ -133,7 +140,7 @@ body.mapa-max #map{border-radius:0;border:none}
 .leaflet-provincias-pane svg{filter:drop-shadow(0 5px 12px rgba(9,66,109,.22))}
 .prov-label{font-family:'DM Mono',monospace;font-weight:500;letter-spacing:.18em;color:var(--blue-dark);opacity:.5;font-size:.7rem;white-space:nowrap;transform:translate(-50%,-50%);pointer-events:none}
 #map .leaflet-interactive{cursor:pointer}
-.leaflet-container{font-family:'Montserrat',sans-serif}
+.leaflet-container{font-family:'Nunito',sans-serif}
 
 /* ---------- tarjetas ---------- */
 .grupo-esp{font-weight:600;color:var(--text-soft);font-size:.72rem;text-transform:uppercase;letter-spacing:.14em;margin:22px 0 8px;border-bottom:none;padding-bottom:0}
@@ -161,7 +168,7 @@ body.mapa-max #map{border-radius:0;border:none}
 .chip-voluntaria{background:#fff;border:1px solid var(--gray-border);color:var(--text-soft);font-weight:600;font-style:italic}
 .tarjeta .fechas{font-size:.78rem;color:var(--text-soft);margin-top:7px}
 .tarjeta .fechas .mono{font-size:.76rem}
-.tarjeta .cod{font-size:.7rem;color:var(--text-soft);margin-top:3px}
+.tarjeta .cod{font-size:.73rem;color:var(--text-soft);margin-top:3px}
 .btn-estrella{display:block;margin:12px 0 0 auto;border:1.5px solid var(--blue-logo);background:#fff;color:var(--blue-logo);border-radius:999px;padding:7px 16px;font-size:.82rem;font-weight:700;white-space:nowrap;line-height:1.25;cursor:pointer}
 .btn-estrella .est{font-size:1rem;line-height:1}
 .btn-estrella:hover{background:var(--blue-light);color:var(--blue-dark)}
@@ -179,8 +186,8 @@ body.mapa-max #map{border-radius:0;border:none}
 .pin.pin-hover{background:var(--blue-mid);transform:scale(1.5);border-color:var(--yellow)}
 .pin.pin-elegida{background:var(--yellow);border-color:var(--blue-dark)}
 .marker-cluster-small,.marker-cluster-medium,.marker-cluster-large{background:rgba(41,128,185,.35)}
-.marker-cluster-small div,.marker-cluster-medium div,.marker-cluster-large div{background:var(--blue-logo);color:#fff;font-family:'Montserrat';font-weight:700}
-.popup-plaza{font-family:'Montserrat',sans-serif}
+.marker-cluster-small div,.marker-cluster-medium div,.marker-cluster-large div{background:var(--blue-logo);color:#fff;font-family:'Nunito';font-weight:700}
+.popup-plaza{font-family:'Nunito',sans-serif}
 .popup-plaza b{color:var(--blue-dark)}
 .popup-plaza .pp-botones{margin-top:6px;display:flex;gap:6px}
 .popup-plaza button{border:1px solid var(--blue-logo);background:#fff;color:var(--blue-logo);border-radius:6px;padding:3px 8px;font-size:.78rem;font-weight:700}
@@ -245,13 +252,12 @@ body.mapa-max #map{border-radius:0;border:none}
 .form-avisos .btn-avisos{grid-column:1/-1;justify-self:start;background:var(--yellow);color:var(--blue-xdark);border:none;border-radius:var(--radius);font-weight:800;padding:11px 22px;font-size:.92rem}
 .form-avisos .btn-avisos:hover{filter:brightness(1.05)}
 .form-avisos .msg-avisos{grid-column:1/-1;font-size:.84rem;font-weight:600}
-.estado-vacio .aviso-titulo{margin-top:16px;font-weight:800;color:var(--blue-dark)}
+.estado-vacio .aviso-titulo{font-family:var(--fuente-titulos);margin-top:16px;font-weight:800;color:var(--blue-dark)}
 .estado-vacio .form-avisos{margin-top:10px}
 .estado-vacio p.aviso-sub{font-size:.8rem;margin-top:4px}
 footer.app{background:var(--blue-xdark);color:rgba(255,255,255,.85);padding:26px 16px 90px;font-size:.8rem}
 footer.app .caja{max-width:760px;margin:0 auto;display:flex;flex-direction:column;gap:12px}
-footer.app .logo-wrap img{height:36px}
-footer.app .marca-footer svg{width:min(250px,70vw);height:auto;display:block}
+footer.app .marca-footer img{width:min(250px,70vw);height:auto;display:block}
 footer.app .endoso{display:flex;gap:14px;align-items:flex-start;flex-wrap:wrap}
 footer.app .endoso .legal{flex:1;min-width:240px}
 footer.app a{color:#9ecbee}
@@ -264,7 +270,7 @@ footer.app .legal{line-height:1.6}
 #hoja-imprimir{display:none}
 @media print{
   body>*{display:none !important}
-  #hoja-imprimir{display:block !important;font-family:'Montserrat',sans-serif}
+  #hoja-imprimir{display:block !important;font-family:'Nunito',sans-serif}
   #hoja-imprimir h1{font-size:15pt;margin-bottom:2mm}
   #hoja-imprimir .pi-sub{font-size:9pt;color:#444;margin-bottom:5mm}
   #hoja-imprimir table{width:100%;border-collapse:collapse;font-size:9pt}
@@ -283,7 +289,7 @@ footer.app .legal{line-height:1.6}
 /* tarjeta oscura de cifras clave (del diseño de la PWA) */
 .stat-oscura{background:var(--blue-dark);border-radius:16px;padding:16px 18px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;text-align:center;margin:4px 0 10px}
 .stat-oscura .v{font-family:'DM Mono',monospace;font-size:1.35rem;color:#fff}
-.stat-oscura .l{font-size:.62rem;color:#8fc3ec;font-weight:600;letter-spacing:.08em;text-transform:uppercase;margin-top:2px}
+.stat-oscura .l{font-size:.66rem;color:#8fc3ec;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-top:2px}
 /* ¿Tengo opciones? — modelo de probabilidad visual (diseño PWA) */
 .sellos-modelo{display:flex;gap:8px;flex-wrap:wrap;margin:2px 0 10px}
 .op-tarjeta{background:#fff;border:1px solid var(--gray-border);border-radius:16px;padding:14px 16px;margin:0 0 10px;box-shadow:0 4px 20px rgba(9,66,109,.07)}
@@ -295,11 +301,11 @@ footer.app .legal{line-height:1.6}
 .op-fila{display:flex;gap:14px;align-items:center}
 .op-anillo{width:78px;height:78px;border-radius:50%;display:grid;place-items:center;flex:none}
 .op-anillo>div{width:58px;height:58px;border-radius:50%;background:#fff;display:grid;place-items:center;font-size:.8rem;font-weight:800;color:var(--blue-dark);text-align:center;line-height:1.1;padding:4px}
-.op-titular{font-size:.95rem;font-weight:700;color:var(--blue-dark)}
+.op-titular{font-family:var(--fuente-titulos);font-size:1.02rem;font-weight:700;color:var(--blue-dark)}
 .op-tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:12px}
 .op-tiles>div{background:var(--gray-bg);border-radius:12px;padding:10px 6px;text-align:center}
 .op-tiles .v{font-family:'DM Mono',monospace;font-size:1.02rem;color:var(--blue-dark);white-space:nowrap}
-.op-tiles .l{font-size:.6rem;color:var(--text-soft);font-weight:600;text-transform:uppercase;letter-spacing:.04em;margin-top:2px}
+.op-tiles .l{font-size:.65rem;color:var(--text-soft);font-weight:700;text-transform:uppercase;letter-spacing:.04em;margin-top:2px}
 #btn-ver-mias{display:block;width:100%;border:none;background:var(--blue-logo);color:#fff;border-radius:12px;padding:14px 0;font-size:.92rem;font-weight:700;box-shadow:0 4px 16px rgba(9,66,109,.18);cursor:pointer;margin:2px 0 6px}
 #btn-ver-mias:hover{background:var(--blue-dark)}
 /* fichas explicativas de bolsa */
@@ -339,7 +345,7 @@ footer.app .legal{line-height:1.6}
 #btn-ir-plan:hover{background:var(--blue-light)}
 #stats-esp,#plan-esp{border:1px solid var(--gray-border);border-radius:var(--radius);padding:8px 10px;font-weight:600;color:var(--text-main);background:#fff}
 #stats-detalle{margin-top:12px}
-.comp-grande{font-size:1.85rem;font-weight:800;color:var(--blue-dark);line-height:1.15}
+.comp-grande{font-family:var(--fuente-titulos);font-size:1.95rem;font-weight:800;color:var(--blue-dark);line-height:1.15}
 .comp-sub{color:var(--text-soft);font-size:.88rem;margin-top:2px}
 .comp-datos{display:flex;gap:22px;flex-wrap:wrap;margin:12px 0 4px}
 .comp-dato .v{font-family:'DM Mono',monospace;font-size:1.2rem;color:var(--blue-dark)}
@@ -407,7 +413,7 @@ details.acordeon[open]>summary::before{transform:rotate(90deg)}
   #btn-expandir{display:none}
   #cabecera-lista{top:38px}
   #tabs-movil{display:flex;position:fixed;bottom:0;left:0;right:0;z-index:1250;background:#fff;border-top:1px solid var(--gray-border);box-shadow:0 -2px 12px rgba(9,66,109,.12);padding:6px 4px calc(8px + env(safe-area-inset-bottom))}
-  #tabs-movil button{flex:1;border:none;background:none;padding:4px 2px;font-size:.68rem;font-weight:600;color:#8a97a8;line-height:1.3}
+  #tabs-movil button{flex:1;border:none;background:none;padding:4px 2px;font-size:.7rem;font-weight:700;color:#8a97a8;line-height:1.3}
   #tabs-movil button .ico{display:block;font-size:1.25rem;line-height:1.35}
   #tabs-movil button[aria-pressed="true"]{color:var(--blue-logo);font-weight:800}
   /* la distancia puede ser larga («a 62 km · ~1 h 05 min en coche»): que
@@ -439,17 +445,16 @@ details.acordeon[open]>summary::before{transform:rotate(90deg)}
   header.app{gap:8px;padding:16px 12px 0;align-items:center}
   header.app>div:first-of-type{display:contents} /* h1 y frase pasan a ser hijos directos */
   header.app h1{order:1}
-  header.app h1 svg{width:min(296px,78vw);margin:0}
+  header.app h1 img{width:min(296px,78vw);margin:0}
+  /* móvil: fondo claro → logo en color (el blanco desaparecería) */
+  header.app h1 .logo-color{display:block}
+  header.app h1 .logo-blanco{display:none}
   #btn-mapa-icono{display:grid;place-items:center;order:2;margin-left:auto;width:46px;height:46px;border:none;border-radius:999px;background:#fff;box-shadow:0 3px 10px rgba(4,30,50,.18);font-size:1.35rem;cursor:pointer}
   #vista-conmutador{display:none} /* el icono del mapa lo sustituye */
   header.app .sub{order:3;flex:1 1 100%;text-align:center;margin-top:4px}
   /* el orden baja a la fila del contador, bajo los filtros */
   #btn-orden{display:inline-block;border:1px solid var(--gray-border);background:#fff;color:var(--blue-logo);border-radius:999px;padding:9px 14px;font-size:.75rem;font-weight:700;white-space:nowrap;cursor:pointer}
   #orden{display:none} /* en móvil ordena el botón ⇅ */
-  header.app h1 svg>path{fill:#09426d}
-  header.app h1 svg>circle:first-of-type{fill:#fff}
-  header.app h1 svg>polyline{stroke:#1a5f9a}
-  header.app h1 svg text{fill:#09426d}
   header.app .sub{color:#2980b9;margin-top:4px}
   /* las pestañas inferiores ya dan acceso a ¿Opciones? y Datos */
   #btn-stats,#btn-planifica{display:none}
@@ -493,17 +498,14 @@ details.acordeon[open]>summary::before{transform:rotate(90deg)}
 <header class="app">
   <div>
     <h1>
-      <!-- Logo de marca inline: versión blanca (fondo azul oscuro, según
-           marca/USO-DE-MARCA.md) heredando la Montserrat de la página -->
-      <svg viewBox="0 0 660 132" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Docentes a la carta, un servicio de Academia CEVI">
-        <title>Docentes a la carta</title>
-        <path d="M56 26 C34 26 16 44 16 66 C16 94 56 128 56 128 C56 128 96 94 96 66 C96 44 78 26 56 26 Z" fill="#ffffff"/>
-        <circle cx="56" cy="64" r="24" fill="#09426d"/>
-        <polyline points="44,64 53,74 70,52" fill="none" stroke="#ffffff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
-        <circle cx="88" cy="34" r="8" fill="#f4c400"/>
-        <text x="120" y="66" font-family="Montserrat, sans-serif" font-size="34" font-weight="600" fill="#ffffff">Docentes <tspan font-size="31" font-weight="500" font-style="italic" opacity=".85">a la carta</tspan></text>
-        <text x="122" y="94" font-family="Montserrat, sans-serif" font-size="13.5" font-weight="500" fill="#ffffff" opacity=".7">un servicio de Academia CEVI</text>
-      </svg>
+      <!-- Logo ilustrado (marca/USO-DE-MARCA.md): la versión en color va sobre
+           el fondo claro del móvil y la blanca sobre el hero azul de escritorio;
+           nunca el blanco sobre claro. Derivados web en marca/web/ (los
+           originales de marca/ son de 2320px y pesan demasiado para la cabecera). -->
+      <img class="logo-color" src="marca/web/logo-cabecera.png" width="760" height="152"
+           alt="Docentes a la carta">
+      <img class="logo-blanco" src="marca/web/logo-cabecera-blanco.png" width="760" height="152"
+           alt="" aria-hidden="true">
     </h1>
     <div class="sub">Selecciona y ordena tus peticiones</div>
   </div>
@@ -721,14 +723,10 @@ details.acordeon[open]>summary::before{transform:rotate(90deg)}
 <footer class="app">
   <div class="caja">
     <div class="marca-footer">
-      <svg viewBox="0 0 660 132" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Docentes a la carta, un servicio de Academia CEVI">
-        <path d="M56 26 C34 26 16 44 16 66 C16 94 56 128 56 128 C56 128 96 94 96 66 C96 44 78 26 56 26 Z" fill="#ffffff"/>
-        <circle cx="56" cy="64" r="24" fill="#09426d"/>
-        <polyline points="44,64 53,74 70,52" fill="none" stroke="#ffffff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
-        <circle cx="88" cy="34" r="8" fill="#f4c400"/>
-        <text x="120" y="66" font-family="Montserrat, sans-serif" font-size="34" font-weight="600" fill="#ffffff">Docentes <tspan font-size="31" font-weight="500" font-style="italic" opacity=".85">a la carta</tspan></text>
-        <text x="122" y="94" font-family="Montserrat, sans-serif" font-size="13.5" font-weight="500" fill="#ffffff" opacity=".7">un servicio de Academia CEVI</text>
-      </svg>
+      <!-- sin loading="lazy": son 15 KB y es identidad; el diferido no dispara
+           de forma fiable en algunos webviews y el pie se quedaba en blanco -->
+      <img src="marca/web/logo-pie-blanco.png" width="600" height="120"
+           alt="Docentes a la carta">
     </div>
     <div class="endoso">
     <div class="legal">

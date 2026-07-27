@@ -14,15 +14,20 @@
  */
 'use strict';
 
-const VERSION = 'docentes-v25';
+const VERSION = 'docentes-v26';
 const CACHE_SHELL = 'shell-' + VERSION;
 const CACHE_DATOS = 'datos-' + VERSION;
 const PRECACHE = [
   './',
   'manifest.webmanifest',
+  'marca/favicon-64.png',
   'marca/icono-app-192.png',
   'marca/icono-app-512.png',
   'marca/icono-app-maskable-512.png',
+  // logos ilustrados de la cabecera y el pie (derivados web, ligeros)
+  'marca/web/logo-cabecera.png',
+  'marca/web/logo-cabecera-blanco.png',
+  'marca/web/logo-pie-blanco.png',
 ];
 
 self.addEventListener('install', e => {
