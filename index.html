@@ -131,6 +131,13 @@ body:not(.mapa-visible) #col-lista{max-width:900px;margin:0 auto;padding:0 16px 
 #orden{margin-left:auto;border:none;border-radius:var(--radius);padding:6px 4px;background:transparent;color:var(--text-soft);font-weight:600;font-size:.82rem}
 #btn-csv{border:none;background:transparent;border-radius:var(--radius);padding:6px 4px;font-size:.8rem;font-weight:600;color:var(--blue-logo)}
 #nota-fin{font-size:.76rem;color:var(--text-soft);padding:0 0 8px}
+/* distintivo de provincia filtrada, flotando sobre el mapa (en escritorio y en
+   móvil: es la única salida visible del filtro cuando el mapa ocupa todo) */
+/* arriba en escritorio (el mapa es alto y su base cae bajo el pliegue) y
+   abajo en móvil, donde el mapa ocupa la pantalla y la mano llega mejor */
+#chip-prov{position:absolute;left:14px;top:12px;z-index:1000;border:none;background:var(--blue-logo);color:#fff;border-radius:999px;padding:10px 16px;font-size:.82rem;font-weight:700;white-space:nowrap;box-shadow:0 4px 16px rgba(9,66,109,.35);cursor:pointer}
+#chip-prov:hover{background:var(--blue-dark)}
+#chip-prov .x{opacity:.85;margin-left:6px;border-left:1px solid rgba(255,255,255,.4);padding-left:8px}
 #col-mapa{display:none;position:sticky;top:50px;height:clamp(280px,40vh,400px);margin:8px 16px 0 8px}
 body.mapa-visible #col-mapa{display:block}
 #map{width:100%;height:100%;background:#fff;border:1px solid var(--gray-border);border-radius:var(--radius-lg)}
@@ -428,6 +435,8 @@ details.acordeon[open]>summary::before{transform:rotate(90deg)}
   #btn-volver-lista{display:none}
   body.tab-mapa #btn-volver-lista{display:block;position:fixed;top:12px;left:12px;z-index:900;border:none;background:#fff;color:var(--blue-logo);font-weight:800;border-radius:999px;padding:10px 16px;font-size:.82rem;box-shadow:0 4px 16px rgba(9,66,109,.28)}
   #btn-radio-mapa{display:none}
+  /* móvil: abajo y centrado, por encima de la barra de pestañas */
+  #chip-prov{top:auto;bottom:84px;left:50%;transform:translateX(-50%)}
   body.tab-mapa #btn-radio-mapa{display:block;position:fixed;top:12px;right:12px;z-index:900;border:none;background:#fff;color:var(--blue-logo);font-weight:800;border-radius:999px;padding:10px 14px;font-size:.82rem;max-width:55vw;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;box-shadow:0 4px 16px rgba(9,66,109,.28)}
   /* el popover de localidad se sirve encima del mapa */
   body.tab-mapa #pop-radio:not(.oculto){position:fixed;top:62px;left:12px;right:12px;z-index:1300;background:#fff;border-radius:16px;box-shadow:0 12px 40px rgba(9,66,109,.3);padding:14px}
@@ -668,6 +677,9 @@ details.acordeon[open]>summary::before{transform:rotate(90deg)}
     <button id="btn-volver-lista" class="solo-movil" aria-label="Volver al listado">≡ Ver lista</button>
     <button id="btn-radio-mapa" class="solo-movil" aria-expanded="false" aria-controls="pop-radio" aria-label="Elegir tu localidad de referencia">📍 Tu localidad</button>
     <div id="map"></div>
+    <!-- al pulsar una provincia el mapa filtra; sin esto, en móvil el mapa tapa
+         el contador y «Quitar filtros» y no había forma visible de volver a todas -->
+    <button id="chip-prov" class="oculto" aria-live="polite"></button>
   </section>
   <aside id="panel-peticiones" aria-label="Mi lista de peticiones">
   <header>
@@ -1195,6 +1207,14 @@ function construirMapa() {
 }
 function renderMapa(res) {
   ultimaRes = res;
+  // distintivo de la provincia filtrada, con su salida a la vista (fuera de la
+  // salida temprana: así nunca se queda desincronizado con el estado)
+  const chip = $('#chip-prov');
+  chip.classList.toggle('oculto', !state.prov);
+  if (state.prov) {
+    chip.innerHTML = `Solo <strong>${esc(state.prov)}</strong> · ${res.length} plaza${res.length === 1 ? '' : 's'} <span class="x">✕ ver todas</span>`;
+    chip.setAttribute('aria-label', `Filtrando por ${state.prov}: ${res.length} plazas. Pulsa para ver todas las provincias.`);
+  }
   if (!map && !intentarConstruirMapa()) return; // sin tamaño aún: se pintará al crearse
   if (!map) return;
   aplicarDegradados(); // por si el SVG del renderer apareció después de construir
@@ -1659,6 +1679,10 @@ $('#tab-datos').onclick = () => { cambiarTab('lista'); abrirPlanifica(); marcarT
 $('#vc-lista').onclick = () => cambiarTab('lista');
 $('#vc-mapa').onclick = () => cambiarTab('mapa');
 $('#btn-mapa-icono').onclick = () => cambiarTab('mapa');
+$('#chip-prov').onclick = () => {
+  state.prov = '';
+  volcarEstadoAControles(); alCambiar();
+};
 $('#btn-volver-lista').onclick = () => cambiarTab('lista');
 
 /* botón de orden rápido de la cabecera móvil: cicla y sincroniza con el
