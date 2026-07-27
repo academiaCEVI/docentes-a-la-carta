@@ -40,7 +40,9 @@ a{color:var(--blue-logo)}
 .oculto{display:none !important}
 
 /* ---------- header ---------- */
-#hero-cevi{background:linear-gradient(135deg,#09426d,#0d5c96);color:#fff}
+/* Cabecera clara en todas las pantallas: la identidad ilustrada pide fondo
+   claro y así manda el logo en color (el blanco solo vive en el pie azul). */
+#hero-cevi{background:var(--gray-bg);color:var(--text-main);border-bottom:1px solid var(--gray-border)}
 header.app{background:transparent;border-bottom:none;padding:28px 16px 0;display:flex;align-items:center;gap:14px;flex-wrap:wrap;max-width:1100px;margin:0 auto}
 /* El logo de Academia CEVI NO aparece en ningún sitio (marca/USO-DE-MARCA.md):
    el endoso es solo la línea de texto del pie. Mínimo 200px de ancho. */
@@ -48,10 +50,11 @@ header.app h1{margin:0;line-height:0}
 /* logo ilustrado: en el hero azul (escritorio) va el blanco; en el fondo claro
    del móvil, el de color. Nunca los dos a la vez. */
 header.app h1 img{width:min(380px,80vw);height:auto;display:block}
-header.app h1 .logo-color{display:none} /* escritorio: hero azul → logo blanco */
-header.app .sub{font-size:.72rem;color:#8fc3ec;text-transform:uppercase;letter-spacing:.14em;font-weight:600;margin-top:8px}
-header.app .meta-derecha{margin-left:auto;text-align:right;font-size:.78rem;color:rgba(255,255,255,.7)}
-header.app .meta-derecha strong{color:#fff}
+/* azul-logo, no azul medio: en texto pequeño sobre fondo claro el medio se
+   queda en 4,0:1 y AA pide 4,5 */
+header.app .sub{font-size:.72rem;color:var(--blue-logo);text-transform:uppercase;letter-spacing:.14em;font-weight:700;margin-top:8px}
+header.app .meta-derecha{margin-left:auto;text-align:right;font-size:.78rem;color:var(--text-soft)}
+header.app .meta-derecha strong{color:var(--blue-dark)}
 
 /* ---------- cuenta atrás ---------- */
 #barra-plazo{position:sticky;top:0;z-index:1100;background:#09426d;color:rgba(255,255,255,.8);border-bottom:none;padding:8px 16px;display:flex;align-items:center;gap:10px;font-size:.85rem;flex-wrap:wrap}
@@ -66,14 +69,12 @@ header.app .meta-derecha strong{color:#fff}
 
 /* ---------- segmentador ---------- */
 #segmentador{display:flex;justify-content:flex-start;gap:10px;padding:16px 16px 20px;max-width:1100px;margin:0 auto;flex-wrap:wrap}
-#segmentador .multisel>summary{background:rgba(255,255,255,.14);color:#fff;font-weight:700;font-size:.85rem;border-radius:999px;padding:9px 16px}
-#segmentador .multisel>summary:hover{background:rgba(255,255,255,.24);color:#fff}
-#segmentador .multisel[open]>summary,#segmentador .multisel.activo>summary{background:#fff;color:var(--blue-logo)}
+/* píldoras sobre la cabecera clara: blancas con borde, azules al activarse */
+#segmentador .multisel>summary,#segmentador #btn-mas-filtros{background:#fff;border:1px solid var(--gray-border);color:var(--text-main);font-weight:700;font-size:.85rem;border-radius:999px;padding:9px 16px;white-space:nowrap}
+#segmentador .multisel>summary:hover,#segmentador #btn-mas-filtros:hover{background:var(--blue-light);color:var(--blue-dark)}
+#segmentador .multisel[open]>summary,#segmentador .multisel.activo>summary,
+#segmentador #btn-mas-filtros.activos{background:var(--blue-logo);border-color:var(--blue-logo);color:#fff}
 #segmentador .multisel .opciones{min-width:290px}
-/* Más filtros comparte fila con Cuerpo/Especialidad */
-#segmentador #btn-mas-filtros{border:none;background:rgba(255,255,255,.14);color:#fff;font-weight:700;font-size:.85rem;border-radius:999px;padding:9px 16px;white-space:nowrap}
-#segmentador #btn-mas-filtros:hover{background:rgba(255,255,255,.24)}
-#segmentador #btn-mas-filtros.activos{background:#fff;color:var(--blue-logo)}
 
 
 /* ---------- barra de herramientas: Especialidad + Cerca de mí + Más filtros ---------- */
@@ -281,9 +282,10 @@ footer.app .legal{line-height:1.6}
 }
 
 /* ---------- competencia: ¿Tengo opciones? ---------- */
-#btn-stats,#btn-planifica{border:none;background:#fff;color:var(--blue-logo);font-weight:800;border-radius:999px;padding:10px 18px;font-size:.85rem;white-space:nowrap;box-shadow:0 3px 10px rgba(4,30,50,.28);cursor:pointer;transition:transform .12s,box-shadow .12s}
-#btn-stats:hover,#btn-planifica:hover{transform:translateY(-1px);box-shadow:0 5px 14px rgba(4,30,50,.38)}
-#btn-stats:active,#btn-planifica:active{transform:translateY(0);box-shadow:0 2px 6px rgba(4,30,50,.3)}
+/* accesos informativos: contorno azul, para no confundirlos con los filtros */
+#btn-stats,#btn-planifica{border:1.5px solid var(--blue-logo);background:#fff;color:var(--blue-logo);font-weight:800;border-radius:999px;padding:9px 18px;font-size:.85rem;white-space:nowrap;box-shadow:0 2px 6px rgba(9,66,109,.08);cursor:pointer;transition:transform .12s,box-shadow .12s}
+#btn-stats:hover,#btn-planifica:hover{background:var(--blue-light);transform:translateY(-1px);box-shadow:0 5px 14px rgba(9,66,109,.16)}
+#btn-stats:active,#btn-planifica:active{transform:translateY(0);box-shadow:0 2px 6px rgba(9,66,109,.12)}
 /* histórico vs. en vivo: el sello deja claro de qué curso hablan los datos */
 .sello-historico{font-family:'DM Mono',monospace;font-size:.68rem;letter-spacing:.08em;color:var(--text-soft);border:1px solid var(--gray-border);border-radius:6px;padding:3px 8px;white-space:nowrap}
 /* tarjeta oscura de cifras clave (del diseño de la PWA) */
@@ -439,23 +441,19 @@ details.acordeon[open]>summary::before{transform:rotate(90deg)}
   header.app .meta-derecha{display:none}
   /* Mi lista también es una pantalla: la barra inferior queda encima */
   #panel-peticiones{z-index:1200;padding-bottom:84px}
-  /* ---- cabecera clara: logo GRANDE a la izquierda y el icono del mapa a su
+  /* ---- móvil: logo GRANDE a la izquierda y el icono del mapa a su
      derecha, a la misma altura; la frase debajo, centrada ---- */
-  #hero-cevi{background:var(--gray-bg)}
   header.app{gap:8px;padding:16px 12px 0;align-items:center}
   header.app>div:first-of-type{display:contents} /* h1 y frase pasan a ser hijos directos */
   header.app h1{order:1}
   header.app h1 img{width:min(296px,78vw);margin:0}
-  /* móvil: fondo claro → logo en color (el blanco desaparecería) */
-  header.app h1 .logo-color{display:block}
-  header.app h1 .logo-blanco{display:none}
   #btn-mapa-icono{display:grid;place-items:center;order:2;margin-left:auto;width:46px;height:46px;border:none;border-radius:999px;background:#fff;box-shadow:0 3px 10px rgba(4,30,50,.18);font-size:1.35rem;cursor:pointer}
   #vista-conmutador{display:none} /* el icono del mapa lo sustituye */
   header.app .sub{order:3;flex:1 1 100%;text-align:center;margin-top:4px}
   /* el orden baja a la fila del contador, bajo los filtros */
   #btn-orden{display:inline-block;border:1px solid var(--gray-border);background:#fff;color:var(--blue-logo);border-radius:999px;padding:9px 14px;font-size:.75rem;font-weight:700;white-space:nowrap;cursor:pointer}
   #orden{display:none} /* en móvil ordena el botón ⇅ */
-  header.app .sub{color:#2980b9;margin-top:4px}
+  header.app .sub{margin-top:4px}
   /* las pestañas inferiores ya dan acceso a ¿Opciones? y Datos */
   #btn-stats,#btn-planifica{display:none}
   #segmentador{gap:8px;margin:10px 16px 0;padding:0}
@@ -498,14 +496,10 @@ details.acordeon[open]>summary::before{transform:rotate(90deg)}
 <header class="app">
   <div>
     <h1>
-      <!-- Logo ilustrado (marca/USO-DE-MARCA.md): la versión en color va sobre
-           el fondo claro del móvil y la blanca sobre el hero azul de escritorio;
-           nunca el blanco sobre claro. Derivados web en marca/web/ (los
-           originales de marca/ son de 2320px y pesan demasiado para la cabecera). -->
-      <img class="logo-color" src="marca/web/logo-cabecera.png" width="760" height="152"
-           alt="Docentes a la carta">
-      <img class="logo-blanco" src="marca/web/logo-cabecera-blanco.png" width="760" height="152"
-           alt="" aria-hidden="true">
+      <!-- Logo ilustrado en color: la cabecera es clara en todas las pantallas.
+           Derivado web en marca/web/ (el original de marca/ son 2320px y pesa
+           demasiado para mostrarse a 300). El blanco solo se usa en el pie azul. -->
+      <img src="marca/web/logo-cabecera.png" width="760" height="152" alt="Docentes a la carta">
     </h1>
     <div class="sub">Selecciona y ordena tus peticiones</div>
   </div>
