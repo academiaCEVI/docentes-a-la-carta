@@ -1,0 +1,3164 @@
+{
+ "tipo_evento": "previa_comienzo_curso",
+ "curso": "2026-2027",
+ "fechas": [
+  "2026-08-05",
+  "2026-08-12"
+ ],
+ "fechas_por_cuerpo": {
+  "0590": "2026-08-05",
+  "0591": "2026-08-05",
+  "0592": "2026-08-05",
+  "0593": "2026-08-05",
+  "0594": "2026-08-05",
+  "0595": "2026-08-05",
+  "0596": "2026-08-05",
+  "0597": "2026-08-12",
+  "0598": "2026-08-05"
+ },
+ "por_especialidad": [
+  {
+   "cuerpo": "0590",
+   "especialidad_cod": "590001",
+   "especialidad": "Filosofía",
+   "vacantes": 190,
+   "vacantes_itinerantes": 0,
+   "adjudicados": 174,
+   "por_caracter": {
+    "Ordinaria": 174
+   },
+   "por_provincia": {
+    "02": 16,
+    "13": 47,
+    "16": 15,
+    "19": 31,
+    "45": 81
+   },
+   "por_via": null,
+   "orden_maximo": 221,
+   "bolsa_reordenada_26_27": false
+  },
+  {
+   "cuerpo": "0590",
+   "especialidad_cod": "590002",
+   "especialidad": "Griego",
+   "vacantes": 34,
+   "vacantes_itinerantes": 0,
+   "adjudicados": 31,
+   "por_caracter": {
+    "Ordinaria": 31
+   },
+   "por_provincia": {
+    "02": 13,
+    "13": 9,
+    "16": 3,
+    "19": 3,
+    "45": 6
+   },
+   "por_via": null,
+   "orden_maximo": 47,
+   "bolsa_reordenada_26_27": false
+  },
+  {
+   "cuerpo": "0590",
+   "especialidad_cod": "590003",
+   "especialidad": "Latín",
+   "vacantes": 77,
+   "vacantes_itinerantes": 0,
+   "adjudicados": 67,
+   "por_caracter": {
+    "Ordinaria": 67
+   },
+   "por_provincia": {
+    "02": 10,
+    "13": 17,
+    "16": 9,
+    "19": 14,
+    "45": 27
+   },
+   "por_via": null,
+   "orden_maximo": 97,
+   "bolsa_reordenada_26_27": false
+  },
+  {
+   "cuerpo": "0590",
+   "especialidad_cod": "590004",
+   "especialidad": "Lengua Castellana y Literatura",
+   "vacantes": 391,
+   "vacantes_itinerantes": 13,
+   "adjudicados": 387,
+   "por_caracter": {
+    "Itinerante": 12,
+    "Ordinaria": 375
+   },
+   "por_provincia": {
+    "02": 31,
+    "13": 32,
+    "16": 37,
+    "19": 74,
+    "45": 230
+   },
+   "por_via": null,
+   "orden_maximo": 584,
+   "bolsa_reordenada_26_27": false
+  },
+  {
+   "cuerpo": "0590",
+   "especialidad_cod": "590005",
+   "especialidad": "Geografía e Historia",
+   "vacantes": 342,
+   "vacantes_itinerantes": 23,
+   "adjudicados": 365,
+   "por_caracter": {
+    "Itinerante": 23,
+    "Ordinaria": 342
+   },
+   "por_provincia": {
+    "02": 32,
+    "13": 53,
+    "16": 39,
+    "19": 61,
+    "45": 180
+   },
+   "por_via": null,
+   "orden_maximo": 550,
+   "bolsa_reordenada_26_27": false
+  },
+  {
+   "cuerpo": "0590",
+   "especialidad_cod": "590006",
+   "especialidad": "Matemáticas",
+   "vacantes": 430,
+   "vacantes_itinerantes": 9,
+   "adjudicados": 374,
+   "por_caracter": {
+    "Itinerante": 9,
+    "Ordinaria": 365
+   },
+   "por_provincia": {
+    "02": 25,
+    "13": 42,
+    "16": 36,
+    "19": 81,
+    "45": 255
+   },
+   "por_via": null,
+   "orden_maximo": 585,
+   "bolsa_reordenada_26_27": false
+  },
+  {
+   "cuerpo": "0590",
+   "especialidad_cod": "590007",
+   "especialidad": "Física y Química",
+   "vacantes": 261,
+   "vacantes_itinerantes": 8,
+   "adjudicados": 253,
+   "por_caracter": {
+    "Itinerante": 5,
+    "Ordinaria": 248
+   },
+   "por_provincia": {
+    "02": 31,
+    "13": 32,
+    "16": 30,
+    "19": 47,
+    "45": 129
+   },
+   "por_via": null,
+   "orden_maximo": 440,
+   "bolsa_reordenada_26_27": false
+  },
+  {
+   "cuerpo": "0590",
+   "especialidad_cod": "590008",
+   "especialidad": "Biología y Geología",
+   "vacantes": 242,
+   "vacantes_itinerantes": 10,
+   "adjudicados": 248,
+   "por_caracter": {
+    "Itinerante": 8,
+    "Ordinaria": 240
+   },
+   "por_provincia": {
+    "02": 27,
+    "13": 53,
+    "16": 21,
+    "19": 41,
+    "45": 110
+   },
+   "por_via": null,
+   "orden_maximo": 420,
+   "bolsa_reordenada_26_27": false
+  },
+  {
+   "cuerpo": "0590",
+   "especialidad_cod": "590009",
+   "especialidad": "Dibujo",
+   "vacantes": 201,
+   "vacantes_itinerantes": 0,
+   "adjudicados": 200,
+   "por_caracter": {
+    "Ordinaria": 200
+   },
+   "por_provincia": {
+    "02": 21,
+    "13": 35,
+    "16": 17,
+    "19": 32,
+    "45": 96
+   },
+   "por_via": null,
+   "orden_maximo": 302,
+   "bolsa_reordenada_26_27": false
+  },
+  {
+   "cuerpo": "0590",
+   "especialidad_cod": "590010",
+   "especialidad": "Francés",
+   "vacantes": 101,
+   "vacantes_itinerantes": 5,
+   "adjudicados": 98,
+   "por_caracter": {
+    "Itinerante": 5,
+    "Ordinaria": 93
+   },
+   "por_provincia": {
+    "02": 16,
+    "13": 13,
+    "16": 10,
+    "19": 20,
+    "45": 47
+   },
+   "por_via": null,
+   "orden_maximo": 171,
+   "bolsa_reordenada_26_27": false
+  },
+  {
+   "cuerpo": "0590",
+   "especialidad_cod": "590011",
+   "especialidad": "Inglés",
+   "vacantes": 420,
+   "vacantes_itinerantes": 31,
+   "adjudicados": 444,
+   "por_caracter": {
+    "Itinerante": 30,
+    "Ordinaria": 414
+   },
+   "por_provincia": {
+    "02": 41,
+    "13": 45,
+    "16": 46,
+    "19": 100,
+    "45": 219
+   },
+   "por_via": null,
+   "orden_maximo": 670,
+   "bolsa_reordenada_26_27": false
+  },
+  {
+   "cuerpo": "0590",
+   "especialidad_cod": "590012",
+   "especialidad": "Alemán",
+   "vacantes": 0,
+   "vacantes_itinerantes": 1,
+   "adjudicados": 1,
+   "por_caracter": {
+    "Itinerante": 1
+   },
+   "por_provincia": {
+    "19": 1
+   },
+   "por_via": null,
+   "orden_maximo": 3,
+   "bolsa_reordenada_26_27": false
+  },
+  {
+   "cuerpo": "0590",
+   "especialidad_cod": "590013",
+   "especialidad": "Italiano",
+   "vacantes": 2,
+   "vacantes_itinerantes": 0,
+   "adjudicados": 2,
+   "por_caracter": {
+    "Ordinaria": 2
+   },
+   "por_provincia": {
+    "02": 2
+   },
+   "por_via": null,
+   "orden_maximo": 5,
+   "bolsa_reordenada_26_27": false
+  },
+  {
+   "cuerpo": "0590",
+   "especialidad_cod": "590016",
+   "especialidad": "Música",
+   "vacantes": 208,
+   "vacantes_itinerantes": 0,
+   "adjudicados": 194,
+   "por_caracter": {
+    "Ordinaria": 194
+   },
+   "por_provincia": {
+    "02": 25,
+    "13": 37,
+    "16": 21,
+    "19": 31,
+    "45": 94
+   },
+   "por_via": null,
+   "orden_maximo": 293,
+   "bolsa_reordenada_26_27": false
+  },
+  {
+   "cuerpo": "0590",
+   "especialidad_cod": "590017",
+   "especialidad": "Educación Física",
+   "vacantes": 273,
+   "vacantes_itinerantes": 2,
+   "adjudicados": 269,
+   "por_caracter": {
+    "Itinerante": 2,
+    "Ordinaria": 267
+   },
+   "por_provincia": {
+    "02": 31,
+    "13": 56,
+    "16": 26,
+    "19": 62,
+    "45": 100
+   },
+   "por_via": null,
+   "orden_maximo": 414,
+   "bolsa_reordenada_26_27": false
+  },
+  {
+   "cuerpo": "0590",
+   "especialidad_cod": "590018",
+   "especialidad": "Orientación Educativa",
+   "vacantes": 313,
+   "vacantes_itinerantes": 11,
+   "adjudicados": 314,
+   "por_caracter": {
+    "Itinerante": 10,
+    "Ordinaria": 304
+   },
+   "por_provincia": {
+    "02": 34,
+    "13": 57,
+    "16": 35,
+    "19": 55,
+    "45": 143
+   },
+   "por_via": null,
+   "orden_maximo": 468,
+   "bolsa_reordenada_26_27": false
+  },
+  {
+   "cuerpo": "0590",
+   "especialidad_cod": "590019",
+   "especialidad": "Tecnología",
+   "vacantes": 310,
+   "vacantes_itinerantes": 10,
+   "adjudicados": 282,
+   "por_caracter": {
+    "Itinerante": 8,
+    "Ordinaria": 274
+   },
+   "por_provincia": {
+    "02": 30,
+    "13": 50,
+    "16": 37,
+    "19": 54,
+    "45": 149
+   },
+   "por_via": null,
+   "orden_maximo": 521,
+   "bolsa_reordenada_26_27": false
+  },
+  {
+   "cuerpo": "0590",
+   "especialidad_cod": "590058",
+   "especialidad": "Geografía e Historia",
+   "vacantes": 0,
+   "vacantes_itinerantes": 0,
+   "adjudicados": 79,
+   "por_caracter": {
+    "Sin carácter": 79
+   },
+   "por_provincia": {
+    "02": 9,
+    "13": 7,
+    "16": 9,
+    "19": 14,
+    "45": 40
+   },
+   "por_via": null,
+   "orden_maximo": 596,
+   "bolsa_reordenada_26_27": false
+  },
+  {
+   "cuerpo": "0590",
+   "especialidad_cod": "590059",
+   "especialidad": "Física y Química",
+   "vacantes": 0,
+   "vacantes_itinerantes": 0,
+   "adjudicados": 81,
+   "por_caracter": {
+    "Sin carácter": 81
+   },
+   "por_provincia": {
+    "02": 8,
+    "13": 15,
+    "16": 7,
+    "19": 9,
+    "45": 42
+   },
+   "por_via": null,
+   "orden_maximo": 586,
+   "bolsa_reordenada_26_27": false
+  },
+  {
+   "cuerpo": "0590",
+   "especialidad_cod": "590061",
+   "especialidad": "Economía",
+   "vacantes": 184,
+   "vacantes_itinerantes": 0,
+   "adjudicados": 172,
+   "por_caracter": {
+    "Ordinaria": 172
+   },
+   "por_provincia": {
+    "02": 14,
+    "13": 32,
+    "16": 10,
+    "19": 42,
+    "45": 86
+   },
+   "por_via": null,
+   "orden_maximo": 267,
+   "bolsa_reordenada_26_27": false
+  },
+  {
+   "cuerpo": "0590",
+   "especialidad_cod": "590101",
+   "especialidad": "Administración de Empresas",
+   "vacantes": 73,
+   "vacantes_itinerantes": 0,
+   "adjudicados": 72,
+   "por_caracter": {
+    "Ordinaria": 72
+   },
+   "por_provincia": {
+    "02": 9,
+    "13": 18,
+    "16": 5,
+    "19": 11,
+    "45": 30
+   },
+   "por_via": null,
+   "orden_maximo": 135,
+   "bolsa_reordenada_26_27": false
+  },
+  {
+   "cuerpo": "0590",
+   "especialidad_cod": "590102",
+   "especialidad": "Analisis y Química Industrial",
+   "vacantes": 15,
+   "vacantes_itinerantes": 0,
+   "adjudicados": 15,
+   "por_caracter": {
+    "Ordinaria": 15
+   },
+   "por_provincia": {
+    "02": 3,
+    "13": 5,
+    "16": 1,
+    "19": 3,
+    "45": 3
+   },
+   "por_via": null,
+   "orden_maximo": 26,
+   "bolsa_reordenada_26_27": false
+  },
+  {
+   "cuerpo": "0590",
+   "especialidad_cod": "590103",
+   "especialidad": "Asesoria y Procesos de Imagen Personal",
+   "vacantes": 11,
+   "vacantes_itinerantes": 0,
+   "adjudicados": 11,
+   "por_caracter": {
+    "Ordinaria": 11
+   },
+   "por_provincia": {
+    "02": 1,
+    "13": 3,
+    "19": 1,
+    "45": 6
+   },
+   "por_via": null,
+   "orden_maximo": 21,
+   "bolsa_reordenada_26_27": false
+  },
+  {
+   "cuerpo": "0590",
+   "especialidad_cod": "590104",
+   "especialidad": "Construcciones Civiles y Edificacion",
+   "vacantes": 15,
+   "vacantes_itinerantes": 0,
+   "adjudicados": 13,
+   "por_caracter": {
+    "Ordinaria": 13
+   },
+   "por_provincia": {
+    "02": 1,
+    "13": 4,
+    "19": 4,
+    "45": 6
+   },
+   "por_via": null,
+   "orden_maximo": 22,
+   "bolsa_reordenada_26_27": false
+  },
+  {
+   "cuerpo": "0590",
+   "especialidad_cod": "590105",
+   "especialidad": "Formación y Orientación Laboral",
+   "vacantes": 164,
+   "vacantes_itinerantes": 2,
+   "adjudicados": 157,
+   "por_caracter": {
+    "Itinerante": 2,
+    "Ordinaria": 155
+   },
+   "por_provincia": {
+    "02": 21,
+    "13": 47,
+    "16": 21,
+    "19": 31,
+    "45": 46
+   },
+   "por_via": null,
+   "orden_maximo": 241,
+   "bolsa_reordenada_26_27": false
+  },
+  {
+   "cuerpo": "0590",
+   "especialidad_cod": "590106",
+   "especialidad": "Hostelería y Turismo",
+   "vacantes": 33,
+   "vacantes_itinerantes": 0,
+   "adjudicados": 32,
+   "por_caracter": {
+    "Ordinaria": 32
+   },
+   "por_provincia": {
+    "02": 4,
+    "13": 6,
+    "16": 7,
+    "19": 4,
+    "45": 12
+   },
+   "por_via": null,
+   "orden_maximo": 55,
+   "bolsa_reordenada_26_27": false
+  },
+  {
+   "cuerpo": "0590",
+   "especialidad_cod": "590107",
+   "especialidad": "Informática",
+   "vacantes": 93,
+   "vacantes_itinerantes": 18,
+   "adjudicados": 91,
+   "por_caracter": {
+    "Itinerante": 10,
+    "Ordinaria": 80,
+    "Sin carácter": 1
+   },
+   "por_provincia": {
+    "02": 8,
+    "13": 22,
+    "16": 17,
+    "19": 25,
+    "45": 39
+   },
+   "por_via": null,
+   "orden_maximo": 151,
+   "bolsa_reordenada_26_27": false
+  },
+  {
+   "cuerpo": "0590",
+   "especialidad_cod": "590108",
+   "especialidad": "Intervención Sociocomunitaria",
+   "vacantes": 42,
+   "vacantes_itinerantes": 1,
+   "adjudicados": 42,
+   "por_caracter": {
+    "Itinerante": 1,
+    "Ordinaria": 41
+   },
+   "por_provincia": {
+    "02": 8,
+    "13": 9,
+    "16": 5,
+    "19": 5,
+    "45": 16
+   },
+   "por_via": null,
+   "orden_maximo": 79,
+   "bolsa_reordenada_26_27": false
+  },
+  {
+   "cuerpo": "0590",
+   "especialidad_cod": "590110",
+   "especialidad": "Organización y Gestión Comercial",
+   "vacantes": 52,
+   "vacantes_itinerantes": 0,
+   "adjudicados": 52,
+   "por_caracter": {
+    "Ordinaria": 52
+   },
+   "por_provincia": {
+    "02": 4,
+    "13": 12,
+    "16": 7,
+    "19": 10,
+    "45": 19
+   },
+   "por_via": null,
+   "orden_maximo": 96,
+   "bolsa_reordenada_26_27": false
+  },
+  {
+   "cuerpo": "0590",
+   "especialidad_cod": "590111",
+   "especialidad": "Vehiculos",
+   "vacantes": 31,
+   "vacantes_itinerantes": 0,
+   "adjudicados": 30,
+   "por_caracter": {
+    "Ordinaria": 30
+   },
+   "por_provincia": {
+    "02": 4,
+    "13": 8,
+    "16": 4,
+    "19": 3,
+    "45": 12
+   },
+   "por_via": null,
+   "orden_maximo": 43,
+   "bolsa_reordenada_26_27": false
+  },
+  {
+   "cuerpo": "0590",
+   "especialidad_cod": "590112",
+   "especialidad": "Mecanica",
+   "vacantes": 33,
+   "vacantes_itinerantes": 0,
+   "adjudicados": 30,
+   "por_caracter": {
+    "Ordinaria": 30
+   },
+   "por_provincia": {
+    "02": 3,
+    "13": 10,
+    "19": 9,
+    "45": 11
+   },
+   "por_via": null,
+   "orden_maximo": 46,
+   "bolsa_reordenada_26_27": false
+  },
+  {
+   "cuerpo": "0590",
+   "especialidad_cod": "590113",
+   "especialidad": "Energeticos",
+   "vacantes": 13,
+   "vacantes_itinerantes": 0,
+   "adjudicados": 12,
+   "por_caracter": {
+    "Ordinaria": 12
+   },
+   "por_provincia": {
+    "02": 1,
+    "13": 8,
+    "19": 4
+   },
+   "por_via": null,
+   "orden_maximo": 17,
+   "bolsa_reordenada_26_27": false
+  },
+  {
+   "cuerpo": "0590",
+   "especialidad_cod": "590115",
+   "especialidad": "Procesos de Producción Agraria",
+   "vacantes": 21,
+   "vacantes_itinerantes": 0,
+   "adjudicados": 21,
+   "por_caracter": {
+    "Ordinaria": 21
+   },
+   "por_provincia": {
+    "02": 1,
+    "13": 5,
+    "16": 2,
+    "45": 13
+   },
+   "por_via": null,
+   "orden_maximo": 48,
+   "bolsa_reordenada_26_27": false
+  },
+  {
+   "cuerpo": "0590",
+   "especialidad_cod": "590116",
+   "especialidad": "Procesos en la Industria Alimentaria",
+   "vacantes": 6,
+   "vacantes_itinerantes": 0,
+   "adjudicados": 5,
+   "por_caracter": {
+    "Ordinaria": 5
+   },
+   "por_provincia": {
+    "02": 3,
+    "13": 1,
+    "19": 1,
+    "45": 1
+   },
+   "por_via": null,
+   "orden_maximo": 12,
+   "bolsa_reordenada_26_27": false
+  },
+  {
+   "cuerpo": "0590",
+   "especialidad_cod": "590117",
+   "especialidad": "Ortoprotesicos",
+   "vacantes": 32,
+   "vacantes_itinerantes": 0,
+   "adjudicados": 32,
+   "por_caracter": {
+    "Ordinaria": 32
+   },
+   "por_provincia": {
+    "02": 4,
+    "13": 9,
+    "16": 8,
+    "19": 6,
+    "45": 5
+   },
+   "por_via": null,
+   "orden_maximo": 45,
+   "bolsa_reordenada_26_27": false
+  },
+  {
+   "cuerpo": "0590",
+   "especialidad_cod": "590118",
+   "especialidad": "Procesos Sanitarios",
+   "vacantes": 37,
+   "vacantes_itinerantes": 0,
+   "adjudicados": 37,
+   "por_caracter": {
+    "Ordinaria": 37
+   },
+   "por_provincia": {
+    "02": 5,
+    "13": 7,
+    "16": 8,
+    "19": 8,
+    "45": 9
+   },
+   "por_via": null,
+   "orden_maximo": 67,
+   "bolsa_reordenada_26_27": false
+  },
+  {
+   "cuerpo": "0590",
+   "especialidad_cod": "590119",
+   "especialidad": "Procesos y Medios de Comunicación",
+   "vacantes": 18,
+   "vacantes_itinerantes": 0,
+   "adjudicados": 15,
+   "por_caracter": {
+    "Ordinaria": 15
+   },
+   "por_provincia": {
+    "02": 2,
+    "16": 2,
+    "19": 5,
+    "45": 9
+   },
+   "por_via": null,
+   "orden_maximo": 28,
+   "bolsa_reordenada_26_27": false
+  },
+  {
+   "cuerpo": "0590",
+   "especialidad_cod": "590120",
+   "especialidad": "Piel",
+   "vacantes": 1,
+   "vacantes_itinerantes": 0,
+   "adjudicados": 1,
+   "por_caracter": {
+    "Ordinaria": 1
+   },
+   "por_provincia": {
+    "02": 1
+   },
+   "por_via": null,
+   "orden_maximo": 2,
+   "bolsa_reordenada_26_27": false
+  },
+  {
+   "cuerpo": "0590",
+   "especialidad_cod": "590122",
+   "especialidad": "Procesos y Productos en Artes Gráficas",
+   "vacantes": 1,
+   "vacantes_itinerantes": 0,
+   "adjudicados": 1,
+   "por_caracter": {
+    "Ordinaria": 1
+   },
+   "por_provincia": {
+    "19": 1
+   },
+   "por_via": null,
+   "orden_maximo": 1,
+   "bolsa_reordenada_26_27": false
+  },
+  {
+   "cuerpo": "0590",
+   "especialidad_cod": "590123",
+   "especialidad": "Procesos y Productos en Madera y Mueble",
+   "vacantes": 2,
+   "vacantes_itinerantes": 0,
+   "adjudicados": 1,
+   "por_caracter": {
+    "Ordinaria": 1
+   },
+   "por_provincia": {
+    "13": 2
+   },
+   "por_via": null,
+   "orden_maximo": 2,
+   "bolsa_reordenada_26_27": false
+  },
+  {
+   "cuerpo": "0590",
+   "especialidad_cod": "590124",
+   "especialidad": "Sistemas Electrónicos",
+   "vacantes": 28,
+   "vacantes_itinerantes": 0,
+   "adjudicados": 24,
+   "por_caracter": {
+    "Ordinaria": 24
+   },
+   "por_provincia": {
+    "02": 2,
+    "13": 7,
+    "19": 5,
+    "45": 14
+   },
+   "por_via": null,
+   "orden_maximo": 41,
+   "bolsa_reordenada_26_27": false
+  },
+  {
+   "cuerpo": "0590",
+   "especialidad_cod": "590125",
+   "especialidad": "Sistemas Electrotecnicos y Automaticos",
+   "vacantes": 44,
+   "vacantes_itinerantes": 0,
+   "adjudicados": 38,
+   "por_caracter": {
+    "Ordinaria": 38
+   },
+   "por_provincia": {
+    "02": 4,
+    "13": 14,
+    "16": 6,
+    "19": 6,
+    "45": 14
+   },
+   "por_via": null,
+   "orden_maximo": 60,
+   "bolsa_reordenada_26_27": false
+  },
+  {
+   "cuerpo": "0590",
+   "especialidad_cod": "590206",
+   "especialidad": "Instalaciones Electrotecnicas",
+   "vacantes": 83,
+   "vacantes_itinerantes": 0,
+   "adjudicados": 69,
+   "por_caracter": {
+    "Ordinaria": 69
+   },
+   "por_provincia": {
+    "02": 18,
+    "13": 24,
+    "16": 5,
+    "19": 14,
+    "45": 22
+   },
+   "por_via": null,
+   "orden_maximo": 95,
+   "bolsa_reordenada_26_27": false
+  },
+  {
+   "cuerpo": "0590",
+   "especialidad_cod": "590219",
+   "especialidad": "Ortoprotesico",
+   "vacantes": 29,
+   "vacantes_itinerantes": 0,
+   "adjudicados": 29,
+   "por_caracter": {
+    "Ordinaria": 29
+   },
+   "por_provincia": {
+    "13": 9,
+    "16": 5,
+    "19": 7,
+    "45": 8
+   },
+   "por_via": null,
+   "orden_maximo": 54,
+   "bolsa_reordenada_26_27": false
+  },
+  {
+   "cuerpo": "0590",
+   "especialidad_cod": "590220",
+   "especialidad": "Procedimientos Sanitarios y Asistenciales",
+   "vacantes": 57,
+   "vacantes_itinerantes": 0,
+   "adjudicados": 49,
+   "por_caracter": {
+    "Ordinaria": 49
+   },
+   "por_provincia": {
+    "02": 11,
+    "13": 8,
+    "16": 13,
+    "19": 11,
+    "45": 14
+   },
+   "por_via": null,
+   "orden_maximo": 84,
+   "bolsa_reordenada_26_27": false
+  },
+  {
+   "cuerpo": "0590",
+   "especialidad_cod": "590221",
+   "especialidad": "Procesos Comerciales",
+   "vacantes": 56,
+   "vacantes_itinerantes": 0,
+   "adjudicados": 50,
+   "por_caracter": {
+    "Ordinaria": 50
+   },
+   "por_provincia": {
+    "02": 1,
+    "13": 19,
+    "16": 6,
+    "19": 8,
+    "45": 22
+   },
+   "por_via": null,
+   "orden_maximo": 99,
+   "bolsa_reordenada_26_27": false
+  },
+  {
+   "cuerpo": "0590",
+   "especialidad_cod": "590222",
+   "especialidad": "Procesos de Gestión Administrativa",
+   "vacantes": 134,
+   "vacantes_itinerantes": 4,
+   "adjudicados": 135,
+   "por_caracter": {
+    "Itinerante": 4,
+    "Ordinaria": 131
+   },
+   "por_provincia": {
+    "02": 12,
+    "13": 35,
+    "16": 13,
+    "19": 17,
+    "45": 61
+   },
+   "por_via": null,
+   "orden_maximo": 205,
+   "bolsa_reordenada_26_27": false
+  },
+  {
+   "cuerpo": "0590",
+   "especialidad_cod": "590225",
+   "especialidad": "Servicios a la Comunidad",
+   "vacantes": 115,
+   "vacantes_itinerantes": 2,
+   "adjudicados": 114,
+   "por_caracter": {
+    "Itinerante": 2,
+    "Ordinaria": 112
+   },
+   "por_provincia": {
+    "02": 15,
+    "13": 26,
+    "16": 5,
+    "19": 12,
+    "45": 59
+   },
+   "por_via": null,
+   "orden_maximo": 197,
+   "bolsa_reordenada_26_27": false
+  },
+  {
+   "cuerpo": "0590",
+   "especialidad_cod": "590227",
+   "especialidad": "Sistemas y Aplicaciones Informáticas",
+   "vacantes": 138,
+   "vacantes_itinerantes": 1,
+   "adjudicados": 120,
+   "por_caracter": {
+    "Itinerante": 1,
+    "Ordinaria": 119
+   },
+   "por_provincia": {
+    "02": 16,
+    "13": 23,
+    "16": 14,
+    "19": 30,
+    "45": 56
+   },
+   "por_via": null,
+   "orden_maximo": 179,
+   "bolsa_reordenada_26_27": false
+  },
+  {
+   "cuerpo": "0591",
+   "especialidad_cod": "591025",
+   "especialidad": "Actividades (C.E.I.S.)",
+   "vacantes": 4,
+   "vacantes_itinerantes": 0,
+   "adjudicados": 4,
+   "por_caracter": {
+    "Ordinaria": 4
+   },
+   "por_provincia": {
+    "02": 4
+   },
+   "por_via": null,
+   "orden_maximo": 4,
+   "bolsa_reordenada_26_27": false
+  },
+  {
+   "cuerpo": "0591",
+   "especialidad_cod": "591202",
+   "especialidad": "Equipos Electrónicos",
+   "vacantes": 47,
+   "vacantes_itinerantes": 0,
+   "adjudicados": 38,
+   "por_caracter": {
+    "Ordinaria": 38
+   },
+   "por_provincia": {
+    "02": 6,
+    "13": 15,
+    "19": 4,
+    "45": 22
+   },
+   "por_via": null,
+   "orden_maximo": 69,
+   "bolsa_reordenada_26_27": false
+  },
+  {
+   "cuerpo": "0591",
+   "especialidad_cod": "591203",
+   "especialidad": "Estetica",
+   "vacantes": 23,
+   "vacantes_itinerantes": 0,
+   "adjudicados": 22,
+   "por_caracter": {
+    "Ordinaria": 22
+   },
+   "por_provincia": {
+    "02": 3,
+    "13": 7,
+    "16": 2,
+    "19": 4,
+    "45": 7
+   },
+   "por_via": null,
+   "orden_maximo": 33,
+   "bolsa_reordenada_26_27": false
+  },
+  {
+   "cuerpo": "0591",
+   "especialidad_cod": "591204",
+   "especialidad": "Mueble",
+   "vacantes": 9,
+   "vacantes_itinerantes": 0,
+   "adjudicados": 7,
+   "por_caracter": {
+    "Ordinaria": 7
+   },
+   "por_provincia": {
+    "13": 4,
+    "16": 4,
+    "19": 1
+   },
+   "por_via": null,
+   "orden_maximo": 13,
+   "bolsa_reordenada_26_27": false
+  },
+  {
+   "cuerpo": "0591",
+   "especialidad_cod": "591205",
+   "especialidad": "Termicos y de Fluidos",
+   "vacantes": 14,
+   "vacantes_itinerantes": 2,
+   "adjudicados": 14,
+   "por_caracter": {
+    "Itinerante": 2,
+    "Ordinaria": 12
+   },
+   "por_provincia": {
+    "13": 6,
+    "19": 7,
+    "45": 3
+   },
+   "por_via": null,
+   "orden_maximo": 42,
+   "bolsa_reordenada_26_27": false
+  },
+  {
+   "cuerpo": "0591",
+   "especialidad_cod": "591207",
+   "especialidad": "Instalaciones y Equipos de Cria y Cultivo",
+   "vacantes": 2,
+   "vacantes_itinerantes": 0,
+   "adjudicados": 1,
+   "por_caracter": {
+    "Ordinaria": 1
+   },
+   "por_provincia": {
+    "16": 1,
+    "45": 1
+   },
+   "por_via": null,
+   "orden_maximo": 1,
+   "bolsa_reordenada_26_27": false
+  },
+  {
+   "cuerpo": "0591",
+   "especialidad_cod": "591208",
+   "especialidad": "Laboratorio",
+   "vacantes": 9,
+   "vacantes_itinerantes": 0,
+   "adjudicados": 9,
+   "por_caracter": {
+    "Ordinaria": 9
+   },
+   "por_provincia": {
+    "02": 4,
+    "13": 3,
+    "19": 2
+   },
+   "por_via": null,
+   "orden_maximo": 27,
+   "bolsa_reordenada_26_27": false
+  },
+  {
+   "cuerpo": "0591",
+   "especialidad_cod": "591212",
+   "especialidad": "Oficina de Proyectos de Construcción",
+   "vacantes": 11,
+   "vacantes_itinerantes": 0,
+   "adjudicados": 6,
+   "por_caracter": {
+    "Ordinaria": 6
+   },
+   "por_provincia": {
+    "13": 5,
+    "19": 1,
+    "45": 5
+   },
+   "por_via": null,
+   "orden_maximo": 39,
+   "bolsa_reordenada_26_27": false
+  },
+  {
+   "cuerpo": "0591",
+   "especialidad_cod": "591214",
+   "especialidad": "Productos Alimentarios",
+   "vacantes": 10,
+   "vacantes_itinerantes": 0,
+   "adjudicados": 9,
+   "por_caracter": {
+    "Ordinaria": 9
+   },
+   "por_provincia": {
+    "02": 6,
+    "13": 3,
+    "19": 1
+   },
+   "por_via": null,
+   "orden_maximo": 18,
+   "bolsa_reordenada_26_27": false
+  },
+  {
+   "cuerpo": "0591",
+   "especialidad_cod": "591215",
+   "especialidad": "Operaciones de Procesos",
+   "vacantes": 3,
+   "vacantes_itinerantes": 0,
+   "adjudicados": 2,
+   "por_caracter": {
+    "Ordinaria": 2
+   },
+   "por_provincia": {
+    "13": 2,
+    "19": 1
+   },
+   "por_via": null,
+   "orden_maximo": 3,
+   "bolsa_reordenada_26_27": false
+  },
+  {
+   "cuerpo": "0591",
+   "especialidad_cod": "591216",
+   "especialidad": "Operaciones de Producción Agraria",
+   "vacantes": 42,
+   "vacantes_itinerantes": 0,
+   "adjudicados": 41,
+   "por_caracter": {
+    "Ordinaria": 41
+   },
+   "por_provincia": {
+    "02": 3,
+    "13": 10,
+    "16": 8,
+    "19": 6,
+    "45": 15
+   },
+   "por_via": null,
+   "orden_maximo": 76,
+   "bolsa_reordenada_26_27": false
+  },
+  {
+   "cuerpo": "0591",
+   "especialidad_cod": "591217",
+   "especialidad": "Patronaje y Confeccion",
+   "vacantes": 7,
+   "vacantes_itinerantes": 0,
+   "adjudicados": 7,
+   "por_caracter": {
+    "Ordinaria": 7
+   },
+   "por_provincia": {
+    "02": 7
+   },
+   "por_via": null,
+   "orden_maximo": 9,
+   "bolsa_reordenada_26_27": false
+  },
+  {
+   "cuerpo": "0591",
+   "especialidad_cod": "591223",
+   "especialidad": "Producción en Artes Gráficas",
+   "vacantes": 11,
+   "vacantes_itinerantes": 0,
+   "adjudicados": 9,
+   "por_caracter": {
+    "Ordinaria": 9
+   },
+   "por_provincia": {
+    "13": 2,
+    "16": 2,
+    "19": 7
+   },
+   "por_via": null,
+   "orden_maximo": 18,
+   "bolsa_reordenada_26_27": false
+  },
+  {
+   "cuerpo": "0591",
+   "especialidad_cod": "591226",
+   "especialidad": "Servicios de Restauracion",
+   "vacantes": 22,
+   "vacantes_itinerantes": 0,
+   "adjudicados": 22,
+   "por_caracter": {
+    "Ordinaria": 22
+   },
+   "por_provincia": {
+    "02": 2,
+    "13": 4,
+    "16": 3,
+    "19": 2,
+    "45": 11
+   },
+   "por_via": null,
+   "orden_maximo": 37,
+   "bolsa_reordenada_26_27": false
+  },
+  {
+   "cuerpo": "0591",
+   "especialidad_cod": "591228",
+   "especialidad": "Soldadura",
+   "vacantes": 11,
+   "vacantes_itinerantes": 0,
+   "adjudicados": 7,
+   "por_caracter": {
+    "Ordinaria": 7
+   },
+   "por_provincia": {
+    "02": 1,
+    "13": 6,
+    "16": 1,
+    "19": 1,
+    "45": 2
+   },
+   "por_via": null,
+   "orden_maximo": 13,
+   "bolsa_reordenada_26_27": false
+  },
+  {
+   "cuerpo": "0591",
+   "especialidad_cod": "591229",
+   "especialidad": "Tecnicas y Procedimientos de Imagen y Sonido",
+   "vacantes": 16,
+   "vacantes_itinerantes": 0,
+   "adjudicados": 13,
+   "por_caracter": {
+    "Ordinaria": 13
+   },
+   "por_provincia": {
+    "02": 2,
+    "16": 1,
+    "19": 4,
+    "45": 9
+   },
+   "por_via": null,
+   "orden_maximo": 20,
+   "bolsa_reordenada_26_27": false
+  },
+  {
+   "cuerpo": "0592",
+   "especialidad_cod": "592001",
+   "especialidad": "Alemán",
+   "vacantes": 2,
+   "vacantes_itinerantes": 0,
+   "adjudicados": 2,
+   "por_caracter": {
+    "Ordinaria": 2
+   },
+   "por_provincia": {
+    "02": 1,
+    "45": 1
+   },
+   "por_via": null,
+   "orden_maximo": 4,
+   "bolsa_reordenada_26_27": false
+  },
+  {
+   "cuerpo": "0592",
+   "especialidad_cod": "592006",
+   "especialidad": "Español Para Extranjeros",
+   "vacantes": 4,
+   "vacantes_itinerantes": 0,
+   "adjudicados": 4,
+   "por_caracter": {
+    "Ordinaria": 4
+   },
+   "por_provincia": {
+    "02": 1,
+    "16": 1,
+    "19": 1,
+    "45": 1
+   },
+   "por_via": null,
+   "orden_maximo": 5,
+   "bolsa_reordenada_26_27": false
+  },
+  {
+   "cuerpo": "0592",
+   "especialidad_cod": "592008",
+   "especialidad": "Francés",
+   "vacantes": 10,
+   "vacantes_itinerantes": 0,
+   "adjudicados": 10,
+   "por_caracter": {
+    "Ordinaria": 10
+   },
+   "por_provincia": {
+    "02": 2,
+    "13": 3,
+    "16": 1,
+    "19": 1,
+    "45": 3
+   },
+   "por_via": null,
+   "orden_maximo": 23,
+   "bolsa_reordenada_26_27": false
+  },
+  {
+   "cuerpo": "0592",
+   "especialidad_cod": "592011",
+   "especialidad": "Inglés",
+   "vacantes": 26,
+   "vacantes_itinerantes": 0,
+   "adjudicados": 26,
+   "por_caracter": {
+    "Ordinaria": 26
+   },
+   "por_provincia": {
+    "02": 5,
+    "13": 6,
+    "16": 2,
+    "19": 11,
+    "45": 2
+   },
+   "por_via": null,
+   "orden_maximo": 53,
+   "bolsa_reordenada_26_27": false
+  },
+  {
+   "cuerpo": "0592",
+   "especialidad_cod": "592012",
+   "especialidad": "Italiano",
+   "vacantes": 5,
+   "vacantes_itinerantes": 0,
+   "adjudicados": 5,
+   "por_caracter": {
+    "Ordinaria": 5
+   },
+   "por_provincia": {
+    "13": 3,
+    "16": 1,
+    "45": 1
+   },
+   "por_via": null,
+   "orden_maximo": 17,
+   "bolsa_reordenada_26_27": false
+  },
+  {
+   "cuerpo": "0592",
+   "especialidad_cod": "592015",
+   "especialidad": "Portugues",
+   "vacantes": 3,
+   "vacantes_itinerantes": 0,
+   "adjudicados": 3,
+   "por_caracter": {
+    "Ordinaria": 3
+   },
+   "por_provincia": {
+    "19": 1,
+    "45": 2
+   },
+   "por_via": null,
+   "orden_maximo": 3,
+   "bolsa_reordenada_26_27": false
+  },
+  {
+   "cuerpo": "0593",
+   "especialidad_cod": "593008",
+   "especialidad": "Clarinete",
+   "vacantes": 1,
+   "vacantes_itinerantes": 0,
+   "adjudicados": 1,
+   "por_caracter": {
+    "Ordinaria": 1
+   },
+   "por_provincia": {
+    "02": 1
+   },
+   "por_via": null,
+   "orden_maximo": 2,
+   "bolsa_reordenada_26_27": false
+  },
+  {
+   "cuerpo": "0593",
+   "especialidad_cod": "593009",
+   "especialidad": "Clave",
+   "vacantes": 1,
+   "vacantes_itinerantes": 0,
+   "adjudicados": 1,
+   "por_caracter": {
+    "Ordinaria": 1
+   },
+   "por_provincia": {
+    "02": 1
+   },
+   "por_via": null,
+   "orden_maximo": 1,
+   "bolsa_reordenada_26_27": false
+  },
+  {
+   "cuerpo": "0593",
+   "especialidad_cod": "593010",
+   "especialidad": "Composicion",
+   "vacantes": 5,
+   "vacantes_itinerantes": 0,
+   "adjudicados": 5,
+   "por_caracter": {
+    "Ordinaria": 5
+   },
+   "por_provincia": {
+    "02": 5
+   },
+   "por_via": null,
+   "orden_maximo": 5,
+   "bolsa_reordenada_26_27": false
+  },
+  {
+   "cuerpo": "0593",
+   "especialidad_cod": "593014",
+   "especialidad": "Contrabajo",
+   "vacantes": 1,
+   "vacantes_itinerantes": 0,
+   "adjudicados": 1,
+   "por_caracter": {
+    "Ordinaria": 1
+   },
+   "por_provincia": {
+    "02": 1
+   },
+   "por_via": null,
+   "orden_maximo": 2,
+   "bolsa_reordenada_26_27": false
+  },
+  {
+   "cuerpo": "0593",
+   "especialidad_cod": "593030",
+   "especialidad": "Fagot",
+   "vacantes": 1,
+   "vacantes_itinerantes": 0,
+   "adjudicados": 1,
+   "por_caracter": {
+    "Ordinaria": 1
+   },
+   "por_provincia": {
+    "02": 1
+   },
+   "por_via": null,
+   "orden_maximo": 1,
+   "bolsa_reordenada_26_27": false
+  },
+  {
+   "cuerpo": "0593",
+   "especialidad_cod": "593032",
+   "especialidad": "Flauta Travesera",
+   "vacantes": 1,
+   "vacantes_itinerantes": 0,
+   "adjudicados": 1,
+   "por_caracter": {
+    "Ordinaria": 1
+   },
+   "por_provincia": {
+    "02": 1
+   },
+   "por_via": null,
+   "orden_maximo": 1,
+   "bolsa_reordenada_26_27": false
+  },
+  {
+   "cuerpo": "0593",
+   "especialidad_cod": "593035",
+   "especialidad": "Guitarra",
+   "vacantes": 1,
+   "vacantes_itinerantes": 0,
+   "adjudicados": 1,
+   "por_caracter": {
+    "Ordinaria": 1
+   },
+   "por_provincia": {
+    "02": 1
+   },
+   "por_via": null,
+   "orden_maximo": 1,
+   "bolsa_reordenada_26_27": false
+  },
+  {
+   "cuerpo": "0593",
+   "especialidad_cod": "593039",
+   "especialidad": "Historia de la Música",
+   "vacantes": 1,
+   "vacantes_itinerantes": 0,
+   "adjudicados": 1,
+   "por_caracter": {
+    "Ordinaria": 1
+   },
+   "por_provincia": {
+    "02": 1
+   },
+   "por_via": null,
+   "orden_maximo": 2,
+   "bolsa_reordenada_26_27": false
+  },
+  {
+   "cuerpo": "0593",
+   "especialidad_cod": "593047",
+   "especialidad": "Lengua Inglesa",
+   "vacantes": 1,
+   "vacantes_itinerantes": 0,
+   "adjudicados": 1,
+   "por_caracter": {
+    "Ordinaria": 1
+   },
+   "por_provincia": {
+    "02": 1
+   },
+   "por_via": null,
+   "orden_maximo": 1,
+   "bolsa_reordenada_26_27": false
+  },
+  {
+   "cuerpo": "0593",
+   "especialidad_cod": "593052",
+   "especialidad": "Oboe",
+   "vacantes": 1,
+   "vacantes_itinerantes": 0,
+   "adjudicados": 1,
+   "por_caracter": {
+    "Ordinaria": 1
+   },
+   "por_provincia": {
+    "02": 1
+   },
+   "por_via": null,
+   "orden_maximo": 2,
+   "bolsa_reordenada_26_27": false
+  },
+  {
+   "cuerpo": "0593",
+   "especialidad_cod": "593058",
+   "especialidad": "Percusion",
+   "vacantes": 1,
+   "vacantes_itinerantes": 0,
+   "adjudicados": 1,
+   "por_caracter": {
+    "Ordinaria": 1
+   },
+   "por_provincia": {
+    "02": 1
+   },
+   "por_via": null,
+   "orden_maximo": 1,
+   "bolsa_reordenada_26_27": false
+  },
+  {
+   "cuerpo": "0593",
+   "especialidad_cod": "593059",
+   "especialidad": "Piano",
+   "vacantes": 2,
+   "vacantes_itinerantes": 0,
+   "adjudicados": 1,
+   "por_caracter": {
+    "Ordinaria": 1
+   },
+   "por_provincia": {
+    "02": 2
+   },
+   "por_via": null,
+   "orden_maximo": 2,
+   "bolsa_reordenada_26_27": false
+  },
+  {
+   "cuerpo": "0593",
+   "especialidad_cod": "593077",
+   "especialidad": "Viola",
+   "vacantes": 1,
+   "vacantes_itinerantes": 0,
+   "adjudicados": 1,
+   "por_caracter": {
+    "Ordinaria": 1
+   },
+   "por_provincia": {
+    "02": 1
+   },
+   "por_via": null,
+   "orden_maximo": 1,
+   "bolsa_reordenada_26_27": false
+  },
+  {
+   "cuerpo": "0593",
+   "especialidad_cod": "593078",
+   "especialidad": "Violin",
+   "vacantes": 1,
+   "vacantes_itinerantes": 0,
+   "adjudicados": 1,
+   "por_caracter": {
+    "Ordinaria": 1
+   },
+   "por_provincia": {
+    "02": 1
+   },
+   "por_via": null,
+   "orden_maximo": 1,
+   "bolsa_reordenada_26_27": false
+  },
+  {
+   "cuerpo": "0593",
+   "especialidad_cod": "593098",
+   "especialidad": "Repertorio Con Piano Para Instrumentos",
+   "vacantes": 11,
+   "vacantes_itinerantes": 0,
+   "adjudicados": 10,
+   "por_caracter": {
+    "Ordinaria": 10
+   },
+   "por_provincia": {
+    "02": 11
+   },
+   "por_via": null,
+   "orden_maximo": 10,
+   "bolsa_reordenada_26_27": false
+  },
+  {
+   "cuerpo": "0593",
+   "especialidad_cod": "593100",
+   "especialidad": "Tecnología Musical",
+   "vacantes": 3,
+   "vacantes_itinerantes": 0,
+   "adjudicados": 3,
+   "por_caracter": {
+    "Ordinaria": 3
+   },
+   "por_provincia": {
+    "02": 3
+   },
+   "por_via": null,
+   "orden_maximo": 3,
+   "bolsa_reordenada_26_27": false
+  },
+  {
+   "cuerpo": "0593",
+   "especialidad_cod": "593150",
+   "especialidad": "Direccion de Orquesta - Perfil Banda",
+   "vacantes": 2,
+   "vacantes_itinerantes": 0,
+   "adjudicados": 2,
+   "por_caracter": {
+    "Ordinaria": 2
+   },
+   "por_provincia": {
+    "02": 2
+   },
+   "por_via": null,
+   "orden_maximo": 3,
+   "bolsa_reordenada_26_27": false
+  },
+  {
+   "cuerpo": "0594",
+   "especialidad_cod": "594124",
+   "especialidad": "Interpretación en el Teatro del Texto",
+   "vacantes": 5,
+   "vacantes_itinerantes": 0,
+   "adjudicados": 4,
+   "por_caracter": {
+    "Ordinaria": 4
+   },
+   "por_provincia": {
+    "16": 5
+   },
+   "por_via": null,
+   "orden_maximo": 6,
+   "bolsa_reordenada_26_27": false
+  },
+  {
+   "cuerpo": "0594",
+   "especialidad_cod": "594403",
+   "especialidad": "Canto",
+   "vacantes": 6,
+   "vacantes_itinerantes": 0,
+   "adjudicados": 6,
+   "por_caracter": {
+    "Ordinaria": 6
+   },
+   "por_provincia": {
+    "02": 1,
+    "13": 2,
+    "16": 1,
+    "19": 1,
+    "45": 1
+   },
+   "por_via": null,
+   "orden_maximo": 7,
+   "bolsa_reordenada_26_27": false
+  },
+  {
+   "cuerpo": "0594",
+   "especialidad_cod": "594404",
+   "especialidad": "Clarinete",
+   "vacantes": 9,
+   "vacantes_itinerantes": 0,
+   "adjudicados": 9,
+   "por_caracter": {
+    "Ordinaria": 9
+   },
+   "por_provincia": {
+    "02": 4,
+    "13": 3,
+    "16": 1,
+    "19": 1
+   },
+   "por_via": null,
+   "orden_maximo": 11,
+   "bolsa_reordenada_26_27": false
+  },
+  {
+   "cuerpo": "0594",
+   "especialidad_cod": "594405",
+   "especialidad": "Clave",
+   "vacantes": 2,
+   "vacantes_itinerantes": 0,
+   "adjudicados": 2,
+   "por_caracter": {
+    "Ordinaria": 2
+   },
+   "por_provincia": {
+    "13": 1,
+    "16": 1
+   },
+   "por_via": null,
+   "orden_maximo": 3,
+   "bolsa_reordenada_26_27": false
+  },
+  {
+   "cuerpo": "0594",
+   "especialidad_cod": "594406",
+   "especialidad": "Contrabajo",
+   "vacantes": 4,
+   "vacantes_itinerantes": 0,
+   "adjudicados": 4,
+   "por_caracter": {
+    "Ordinaria": 4
+   },
+   "por_provincia": {
+    "13": 3,
+    "45": 1
+   },
+   "por_via": null,
+   "orden_maximo": 5,
+   "bolsa_reordenada_26_27": false
+  },
+  {
+   "cuerpo": "0594",
+   "especialidad_cod": "594407",
+   "especialidad": "Coro",
+   "vacantes": 3,
+   "vacantes_itinerantes": 0,
+   "adjudicados": 3,
+   "por_caracter": {
+    "Ordinaria": 3
+   },
+   "por_provincia": {
+    "13": 1,
+    "16": 1,
+    "19": 1
+   },
+   "por_via": null,
+   "orden_maximo": 4,
+   "bolsa_reordenada_26_27": false
+  },
+  {
+   "cuerpo": "0594",
+   "especialidad_cod": "594408",
+   "especialidad": "Fagot",
+   "vacantes": 1,
+   "vacantes_itinerantes": 0,
+   "adjudicados": 1,
+   "por_caracter": {
+    "Ordinaria": 1
+   },
+   "por_provincia": {
+    "19": 1
+   },
+   "por_via": null,
+   "orden_maximo": 6,
+   "bolsa_reordenada_26_27": false
+  },
+  {
+   "cuerpo": "0594",
+   "especialidad_cod": "594410",
+   "especialidad": "Flauta Travesera",
+   "vacantes": 7,
+   "vacantes_itinerantes": 0,
+   "adjudicados": 7,
+   "por_caracter": {
+    "Ordinaria": 7
+   },
+   "por_provincia": {
+    "02": 3,
+    "13": 2,
+    "16": 1,
+    "45": 1
+   },
+   "por_via": null,
+   "orden_maximo": 10,
+   "bolsa_reordenada_26_27": false
+  },
+  {
+   "cuerpo": "0594",
+   "especialidad_cod": "594411",
+   "especialidad": "Flauta de Pico",
+   "vacantes": 2,
+   "vacantes_itinerantes": 0,
+   "adjudicados": 2,
+   "por_caracter": {
+    "Ordinaria": 2
+   },
+   "por_provincia": {
+    "13": 1,
+    "16": 1
+   },
+   "por_via": null,
+   "orden_maximo": 3,
+   "bolsa_reordenada_26_27": false
+  },
+  {
+   "cuerpo": "0594",
+   "especialidad_cod": "594412",
+   "especialidad": "Fundamentos de Composición",
+   "vacantes": 11,
+   "vacantes_itinerantes": 0,
+   "adjudicados": 11,
+   "por_caracter": {
+    "Ordinaria": 11
+   },
+   "por_provincia": {
+    "02": 3,
+    "13": 3,
+    "16": 1,
+    "19": 2,
+    "45": 2
+   },
+   "por_via": null,
+   "orden_maximo": 17,
+   "bolsa_reordenada_26_27": false
+  },
+  {
+   "cuerpo": "0594",
+   "especialidad_cod": "594414",
+   "especialidad": "Guitarra",
+   "vacantes": 9,
+   "vacantes_itinerantes": 0,
+   "adjudicados": 8,
+   "por_caracter": {
+    "Ordinaria": 8
+   },
+   "por_provincia": {
+    "02": 3,
+    "13": 3,
+    "16": 1,
+    "19": 1,
+    "45": 1
+   },
+   "por_via": null,
+   "orden_maximo": 12,
+   "bolsa_reordenada_26_27": false
+  },
+  {
+   "cuerpo": "0594",
+   "especialidad_cod": "594416",
+   "especialidad": "Historia de la Música",
+   "vacantes": 5,
+   "vacantes_itinerantes": 0,
+   "adjudicados": 5,
+   "por_caracter": {
+    "Ordinaria": 5
+   },
+   "por_provincia": {
+    "02": 2,
+    "13": 3
+   },
+   "por_via": null,
+   "orden_maximo": 8,
+   "bolsa_reordenada_26_27": false
+  },
+  {
+   "cuerpo": "0594",
+   "especialidad_cod": "594418",
+   "especialidad": "Instrumentos de Pua",
+   "vacantes": 3,
+   "vacantes_itinerantes": 0,
+   "adjudicados": 2,
+   "por_caracter": {
+    "Ordinaria": 2
+   },
+   "por_provincia": {
+    "13": 2,
+    "16": 1
+   },
+   "por_via": null,
+   "orden_maximo": 2,
+   "bolsa_reordenada_26_27": false
+  },
+  {
+   "cuerpo": "0594",
+   "especialidad_cod": "594419",
+   "especialidad": "Oboe",
+   "vacantes": 1,
+   "vacantes_itinerantes": 0,
+   "adjudicados": 1,
+   "por_caracter": {
+    "Ordinaria": 1
+   },
+   "por_provincia": {
+    "02": 1
+   },
+   "por_via": null,
+   "orden_maximo": 4,
+   "bolsa_reordenada_26_27": false
+  },
+  {
+   "cuerpo": "0594",
+   "especialidad_cod": "594421",
+   "especialidad": "Orquesta",
+   "vacantes": 3,
+   "vacantes_itinerantes": 0,
+   "adjudicados": 3,
+   "por_caracter": {
+    "Ordinaria": 3
+   },
+   "por_provincia": {
+    "02": 2,
+    "45": 1
+   },
+   "por_via": null,
+   "orden_maximo": 5,
+   "bolsa_reordenada_26_27": false
+  },
+  {
+   "cuerpo": "0594",
+   "especialidad_cod": "594422",
+   "especialidad": "Percusión",
+   "vacantes": 9,
+   "vacantes_itinerantes": 0,
+   "adjudicados": 9,
+   "por_caracter": {
+    "Ordinaria": 9
+   },
+   "por_provincia": {
+    "02": 2,
+    "13": 4,
+    "16": 1,
+    "19": 1,
+    "45": 1
+   },
+   "por_via": null,
+   "orden_maximo": 12,
+   "bolsa_reordenada_26_27": false
+  },
+  {
+   "cuerpo": "0594",
+   "especialidad_cod": "594423",
+   "especialidad": "Piano",
+   "vacantes": 57,
+   "vacantes_itinerantes": 0,
+   "adjudicados": 57,
+   "por_caracter": {
+    "Ordinaria": 57
+   },
+   "por_provincia": {
+    "02": 19,
+    "13": 21,
+    "16": 5,
+    "19": 5,
+    "45": 7
+   },
+   "por_via": null,
+   "orden_maximo": 76,
+   "bolsa_reordenada_26_27": false
+  },
+  {
+   "cuerpo": "0594",
+   "especialidad_cod": "594424",
+   "especialidad": "Saxofón",
+   "vacantes": 7,
+   "vacantes_itinerantes": 0,
+   "adjudicados": 7,
+   "por_caracter": {
+    "Ordinaria": 7
+   },
+   "por_provincia": {
+    "02": 1,
+    "13": 1,
+    "16": 2,
+    "19": 1,
+    "45": 2
+   },
+   "por_via": null,
+   "orden_maximo": 10,
+   "bolsa_reordenada_26_27": false
+  },
+  {
+   "cuerpo": "0594",
+   "especialidad_cod": "594426",
+   "especialidad": "Trombón",
+   "vacantes": 5,
+   "vacantes_itinerantes": 0,
+   "adjudicados": 5,
+   "por_caracter": {
+    "Ordinaria": 5
+   },
+   "por_provincia": {
+    "02": 1,
+    "13": 2,
+    "16": 1,
+    "19": 1
+   },
+   "por_via": null,
+   "orden_maximo": 6,
+   "bolsa_reordenada_26_27": false
+  },
+  {
+   "cuerpo": "0594",
+   "especialidad_cod": "594427",
+   "especialidad": "Trompa",
+   "vacantes": 5,
+   "vacantes_itinerantes": 0,
+   "adjudicados": 5,
+   "por_caracter": {
+    "Ordinaria": 5
+   },
+   "por_provincia": {
+    "02": 1,
+    "13": 1,
+    "16": 1,
+    "19": 1,
+    "45": 1
+   },
+   "por_via": null,
+   "orden_maximo": 8,
+   "bolsa_reordenada_26_27": false
+  },
+  {
+   "cuerpo": "0594",
+   "especialidad_cod": "594428",
+   "especialidad": "Trompeta",
+   "vacantes": 7,
+   "vacantes_itinerantes": 0,
+   "adjudicados": 7,
+   "por_caracter": {
+    "Ordinaria": 7
+   },
+   "por_provincia": {
+    "02": 3,
+    "13": 3,
+    "45": 1
+   },
+   "por_via": null,
+   "orden_maximo": 8,
+   "bolsa_reordenada_26_27": false
+  },
+  {
+   "cuerpo": "0594",
+   "especialidad_cod": "594429",
+   "especialidad": "Tuba",
+   "vacantes": 6,
+   "vacantes_itinerantes": 0,
+   "adjudicados": 6,
+   "por_caracter": {
+    "Ordinaria": 6
+   },
+   "por_provincia": {
+    "02": 1,
+    "13": 2,
+    "16": 1,
+    "19": 1,
+    "45": 1
+   },
+   "por_via": null,
+   "orden_maximo": 11,
+   "bolsa_reordenada_26_27": false
+  },
+  {
+   "cuerpo": "0594",
+   "especialidad_cod": "594431",
+   "especialidad": "Viola",
+   "vacantes": 3,
+   "vacantes_itinerantes": 0,
+   "adjudicados": 3,
+   "por_caracter": {
+    "Ordinaria": 3
+   },
+   "por_provincia": {
+    "02": 1,
+    "13": 1,
+    "16": 1
+   },
+   "por_via": null,
+   "orden_maximo": 5,
+   "bolsa_reordenada_26_27": false
+  },
+  {
+   "cuerpo": "0594",
+   "especialidad_cod": "594433",
+   "especialidad": "Violin",
+   "vacantes": 11,
+   "vacantes_itinerantes": 0,
+   "adjudicados": 11,
+   "por_caracter": {
+    "Ordinaria": 11
+   },
+   "por_provincia": {
+    "02": 1,
+    "13": 6,
+    "16": 2,
+    "19": 1,
+    "45": 1
+   },
+   "por_via": null,
+   "orden_maximo": 19,
+   "bolsa_reordenada_26_27": false
+  },
+  {
+   "cuerpo": "0594",
+   "especialidad_cod": "594434",
+   "especialidad": "Violoncello",
+   "vacantes": 6,
+   "vacantes_itinerantes": 0,
+   "adjudicados": 6,
+   "por_caracter": {
+    "Ordinaria": 6
+   },
+   "por_provincia": {
+    "02": 1,
+    "13": 2,
+    "16": 1,
+    "19": 1,
+    "45": 1
+   },
+   "por_via": null,
+   "orden_maximo": 6,
+   "bolsa_reordenada_26_27": false
+  },
+  {
+   "cuerpo": "0594",
+   "especialidad_cod": "594435",
+   "especialidad": "Danza Española",
+   "vacantes": 6,
+   "vacantes_itinerantes": 0,
+   "adjudicados": 6,
+   "por_caracter": {
+    "Ordinaria": 6
+   },
+   "por_provincia": {
+    "02": 2,
+    "13": 4
+   },
+   "por_via": null,
+   "orden_maximo": 11,
+   "bolsa_reordenada_26_27": false
+  },
+  {
+   "cuerpo": "0594",
+   "especialidad_cod": "594436",
+   "especialidad": "Danza Clásica",
+   "vacantes": 9,
+   "vacantes_itinerantes": 0,
+   "adjudicados": 9,
+   "por_caracter": {
+    "Ordinaria": 9
+   },
+   "por_provincia": {
+    "02": 4,
+    "13": 5
+   },
+   "por_via": null,
+   "orden_maximo": 13,
+   "bolsa_reordenada_26_27": false
+  },
+  {
+   "cuerpo": "0594",
+   "especialidad_cod": "594437",
+   "especialidad": "Danza Contemporánea",
+   "vacantes": 1,
+   "vacantes_itinerantes": 0,
+   "adjudicados": 1,
+   "por_caracter": {
+    "Ordinaria": 1
+   },
+   "por_provincia": {
+    "02": 1
+   },
+   "por_via": null,
+   "orden_maximo": 1,
+   "bolsa_reordenada_26_27": false
+  },
+  {
+   "cuerpo": "0594",
+   "especialidad_cod": "594441",
+   "especialidad": "Canto Aplicado al Arte Dramático",
+   "vacantes": 1,
+   "vacantes_itinerantes": 0,
+   "adjudicados": 1,
+   "por_caracter": {
+    "Ordinaria": 1
+   },
+   "por_provincia": {
+    "16": 1
+   },
+   "por_via": null,
+   "orden_maximo": 1,
+   "bolsa_reordenada_26_27": false
+  },
+  {
+   "cuerpo": "0594",
+   "especialidad_cod": "594442",
+   "especialidad": "Caracterización",
+   "vacantes": 1,
+   "vacantes_itinerantes": 0,
+   "adjudicados": 1,
+   "por_caracter": {
+    "Ordinaria": 1
+   },
+   "por_provincia": {
+    "16": 1
+   },
+   "por_via": null,
+   "orden_maximo": 1,
+   "bolsa_reordenada_26_27": false
+  },
+  {
+   "cuerpo": "0594",
+   "especialidad_cod": "594443",
+   "especialidad": "Danza Aplicada al Arte Dramático",
+   "vacantes": 1,
+   "vacantes_itinerantes": 0,
+   "adjudicados": 1,
+   "por_caracter": {
+    "Ordinaria": 1
+   },
+   "por_provincia": {
+    "16": 1
+   },
+   "por_via": null,
+   "orden_maximo": 1,
+   "bolsa_reordenada_26_27": false
+  },
+  {
+   "cuerpo": "0594",
+   "especialidad_cod": "594444",
+   "especialidad": "Dicción y Expresión Oral",
+   "vacantes": 2,
+   "vacantes_itinerantes": 0,
+   "adjudicados": 2,
+   "por_caracter": {
+    "Ordinaria": 2
+   },
+   "por_provincia": {
+    "16": 2
+   },
+   "por_via": null,
+   "orden_maximo": 2,
+   "bolsa_reordenada_26_27": false
+  },
+  {
+   "cuerpo": "0594",
+   "especialidad_cod": "594449",
+   "especialidad": "Expresión Corporal",
+   "vacantes": 2,
+   "vacantes_itinerantes": 0,
+   "adjudicados": 2,
+   "por_caracter": {
+    "Ordinaria": 2
+   },
+   "por_provincia": {
+    "16": 2
+   },
+   "por_via": null,
+   "orden_maximo": 2,
+   "bolsa_reordenada_26_27": false
+  },
+  {
+   "cuerpo": "0594",
+   "especialidad_cod": "594459",
+   "especialidad": "Teoría de las Artes del Espectáculo",
+   "vacantes": 1,
+   "vacantes_itinerantes": 0,
+   "adjudicados": 1,
+   "por_caracter": {
+    "Ordinaria": 1
+   },
+   "por_provincia": {
+    "16": 1
+   },
+   "por_via": null,
+   "orden_maximo": 1,
+   "bolsa_reordenada_26_27": false
+  },
+  {
+   "cuerpo": "0594",
+   "especialidad_cod": "594460",
+   "especialidad": "Lenguaje Musical",
+   "vacantes": 14,
+   "vacantes_itinerantes": 0,
+   "adjudicados": 14,
+   "por_caracter": {
+    "Ordinaria": 14
+   },
+   "por_provincia": {
+    "02": 3,
+    "13": 7,
+    "16": 2,
+    "19": 1,
+    "45": 1
+   },
+   "por_via": null,
+   "orden_maximo": 29,
+   "bolsa_reordenada_26_27": false
+  },
+  {
+   "cuerpo": "0595",
+   "especialidad_cod": "595507",
+   "especialidad": "Dibujo Artistico y Color",
+   "vacantes": 24,
+   "vacantes_itinerantes": 0,
+   "adjudicados": 23,
+   "por_caracter": {
+    "Ordinaria": 23
+   },
+   "por_provincia": {
+    "02": 1,
+    "13": 5,
+    "16": 2,
+    "19": 7,
+    "45": 9
+   },
+   "por_via": null,
+   "orden_maximo": 38,
+   "bolsa_reordenada_26_27": false
+  },
+  {
+   "cuerpo": "0595",
+   "especialidad_cod": "595508",
+   "especialidad": "Dibujo Tecnico",
+   "vacantes": 5,
+   "vacantes_itinerantes": 0,
+   "adjudicados": 3,
+   "por_caracter": {
+    "Ordinaria": 3
+   },
+   "por_provincia": {
+    "16": 1,
+    "19": 1,
+    "45": 3
+   },
+   "por_via": null,
+   "orden_maximo": 12,
+   "bolsa_reordenada_26_27": false
+  },
+  {
+   "cuerpo": "0595",
+   "especialidad_cod": "595509",
+   "especialidad": "Diseño de Interiores",
+   "vacantes": 12,
+   "vacantes_itinerantes": 0,
+   "adjudicados": 11,
+   "por_caracter": {
+    "Ordinaria": 11
+   },
+   "por_provincia": {
+    "02": 2,
+    "13": 5,
+    "19": 2,
+    "45": 3
+   },
+   "por_via": null,
+   "orden_maximo": 15,
+   "bolsa_reordenada_26_27": false
+  },
+  {
+   "cuerpo": "0595",
+   "especialidad_cod": "595510",
+   "especialidad": "Diseño de Moda",
+   "vacantes": 2,
+   "vacantes_itinerantes": 0,
+   "adjudicados": 2,
+   "por_caracter": {
+    "Ordinaria": 2
+   },
+   "por_provincia": {
+    "19": 1,
+    "45": 1
+   },
+   "por_via": null,
+   "orden_maximo": 2,
+   "bolsa_reordenada_26_27": false
+  },
+  {
+   "cuerpo": "0595",
+   "especialidad_cod": "595511",
+   "especialidad": "Diseño de Producto",
+   "vacantes": 2,
+   "vacantes_itinerantes": 0,
+   "adjudicados": 2,
+   "por_caracter": {
+    "Ordinaria": 2
+   },
+   "por_provincia": {
+    "13": 2
+   },
+   "por_via": null,
+   "orden_maximo": 3,
+   "bolsa_reordenada_26_27": false
+  },
+  {
+   "cuerpo": "0595",
+   "especialidad_cod": "595512",
+   "especialidad": "Diseño Grafico",
+   "vacantes": 23,
+   "vacantes_itinerantes": 0,
+   "adjudicados": 22,
+   "por_caracter": {
+    "Ordinaria": 22
+   },
+   "por_provincia": {
+    "02": 1,
+    "13": 8,
+    "16": 2,
+    "19": 5,
+    "45": 7
+   },
+   "por_via": null,
+   "orden_maximo": 42,
+   "bolsa_reordenada_26_27": false
+  },
+  {
+   "cuerpo": "0595",
+   "especialidad_cod": "595515",
+   "especialidad": "Fotografia",
+   "vacantes": 11,
+   "vacantes_itinerantes": 0,
+   "adjudicados": 11,
+   "por_caracter": {
+    "Ordinaria": 11
+   },
+   "por_provincia": {
+    "02": 1,
+    "13": 2,
+    "16": 2,
+    "19": 2,
+    "45": 4
+   },
+   "por_via": null,
+   "orden_maximo": 26,
+   "bolsa_reordenada_26_27": false
+  },
+  {
+   "cuerpo": "0595",
+   "especialidad_cod": "595516",
+   "especialidad": "Historia del Arte",
+   "vacantes": 9,
+   "vacantes_itinerantes": 0,
+   "adjudicados": 9,
+   "por_caracter": {
+    "Ordinaria": 9
+   },
+   "por_provincia": {
+    "13": 2,
+    "16": 2,
+    "19": 2,
+    "45": 3
+   },
+   "por_via": null,
+   "orden_maximo": 14,
+   "bolsa_reordenada_26_27": false
+  },
+  {
+   "cuerpo": "0595",
+   "especialidad_cod": "595518",
+   "especialidad": "Materiales y Tecnologia: Ceramica y Vidrio",
+   "vacantes": 1,
+   "vacantes_itinerantes": 0,
+   "adjudicados": 1,
+   "por_caracter": {
+    "Ordinaria": 1
+   },
+   "por_provincia": {
+    "45": 1
+   },
+   "por_via": null,
+   "orden_maximo": 1,
+   "bolsa_reordenada_26_27": false
+  },
+  {
+   "cuerpo": "0595",
+   "especialidad_cod": "595520",
+   "especialidad": "Materiales y Tecnologia: Diseño",
+   "vacantes": 6,
+   "vacantes_itinerantes": 0,
+   "adjudicados": 4,
+   "por_caracter": {
+    "Ordinaria": 4
+   },
+   "por_provincia": {
+    "02": 1,
+    "13": 1,
+    "19": 2,
+    "45": 2
+   },
+   "por_via": null,
+   "orden_maximo": 9,
+   "bolsa_reordenada_26_27": false
+  },
+  {
+   "cuerpo": "0595",
+   "especialidad_cod": "595521",
+   "especialidad": "Medios Audiovisuales",
+   "vacantes": 10,
+   "vacantes_itinerantes": 0,
+   "adjudicados": 10,
+   "por_caracter": {
+    "Ordinaria": 10
+   },
+   "por_provincia": {
+    "02": 1,
+    "13": 2,
+    "16": 2,
+    "19": 2,
+    "45": 3
+   },
+   "por_via": null,
+   "orden_maximo": 18,
+   "bolsa_reordenada_26_27": false
+  },
+  {
+   "cuerpo": "0595",
+   "especialidad_cod": "595522",
+   "especialidad": "Medios Informaticos",
+   "vacantes": 18,
+   "vacantes_itinerantes": 0,
+   "adjudicados": 13,
+   "por_caracter": {
+    "Ordinaria": 13
+   },
+   "por_provincia": {
+    "02": 3,
+    "13": 3,
+    "16": 2,
+    "19": 4,
+    "45": 6
+   },
+   "por_via": null,
+   "orden_maximo": 34,
+   "bolsa_reordenada_26_27": false
+  },
+  {
+   "cuerpo": "0595",
+   "especialidad_cod": "595523",
+   "especialidad": "Organización Industrial y Legislacion",
+   "vacantes": 8,
+   "vacantes_itinerantes": 0,
+   "adjudicados": 6,
+   "por_caracter": {
+    "Ordinaria": 6
+   },
+   "por_provincia": {
+    "02": 1,
+    "13": 1,
+    "19": 2,
+    "45": 4
+   },
+   "por_via": null,
+   "orden_maximo": 24,
+   "bolsa_reordenada_26_27": false
+  },
+  {
+   "cuerpo": "0595",
+   "especialidad_cod": "595525",
+   "especialidad": "Volumen",
+   "vacantes": 5,
+   "vacantes_itinerantes": 0,
+   "adjudicados": 4,
+   "por_caracter": {
+    "Ordinaria": 4
+   },
+   "por_provincia": {
+    "02": 1,
+    "13": 1,
+    "45": 3
+   },
+   "por_via": null,
+   "orden_maximo": 9,
+   "bolsa_reordenada_26_27": false
+  },
+  {
+   "cuerpo": "0596",
+   "especialidad_cod": "596608",
+   "especialidad": "Fotografia y Procesos de Reproduccion",
+   "vacantes": 7,
+   "vacantes_itinerantes": 0,
+   "adjudicados": 7,
+   "por_caracter": {
+    "Ordinaria": 7
+   },
+   "por_provincia": {
+    "02": 1,
+    "16": 1,
+    "19": 2,
+    "45": 3
+   },
+   "por_via": null,
+   "orden_maximo": 16,
+   "bolsa_reordenada_26_27": false
+  },
+  {
+   "cuerpo": "0596",
+   "especialidad_cod": "596610",
+   "especialidad": "Moldes y Reproducciones",
+   "vacantes": 1,
+   "vacantes_itinerantes": 0,
+   "adjudicados": 1,
+   "por_caracter": {
+    "Ordinaria": 1
+   },
+   "por_provincia": {
+    "45": 1
+   },
+   "por_via": null,
+   "orden_maximo": 2,
+   "bolsa_reordenada_26_27": false
+  },
+  {
+   "cuerpo": "0596",
+   "especialidad_cod": "596612",
+   "especialidad": "Talla en Piedra y Madera",
+   "vacantes": 1,
+   "vacantes_itinerantes": 0,
+   "adjudicados": 1,
+   "por_caracter": {
+    "Ordinaria": 1
+   },
+   "por_provincia": {
+    "45": 1
+   },
+   "por_via": null,
+   "orden_maximo": 1,
+   "bolsa_reordenada_26_27": false
+  },
+  {
+   "cuerpo": "0596",
+   "especialidad_cod": "596613",
+   "especialidad": "Tecnicas Ceramicas",
+   "vacantes": 3,
+   "vacantes_itinerantes": 0,
+   "adjudicados": 3,
+   "por_caracter": {
+    "Ordinaria": 3
+   },
+   "por_provincia": {
+    "02": 1,
+    "45": 2
+   },
+   "por_via": null,
+   "orden_maximo": 7,
+   "bolsa_reordenada_26_27": false
+  },
+  {
+   "cuerpo": "0596",
+   "especialidad_cod": "596614",
+   "especialidad": "Tecnicas de Grabado y Estampacion",
+   "vacantes": 3,
+   "vacantes_itinerantes": 0,
+   "adjudicados": 3,
+   "por_caracter": {
+    "Ordinaria": 3
+   },
+   "por_provincia": {
+    "13": 1,
+    "16": 1,
+    "45": 1
+   },
+   "por_via": null,
+   "orden_maximo": 4,
+   "bolsa_reordenada_26_27": false
+  },
+  {
+   "cuerpo": "0596",
+   "especialidad_cod": "596618",
+   "especialidad": "Tecnicas del Metal",
+   "vacantes": 1,
+   "vacantes_itinerantes": 0,
+   "adjudicados": 1,
+   "por_caracter": {
+    "Ordinaria": 1
+   },
+   "por_provincia": {
+    "45": 1
+   },
+   "por_via": null,
+   "orden_maximo": 1,
+   "bolsa_reordenada_26_27": false
+  },
+  {
+   "cuerpo": "0597",
+   "especialidad_cod": "597021",
+   "especialidad": "Ciencias Sociales: Geografía e Historia - Ies",
+   "vacantes": 1,
+   "vacantes_itinerantes": 0,
+   "adjudicados": 1,
+   "por_caracter": {
+    "Ordinaria": 1
+   },
+   "por_provincia": {
+    "13": 1
+   },
+   "por_via": null,
+   "orden_maximo": 5,
+   "bolsa_reordenada_26_27": true
+  },
+  {
+   "cuerpo": "0597",
+   "especialidad_cod": "597024",
+   "especialidad": "Lengua Castellana y Literatura - Ies",
+   "vacantes": 1,
+   "vacantes_itinerantes": 0,
+   "adjudicados": 1,
+   "por_caracter": {
+    "Ordinaria": 1
+   },
+   "por_provincia": {
+    "45": 1
+   },
+   "por_via": null,
+   "orden_maximo": 6,
+   "bolsa_reordenada_26_27": true
+  },
+  {
+   "cuerpo": "0597",
+   "especialidad_cod": "597031",
+   "especialidad": "Educación Infantil",
+   "vacantes": 361,
+   "vacantes_itinerantes": 9,
+   "adjudicados": 237,
+   "por_caracter": {
+    "Itinerante": 9,
+    "Ordinaria": 228
+   },
+   "por_provincia": {
+    "02": 16,
+    "13": 40,
+    "16": 10,
+    "19": 68,
+    "45": 236
+   },
+   "por_via": null,
+   "orden_maximo": 5413,
+   "bolsa_reordenada_26_27": true
+  },
+  {
+   "cuerpo": "0597",
+   "especialidad_cod": "597032",
+   "especialidad": "Idioma Extranjero: Inglés",
+   "vacantes": 293,
+   "vacantes_itinerantes": 49,
+   "adjudicados": 262,
+   "por_caracter": {
+    "Itinerante": 40,
+    "Ordinaria": 222
+   },
+   "por_provincia": {
+    "02": 12,
+    "13": 43,
+    "16": 12,
+    "19": 70,
+    "45": 205
+   },
+   "por_via": null,
+   "orden_maximo": 3474,
+   "bolsa_reordenada_26_27": true
+  },
+  {
+   "cuerpo": "0597",
+   "especialidad_cod": "597033",
+   "especialidad": "Idioma Extranjero: Francés",
+   "vacantes": 12,
+   "vacantes_itinerantes": 0,
+   "adjudicados": 8,
+   "por_caracter": {
+    "Ordinaria": 8
+   },
+   "por_provincia": {
+    "02": 1,
+    "13": 5,
+    "16": 1,
+    "19": 4,
+    "45": 1
+   },
+   "por_via": null,
+   "orden_maximo": 2436,
+   "bolsa_reordenada_26_27": true
+  },
+  {
+   "cuerpo": "0597",
+   "especialidad_cod": "597034",
+   "especialidad": "Educación Física",
+   "vacantes": 184,
+   "vacantes_itinerantes": 23,
+   "adjudicados": 160,
+   "por_caracter": {
+    "Itinerante": 19,
+    "Ordinaria": 141
+   },
+   "por_provincia": {
+    "02": 7,
+    "13": 26,
+    "16": 7,
+    "19": 46,
+    "45": 121
+   },
+   "por_via": null,
+   "orden_maximo": 4365,
+   "bolsa_reordenada_26_27": true
+  },
+  {
+   "cuerpo": "0597",
+   "especialidad_cod": "597035",
+   "especialidad": "Música",
+   "vacantes": 100,
+   "vacantes_itinerantes": 40,
+   "adjudicados": 109,
+   "por_caracter": {
+    "Itinerante": 32,
+    "Ordinaria": 77
+   },
+   "por_provincia": {
+    "02": 15,
+    "13": 16,
+    "16": 6,
+    "19": 28,
+    "45": 75
+   },
+   "por_via": null,
+   "orden_maximo": 5754,
+   "bolsa_reordenada_26_27": true
+  },
+  {
+   "cuerpo": "0597",
+   "especialidad_cod": "597036",
+   "especialidad": "Educación Especial, Pedagogía Terapeutica",
+   "vacantes": 297,
+   "vacantes_itinerantes": 37,
+   "adjudicados": 282,
+   "por_caracter": {
+    "Itinerante": 26,
+    "Ordinaria": 256
+   },
+   "por_provincia": {
+    "02": 27,
+    "13": 54,
+    "16": 11,
+    "19": 46,
+    "45": 196
+   },
+   "por_via": null,
+   "orden_maximo": 5335,
+   "bolsa_reordenada_26_27": true
+  },
+  {
+   "cuerpo": "0597",
+   "especialidad_cod": "597037",
+   "especialidad": "Educación Especial, Audición y Lenguaje",
+   "vacantes": 128,
+   "vacantes_itinerantes": 66,
+   "adjudicados": 178,
+   "por_caracter": {
+    "Itinerante": 59,
+    "Ordinaria": 119
+   },
+   "por_provincia": {
+    "02": 20,
+    "13": 20,
+    "16": 12,
+    "19": 35,
+    "45": 107
+   },
+   "por_via": null,
+   "orden_maximo": 5532,
+   "bolsa_reordenada_26_27": true
+  },
+  {
+   "cuerpo": "0597",
+   "especialidad_cod": "597038",
+   "especialidad": "Educación Primaria",
+   "vacantes": 369,
+   "vacantes_itinerantes": 15,
+   "adjudicados": 204,
+   "por_caracter": {
+    "Itinerante": 13,
+    "Ordinaria": 191
+   },
+   "por_provincia": {
+    "02": 4,
+    "13": 34,
+    "16": 4,
+    "19": 88,
+    "45": 254
+   },
+   "por_via": null,
+   "orden_maximo": 5302,
+   "bolsa_reordenada_26_27": true
+  },
+  {
+   "cuerpo": "0597",
+   "especialidad_cod": "597060",
+   "especialidad": "Pedagogía Terapeutica - Ies",
+   "vacantes": 95,
+   "vacantes_itinerantes": 0,
+   "adjudicados": 95,
+   "por_caracter": {
+    "Ordinaria": 95
+   },
+   "por_provincia": {
+    "02": 8,
+    "13": 17,
+    "16": 9,
+    "19": 11,
+    "45": 50
+   },
+   "por_via": null,
+   "orden_maximo": 5530,
+   "bolsa_reordenada_26_27": true
+  },
+  {
+   "cuerpo": "0597",
+   "especialidad_cod": "597061",
+   "especialidad": "Audición y Lenguaje - Ies",
+   "vacantes": 13,
+   "vacantes_itinerantes": 3,
+   "adjudicados": 16,
+   "por_caracter": {
+    "Itinerante": 3,
+    "Ordinaria": 13
+   },
+   "por_provincia": {
+    "13": 3,
+    "16": 1,
+    "19": 1,
+    "45": 11
+   },
+   "por_via": null,
+   "orden_maximo": 4996,
+   "bolsa_reordenada_26_27": true
+  },
+  {
+   "cuerpo": "0597",
+   "especialidad_cod": "597071",
+   "especialidad": "Matemáticas y Ciencias de la Naturaleza",
+   "vacantes": 2,
+   "vacantes_itinerantes": 0,
+   "adjudicados": 2,
+   "por_caracter": {
+    "Ordinaria": 2
+   },
+   "por_provincia": {
+    "13": 2
+   },
+   "por_via": null,
+   "orden_maximo": 5,
+   "bolsa_reordenada_26_27": true
+  },
+  {
+   "cuerpo": "0598",
+   "especialidad_cod": "598001",
+   "especialidad": "Cocina y Pasteleria",
+   "vacantes": 36,
+   "vacantes_itinerantes": 2,
+   "adjudicados": 36,
+   "por_caracter": {
+    "Itinerante": 2,
+    "Ordinaria": 34
+   },
+   "por_provincia": {
+    "13": 5,
+    "16": 8,
+    "19": 14,
+    "45": 11
+   },
+   "por_via": null,
+   "orden_maximo": 61,
+   "bolsa_reordenada_26_27": false
+  },
+  {
+   "cuerpo": "0598",
+   "especialidad_cod": "598004",
+   "especialidad": "Mantenimiento de Vehiculos",
+   "vacantes": 52,
+   "vacantes_itinerantes": 0,
+   "adjudicados": 48,
+   "por_caracter": {
+    "Ordinaria": 48
+   },
+   "por_provincia": {
+    "02": 8,
+    "13": 10,
+    "16": 5,
+    "19": 12,
+    "45": 17
+   },
+   "por_via": null,
+   "orden_maximo": 61,
+   "bolsa_reordenada_26_27": false
+  },
+  {
+   "cuerpo": "0598",
+   "especialidad_cod": "598005",
+   "especialidad": "Mecanizado y Mantenimiento de Maquinas",
+   "vacantes": 25,
+   "vacantes_itinerantes": 0,
+   "adjudicados": 24,
+   "por_caracter": {
+    "Ordinaria": 24
+   },
+   "por_provincia": {
+    "02": 3,
+    "13": 5,
+    "16": 1,
+    "19": 5,
+    "45": 11
+   },
+   "por_via": null,
+   "orden_maximo": 33,
+   "bolsa_reordenada_26_27": false
+  },
+  {
+   "cuerpo": "0598",
+   "especialidad_cod": "598007",
+   "especialidad": "Peluqueria",
+   "vacantes": 30,
+   "vacantes_itinerantes": 0,
+   "adjudicados": 30,
+   "por_caracter": {
+    "Ordinaria": 30
+   },
+   "por_provincia": {
+    "02": 1,
+    "13": 9,
+    "16": 4,
+    "19": 5,
+    "45": 11
+   },
+   "por_via": null,
+   "orden_maximo": 41,
+   "bolsa_reordenada_26_27": false
+  }
+ ],
+ "totales": {
+  "vacantes": 8455,
+  "adjudicados": 7679,
+  "por_cuerpo": {
+   "0590": 5507,
+   "0591": 243,
+   "0592": 50,
+   "0593": 35,
+   "0594": 225,
+   "0595": 136,
+   "0596": 16,
+   "0597": 2098,
+   "0598": 145
+  }
+ }
+}

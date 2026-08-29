@@ -518,7 +518,7 @@ details.acordeon[open]>summary::before{transform:rotate(90deg)}
     <button id="vc-mapa" aria-pressed="false">🗺 Mapa</button>
   </div>
   <button id="btn-stats" class="oculto" aria-expanded="false" aria-controls="seccion-stats">🎯 ¿Tengo opciones?</button>
-  <button id="btn-planifica" class="oculto" aria-expanded="false" aria-controls="seccion-planifica">📊 Estadísticas curso 25/26</button>
+  <button id="btn-planifica" class="oculto" aria-expanded="false" aria-controls="seccion-planifica">📊 Estadísticas del curso</button>
   <div class="meta-derecha">
     Datos actualizados: <strong id="fecha-actualizado">—</strong><br>
     Incorporación entre <strong id="fecha-comienzo">—</strong>
@@ -621,7 +621,7 @@ details.acordeon[open]>summary::before{transform:rotate(90deg)}
 <section id="seccion-planifica" class="oculto popup-velo" role="dialog" aria-modal="true" aria-labelledby="titulo-plan">
   <div class="stats-caja">
     <div class="stats-cabecera">
-      <h2 id="titulo-plan">📊 Estadísticas curso 25/26</h2>
+      <h2 id="titulo-plan">📊 Estadísticas del curso</h2>
       <span class="sello-historico" id="plan-sello">HISTÓRICO</span>
       <button id="btn-cerrar-plan" aria-label="Cerrar estadísticas del curso">×</button>
     </div>
@@ -1782,6 +1782,22 @@ const CURSO_MINIMO_STATS = '2026-2027';
 const cursoDeFecha = f => { const a = +f.slice(0, 4); return +f.slice(5, 7) >= 8 ? `${a}-${a + 1}` : `${a - 1}-${a}`; };
 let STATS_EN_ESPERA = false;
 
+/* Rótulos de curso: SIEMPRE derivados del dato cargado, nunca escritos a mano.
+   Cuando entra un curso nuevo en historico/index.json, los textos del modelo lo
+   siguen solos; un literal «25/26» olvidado aquí mentiría durante todo un año. */
+const cursoCorto = c => {
+  const m = (c || '').match(/^\d{2}(\d{2})-\d{2}(\d{2})$/);
+  return m ? `${m[1]}/${m[2]}` : '';
+};
+// «2025-2026» → «26/27»: el curso siguiente al del dato que se muestra
+const cursoSiguienteCorto = c => {
+  const m = (c || '').match(/^\d{4}-(\d{4})$/);
+  return m ? `${m[1].slice(2)}/${String(+m[1] + 1).slice(2)}` : '';
+};
+// El curso del que sale el modelo es el del rollup anual cargado (PLAN)
+const cursoModelo = () => cursoCorto((typeof PLAN !== 'undefined' && PLAN) ? PLAN.curso : '');
+const delCursoModelo = () => { const c = cursoModelo(); return c ? 'curso ' + c : 'curso pasado'; };
+
 function initStats() {
   if (!STATS || !STATS.por_especialidad.length) return; // sin bloque: la app funciona igual
   $('#btn-stats').classList.remove('oculto');
@@ -1883,7 +1899,7 @@ function renderStatsDetalle() {
 
   partes.push(`<div class="sellos-modelo">
     <span class="sello-historico">MODELO DE PROBABILIDAD</span>
-    <span class="sello-historico">${STATS_EN_ESPERA ? 'REFERENCIA: CURSO 25/26' : 'SEMANA ' + fmtFecha(fechaSemana)}</span>
+    <span class="sello-historico">${STATS_EN_ESPERA ? 'REFERENCIA: ' + delCursoModelo().toUpperCase() : 'SEMANA ' + fmtFecha(fechaSemana)}</span>
   </div>`);
 
   // ---- tu perfil ----
@@ -1914,10 +1930,10 @@ function renderStatsDetalle() {
     partes.push(`<div class="op-tarjeta"><p class="nota-honesta" style="margin:0 0 10px">
       <strong>Maestros tiene concurso-oposición en verano de 2026:</strong> la bolsa se reordena por
       completo y ninguna posición del curso pasado sirve para estimar probabilidades. El modelo se
-      activará con las primeras adjudicaciones del curso 26/27.</p>
+      activará con las primeras adjudicaciones del curso ${cursoCorto(CURSO_MINIMO_STATS)}.</p>
       <div class="op-tiles">
         <div><div class="v">${e.plazas}</div><div class="l">plazas esta semana</div></div>
-        ${pe ? `<div><div class="v">${fmtNum(pe.plazas_total)}</div><div class="l">plazas curso 25/26</div></div>` : ''}
+        ${pe ? `<div><div class="v">${fmtNum(pe.plazas_total)}</div><div class="l">plazas ${delCursoModelo()}</div></div>` : ''}
         ${pe && pe.por_mes && Object.keys(pe.por_mes).length ? `<div><div class="v">${MES_NOMBRE[Object.entries(pe.por_mes).sort((x, y) => y[1] - x[1])[0][0]].slice(0, 3)}</div><div class="l">mes con más plazas</div></div>` : ''}
       </div></div>`);
   } else if (guardado.pos && b) {
@@ -1936,13 +1952,13 @@ function renderStatsDetalle() {
       <div class="op-fila">
         <div class="op-anillo" style="background:conic-gradient(var(--blue-logo) 0 ${pct}%,var(--blue-light) ${pct}% 100%)" role="img" aria-label="Probabilidad ${nivel}"><div>${nivel}</div></div>
         <div class="op-texto">
-          <div class="op-titular">Probabilidad ${nivel.toLowerCase()}, según el curso 25/26</div>
+          <div class="op-titular">Probabilidad ${nivel.toLowerCase()}, según el ${delCursoModelo()}</div>
           <div class="comp-sub">${frase}</div>
         </div>
       </div>
       <div class="op-tiles">
         <div><div class="v">${e.plazas}</div><div class="l">plazas esta semana</div></div>
-        <div><div class="v">nº ${fmtNum(b.max)}</div><div class="l">llegó hasta (25/26)</div></div>
+        <div><div class="v">nº ${fmtNum(b.max)}</div><div class="l">llegó hasta (${cursoModelo() || 'curso pasado'})</div></div>
         <div><div class="v">${margen >= 0 ? '+' : '−'}${fmtNum(Math.abs(margen))}</div><div class="l">margen sobre tu nº</div></div>
       </div>
       <div class="nota-corta">Es un modelo de probabilidad sobre el curso pasado: una previsión orientativa, nunca una garantía.</div>
@@ -1951,7 +1967,7 @@ function renderStatsDetalle() {
     partes.push(`<div class="op-tarjeta op-modelo"><div class="op-fila">
       <div class="op-anillo" style="background:conic-gradient(var(--gray-border) 0 100%)"><div>?</div></div>
       <div class="op-texto"><div class="op-titular">Dinos tu posición en bolsa</div>
-        <div class="comp-sub">Comparamos tu número con hasta dónde llegó la bolsa el curso 25/26 y te damos una probabilidad orientativa.</div></div>
+        <div class="comp-sub">Comparamos tu número con hasta dónde llegó la bolsa el ${delCursoModelo()} y te damos una probabilidad orientativa.</div></div>
     </div></div>`);
   } else {
     partes.push(`<div class="op-tarjeta"><p class="comp-sub" style="margin:0">Sin adjudicaciones de bolsa ordinaria registradas el curso pasado para ${esc(e.especialidad)}: no hay base para estimar probabilidades.</p></div>`);
@@ -2339,7 +2355,12 @@ function renderPlanPrevia(e) {
     return;
   }
   const fechas = PREVIA.fechas || [];
-  const fecha = e.cuerpo === '0597' ? fechas[0] : fechas[fechas.length - 1];
+  // La fecha viene marcada por cuerpo desde generar.py. Maestros y EEMM se
+  // publican en días distintos y el orden entre ellos cambia de un año a otro,
+  // así que deducirla por posición daba la fecha cruzada. El respaldo por
+  // indice solo cubre las previas antiguas, anteriores a fechas_por_cuerpo.
+  const fecha = (PREVIA.fechas_por_cuerpo || {})[e.cuerpo]
+    || (e.cuerpo === '0597' ? fechas[0] : fechas[fechas.length - 1]);
   const partes = [];
   partes.push(`<p class="comp-sub">Reparto de <strong>vacantes de curso completo</strong>, previo al inicio
     del curso${fecha ? `, adjudicado el <strong>${fmtFecha(fecha)}</strong>` : ''}.
@@ -2367,9 +2388,17 @@ function renderPlanPrevia(e) {
       referencia</strong>: Maestros tiene concurso-oposición en verano de 2026 y la bolsa se reordena por completo.</p>`);
   } else if (pv.orden_maximo) {
     partes.push(`<p class="nota-corta">Detalle secundario: el orden llegó como mucho al nº ${fmtNum(pv.orden_maximo)}.
-      Referencia orientativa del curso pasado, nunca una garantía.</p>`);
+      Referencia orientativa de esa adjudicación, nunca una garantía.</p>`);
   }
-  partes.push('<p class="nota-corta">Datos del curso pasado: orientan para planificar, no predicen el 26/27.</p>');
+  // La previa puede ser la del curso que ARRANCA (dato vivo) o la de un curso ya
+  // cerrado (referencia histórica). El texto no puede dar por hecho ninguna de las
+  // dos: con la de agosto de 2026 cargada, «datos del curso pasado» era falso.
+  const previaDelCursoNuevo = !!(PLAN && PREVIA.curso && PREVIA.curso > PLAN.curso);
+  partes.push(previaDelCursoNuevo
+    ? `<p class="nota-corta">Así arrancó el curso ${cursoCorto(PREVIA.curso)}: son las vacantes repartidas
+       antes de empezar, no una previsión de las sustituciones que saldrán cada semana.</p>`
+    : `<p class="nota-corta">Datos del curso pasado: orientan para planificar, no predicen el
+       ${cursoSiguienteCorto(PREVIA.curso) || 'curso siguiente'}.</p>`);
   caja.innerHTML = partes.join('');
 }
 function renderPlanBolsa(e) {
