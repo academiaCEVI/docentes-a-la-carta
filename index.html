@@ -482,6 +482,10 @@ details.acordeon[open]>summary::before{transform:rotate(90deg)}
   header.app .sub{margin-top:4px}
   /* las pestañas inferiores ya dan acceso a ¿Opciones? y Datos */
   #btn-stats,#btn-planifica{display:none}
+  /* La raya del hero caía justo entre la fila de Cuerpo/Especialidad y la de
+     Cerca de mí, partiendo en dos lo que el usuario lee como un solo bloque de
+     filtros. No separaba nada: el hero tiene el mismo fondo que el body. */
+  #hero-cevi{border-bottom:none}
   #segmentador{gap:8px;margin:10px 16px 0;padding:0}
   #segmentador .multisel{flex:1;min-width:0}
   #segmentador .multisel>summary{display:block;text-align:center;background:#fff;border:1px solid var(--gray-border);color:var(--text-main);border-radius:999px;padding:9px 6px;font-size:.78rem;font-weight:700;overflow:hidden;text-overflow:ellipsis}
