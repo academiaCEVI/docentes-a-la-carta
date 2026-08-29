@@ -14,7 +14,7 @@
  */
 'use strict';
 
-const VERSION = 'docentes-v31';
+const VERSION = 'docentes-v33';
 const CACHE_SHELL = 'shell-' + VERSION;
 const CACHE_DATOS = 'datos-' + VERSION;
 const PRECACHE = [
@@ -50,7 +50,8 @@ self.addEventListener('activate', e => {
 });
 
 const esDato = url => url.origin === self.location.origin &&
-  (/\/plazas\.json$/.test(url.pathname) || /\/historico\//.test(url.pathname));
+  (/\/plazas\.json$/.test(url.pathname) || /\/historico\//.test(url.pathname) ||
+   /\/proxima-adjudicacion\.json$/.test(url.pathname));
 
 async function redPrimero(req) {
   try {

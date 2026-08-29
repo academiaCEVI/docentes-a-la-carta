@@ -184,6 +184,15 @@ body.mapa-max #map{border-radius:0;border:none}
 .btn-estrella[aria-pressed="true"] .est{color:var(--yellow)}
 .sin-mapa{font-size:.72rem;color:var(--rojo)}
 
+/* ---------- aviso de entre cursos (sin plazas del curso nuevo todavía) ---------- */
+#aviso-entrecursos{background:#fff;border:1px solid var(--blue-light);border-left:4px solid var(--blue-logo);border-radius:var(--radio);padding:16px 18px;margin-bottom:14px;box-shadow:var(--sombra)}
+#aviso-entrecursos h2{font-size:1.02rem;margin:0 0 6px;color:var(--blue-logo)}
+#aviso-entrecursos p{margin:0 0 8px;font-size:.9rem;line-height:1.45}
+#aviso-entrecursos .ae-fecha{font-weight:700;color:var(--blue-logo);white-space:nowrap}
+#aviso-entrecursos .ae-pie{font-size:.8rem;color:var(--gray-text);margin:0}
+#aviso-entrecursos button{margin-top:4px;border:none;background:var(--blue-logo);color:#fff;font-weight:700;border-radius:999px;padding:9px 18px;font-size:.86rem;cursor:pointer}
+#aviso-entrecursos button:hover{background:var(--blue-dark)}
+
 /* ---------- estado vacío / carga ---------- */
 .estado-vacio{background:#fff;border:1px dashed var(--gray-border);border-radius:var(--radius-lg);padding:22px;text-align:center;color:var(--text-soft);margin-top:14px}
 .estado-vacio strong{color:var(--blue-dark)}
@@ -328,8 +337,8 @@ footer.app .legal{line-height:1.6}
 .mes-barras .mes .barra{width:100%;max-width:38px;background:var(--blue-mid);border-radius:5px 5px 0 0;min-height:2px}
 .mes-barras .mes.pico .barra{background:var(--blue-dark)}
 /* bloque de la adjudicación previa: sus fichas sobre fondo claro */
-#plan-previa .op-tiles{margin:10px 0}
-#plan-previa .op-tiles>div{background:var(--blue-light)}
+#agosto-detalle .op-tiles{margin:10px 0}
+#agosto-detalle .op-tiles>div{background:var(--blue-light)}
 .mes-barras .mes .etiqueta{font-size:.66rem;color:var(--text-soft);text-transform:uppercase}
 .plan-geo-mapa{max-width:480px}
 .plan-geo-mapa path{stroke:#fff;stroke-width:1.5}
@@ -349,6 +358,14 @@ footer.app .legal{line-height:1.6}
 .stats-cabecera h2{flex:1;color:var(--blue-dark);font-size:1.05rem;font-weight:800}
 #btn-cerrar-stats,#btn-cerrar-plan{border:none;background:none;font-size:1.5rem;line-height:1;color:var(--text-soft);cursor:pointer}
 .nota-honesta{background:var(--blue-light);border-left:4px solid var(--blue-logo);border-radius:0 var(--radius) var(--radius) 0;padding:9px 12px;font-size:.8rem;color:var(--blue-dark);margin:10px 0}
+#datos-vistas{display:flex;gap:6px;background:var(--blue-light);padding:4px;border-radius:999px;margin:10px 0 14px}
+#datos-vistas button{flex:1 1 0;min-width:0;border:none;background:transparent;color:var(--blue-logo);font-weight:700;font-size:.85rem;border-radius:999px;padding:9px 10px;cursor:pointer;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+@media(max-width:420px){#datos-vistas button{font-size:.78rem;padding:9px 6px}}
+#datos-vistas button[aria-selected="true"]{background:#fff;box-shadow:0 2px 6px rgba(9,66,109,.14)}
+#datos-vistas button.oculto{display:none}
+#agosto-resumen{margin-bottom:12px}
+#agosto-esp,#plan-curso,#agosto-anyo{border:1px solid var(--gray-border);border-radius:var(--radius);padding:8px 10px;font-weight:600;color:var(--text-main);background:#fff}
+.aviso-apoyo{background:var(--blue-light);border-radius:var(--radio);padding:10px 12px;font-size:.84rem;margin:0 0 10px}
 .lbl-esp{font-size:.78rem;font-weight:700;color:var(--text-soft);display:flex;flex-direction:column;gap:4px;max-width:420px}
 #btn-ir-plan{border:1.5px solid var(--blue-logo);background:#fff;color:var(--blue-logo);font-weight:700;border-radius:var(--radius);padding:9px 14px;font-size:.86rem;margin:6px 0 4px;cursor:pointer}
 #btn-ir-plan:hover{background:var(--blue-light)}
@@ -518,7 +535,7 @@ details.acordeon[open]>summary::before{transform:rotate(90deg)}
     <button id="vc-mapa" aria-pressed="false">🗺 Mapa</button>
   </div>
   <button id="btn-stats" class="oculto" aria-expanded="false" aria-controls="seccion-stats">🎯 ¿Tengo opciones?</button>
-  <button id="btn-planifica" class="oculto" aria-expanded="false" aria-controls="seccion-planifica">📊 Estadísticas del curso</button>
+  <button id="btn-planifica" class="oculto" aria-expanded="false" aria-controls="seccion-planifica">📊 Datos</button>
   <div class="meta-derecha">
     Datos actualizados: <strong id="fecha-actualizado">—</strong><br>
     Incorporación entre <strong id="fecha-comienzo">—</strong>
@@ -621,19 +638,41 @@ details.acordeon[open]>summary::before{transform:rotate(90deg)}
 <section id="seccion-planifica" class="oculto popup-velo" role="dialog" aria-modal="true" aria-labelledby="titulo-plan">
   <div class="stats-caja">
     <div class="stats-cabecera">
-      <h2 id="titulo-plan">📊 Estadísticas del curso</h2>
+      <h2 id="titulo-plan">📊 Datos</h2>
       <span class="sello-historico" id="plan-sello">HISTÓRICO</span>
-      <button id="btn-cerrar-plan" aria-label="Cerrar estadísticas del curso">×</button>
+      <button id="btn-cerrar-plan" aria-label="Cerrar los datos">×</button>
     </div>
+    <!-- Dos familias de datos que NO deben mezclarse: las vacantes de curso
+         completo que se reparten en agosto y las sustituciones semanales. Antes
+         convivían en la misma vista y el titular nombraba un curso mientras el
+         contenido tenía dos. -->
+    <div id="datos-vistas" role="tablist" aria-label="Qué datos quieres ver">
+      <button id="v-agosto" type="button" role="tab" aria-selected="false" aria-controls="vista-agosto" class="oculto">Vacantes de agosto</button>
+      <button id="v-curso" type="button" role="tab" aria-selected="true" aria-controls="vista-curso" class="oculto">Sustituciones por curso</button>
+    </div>
+
+    <div id="vista-agosto" class="oculto" role="tabpanel" aria-labelledby="v-agosto">
+      <p class="nota-honesta">Vacantes de <strong>curso completo</strong> repartidas antes de empezar.
+        <strong>No son sustituciones semanales</strong>: se adjudican una vez, en agosto.</p>
+      <label class="lbl-esp">Adjudicación
+        <select id="agosto-anyo" aria-label="Elegir el año de la adjudicación de agosto"></select>
+      </label>
+      <div id="agosto-resumen"></div>
+      <label class="lbl-esp">Especialidad
+        <select id="agosto-esp" aria-label="Elegir especialidad de la adjudicación de agosto"></select>
+      </label>
+      <div id="agosto-detalle"></div>
+    </div>
+
+    <div id="vista-curso" role="tabpanel" aria-labelledby="v-curso">
     <p class="nota-honesta" id="plan-nota">Datos del curso pasado completo. Son <strong>orientativos para planificar</strong>, no una predicción del curso que viene.</p>
+    <label class="lbl-esp">Curso
+      <select id="plan-curso" aria-label="Elegir curso"></select>
+    </label>
     <label class="lbl-esp">Especialidad
       <select id="plan-esp" aria-label="Elegir especialidad para ver su curso"></select>
     </label>
     <div id="plan-detalle"></div>
-    <details class="acordeon oculto" id="ac-previa" open>
-      <summary>Cómo arrancó el curso: la adjudicación de agosto</summary>
-      <div class="acordeon-cuerpo" id="plan-previa"></div>
-    </details>
     <details class="acordeon">
       <summary>Hasta dónde llegó la bolsa</summary>
       <div class="acordeon-cuerpo" id="plan-bolsa"></div>
@@ -642,11 +681,16 @@ details.acordeon[open]>summary::before{transform:rotate(90deg)}
       <summary>Dónde salieron las plazas (geografía)</summary>
       <div class="acordeon-cuerpo" id="plan-geo"></div>
     </details>
+    </div>
   </div>
 </section>
 
 <main id="principal">
   <section id="col-lista" aria-label="Listado de plazas">
+    <!-- Entre cursos: plazas.json trae todavía una semana del curso anterior.
+         Sin este aviso la app presentaba esas plazas como si fueran de esta
+         semana, que es justo el fallo que el proyecto no se permite. -->
+    <div id="aviso-entrecursos" class="oculto" role="status"></div>
     <div id="tarjeta-competencia" class="oculto"></div>
     <div id="cabecera-lista">
       <span id="contador" aria-live="polite">Cargando…</span>
@@ -1401,6 +1445,63 @@ $('#btn-cta-panel').onclick = () => {
   $('#acciones-orden').scrollIntoView({ block: 'nearest', behavior: 'smooth' });
 };
 
+/* ================= ENTRE CURSOS =================
+   Mientras plazas.json siga trayendo una semana de un curso ya cerrado, la app
+   NO puede presentarla como la oferta viva. Se detecta solo comparando el curso
+   del dato con el curso de hoy, así que el aviso se apaga sin tocar nada en
+   cuanto entre la primera semana del curso nuevo. La fecha prevista vive en
+   proxima-adjudicacion.json (editable a mano) y es opcional: si falta o ya ha
+   pasado, el aviso se muestra igual, sin prometer una fecha. */
+let PROXIMA = null;
+
+function entreCursos() {
+  const fechaSemana = ((DATA && (DATA.cierre_plazo || DATA.actualizado)) || '').slice(0, 10);
+  if (!fechaSemana) return false;
+  const hoy = new Date();
+  const hoyISO = `${hoy.getFullYear()}-${String(hoy.getMonth() + 1).padStart(2, '0')}-01`;
+  return cursoDeFecha(fechaSemana) < cursoDeFecha(hoyISO);
+}
+
+// «2026-09-04» → «viernes 4 de septiembre», o null si ya pasó o no es válida
+function fechaPrevistaLarga() {
+  if (!PROXIMA || !PROXIMA.fecha) return null;
+  const d = new Date(PROXIMA.fecha + 'T00:00:00');
+  if (isNaN(d)) return null;
+  const hoy = new Date(); hoy.setHours(0, 0, 0, 0);
+  if (d < hoy) return null; // no anunciamos una fecha que ya se ha quedado atrás
+  // es-ES devuelve «viernes, 4 de septiembre»; la coma estorba dentro de la frase
+  return d.toLocaleDateString('es-ES', { weekday: 'long', day: 'numeric', month: 'long' })
+    .replace(/^(\S+),/, '$1');
+}
+
+function renderAvisoEntreCursos() {
+  const caja = $('#aviso-entrecursos');
+  if (!caja) return;
+  if (!entreCursos()) { caja.classList.add('oculto'); return; }
+  caja.classList.remove('oculto');
+  const cursoNuevo = cursoCorto((PROXIMA && PROXIMA.curso) || '')
+    || cursoSiguienteCorto(cursoDeFecha(((DATA && DATA.cierre_plazo) || '').slice(0, 10)));
+  const larga = fechaPrevistaLarga();
+  const semana = ((DATA && DATA.cierre_plazo) || '').slice(0, 10);
+  const partes = [];
+  partes.push(`<h2>Todavía no hay plazas${cursoNuevo ? ` del curso ${cursoNuevo}` : ' del curso nuevo'}</h2>`);
+  partes.push(`<p>${larga
+    ? `La primera adjudicación está prevista para el <span class="ae-fecha">${esc(larga)}</span>.`
+    : 'Aún no se ha publicado la primera adjudicación del curso.'}
+    Lo que ves debajo es la <strong>última semana del curso pasado</strong>${semana ? ` (${fmtFecha(semana)})` : ''},
+    que dejamos como referencia: <strong>no puedes pedir esas plazas</strong>.</p>`);
+  // El enlace solo aparece si la previa está cargada: no prometemos lo que no hay
+  if (PREVIA && PREVIA.totales) {
+    partes.push(`<p>Lo más reciente que sí puedes consultar es la <strong>adjudicación previa de agosto</strong>:
+      ${fmtNum(PREVIA.totales.vacantes)} vacantes de curso completo repartidas antes de empezar.</p>
+      <button id="btn-ir-previa" type="button">Ver la adjudicación de agosto →</button>`);
+  }
+  if (larga) partes.push('<p class="ae-pie">Es la fecha prevista; la confirma la JCCM al publicar.</p>');
+  caja.innerHTML = partes.join('');
+  const ir = $('#btn-ir-previa');
+  if (ir) ir.onclick = () => abrirDatos('agosto');
+}
+
 /* ================= CUENTA ATRÁS ================= */
 function initCuentaAtras() {
   const cierre = new Date(DATA.cierre_plazo);
@@ -1410,16 +1511,37 @@ function initCuentaAtras() {
     const ms = cierre - new Date();
     if (ms <= 0) {
       barra.classList.add('cerrado'); barra.classList.remove('urgente');
-      texto.textContent = 'Plazo cerrado. La próxima oferta se publica el jueves.';
+      // Entre cursos no hay «próximo jueves»: prometerlo era falso durante
+      // todo el verano. Con curso en marcha, el mensaje semanal de siempre.
+      const entre = entreCursos();
+      if (entre) {
+        const larga = fechaPrevistaLarga();
+        texto.textContent = larga
+          ? `Sin plazas del curso nuevo todavía. Primera adjudicación prevista: ${larga}.`
+          : 'Sin plazas del curso nuevo todavía.';
+      } else {
+        texto.textContent = 'Plazo cerrado. La próxima oferta se publica el jueves.';
+      }
       badge.textContent = '⏸';
-      if (pill) { pill.textContent = '⏱ cerrado'; pill.classList.add('cerrado'); }
+      // En móvil la barra se oculta y la píldora es el ÚNICO aviso de cabecera:
+      // decir «cerrado» entre cursos insinúa un plazo que reabre el jueves.
+      if (pill) {
+        pill.textContent = entre ? '⏸ sin plazas' : '⏱ cerrado';
+        pill.setAttribute('aria-label', entre
+          ? 'Todavía no hay plazas del curso nuevo'
+          : 'El plazo de esta semana está cerrado');
+        pill.classList.add('cerrado');
+      }
       return;
     }
     const h = Math.floor(ms / 3.6e6), m = Math.floor(ms % 3.6e6 / 6e4);
     const dia = cierre.toLocaleDateString('es-ES', { weekday: 'long' });
     texto.textContent = `Queda${h * 60 + m === 1 ? '' : 'n'} para el cierre de plazo (${dia} ${cierre.getHours()}:${String(cierre.getMinutes()).padStart(2, '0')}):`;
     badge.textContent = h >= 48 ? `${Math.floor(h / 24)} d ${h % 24} h` : `${h} h ${String(m).padStart(2, '0')} min`;
-    if (pill) pill.textContent = '⏱ ' + badge.textContent;
+    if (pill) {
+      pill.textContent = '⏱ ' + badge.textContent;
+      pill.setAttribute('aria-label', 'Tiempo hasta el cierre de plazo');
+    }
     barra.classList.toggle('urgente', ms < 3 * 3.6e6);
   }
   tic();
@@ -1675,7 +1797,7 @@ function cambiarTab(cual) {
 $('#tab-lista').onclick = () => cambiarTab('lista');
 $('#tab-pet').onclick = () => cambiarTab('pet');
 $('#tab-opciones').onclick = () => { cambiarTab('lista'); abrirStats(); marcarTabs('opciones'); };
-$('#tab-datos').onclick = () => { cambiarTab('lista'); abrirPlanifica(); marcarTabs('datos'); };
+$('#tab-datos').onclick = () => { cambiarTab('lista'); abrirDatos(); marcarTabs('datos'); };
 $('#vc-lista').onclick = () => cambiarTab('lista');
 $('#vc-mapa').onclick = () => cambiarTab('mapa');
 $('#btn-mapa-icono').onclick = () => cambiarTab('mapa');
@@ -1795,8 +1917,10 @@ const cursoSiguienteCorto = c => {
   return m ? `${m[1].slice(2)}/${String(+m[1] + 1).slice(2)}` : '';
 };
 // El curso del que sale el modelo es el del rollup anual cargado (PLAN)
-const cursoModelo = () => cursoCorto((typeof PLAN !== 'undefined' && PLAN) ? PLAN.curso : '');
+const cursoModelo = () => cursoCorto((typeof PLAN_MODELO !== 'undefined' && PLAN_MODELO) ? PLAN_MODELO.curso : '');
 const delCursoModelo = () => { const c = cursoModelo(); return c ? 'curso ' + c : 'curso pasado'; };
+// «2025-2026» → «2025/26», para rótulos largos
+const cursoBonito = c => (c || '').replace(/^(\d{4})-\d{2}(\d{2})$/, '$1/$2');
 
 function initStats() {
   if (!STATS || !STATS.por_especialidad.length) return; // sin bloque: la app funciona igual
@@ -1847,7 +1971,9 @@ function initStats() {
       PREVIAS_LISTA = Array.isArray(indice) ? [] : (indice.previas || []);
       pintarNotaStats();
       renderTendencias();
-      initPlanifica();
+      initVistasDatos();
+      initPlanifica();   // sustituciones por curso
+      initAgosto();      // vacantes de agosto (independiente del rollup)
     });
   pintarNotaStats();
   renderStatsDetalle();
@@ -1891,7 +2017,9 @@ function renderStatsDetalle() {
   const caja = $('#stats-detalle');
   if (!e) { caja.innerHTML = ''; return; }
   const fechaSemana = ((DATA && DATA.cierre_plazo) || '').slice(0, 10);
-  const pe = (typeof PLAN !== 'undefined' && PLAN) ? entradaPlan(e.cuerpo + '|' + e.especialidad) : null;
+  const pm = (typeof PLAN_MODELO !== 'undefined') ? PLAN_MODELO : null;
+  const pe = pm ? (pm.por_especialidad.find(x => claveDe(x) === e.cuerpo + '|' + e.especialidad)
+                   || pm.por_especialidad.find(x => x.especialidad === e.especialidad)) : null;
   const guardado = JSON.parse(localStorage.getItem('cevi_bolsa') || '{}');
   const b = pe && pe.bolsa_ordinaria;
   const reordenada = pe ? pe.bolsa_reordenada_26_27 && STATS_EN_ESPERA : (e.cuerpo === '0597' && STATS_EN_ESPERA);
@@ -2148,26 +2276,18 @@ function renderTarjetaCompetencia() {
    bolsa. HISTÓRICO ≠ semana en vivo: sello visible y nota permanente.
    Regla de oro: si el cuerpo tiene oposición (bolsa_reordenada), sus
    posiciones de bolsa NO se muestran como referencia usable. */
-let CURSOS_HISTORICO = [], PLAN = null, PLAN_DUP = new Set(), PREVIA = null, PREVIAS_LISTA = [];
+/* PLAN es el curso que se está MIRANDO en la pestaña de Datos; PLAN_MODELO es
+   siempre el último cerrado, del que bebe «¿Tengo opciones?». Hoy son el mismo
+   objeto, pero en cuanto haya más de un curso el selector de Datos no debe
+   cambiar el modelo de probabilidad sin avisar. */
+let CURSOS_HISTORICO = [], PLAN = null, PLAN_MODELO = null, PLAN_DUP = new Set(), PREVIA = null, PREVIAS_LISTA = [];
+let PREVIA_SEL = null;                 // la previa que se mira en la vista de agosto
+const PREVIAS_CACHE = new Map();       // «2026-08» → json ya descargado
 
-/* La previa de agosto nombra las especialidades a su manera («IDIOMA
-   EXTRANJERO: INGLES» vs «Lengua Extranjera: Inglés» semanal): se casan por
-   nombre normalizado, con igualdad exacta primero y contención después. */
-function normEsp(s) {
-  return s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '')
-    .replace(/^educacion especial,\s*/, '')
-    .replace(/^(idioma|lengua) extranjer[oa]:\s*/, '')
-    .replace(/\s*-\s*ies$/, '')
-    .trim();
-}
-function entradaPrevia(e) {
-  if (!PREVIA || !e) return null;
-  const objetivo = normEsp(e.especialidad);
-  const mismas = PREVIA.por_especialidad.filter(p => p.cuerpo === e.cuerpo);
-  return mismas.find(p => normEsp(p.especialidad) === objetivo)
-    || mismas.find(p => { const n = normEsp(p.especialidad); return n.includes(objetivo) || objetivo.includes(n); })
-    || null;
-}
+/* La vista de agosto lista las especialidades de la propia previa: ya no se
+   emparejan por nombre con el rollup semanal. Aquel emparejamiento difuso era
+   frágil y dejaba fuera lo que no existiera como especialidad semanal, como
+   los apoyos. */
 const MESES_CURSO = [['09', 'sep'], ['10', 'oct'], ['11', 'nov'], ['12', 'dic'], ['01', 'ene'],
                      ['02', 'feb'], ['03', 'mar'], ['04', 'abr'], ['05', 'may'], ['06', 'jun']];
 const MES_NOMBRE = { '09': 'septiembre', '10': 'octubre', '11': 'noviembre', '12': 'diciembre',
@@ -2183,23 +2303,23 @@ function entradaPlan(clave) {
     || PLAN.por_especialidad.find(e => e.especialidad === clave);
 }
 
-function initPlanifica() {
-  if (!CURSOS_HISTORICO.length || PLAN) return;
-  const curso = CURSOS_HISTORICO[CURSOS_HISTORICO.length - 1].curso;
+function initPlanifica(cursoPedido) {
+  if (!CURSOS_HISTORICO.length) return;
+  const curso = cursoPedido || CURSOS_HISTORICO[CURSOS_HISTORICO.length - 1].curso;
+  if (PLAN && PLAN.curso === curso) return;
   fetch(`historico/curso-${curso}.json`, { cache: 'no-store' })
     .then(r => r.ok ? r.json() : null)
     .catch(() => null)
     .then(datos => {
       if (!datos || !datos.por_especialidad || !datos.por_especialidad.length) return;
       PLAN = datos;
+      // el último curso cerrado alimenta «¿Tengo opciones?» pase lo que pase aquí
+      if (!PLAN_MODELO || PLAN_MODELO.curso <= datos.curso) PLAN_MODELO = datos;
       const vistos = new Map();
       for (const e of PLAN.por_especialidad) vistos.set(e.especialidad, (vistos.get(e.especialidad) || 0) + 1);
       PLAN_DUP = new Set([...vistos].filter(([, n]) => n > 1).map(([n]) => n));
       const bonito = curso.replace(/^(\d{4})-\d{2}(\d{2})$/, '$1/$2');
       const corto = curso.replace(/^\d{2}(\d{2})-\d{2}(\d{2})$/, '$1/$2');
-      $('#plan-sello').textContent = 'CURSO ' + bonito;
-      $('#btn-planifica').textContent = '📊 Estadísticas curso ' + corto;
-      $('#titulo-plan').textContent = '📊 Estadísticas curso ' + corto;
       $('#plan-nota').innerHTML = `Datos del curso <strong>${esc(bonito)}</strong> completo (${PLAN.semanas} semanas, del ${fmtFecha(PLAN.desde)} al ${fmtFecha(PLAN.hasta)}). Son <strong>orientativos para planificar</strong>, no una predicción del curso siguiente.`;
       $('#plan-esp').innerHTML = [...PLAN.por_especialidad]
         .sort((a, b) => a.especialidad.localeCompare(b.especialidad, 'es'))
@@ -2215,24 +2335,16 @@ function initPlanifica() {
         localStorage.setItem('cevi_plan_esp', $('#plan-esp').value);
         renderPlanDetalle();
       };
-      $('#btn-planifica').classList.remove('oculto');
-      $('#tab-datos').classList.remove('oculto');
-      $('#btn-planifica').onclick = abrirPlanifica;
-      $('#btn-cerrar-plan').onclick = cerrarPlanifica;
-      $('#seccion-planifica').addEventListener('click', e => { if (e.target === $('#seccion-planifica')) cerrarPlanifica(); });
-      document.addEventListener('keydown', e => {
-        if (e.key === 'Escape' && !$('#seccion-planifica').classList.contains('oculto')) cerrarPlanifica();
-      });
+      $('#v-curso').classList.remove('oculto');
+      ajustarVistaDatos();
+      initSelectorCurso();
       renderPlanDetalle();
       renderStatsDetalle(); // el modelo de ¿Tengo opciones? bebe del rollup recién cargado
-      // la adjudicación previa de agosto (vacantes de curso completo), si existe
-      if (PREVIAS_LISTA.length) {
-        fetch(`historico/previa-${PREVIAS_LISTA[PREVIAS_LISTA.length - 1]}.json`, { cache: 'no-store' })
-          .then(r => r.ok ? r.json() : null)
-          .catch(() => null)
-          .then(p => { if (p) { PREVIA = p; renderPlanDetalle(); } });
-      }
     });
+}
+function abrirDatos(vista) {
+  if (vista) mostrarVistaDatos(vista);
+  abrirPlanifica();
 }
 function abrirPlanifica() {
   $('#seccion-planifica').classList.remove('oculto');
@@ -2280,7 +2392,6 @@ function renderPlanDetalle() {
     ${pocas ? `<div class="calc"><h3>Pocas plazas al año: que no se te escape ninguna</h3>
       <p class="comp-sub" style="margin-bottom:8px">Esta especialidad sacó solo ${e.plazas_total} plaza${e.plazas_total === 1 ? '' : 's'} en todo el curso. Te avisamos cuando salga alguna cerca de ti.</p>
       ${formAvisosHTML({ esp: e.especialidad })}</div>` : ''}`;
-  renderPlanPrevia(e);
   renderPlanGeo(e);
   renderPlanBolsa(e);
 }
@@ -2339,68 +2450,6 @@ function renderPlanGeo(e) {
     : svg + `<p class="comp-sub">Plazas de ${esc(e.especialidad)} por provincia en todo el curso.</p>`;
 }
 
-/* «Cómo arrancó el curso»: la adjudicación previa de agosto en su BLOQUE
-   propio (regla del brief v8: jamás mezclada con lo semanal). Volúmenes al
-   frente; la vía como secundario etiquetado; el Orden, muy matizado — y en
-   Maestros oculto como referencia, con el aviso de la reordenación. */
-function renderPlanPrevia(e) {
-  const caja = $('#plan-previa');
-  if (!caja) return;
-  const pv = entradaPrevia(e);
-  $('#ac-previa').classList.toggle('oculto', !PREVIA);
-  if (!PREVIA) return;
-  if (!pv) {
-    caja.innerHTML = `<p class="comp-sub">En la adjudicación de agosto no hubo vacantes de
-      ${esc(e.especialidad)} (${esc(e.cuerpo === '0597' ? 'Maestros' : 'cuerpo ' + e.cuerpo)}).</p>`;
-    return;
-  }
-  const fechas = PREVIA.fechas || [];
-  // La fecha viene marcada por cuerpo desde generar.py. Maestros y EEMM se
-  // publican en días distintos y el orden entre ellos cambia de un año a otro,
-  // así que deducirla por posición daba la fecha cruzada. El respaldo por
-  // indice solo cubre las previas antiguas, anteriores a fechas_por_cuerpo.
-  const fecha = (PREVIA.fechas_por_cuerpo || {})[e.cuerpo]
-    || (e.cuerpo === '0597' ? fechas[0] : fechas[fechas.length - 1]);
-  const partes = [];
-  partes.push(`<p class="comp-sub">Reparto de <strong>vacantes de curso completo</strong>, previo al inicio
-    del curso${fecha ? `, adjudicado el <strong>${fmtFecha(fecha)}</strong>` : ''}.
-    <strong>No son sustituciones semanales</strong>: por eso no aparecen en el gráfico de arriba ni en el listado.</p>`);
-  const vacTotal = pv.vacantes + pv.vacantes_itinerantes;
-  partes.push(`<div class="op-tiles">
-    <div><div class="v">${fmtNum(vacTotal)}</div><div class="l">vacantes curso completo</div></div>
-    <div><div class="v">${fmtNum(pv.adjudicados)}</div><div class="l">adjudicadas a interinos</div></div>
-    <div><div class="v">${fmtNum(pv.vacantes_itinerantes)}</div><div class="l">itinerantes</div></div>
-  </div>`);
-  if (vacTotal > pv.adjudicados) {
-    partes.push(`<p class="comp-sub">De las ${fmtNum(vacTotal)} vacantes, ${fmtNum(pv.adjudicados)} se adjudicaron a
-      personal interino en esta previa; las ${fmtNum(vacTotal - pv.adjudicados)} restantes no se cubrieron aquí
-      (otras vías de provisión o el reparto semanal del curso).</p>`);
-  }
-  const svg = svgMapaProvincias(pv.por_provincia, 'Vacantes de curso completo por provincia');
-  if (svg) partes.push(svg + '<p class="comp-sub">Dónde estaban las <strong>vacantes</strong>, por provincia — son plazas ofertadas, no adjudicaciones.</p>');
-  if (pv.por_via) {
-    partes.push(`<p class="comp-sub">Por vía: ${Object.entries(pv.por_via)
-      .map(([v, n]) => `<strong>${v === 'Oposicion' ? 'Oposición' : 'Renovación'}</strong> ${fmtNum(n)}`)
-      .join(' · ')} — son poblaciones distintas (recién aprobados frente a interinos que renuevan).</p>`);
-  }
-  if (pv.bolsa_reordenada_26_27) {
-    partes.push(`<p class="nota-honesta">Las posiciones de bolsa de esta adjudicación <strong>no sirven de
-      referencia</strong>: Maestros tiene concurso-oposición en verano de 2026 y la bolsa se reordena por completo.</p>`);
-  } else if (pv.orden_maximo) {
-    partes.push(`<p class="nota-corta">Detalle secundario: el orden llegó como mucho al nº ${fmtNum(pv.orden_maximo)}.
-      Referencia orientativa de esa adjudicación, nunca una garantía.</p>`);
-  }
-  // La previa puede ser la del curso que ARRANCA (dato vivo) o la de un curso ya
-  // cerrado (referencia histórica). El texto no puede dar por hecho ninguna de las
-  // dos: con la de agosto de 2026 cargada, «datos del curso pasado» era falso.
-  const previaDelCursoNuevo = !!(PLAN && PREVIA.curso && PREVIA.curso > PLAN.curso);
-  partes.push(previaDelCursoNuevo
-    ? `<p class="nota-corta">Así arrancó el curso ${cursoCorto(PREVIA.curso)}: son las vacantes repartidas
-       antes de empezar, no una previsión de las sustituciones que saldrán cada semana.</p>`
-    : `<p class="nota-corta">Datos del curso pasado: orientan para planificar, no predicen el
-       ${cursoSiguienteCorto(PREVIA.curso) || 'curso siguiente'}.</p>`);
-  caja.innerHTML = partes.join('');
-}
 function renderPlanBolsa(e) {
   const partes = [];
   if (e.bolsa_reordenada_26_27) {
@@ -2431,6 +2480,204 @@ function renderPlanBolsa(e) {
     partes.push('<p>Sin adjudicaciones de bolsa ordinaria registradas para esta especialidad ese curso.</p>');
   }
   $('#plan-bolsa').innerHTML = partes.join('');
+}
+
+
+/* ================= DATOS: VISTA DE AGOSTO (previas) =================
+   Las vacantes de agosto son de CURSO COMPLETO y se adjudican una sola vez.
+   Viven en su propia vista, con su propio selector de año y su propia lista de
+   especialidades, para que nadie las lea como sustituciones semanales.
+   NO se comparan años automáticamente: cada verano se reordena la bolsa de un
+   cuerpo distinto (EEMM en 2025, Maestros en 2026), así que una diferencia de
+   vacantes no significa «más trabajo» y una flecha verde mentiría. */
+
+function cargarPreviaJSON(clave) {
+  if (PREVIAS_CACHE.has(clave)) return Promise.resolve(PREVIAS_CACHE.get(clave));
+  return fetch(`historico/previa-${clave}.json`, { cache: 'no-store' })
+    .then(r => r.ok ? r.json() : null)
+    .catch(() => null)
+    .then(p => { if (p) PREVIAS_CACHE.set(clave, p); return p; });
+}
+
+function mostrarVistaDatos(cual) {
+  const agosto = cual === 'agosto';
+  // si la vista pedida no está disponible, no dejamos el modal en blanco
+  if (agosto && $('#v-agosto').classList.contains('oculto')) return;
+  if (!agosto && $('#v-curso').classList.contains('oculto')) return;
+  $('#vista-agosto').classList.toggle('oculto', !agosto);
+  $('#vista-curso').classList.toggle('oculto', agosto);
+  $('#v-agosto').setAttribute('aria-selected', String(agosto));
+  $('#v-curso').setAttribute('aria-selected', String(!agosto));
+  $('#plan-sello').textContent = agosto
+    ? 'AGOSTO ' + ((PREVIA_SEL && PREVIA_SEL.fechas && PREVIA_SEL.fechas[0]) || '').slice(0, 4)
+    : (PLAN ? 'CURSO ' + cursoBonito(PLAN.curso) : 'HISTÓRICO');
+  $('#seccion-planifica').scrollTop = 0;
+}
+
+// nombre repetido en más de un cuerpo → la etiqueta lleva el cuerpo
+function etiquetaAgosto(e, dup) {
+  const cuerpo = e.cuerpo === '0597' ? 'Maestros' : e.cuerpo;
+  return e.especialidad + (dup.has(e.especialidad) ? ` · ${cuerpo}` : '');
+}
+
+function initAgosto() {
+  if (!PREVIAS_LISTA.length) return;
+  const sel = $('#agosto-anyo');
+  // la más reciente primero: es la que le interesa a quien entra hoy
+  sel.innerHTML = [...PREVIAS_LISTA].reverse().map(k =>
+    `<option value="${esc(k)}">Agosto de ${esc(k.slice(0, 4))}</option>`).join('');
+  sel.onchange = () => seleccionarPrevia(sel.value);
+  $('#agosto-esp').onchange = renderAgostoDetalle;
+  $('#v-agosto').classList.remove('oculto');
+  $('#btn-planifica').classList.remove('oculto');
+  $('#tab-datos').classList.remove('oculto');
+  seleccionarPrevia(sel.value).then(ajustarVistaDatos);
+}
+
+function seleccionarPrevia(clave) {
+  return cargarPreviaJSON(clave).then(p => {
+    if (!p) return;
+    PREVIA_SEL = p;
+    // PREVIA es siempre la última publicada: el aviso de la portada la cita a
+    // ella, y no debe cambiar porque alguien mire otro año aquí dentro.
+    if (clave === PREVIAS_LISTA[PREVIAS_LISTA.length - 1]) PREVIA = p;
+    const vistos = new Map();
+    for (const e of p.por_especialidad) vistos.set(e.especialidad, (vistos.get(e.especialidad) || 0) + 1);
+    const dup = new Set([...vistos].filter(([, n]) => n > 1).map(([n]) => n));
+    // los apoyos al final: no son especialidades y confunden en medio de la lista
+    const lista = [...p.por_especialidad].sort((a, b) =>
+      (a.apoyo ? 1 : 0) - (b.apoyo ? 1 : 0) || a.especialidad.localeCompare(b.especialidad, 'es'));
+    const antes = $('#agosto-esp').value;
+    $('#agosto-esp').innerHTML = lista.map(e =>
+      `<option value="${esc(e.cuerpo + '|' + e.especialidad_cod)}">${esc(etiquetaAgosto(e, dup))}</option>`).join('');
+    // al cambiar de año se conserva la especialidad si también existe allí
+    const sigue = antes && lista.some(e => (e.cuerpo + '|' + e.especialidad_cod) === antes);
+    if (sigue) $('#agosto-esp').value = antes;
+    else {
+      const top = [...lista].sort((a, b) =>
+        (b.vacantes + b.vacantes_itinerantes) - (a.vacantes + a.vacantes_itinerantes))[0];
+      if (top) $('#agosto-esp').value = top.cuerpo + '|' + top.especialidad_cod;
+    }
+    const guardada = localStorage.getItem('cevi_agosto_esp');
+    if (!antes && guardada && lista.some(e => (e.cuerpo + '|' + e.especialidad_cod) === guardada)) {
+      $('#agosto-esp').value = guardada;
+    }
+    renderAgostoResumen();
+    renderAgostoDetalle();
+    renderAvisoEntreCursos();
+    if (!$('#vista-agosto').classList.contains('oculto')) mostrarVistaDatos('agosto');
+  });
+}
+
+function entradaAgosto() {
+  if (!PREVIA_SEL) return null;
+  const v = $('#agosto-esp').value;
+  return PREVIA_SEL.por_especialidad.find(e => (e.cuerpo + '|' + e.especialidad_cod) === v) || null;
+}
+
+function renderAgostoResumen() {
+  const p = PREVIA_SEL;
+  if (!p) return;
+  const t = p.totales || {};
+  const fechas = (p.fechas || []).map(fmtFecha).join(' y ');
+  $('#agosto-resumen').innerHTML = `
+    <div class="stat-oscura" role="group" aria-label="Totales de la adjudicación de agosto">
+      <div><div class="v">${fmtNum(t.vacantes || 0)}</div><div class="l">vacantes de curso completo</div></div>
+      <div><div class="v">${fmtNum(t.adjudicados || 0)}</div><div class="l">adjudicadas a interinos</div></div>
+      <div><div class="v">${p.por_especialidad.filter(e => !e.apoyo).length}</div><div class="l">especialidades</div></div>
+    </div>
+    <div class="comp-sub">Reparto previo al curso <strong>${esc(cursoBonito(p.curso) || '—')}</strong>${
+      fechas ? `, adjudicado el ${esc(fechas)}` : ''}.</div>`;
+}
+
+function renderAgostoDetalle() {
+  const caja = $('#agosto-detalle');
+  const e = entradaAgosto();
+  if (!caja) return;
+  if (!e) { caja.innerHTML = ''; return; }
+  localStorage.setItem('cevi_agosto_esp', e.cuerpo + '|' + e.especialidad_cod);
+  const p = PREVIA_SEL;
+  const fecha = (p.fechas_por_cuerpo || {})[e.cuerpo] || (p.fechas || [])[0];
+  const vacTotal = e.vacantes + e.vacantes_itinerantes;
+  const partes = [];
+  if (e.apoyo) {
+    partes.push(`<p class="aviso-apoyo"><strong>No es una especialidad.</strong> Es un
+      <strong>apoyo</strong> que se adjudica dentro de varias especialidades, por eso no
+      tiene vacantes propias en el listado de plazas: solo personas adjudicadas.</p>`);
+  }
+  partes.push(`<p class="comp-sub">${esc(e.especialidad)} · ${esc(e.cuerpo === '0597' ? 'Maestros' : 'cuerpo ' + e.cuerpo)}${
+    fecha ? ` · adjudicado el <strong>${fmtFecha(fecha)}</strong>` : ''}</p>`);
+  partes.push(e.apoyo
+    ? `<div class="op-tiles">
+        <div><div class="v">${fmtNum(e.adjudicados)}</div><div class="l">personas adjudicadas a este apoyo</div></div>
+      </div>`
+    : `<div class="op-tiles">
+        <div><div class="v">${fmtNum(vacTotal)}</div><div class="l">vacantes de curso completo</div></div>
+        <div><div class="v">${fmtNum(e.adjudicados)}</div><div class="l">adjudicadas a interinos</div></div>
+        <div><div class="v">${fmtNum(e.vacantes_itinerantes)}</div><div class="l">itinerantes</div></div>
+      </div>`);
+  if (!e.apoyo && vacTotal > e.adjudicados) {
+    partes.push(`<p class="comp-sub">De las ${fmtNum(vacTotal)} vacantes, ${fmtNum(e.adjudicados)} se adjudicaron a
+      personal interino en esta previa; las ${fmtNum(vacTotal - e.adjudicados)} restantes no se cubrieron aquí
+      (otras vías de provisión o el reparto semanal del curso).</p>`);
+  }
+  const svg = svgMapaProvincias(e.por_provincia, 'Vacantes de curso completo por provincia');
+  if (svg) partes.push(svg + '<p class="comp-sub">Dónde estaban las <strong>vacantes</strong>, por provincia — son plazas ofertadas, no adjudicaciones.</p>');
+  if (e.por_via) {
+    partes.push(`<p class="comp-sub">Por vía: ${Object.entries(e.por_via)
+      .map(([v, n]) => `<strong>${v === 'Oposicion' ? 'Oposición' : 'Renovación'}</strong> ${fmtNum(n)}`)
+      .join(' · ')} — son poblaciones distintas (recién aprobados frente a interinos que renuevan).</p>`);
+  }
+  if (e.bolsa_reordenada_26_27) {
+    partes.push(`<p class="nota-honesta">Las posiciones de bolsa de esta adjudicación <strong>no sirven de
+      referencia</strong>: Maestros tiene concurso-oposición en verano de 2026 y la bolsa se reordena por completo.</p>`);
+  } else if (e.orden_maximo) {
+    partes.push(`<p class="nota-corta">Detalle secundario: el orden llegó como mucho al nº ${fmtNum(e.orden_maximo)}.
+      Referencia orientativa de esa adjudicación, nunca una garantía.</p>`);
+  }
+  partes.push(`<p class="nota-corta">Es una foto de cómo se repartieron las vacantes antes de empezar el curso.
+    No predice cuántas sustituciones saldrán después, semana a semana.</p>`);
+  caja.innerHTML = partes.join('');
+}
+
+/* ================= DATOS: CONMUTADOR ================= */
+
+/* Qué vista se abre primero. Entre cursos, lo único fresco es la adjudicación
+   de agosto, así que manda ella; con el curso en marcha, el histórico semanal.
+   Y si una de las dos no ha cargado, se muestra la que sí exista en vez de
+   dejar el modal en blanco. */
+function ajustarVistaDatos() {
+  const hayAgosto = !$('#v-agosto').classList.contains('oculto');
+  const hayCurso = !$('#v-curso').classList.contains('oculto');
+  if (!hayAgosto && !hayCurso) return;
+  if (!hayAgosto) return mostrarVistaDatos('curso');
+  if (!hayCurso) return mostrarVistaDatos('agosto');
+  mostrarVistaDatos(entreCursos() ? 'agosto' : 'curso');
+}
+
+function initVistasDatos() {
+  if (initVistasDatos.hecho) return;
+  initVistasDatos.hecho = true;
+  $('#v-agosto').onclick = () => mostrarVistaDatos('agosto');
+  $('#v-curso').onclick = () => mostrarVistaDatos('curso');
+  $('#btn-planifica').onclick = () => abrirDatos();
+  $('#btn-cerrar-plan').onclick = cerrarPlanifica;
+  $('#seccion-planifica').addEventListener('click', ev => {
+    if (ev.target === $('#seccion-planifica')) cerrarPlanifica();
+  });
+  document.addEventListener('keydown', ev => {
+    if (ev.key === 'Escape' && !$('#seccion-planifica').classList.contains('oculto')) cerrarPlanifica();
+  });
+}
+
+// selector de curso: hoy con una sola entrada, listo para cuando haya más
+function initSelectorCurso() {
+  const sel = $('#plan-curso');
+  if (!sel || !CURSOS_HISTORICO.length) return;
+  sel.innerHTML = [...CURSOS_HISTORICO].reverse().map(c =>
+    `<option value="${esc(c.curso)}">Curso ${esc(cursoBonito(c.curso))} · ${c.semanas} semanas</option>`).join('');
+  if (PLAN) sel.value = PLAN.curso;
+  sel.onchange = () => initPlanifica(sel.value);
 }
 
 /* ================= PWA =================
@@ -2492,6 +2739,12 @@ async function arrancar() {
       ? 'el ' + fmtFecha(json.comienzo_entre[0])
       : `el ${fmtFecha(json.comienzo_entre[0])} y el ${fmtFecha(json.comienzo_entre[1])}`;
   }
+  // fecha prevista de la primera adjudicación: opcional, nunca bloquea el arranque
+  try {
+    const rp = await fetch('proxima-adjudicacion.json', { cache: 'no-store' });
+    if (rp.ok) PROXIMA = await rp.json();
+  } catch (e) { /* sin fichero, el aviso sale sin fecha */ }
+  renderAvisoEntreCursos();
   initCuentaAtras();
   poblarControles();
   volcarEstadoAControles();
