@@ -70,15 +70,20 @@ header.app .meta-derecha strong{color:var(--blue-dark)}
 /* ---------- segmentador ---------- */
 #segmentador{display:flex;justify-content:flex-start;gap:10px;padding:16px 16px 20px;max-width:1100px;margin:0 auto;flex-wrap:wrap}
 /* píldoras sobre la cabecera clara: blancas con borde, azules al activarse */
-#segmentador .multisel>summary,#segmentador #btn-mas-filtros{background:#fff;border:1px solid var(--gray-border);color:var(--text-main);font-weight:700;font-size:.85rem;border-radius:999px;padding:9px 16px;white-space:nowrap}
-#segmentador .multisel>summary:hover,#segmentador #btn-mas-filtros:hover{background:var(--blue-light);color:var(--blue-dark)}
+#segmentador .multisel>summary,#segmentador #btn-mas-filtros,
+#segmentador #btn-radio,#segmentador #f-idioma{background:#fff;border:1px solid var(--gray-border);color:var(--text-main);font-weight:700;font-size:.85rem;border-radius:999px;padding:9px 16px;white-space:nowrap}
+#segmentador .multisel>summary:hover,#segmentador #btn-mas-filtros:hover,
+#segmentador #btn-radio:hover,#segmentador #f-idioma:hover{background:var(--blue-light);color:var(--blue-dark)}
 #segmentador .multisel[open]>summary,#segmentador .multisel.activo>summary,
-#segmentador #btn-mas-filtros.activos{background:var(--blue-logo);border-color:var(--blue-logo);color:#fff}
+#segmentador #btn-mas-filtros.activos,#segmentador #btn-radio.activo,
+#segmentador #f-idioma[aria-pressed="true"]{background:var(--blue-logo);border-color:var(--blue-logo);color:#fff}
 #segmentador .multisel .opciones{min-width:290px}
 
 
 /* ---------- barra de herramientas: Especialidad + Cerca de mí + Más filtros ---------- */
-#zona-filtros{padding:14px 16px 4px;display:flex;flex-wrap:wrap;gap:14px;align-items:center;max-width:1100px;margin:0 auto}
+/* Aqui solo quedan «Quitar filtros» (oculto si no hay ninguno) y el panel de
+   «Mas filtros». Sin padding arriba para que no deje un hueco muerto. */
+#zona-filtros{padding:0 16px 4px;display:flex;flex-wrap:wrap;gap:14px;align-items:center;max-width:1100px;margin:0 auto}
 #zona-filtros select,#zona-filtros input[type=text],#zona-filtros input[type=search]{border:1px solid var(--gray-border);border-radius:var(--radius);padding:7px 10px;background:#fff;color:var(--text-main)}
 .multisel{position:relative}
 .multisel>summary{list-style:none;border:none;color:var(--blue-logo);border-radius:var(--radius);padding:8px 4px;background:transparent;font-size:.85rem;font-weight:600;cursor:pointer;user-select:none;white-space:nowrap}
@@ -416,7 +421,9 @@ details.acordeon[open]>summary::before{transform:rotate(90deg)}
 
 /* ---------- escritorio ancho: lista | (mapa) | mi lista ---------- */
 @media (min-width:1200px){
-  #principal{grid-template-columns:minmax(0,1fr) minmax(300px,350px)}
+  #principal{grid-template-columns:minmax(0,1fr) minmax(300px,350px);
+    max-width:1340px;margin:0 auto}
+  body.mapa-visible #principal{max-width:1600px}
   body.mapa-visible #principal{grid-template-columns:minmax(340px,420px) minmax(0,1fr) minmax(300px,350px)}
   body.mapa-visible #col-mapa{position:sticky;top:50px;height:calc(100vh - 66px);margin:8px 8px 0}
   body:not(.mapa-visible) #col-lista{max-width:960px}
@@ -492,6 +499,15 @@ details.acordeon[open]>summary::before{transform:rotate(90deg)}
      Cerca de mí, partiendo en dos lo que el usuario lee como un solo bloque de
      filtros. No separaba nada: el hero tiene el mismo fondo que el body. */
   #hero-cevi{border-bottom:none}
+  /* En escritorio los cinco filtros van en una fila. En movil no caben: se
+     reparten como siempre, Cuerpo/Especialidad/Mas filtros arriba y los dos
+     de busqueda debajo. El ::after fuerza el salto de linea; sin el, «Buscar
+     cerca de mi» subia a la primera fila y aplastaba las dos etiquetas. */
+  #segmentador .multisel{order:1}
+  #segmentador #btn-mas-filtros{order:2}
+  #segmentador::after{content:"";flex-basis:100%;height:0;order:3}
+  #segmentador .radio-wrap{order:4;flex:1 1 auto}
+  #segmentador #f-idioma{order:5}
   #segmentador{gap:8px;margin:10px 16px 0;padding:0}
   #segmentador .multisel{flex:1;min-width:0}
   #segmentador .multisel>summary{display:block;text-align:center;background:#fff;border:1px solid var(--gray-border);color:var(--text-main);border-radius:999px;padding:9px 6px;font-size:.78rem;font-weight:700;overflow:hidden;text-overflow:ellipsis}
@@ -561,11 +577,6 @@ details.acordeon[open]>summary::before{transform:rotate(90deg)}
     <summary aria-label="Filtrar por especialidad">Especialidad: todas</summary>
     <div class="opciones" id="ops-esp"></div>
   </details>
-  <button id="btn-mas-filtros" aria-expanded="false" aria-controls="panel-mas-filtros">Más filtros <span id="n-filtros"></span></button>
-</nav>
-</div>
-
-<div id="zona-filtros">
   <div class="radio-wrap">
     <button id="btn-radio" aria-expanded="false" aria-controls="pop-radio">📍 Buscar cerca de mí</button>
     <div id="pop-radio" class="oculto">
@@ -583,6 +594,11 @@ details.acordeon[open]>summary::before{transform:rotate(90deg)}
     </div>
   </div>
   <button id="f-idioma" aria-pressed="false" title="Solo plazas que piden idioma acreditado: si lo tienes, compite mucha menos gente">🗣 Perfil de idioma</button>
+  <button id="btn-mas-filtros" aria-expanded="false" aria-controls="panel-mas-filtros">Más filtros <span id="n-filtros"></span></button>
+</nav>
+</div>
+
+<div id="zona-filtros">
   <button id="btn-limpiar">Quitar filtros</button>
   <div id="panel-mas-filtros">
     <button id="btn-x-filtros" type="button" aria-label="Cerrar sin cambiar los filtros">×</button>
