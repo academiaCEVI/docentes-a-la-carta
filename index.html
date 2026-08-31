@@ -1416,7 +1416,9 @@ $('#btn-correo').onclick = () => {
   const asunto = `Mi lista de peticiones — semana del ${fmtFecha(((DATA && DATA.cierre_plazo) || '').slice(0, 10))}`;
   const cuerpo = `Mi lista ordenada de peticiones (Docentes a la carta):\n\n${textoPeticiones()}\n\n` +
     'Recuerda: la solicitud solo cuenta si la registras en la aplicación oficial de la JCCM antes de las 10:00 del viernes.\n' +
-    'https://academiacevi.github.io/docentes-a-la-carta/';
+    // la URL se deduce de dónde esté servida la app: escrita a mano se quedaba
+    // atrás al cambiar de dominio, y este correo lo reenvía gente a gente
+    location.origin + location.pathname;
   location.href = `mailto:?subject=${encodeURIComponent(asunto)}&body=${encodeURIComponent(cuerpo)}`;
 };
 $('#btn-imprimir').onclick = () => {
