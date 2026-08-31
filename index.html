@@ -450,7 +450,10 @@ details.acordeon[open]>summary::before{transform:rotate(90deg)}
   .btn-estrella:hover{color:#fff;background:var(--blue-logo)}
   .btn-estrella[aria-pressed="true"]{background:var(--blue-dark);color:#fff}
   #btn-volver-lista{display:none}
-  body.tab-mapa #btn-volver-lista{display:block;position:fixed;top:12px;left:12px;z-index:900;border:none;background:#fff;color:var(--blue-logo);font-weight:800;border-radius:999px;padding:10px 16px;font-size:.82rem;box-shadow:0 4px 16px rgba(9,66,109,.28)}
+  /* El botón flotante «≡ Ver lista» se retira: la barra inferior ya trae
+     «Plazas», y además se solapaba con los controles de zoom de Leaflet
+     (ambos en la esquina superior izquierda). Sigue en el DOM con su
+     manejador; solo deja de mostrarse. */
   #btn-radio-mapa{display:none}
   /* móvil: abajo y centrado, por encima de la barra de pestañas */
   #chip-prov{top:auto;bottom:84px;left:50%;transform:translateX(-50%)}
@@ -473,7 +476,10 @@ details.acordeon[open]>summary::before{transform:rotate(90deg)}
   header.app>div:first-of-type{display:contents} /* h1 y frase pasan a ser hijos directos */
   header.app h1{order:1}
   header.app h1 img{width:min(296px,78vw);margin:0}
-  #btn-mapa-icono{display:grid;place-items:center;order:2;margin-left:auto;width:46px;height:46px;border:none;border-radius:999px;background:#fff;box-shadow:0 3px 10px rgba(4,30,50,.18);font-size:1.35rem;cursor:pointer}
+  /* El icono del mapa de la cabecera se retira: duplicaba el acceso que
+     ahora vive en la barra inferior. Hay que apagarlo explícitamente:
+     .solo-movil ya le da display:block en móvil. */
+  #btn-mapa-icono{display:none}
   #vista-conmutador{display:none} /* el icono del mapa lo sustituye */
   header.app .sub{order:3;flex:1 1 100%;text-align:center;margin-top:4px}
   /* el orden baja a la fila del contador, bajo los filtros */
@@ -797,6 +803,7 @@ details.acordeon[open]>summary::before{transform:rotate(90deg)}
 
 <nav id="tabs-movil" aria-label="Secciones">
   <button id="tab-lista" aria-pressed="true"><span class="ico">📋</span>Plazas</button>
+  <button id="tab-mapa" aria-pressed="false"><span class="ico">🗺</span>Mapa</button>
   <button id="tab-opciones" class="oculto" aria-pressed="false"><span class="ico">🎯</span>¿Opciones?</button>
   <button id="tab-datos" class="oculto" aria-pressed="false"><span class="ico">📊</span>Datos</button>
   <button id="tab-pet" aria-pressed="false"><span class="ico">⭐</span>Mi lista (<span id="cuenta-tab">0</span>)</button>
@@ -812,6 +819,20 @@ details.acordeon[open]>summary::before{transform:rotate(90deg)}
 // Endpoint del formulario de avisos (Formspree, Brevo, Mailchimp...).
 // Mientras esté vacío, el formulario abre un correo a la academia.
 const ENDPOINT_AVISOS = "";
+
+/* «¿Tengo opciones?» está RETIRADO de la interfaz, no borrado. Dos motivos:
+
+   1. El ratio por especialidad no describe la competencia real: se pueden pedir
+      plazas de especialidades AFINES, así que «N aspirantes por plaza» ni cuenta
+      a todos los que compiten por una plaza ni reparte bien los que hay.
+   2. El modelo de probabilidad bebe del rollup del curso ya cerrado, pero la
+      puerta CURSO_MINIMO_STATS mira el curso de la SEMANA cargada, no el del
+      modelo. Al entrar la primera semana de 26/27 se abriría y daría
+      probabilidades con números de 25/26 — y en Maestros, con la bolsa
+      reordenada por el concurso-oposición, eso es sencillamente falso.
+
+   Para reactivarlo hay que resolver las dos cosas, no basta con poner true. */
+const MOSTRAR_OPCIONES = false;
 const WA_URL = "https://wa.me/34623184934?text=Hola%20CEVI%2C%20tengo%20dudas%20con%20el%20orden%20de%20mis%20peticiones%20de%20sustituciones.";
 
 /* ============ DATASET DE MUNICIPIOS (919, JCCM) ============ */
@@ -983,7 +1004,7 @@ function tarjetaHTML(p) {
     <div class="fila1">
       <h3>${esc(p.especialidad)}</h3>
       ${p.competencia ? `<span class="perfil-idioma">Perfil: ${esc(p.competencia)}</span>` : ''}
-      ${STATS && entradaDePlaza(p) ? `<button class="btn-comp" data-clave="${esc(p.cuerpo_cod + '|' + p.especialidad)}" aria-label="Ver competencia de ${esc(p.especialidad)}" title="¿Cuánta gente compite por esta especialidad?">📊</button>` : ''}
+      ${MOSTRAR_OPCIONES && STATS && entradaDePlaza(p) ? `<button class="btn-comp" data-clave="${esc(p.cuerpo_cod + '|' + p.especialidad)}" aria-label="Ver competencia de ${esc(p.especialidad)}" title="¿Cuánta gente compite por esta especialidad?">📊</button>` : ''}
       ${dist}
     </div>
     <div class="centro">${esc(p.centro)} · <span class="loc">${esc(p.localidad)} (${esc(p.provincia)})</span>
@@ -1785,7 +1806,7 @@ function exportarCSV() {
    El mapa ya no es pestaña: es un conmutador dentro de Plazas (como en el
    diseño). ¿Opciones? y Datos abren sus vistas a pantalla completa. */
 function marcarTabs(activa) {
-  ['lista', 'opciones', 'datos', 'pet'].forEach(t => {
+  ['lista', 'mapa', 'opciones', 'datos', 'pet'].forEach(t => {
     const b = $('#tab-' + t);
     if (b) b.setAttribute('aria-pressed', String(t === activa));
   });
@@ -1794,13 +1815,14 @@ function cambiarTab(cual) {
   if (!$('#seccion-stats').classList.contains('oculto')) cerrarStats();
   if (!$('#seccion-planifica').classList.contains('oculto')) cerrarPlanifica();
   document.body.classList.toggle('tab-mapa', cual === 'mapa');
-  marcarTabs(cual === 'mapa' ? 'lista' : cual);
+  marcarTabs(cual);
   $('#vc-lista').setAttribute('aria-pressed', String(cual !== 'mapa'));
   $('#vc-mapa').setAttribute('aria-pressed', String(cual === 'mapa'));
   if (cual === 'mapa') setTimeout(() => { if (map) map.invalidateSize(); }, 60);
   if (cual === 'pet') abrirPanel(true); else abrirPanel(false);
 }
 $('#tab-lista').onclick = () => cambiarTab('lista');
+$('#tab-mapa').onclick = () => cambiarTab('mapa');
 $('#tab-pet').onclick = () => cambiarTab('pet');
 $('#tab-opciones').onclick = () => { cambiarTab('lista'); abrirStats(); marcarTabs('opciones'); };
 $('#tab-datos').onclick = () => { cambiarTab('lista'); abrirDatos(); marcarTabs('datos'); };
@@ -1930,8 +1952,10 @@ const cursoBonito = c => (c || '').replace(/^(\d{4})-\d{2}(\d{2})$/, '$1/$2');
 
 function initStats() {
   if (!STATS || !STATS.por_especialidad.length) return; // sin bloque: la app funciona igual
-  $('#btn-stats').classList.remove('oculto');
-  $('#tab-opciones').classList.remove('oculto');
+  if (MOSTRAR_OPCIONES) {
+    $('#btn-stats').classList.remove('oculto');
+    $('#tab-opciones').classList.remove('oculto');
+  }
   // ¿La semana cargada es de un curso ya cerrado? El modelo sigue funcionando,
   // pero se sella como «referencia del curso pasado» y en Maestros (bolsa
   // reordenada) no se dan probabilidades.
@@ -2262,6 +2286,7 @@ async function renderTendencias() {
 /* tarjeta compacta sobre el listado (cuando hay UNA especialidad filtrada) */
 function renderTarjetaCompetencia() {
   const caja = $('#tarjeta-competencia');
+  if (!MOSTRAR_OPCIONES) { caja.classList.add('oculto'); return; }
   if (!STATS || state.esp.length !== 1) { caja.classList.add('oculto'); return; }
   // el filtro de especialidad va por nombre: desambiguar por cuerpo si hace falta
   let candidatas = STATS.por_especialidad.filter(x => x.especialidad === state.esp[0] && x.plazas);
@@ -2391,7 +2416,6 @@ function renderPlanDetalle() {
       <div><div class="v">${fmtNum(e.adjudicadas_total)}</div><div class="l">adjudicadas</div></div>
       <div><div class="v">${e.desiertas_total}</div><div class="l">desiertas</div></div>
     </div>
-    ${e.ratio_medio != null ? `<div class="comp-sub">Ratio medio del curso: <strong>${fmtRatio(e.ratio_medio)} aspirantes por plaza</strong>.</div>` : ''}
     <div class="nota-corta">Indicador orientativo del curso pasado, no una garantía.</div>
     <div class="mes-barras" role="img" aria-label="Plazas semanales por mes de ${esc(e.especialidad)} en el curso">${barras}</div>
     ${picos.length ? `<div class="comp-sub">Las sustituciones semanales de ${esc(e.especialidad)} salieron sobre todo en <strong>${picos.join(' y ')}</strong>.</div>` : ''}
