@@ -736,7 +736,7 @@ details.acordeon[open]>summary::before{transform:rotate(90deg)}
     <div id="tarjetas"></div>
     <div class="banda-avisos" id="banda-avisos">
       <h2>¿Nada que te encaje esta semana?</h2>
-      <p>Las plazas salen los jueves y el plazo cierra a las 10:00 del viernes. Te escribimos cuando haya algo de tu especialidad cerca de ti — y si no hay nada, no te molestamos.</p>
+      <p id="txt-cierre-banda">Te escribimos cuando haya algo de tu especialidad cerca de ti — y si no hay nada, no te molestamos.</p>
       <div class="form-hueco"></div>
     </div>
     <datalist id="dl-especialidades"></datalist>
@@ -760,7 +760,7 @@ details.acordeon[open]>summary::before{transform:rotate(90deg)}
     <strong>⚠️ Esta lista no envía nada.</strong>
     Es una herramienta de preparación. Tu solicitud solo cuenta si la registras en la
     <a href="https://educa.jccm.es" target="_blank" rel="noopener">aplicación oficial de la JCCM</a>
-    antes de las <strong>10:00 del viernes</strong>.
+    antes de <strong id="txt-cierre-panel">el cierre de plazo</strong>.
   </div>
   <div id="cta-panel"><button id="btn-cta-panel">Ordenar y exportar mi lista →</button></div>
   <div id="acciones-orden">
@@ -1452,7 +1452,7 @@ $('#btn-correo').onclick = () => {
   if (!peticiones.length) return;
   const asunto = `Mi lista de peticiones — semana del ${fmtFecha(((DATA && DATA.cierre_plazo) || '').slice(0, 10))}`;
   const cuerpo = `Mi lista ordenada de peticiones (Docentes a la carta):\n\n${textoPeticiones()}\n\n` +
-    'Recuerda: la solicitud solo cuenta si la registras en la aplicación oficial de la JCCM antes de las 10:00 del viernes.\n' +
+    `Recuerda: la solicitud solo cuenta si la registras en la aplicación oficial de la JCCM antes de ${textoCierre()}.\n` +
     // la URL se deduce de dónde esté servida la app: escrita a mano se quedaba
     // atrás al cambiar de dominio, y este correo lo reenvía gente a gente
     location.origin + location.pathname;
@@ -1468,7 +1468,7 @@ $('#btn-imprimir').onclick = () => {
   $('#hoja-imprimir').innerHTML = `<h1>Mi lista de peticiones — Sustituciones CLM</h1>
     <div class="pi-sub">Preparada con Docentes a la carta, un servicio de Academia CEVI · ${fmtFechaHora(new Date())} · Adjudicación: ${DATA ? fmtFecha(DATA.adjudicacion) : ''}</div>
     <table><thead><tr><th>Nº</th><th>Especialidad</th><th>Centro</th><th>Cód. centro</th><th>Jornada</th><th>Fechas</th></tr></thead><tbody>${filas}</tbody></table>
-    <div class="pi-aviso">⚠️ Esta hoja es solo una ayuda. La solicitud únicamente es válida si se registra en la aplicación oficial de la JCCM (educa.jccm.es) antes de las 10:00 del viernes.</div>`;
+    <div class="pi-aviso">⚠️ Esta hoja es solo una ayuda. La solicitud únicamente es válida si se registra en la aplicación oficial de la JCCM (educa.jccm.es) antes de ${textoCierre()}.</div>`;
   window.print();
 };
 /* abrir/cerrar panel */
@@ -1543,6 +1543,19 @@ function renderAvisoEntreCursos() {
   caja.innerHTML = partes.join('');
   const ir = $('#btn-ir-previa');
   if (ir) ir.onclick = () => abrirDatos('agosto');
+}
+
+/* Texto del cierre SIEMPRE derivado de cierre_plazo, nunca escrito a mano: la
+   JCCM mueve el calendario —el 4/9/2026 las plazas salieron el viernes y el
+   plazo cerraba el sábado a las 9:00— y un texto fijo convierte la app en un
+   consejo falso justo en lo único que no puede fallar. */
+function textoCierre() {
+  const c = (DATA && DATA.cierre_plazo) || '';
+  const d = new Date(c);
+  if (!c || isNaN(d)) return 'el cierre de plazo';
+  const dia = d.toLocaleDateString('es-ES', { weekday: 'long' });
+  const hora = d.getHours() + ':' + String(d.getMinutes()).padStart(2, '0');
+  return `las ${hora} del ${dia}`;
 }
 
 /* ================= CUENTA ATRÁS ================= */
@@ -2004,12 +2017,19 @@ function initStats() {
     localStorage.setItem('cevi_stats_esp', $('#stats-esp').value);
     renderStatsDetalle(); renderTendencias();
   };
-  // nota de honestidad, con aviso extra mientras haya pocas semanas de datos
+  pintarNotaStats();
+  renderStatsDetalle();
+}
+
+/* El histórico de cursos y la adjudicación de agosto NO dependen de las
+   estadísticas de esta semana. Vivían dentro de initStats(), que se corta si
+   plazas.json llega sin bloque «estadisticas» —lo normal el día que aún no hay
+   PDF de aspirantes—, y eso hacía desaparecer la pestaña Datos entera. */
+function initHistorico() {
   fetch('historico/index.json', { cache: 'no-store' })
     .then(r => r.ok ? r.json() : [])
     .catch(() => [])
     .then(indice => {
-      // index.json: {semanas: [{fecha,...}], cursos: [{curso, semanas}]} —
       // tolera también los formatos antiguos (lista de fechas u objetos)
       const semanas = Array.isArray(indice) ? indice : (indice.semanas || []);
       SEMANAS_HISTORICO = semanas.map(x => x.fecha || x);
@@ -2019,10 +2039,8 @@ function initStats() {
       renderTendencias();
       initVistasDatos();
       initPlanifica();   // sustituciones por curso
-      initAgosto();      // vacantes de agosto (independiente del rollup)
+      initAgosto();      // vacantes de agosto
     });
-  pintarNotaStats();
-  renderStatsDetalle();
 }
 function pintarNotaStats() {
   const n = SEMANAS_HISTORICO ? SEMANAS_HISTORICO.filter(f => cursoDeFecha(f) >= CURSO_MINIMO_STATS).length : 1;
@@ -2791,11 +2809,22 @@ async function arrancar() {
     if (rp.ok) PROXIMA = await rp.json();
   } catch (e) { /* sin fichero, el aviso sale sin fecha */ }
   renderAvisoEntreCursos();
+  // los textos del plazo, ya con el dato cargado
+  const cierreTxt = textoCierre();
+  const elPanel = $('#txt-cierre-panel');
+  if (elPanel) elPanel.textContent = cierreTxt;
+  const elBanda = $('#txt-cierre-banda');
+  if (elBanda) {
+    elBanda.textContent = `El plazo de esta semana cierra a ${cierreTxt}. `
+      + 'Te escribimos cuando haya algo de tu especialidad cerca de ti '
+      + '— y si no hay nada, no te molestamos.';
+  }
   initCuentaAtras();
   poblarControles();
   volcarEstadoAControles();
   initControles();
   initStats();
+  initHistorico();   // no depende de que haya estadísticas semanales
   renderLista();
   renderPeticiones();
 }
