@@ -1,5 +1,5 @@
 {
-  "_comentario": "Fecha prevista de la PRIMERA adjudicación del curso nuevo. La app la usa solo mientras plazas.json siga trayendo un curso ya cerrado; en cuanto se publique la primera semana del curso nuevo, el aviso desaparece solo. Se edita a mano (generar.py no lo toca) para no tener que republicar index.html ni subir la versión del service worker por un cambio de fecha. Si el fichero falta o la fecha ya ha pasado, el aviso se sigue mostrando pero sin fecha.",
+  "_comentario": "Fecha prevista de la PRIMERA adjudicación del curso nuevo. La app la usa solo mientras plazas.json siga trayendo un curso ya cerrado; en cuanto se publique la primera semana del curso nuevo, el aviso desaparece solo. Se edita a mano (generar.py no lo toca) para no tener que republicar index.html ni subir la versión del service worker por un cambio de fecha. Si el fichero falta o la fecha ya ha pasado, el aviso se sigue mostrando pero sin fecha. 4/9/2026: la JCCM retrasó la oferta del jueves al viernes y la adjudicación al sábado.",
   "curso": "2026-2027",
-  "fecha": "2026-09-04"
+  "fecha": "2026-09-05"
 }
