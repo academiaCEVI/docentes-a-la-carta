@@ -2370,7 +2370,14 @@ function entradaPlan(clave) {
 
 function initPlanifica(cursoPedido) {
   if (!CURSOS_HISTORICO.length) return;
-  const curso = cursoPedido || CURSOS_HISTORICO[CURSOS_HISTORICO.length - 1].curso;
+  // Por defecto, el último curso YA CERRADO: el que está en marcha tiene pocas
+  // semanas al principio (17/9/2026: una sola) y abrirlo vaciaba la vista. Si
+  // todavía no hay ninguno cerrado, el más reciente.
+  const hoyISO = new Date().toISOString().slice(0, 10);
+  const cerrados = CURSOS_HISTORICO.filter(c => c.curso < cursoDeFecha(hoyISO));
+  const porDefecto = (cerrados.length ? cerrados : CURSOS_HISTORICO)[
+    (cerrados.length ? cerrados : CURSOS_HISTORICO).length - 1].curso;
+  const curso = cursoPedido || porDefecto;
   if (PLAN && PLAN.curso === curso) return;
   fetch(`historico/curso-${curso}.json`, { cache: 'no-store' })
     .then(r => r.ok ? r.json() : null)
@@ -2385,7 +2392,15 @@ function initPlanifica(cursoPedido) {
       PLAN_DUP = new Set([...vistos].filter(([, n]) => n > 1).map(([n]) => n));
       const bonito = curso.replace(/^(\d{4})-\d{2}(\d{2})$/, '$1/$2');
       const corto = curso.replace(/^\d{2}(\d{2})-\d{2}(\d{2})$/, '$1/$2');
-      $('#plan-nota').innerHTML = `Datos del curso <strong>${esc(bonito)}</strong> completo (${PLAN.semanas} semanas, del ${fmtFecha(PLAN.desde)} al ${fmtFecha(PLAN.hasta)}). Son <strong>orientativos para planificar</strong>, no una predicción del curso siguiente.`;
+      const enMarcha = curso >= cursoDeFecha(new Date().toISOString().slice(0, 10));
+      const semanasTxt = `${PLAN.semanas} semana${PLAN.semanas === 1 ? '' : 's'}`;
+      $('#plan-nota').innerHTML = enMarcha
+        ? `Curso <strong>${esc(bonito)}</strong> <strong>en marcha</strong>: ${semanasTxt} hasta ahora `
+          + `(del ${fmtFecha(PLAN.desde)} al ${fmtFecha(PLAN.hasta)}). Crece cada semana; con tan pocos datos, `
+          + `las cifras cambiarán mucho.`
+        : `Datos del curso <strong>${esc(bonito)}</strong> completo (${semanasTxt}, `
+          + `del ${fmtFecha(PLAN.desde)} al ${fmtFecha(PLAN.hasta)}). Son <strong>orientativos para planificar</strong>, `
+          + `no una predicción del curso siguiente.`;
       $('#plan-esp').innerHTML = [...PLAN.por_especialidad]
         .sort((a, b) => a.especialidad.localeCompare(b.especialidad, 'es'))
         .map(e => `<option value="${esc(claveDe(e))}">${esc(etiquetaPlan(e))}</option>`).join('');
@@ -2739,7 +2754,8 @@ function initSelectorCurso() {
   const sel = $('#plan-curso');
   if (!sel || !CURSOS_HISTORICO.length) return;
   sel.innerHTML = [...CURSOS_HISTORICO].reverse().map(c =>
-    `<option value="${esc(c.curso)}">Curso ${esc(cursoBonito(c.curso))} · ${c.semanas} semanas</option>`).join('');
+    `<option value="${esc(c.curso)}">Curso ${esc(cursoBonito(c.curso))} · ${c.semanas} semana${c.semanas === 1 ? '' : 's'}`
+    + `${c.curso >= cursoDeFecha(new Date().toISOString().slice(0, 10)) ? ' (en marcha)' : ''}</option>`).join('');
   if (PLAN) sel.value = PLAN.curso;
   sel.onchange = () => initPlanifica(sel.value);
 }

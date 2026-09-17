@@ -1,0 +1,1677 @@
+{
+ "curso": "2026-2027",
+ "semanas": 1,
+ "desde": "2026-09-11",
+ "hasta": "2026-09-11",
+ "por_especialidad": [
+  {
+   "cuerpo": "0590",
+   "especialidad": "Administración de Empresas",
+   "plazas_total": 2,
+   "adjudicadas_total": 2,
+   "desiertas_total": 0,
+   "ratio_medio": 24.0,
+   "por_mes": {
+    "09": 2
+   },
+   "por_provincia": {
+    "16": 1,
+    "45": 1
+   },
+   "por_idioma": {
+    "sin_perfil": 2
+   },
+   "bolsa_ordinaria": null,
+   "bolsa_por_mes": {},
+   "bolsa_max": null,
+   "bolsa_reserva_max": {
+    "posicion": 10,
+    "fecha": "2026-09-11"
+   },
+   "ordinaria_sin_disponibles_desde": null,
+   "reserva_sin_disponibles_desde": null,
+   "bolsa_reordenada_26_27": false
+  },
+  {
+   "cuerpo": "0590",
+   "especialidad": "Biología y Geología",
+   "plazas_total": 9,
+   "adjudicadas_total": 9,
+   "desiertas_total": 0,
+   "ratio_medio": 11.1,
+   "por_mes": {
+    "09": 9
+   },
+   "por_provincia": {
+    "13": 3,
+    "16": 1,
+    "19": 2,
+    "45": 3
+   },
+   "por_idioma": {
+    "sin_perfil": 8,
+    "Inglés": 1
+   },
+   "bolsa_ordinaria": {
+    "min": 396,
+    "mediana": 396,
+    "max": 396
+   },
+   "bolsa_por_mes": {
+    "09": 396
+   },
+   "bolsa_max": {
+    "posicion": 396,
+    "fecha": "2026-09-11"
+   },
+   "bolsa_reserva_max": {
+    "posicion": 39,
+    "fecha": "2026-09-11"
+   },
+   "ordinaria_sin_disponibles_desde": null,
+   "reserva_sin_disponibles_desde": null,
+   "bolsa_reordenada_26_27": false
+  },
+  {
+   "cuerpo": "0590",
+   "especialidad": "Dibujo",
+   "plazas_total": 17,
+   "adjudicadas_total": 17,
+   "desiertas_total": 0,
+   "ratio_medio": 4.1,
+   "por_mes": {
+    "09": 17
+   },
+   "por_provincia": {
+    "02": 4,
+    "13": 2,
+    "16": 1,
+    "19": 2,
+    "45": 8
+   },
+   "por_idioma": {
+    "sin_perfil": 17
+   },
+   "bolsa_ordinaria": {
+    "min": 285,
+    "mediana": 285,
+    "max": 285
+   },
+   "bolsa_por_mes": {
+    "09": 285
+   },
+   "bolsa_max": {
+    "posicion": 285,
+    "fecha": "2026-09-11"
+   },
+   "bolsa_reserva_max": {
+    "posicion": 72,
+    "fecha": "2026-09-11"
+   },
+   "ordinaria_sin_disponibles_desde": null,
+   "reserva_sin_disponibles_desde": null,
+   "bolsa_reordenada_26_27": false
+  },
+  {
+   "cuerpo": "0590",
+   "especialidad": "Economía",
+   "plazas_total": 1,
+   "adjudicadas_total": 1,
+   "desiertas_total": 0,
+   "ratio_medio": 18.0,
+   "por_mes": {
+    "09": 1
+   },
+   "por_provincia": {
+    "02": 1
+   },
+   "por_idioma": {
+    "sin_perfil": 1
+   },
+   "bolsa_ordinaria": {
+    "min": 7,
+    "mediana": 7,
+    "max": 7
+   },
+   "bolsa_por_mes": {
+    "09": 7
+   },
+   "bolsa_max": {
+    "posicion": 7,
+    "fecha": "2026-09-11"
+   },
+   "bolsa_reserva_max": null,
+   "ordinaria_sin_disponibles_desde": null,
+   "reserva_sin_disponibles_desde": null,
+   "bolsa_reordenada_26_27": false
+  },
+  {
+   "cuerpo": "0590",
+   "especialidad": "Educación Física",
+   "plazas_total": 10,
+   "adjudicadas_total": 9,
+   "desiertas_total": 1,
+   "ratio_medio": 23.2,
+   "por_mes": {
+    "09": 10
+   },
+   "por_provincia": {
+    "13": 5,
+    "16": 1,
+    "19": 3,
+    "45": 1
+   },
+   "por_idioma": {
+    "Inglés": 4,
+    "sin_perfil": 6
+   },
+   "bolsa_ordinaria": {
+    "min": 361,
+    "mediana": 361,
+    "max": 361
+   },
+   "bolsa_por_mes": {
+    "09": 361
+   },
+   "bolsa_max": {
+    "posicion": 361,
+    "fecha": "2026-09-11"
+   },
+   "bolsa_reserva_max": {
+    "posicion": 78,
+    "fecha": "2026-09-11"
+   },
+   "ordinaria_sin_disponibles_desde": null,
+   "reserva_sin_disponibles_desde": null,
+   "bolsa_reordenada_26_27": false
+  },
+  {
+   "cuerpo": "0590",
+   "especialidad": "Filosofía",
+   "plazas_total": 4,
+   "adjudicadas_total": 3,
+   "desiertas_total": 1,
+   "ratio_medio": 1.5,
+   "por_mes": {
+    "09": 4
+   },
+   "por_provincia": {
+    "13": 1,
+    "16": 1,
+    "19": 1,
+    "45": 1
+   },
+   "por_idioma": {
+    "sin_perfil": 4
+   },
+   "bolsa_ordinaria": null,
+   "bolsa_por_mes": {},
+   "bolsa_max": null,
+   "bolsa_reserva_max": {
+    "posicion": 2,
+    "fecha": "2026-09-11"
+   },
+   "ordinaria_sin_disponibles_desde": null,
+   "reserva_sin_disponibles_desde": null,
+   "bolsa_reordenada_26_27": false
+  },
+  {
+   "cuerpo": "0590",
+   "especialidad": "Formación y Orientación Laboral",
+   "plazas_total": 11,
+   "adjudicadas_total": 11,
+   "desiertas_total": 0,
+   "ratio_medio": 8.4,
+   "por_mes": {
+    "09": 11
+   },
+   "por_provincia": {
+    "02": 3,
+    "13": 3,
+    "19": 4,
+    "45": 1
+   },
+   "por_idioma": {
+    "sin_perfil": 11
+   },
+   "bolsa_ordinaria": {
+    "min": 215,
+    "mediana": 215,
+    "max": 215
+   },
+   "bolsa_por_mes": {
+    "09": 215
+   },
+   "bolsa_max": {
+    "posicion": 215,
+    "fecha": "2026-09-11"
+   },
+   "bolsa_reserva_max": {
+    "posicion": 79,
+    "fecha": "2026-09-11"
+   },
+   "ordinaria_sin_disponibles_desde": null,
+   "reserva_sin_disponibles_desde": null,
+   "bolsa_reordenada_26_27": false
+  },
+  {
+   "cuerpo": "0590",
+   "especialidad": "Francés",
+   "plazas_total": 6,
+   "adjudicadas_total": 6,
+   "desiertas_total": 0,
+   "ratio_medio": 2.3,
+   "por_mes": {
+    "09": 6
+   },
+   "por_provincia": {
+    "13": 3,
+    "16": 2,
+    "45": 1
+   },
+   "por_idioma": {
+    "sin_perfil": 6
+   },
+   "bolsa_ordinaria": {
+    "min": 148,
+    "mediana": 148,
+    "max": 148
+   },
+   "bolsa_por_mes": {
+    "09": 148
+   },
+   "bolsa_max": {
+    "posicion": 148,
+    "fecha": "2026-09-11"
+   },
+   "bolsa_reserva_max": {
+    "posicion": 4,
+    "fecha": "2026-09-11"
+   },
+   "ordinaria_sin_disponibles_desde": null,
+   "reserva_sin_disponibles_desde": null,
+   "bolsa_reordenada_26_27": false
+  },
+  {
+   "cuerpo": "0590",
+   "especialidad": "Física y Química",
+   "plazas_total": 16,
+   "adjudicadas_total": 16,
+   "desiertas_total": 0,
+   "ratio_medio": 3.3,
+   "por_mes": {
+    "09": 16
+   },
+   "por_provincia": {
+    "02": 2,
+    "13": 4,
+    "16": 4,
+    "19": 1,
+    "45": 5
+   },
+   "por_idioma": {
+    "sin_perfil": 16
+   },
+   "bolsa_ordinaria": {
+    "min": 404,
+    "mediana": 404,
+    "max": 404
+   },
+   "bolsa_por_mes": {
+    "09": 404
+   },
+   "bolsa_max": {
+    "posicion": 404,
+    "fecha": "2026-09-11"
+   },
+   "bolsa_reserva_max": {
+    "posicion": 138,
+    "fecha": "2026-09-11"
+   },
+   "ordinaria_sin_disponibles_desde": null,
+   "reserva_sin_disponibles_desde": null,
+   "bolsa_reordenada_26_27": false
+  },
+  {
+   "cuerpo": "0590",
+   "especialidad": "Geografía e Historia",
+   "plazas_total": 7,
+   "adjudicadas_total": 7,
+   "desiertas_total": 0,
+   "ratio_medio": 56.1,
+   "por_mes": {
+    "09": 7
+   },
+   "por_provincia": {
+    "02": 2,
+    "13": 1,
+    "19": 1,
+    "45": 3
+   },
+   "por_idioma": {
+    "sin_perfil": 7
+   },
+   "bolsa_ordinaria": {
+    "min": 530,
+    "mediana": 530,
+    "max": 530
+   },
+   "bolsa_por_mes": {
+    "09": 530
+   },
+   "bolsa_max": {
+    "posicion": 530,
+    "fecha": "2026-09-11"
+   },
+   "bolsa_reserva_max": null,
+   "ordinaria_sin_disponibles_desde": null,
+   "reserva_sin_disponibles_desde": null,
+   "bolsa_reordenada_26_27": false
+  },
+  {
+   "cuerpo": "0590",
+   "especialidad": "Griego",
+   "plazas_total": 1,
+   "adjudicadas_total": 0,
+   "desiertas_total": 1,
+   "ratio_medio": 1.0,
+   "por_mes": {
+    "09": 1
+   },
+   "por_provincia": {
+    "19": 1
+   },
+   "por_idioma": {
+    "sin_perfil": 1
+   },
+   "bolsa_ordinaria": null,
+   "bolsa_por_mes": {},
+   "bolsa_max": null,
+   "bolsa_reserva_max": null,
+   "ordinaria_sin_disponibles_desde": null,
+   "reserva_sin_disponibles_desde": null,
+   "bolsa_reordenada_26_27": false
+  },
+  {
+   "cuerpo": "0590",
+   "especialidad": "Hostelería y Turismo",
+   "plazas_total": 1,
+   "adjudicadas_total": 1,
+   "desiertas_total": 0,
+   "ratio_medio": 7.0,
+   "por_mes": {
+    "09": 1
+   },
+   "por_provincia": {
+    "16": 1
+   },
+   "por_idioma": {
+    "sin_perfil": 1
+   },
+   "bolsa_ordinaria": {
+    "min": 178,
+    "mediana": 178,
+    "max": 178
+   },
+   "bolsa_por_mes": {
+    "09": 178
+   },
+   "bolsa_max": {
+    "posicion": 178,
+    "fecha": "2026-09-11"
+   },
+   "bolsa_reserva_max": null,
+   "ordinaria_sin_disponibles_desde": "2026-09-11",
+   "reserva_sin_disponibles_desde": null,
+   "bolsa_reordenada_26_27": false
+  },
+  {
+   "cuerpo": "0590",
+   "especialidad": "Informática",
+   "plazas_total": 4,
+   "adjudicadas_total": 2,
+   "desiertas_total": 2,
+   "ratio_medio": 0.8,
+   "por_mes": {
+    "09": 4
+   },
+   "por_provincia": {
+    "16": 4
+   },
+   "por_idioma": {
+    "sin_perfil": 3,
+    "Inglés": 1
+   },
+   "bolsa_ordinaria": {
+    "min": 370,
+    "mediana": 370,
+    "max": 370
+   },
+   "bolsa_por_mes": {
+    "09": 370
+   },
+   "bolsa_max": {
+    "posicion": 370,
+    "fecha": "2026-09-11"
+   },
+   "bolsa_reserva_max": {
+    "posicion": 181,
+    "fecha": "2026-09-11"
+   },
+   "ordinaria_sin_disponibles_desde": null,
+   "reserva_sin_disponibles_desde": null,
+   "bolsa_reordenada_26_27": false
+  },
+  {
+   "cuerpo": "0590",
+   "especialidad": "Inglés",
+   "plazas_total": 32,
+   "adjudicadas_total": 32,
+   "desiertas_total": 0,
+   "ratio_medio": 4.9,
+   "por_mes": {
+    "09": 32
+   },
+   "por_provincia": {
+    "02": 10,
+    "13": 1,
+    "16": 2,
+    "19": 2,
+    "45": 17
+   },
+   "por_idioma": {
+    "sin_perfil": 32
+   },
+   "bolsa_ordinaria": {
+    "min": 634,
+    "mediana": 634,
+    "max": 634
+   },
+   "bolsa_por_mes": {
+    "09": 634
+   },
+   "bolsa_max": {
+    "posicion": 634,
+    "fecha": "2026-09-11"
+   },
+   "bolsa_reserva_max": {
+    "posicion": 131,
+    "fecha": "2026-09-11"
+   },
+   "ordinaria_sin_disponibles_desde": null,
+   "reserva_sin_disponibles_desde": null,
+   "bolsa_reordenada_26_27": false
+  },
+  {
+   "cuerpo": "0590",
+   "especialidad": "Intervención Sociocomunitaria",
+   "plazas_total": 2,
+   "adjudicadas_total": 2,
+   "desiertas_total": 0,
+   "ratio_medio": 2.5,
+   "por_mes": {
+    "09": 2
+   },
+   "por_provincia": {
+    "13": 1,
+    "16": 1
+   },
+   "por_idioma": {
+    "sin_perfil": 2
+   },
+   "bolsa_ordinaria": null,
+   "bolsa_por_mes": {},
+   "bolsa_max": null,
+   "bolsa_reserva_max": null,
+   "ordinaria_sin_disponibles_desde": "2026-09-11",
+   "reserva_sin_disponibles_desde": null,
+   "bolsa_reordenada_26_27": false
+  },
+  {
+   "cuerpo": "0590",
+   "especialidad": "Latín",
+   "plazas_total": 2,
+   "adjudicadas_total": 1,
+   "desiertas_total": 1,
+   "ratio_medio": 1.0,
+   "por_mes": {
+    "09": 2
+   },
+   "por_provincia": {
+    "13": 1,
+    "19": 1
+   },
+   "por_idioma": {
+    "sin_perfil": 2
+   },
+   "bolsa_ordinaria": null,
+   "bolsa_por_mes": {},
+   "bolsa_max": null,
+   "bolsa_reserva_max": null,
+   "ordinaria_sin_disponibles_desde": "2026-09-11",
+   "reserva_sin_disponibles_desde": null,
+   "bolsa_reordenada_26_27": false
+  },
+  {
+   "cuerpo": "0590",
+   "especialidad": "Lengua Castellana y Literatura",
+   "plazas_total": 14,
+   "adjudicadas_total": 14,
+   "desiertas_total": 0,
+   "ratio_medio": 3.6,
+   "por_mes": {
+    "09": 14
+   },
+   "por_provincia": {
+    "02": 4,
+    "13": 3,
+    "16": 3,
+    "45": 4
+   },
+   "por_idioma": {
+    "sin_perfil": 14
+   },
+   "bolsa_ordinaria": {
+    "min": 515,
+    "mediana": 515,
+    "max": 515
+   },
+   "bolsa_por_mes": {
+    "09": 515
+   },
+   "bolsa_max": {
+    "posicion": 515,
+    "fecha": "2026-09-11"
+   },
+   "bolsa_reserva_max": {
+    "posicion": 86,
+    "fecha": "2026-09-11"
+   },
+   "ordinaria_sin_disponibles_desde": null,
+   "reserva_sin_disponibles_desde": null,
+   "bolsa_reordenada_26_27": false
+  },
+  {
+   "cuerpo": "0590",
+   "especialidad": "Matemáticas",
+   "plazas_total": 19,
+   "adjudicadas_total": 16,
+   "desiertas_total": 3,
+   "ratio_medio": 2.8,
+   "por_mes": {
+    "09": 19
+   },
+   "por_provincia": {
+    "02": 2,
+    "13": 6,
+    "16": 3,
+    "19": 3,
+    "45": 5
+   },
+   "por_idioma": {
+    "sin_perfil": 19
+   },
+   "bolsa_ordinaria": {
+    "min": 429,
+    "mediana": 429,
+    "max": 429
+   },
+   "bolsa_por_mes": {
+    "09": 429
+   },
+   "bolsa_max": {
+    "posicion": 429,
+    "fecha": "2026-09-11"
+   },
+   "bolsa_reserva_max": {
+    "posicion": 207,
+    "fecha": "2026-09-11"
+   },
+   "ordinaria_sin_disponibles_desde": null,
+   "reserva_sin_disponibles_desde": null,
+   "bolsa_reordenada_26_27": false
+  },
+  {
+   "cuerpo": "0590",
+   "especialidad": "Música",
+   "plazas_total": 6,
+   "adjudicadas_total": 3,
+   "desiertas_total": 3,
+   "ratio_medio": 1.5,
+   "por_mes": {
+    "09": 6
+   },
+   "por_provincia": {
+    "02": 1,
+    "13": 2,
+    "16": 1,
+    "19": 1,
+    "45": 1
+   },
+   "por_idioma": {
+    "sin_perfil": 4,
+    "Inglés": 2
+   },
+   "bolsa_ordinaria": null,
+   "bolsa_por_mes": {},
+   "bolsa_max": null,
+   "bolsa_reserva_max": null,
+   "ordinaria_sin_disponibles_desde": null,
+   "reserva_sin_disponibles_desde": null,
+   "bolsa_reordenada_26_27": false
+  },
+  {
+   "cuerpo": "0590",
+   "especialidad": "Organización y Gestión Comercial",
+   "plazas_total": 1,
+   "adjudicadas_total": 1,
+   "desiertas_total": 0,
+   "ratio_medio": 10.0,
+   "por_mes": {
+    "09": 1
+   },
+   "por_provincia": {
+    "02": 1
+   },
+   "por_idioma": {
+    "sin_perfil": 1
+   },
+   "bolsa_ordinaria": null,
+   "bolsa_por_mes": {},
+   "bolsa_max": null,
+   "bolsa_reserva_max": null,
+   "ordinaria_sin_disponibles_desde": null,
+   "reserva_sin_disponibles_desde": null,
+   "bolsa_reordenada_26_27": false
+  },
+  {
+   "cuerpo": "0590",
+   "especialidad": "Organización y Proyectos de Fabricacion Mecanica",
+   "plazas_total": 1,
+   "adjudicadas_total": 0,
+   "desiertas_total": 1,
+   "ratio_medio": 2.0,
+   "por_mes": {
+    "09": 1
+   },
+   "por_provincia": {
+    "19": 1
+   },
+   "por_idioma": {
+    "Inglés": 1
+   },
+   "bolsa_ordinaria": null,
+   "bolsa_por_mes": {},
+   "bolsa_max": null,
+   "bolsa_reserva_max": null,
+   "ordinaria_sin_disponibles_desde": null,
+   "reserva_sin_disponibles_desde": null,
+   "bolsa_reordenada_26_27": false
+  },
+  {
+   "cuerpo": "0590",
+   "especialidad": "Organización y Proyectos de Sistemas Energeticos",
+   "plazas_total": 1,
+   "adjudicadas_total": 0,
+   "desiertas_total": 1,
+   "ratio_medio": 5.0,
+   "por_mes": {
+    "09": 1
+   },
+   "por_provincia": {
+    "13": 1
+   },
+   "por_idioma": {
+    "sin_perfil": 1
+   },
+   "bolsa_ordinaria": null,
+   "bolsa_por_mes": {},
+   "bolsa_max": null,
+   "bolsa_reserva_max": null,
+   "ordinaria_sin_disponibles_desde": null,
+   "reserva_sin_disponibles_desde": null,
+   "bolsa_reordenada_26_27": false
+  },
+  {
+   "cuerpo": "0590",
+   "especialidad": "Orientación Educativa",
+   "plazas_total": 16,
+   "adjudicadas_total": 16,
+   "desiertas_total": 0,
+   "ratio_medio": 8.2,
+   "por_mes": {
+    "09": 16
+   },
+   "por_provincia": {
+    "02": 2,
+    "13": 1,
+    "16": 4,
+    "19": 3,
+    "45": 6
+   },
+   "por_idioma": {
+    "sin_perfil": 16
+   },
+   "bolsa_ordinaria": {
+    "min": 430,
+    "mediana": 430,
+    "max": 430
+   },
+   "bolsa_por_mes": {
+    "09": 430
+   },
+   "bolsa_max": {
+    "posicion": 430,
+    "fecha": "2026-09-11"
+   },
+   "bolsa_reserva_max": {
+    "posicion": 44,
+    "fecha": "2026-09-11"
+   },
+   "ordinaria_sin_disponibles_desde": null,
+   "reserva_sin_disponibles_desde": null,
+   "bolsa_reordenada_26_27": false
+  },
+  {
+   "cuerpo": "0590",
+   "especialidad": "Procedimientos Sanitarios y Asistenciales",
+   "plazas_total": 1,
+   "adjudicadas_total": 1,
+   "desiertas_total": 0,
+   "ratio_medio": 5.0,
+   "por_mes": {
+    "09": 1
+   },
+   "por_provincia": {
+    "16": 1
+   },
+   "por_idioma": {
+    "sin_perfil": 1
+   },
+   "bolsa_ordinaria": {
+    "min": 408,
+    "mediana": 408,
+    "max": 408
+   },
+   "bolsa_por_mes": {
+    "09": 408
+   },
+   "bolsa_max": {
+    "posicion": 408,
+    "fecha": "2026-09-11"
+   },
+   "bolsa_reserva_max": null,
+   "ordinaria_sin_disponibles_desde": null,
+   "reserva_sin_disponibles_desde": null,
+   "bolsa_reordenada_26_27": false
+  },
+  {
+   "cuerpo": "0590",
+   "especialidad": "Procedimientos de Diagnostico Clinico y Ortoprotesico",
+   "plazas_total": 1,
+   "adjudicadas_total": 1,
+   "desiertas_total": 0,
+   "ratio_medio": 41.0,
+   "por_mes": {
+    "09": 1
+   },
+   "por_provincia": {
+    "02": 1
+   },
+   "por_idioma": {
+    "sin_perfil": 1
+   },
+   "bolsa_ordinaria": null,
+   "bolsa_por_mes": {},
+   "bolsa_max": null,
+   "bolsa_reserva_max": {
+    "posicion": 28,
+    "fecha": "2026-09-11"
+   },
+   "ordinaria_sin_disponibles_desde": null,
+   "reserva_sin_disponibles_desde": null,
+   "bolsa_reordenada_26_27": false
+  },
+  {
+   "cuerpo": "0590",
+   "especialidad": "Procesos Comerciales",
+   "plazas_total": 3,
+   "adjudicadas_total": 3,
+   "desiertas_total": 0,
+   "ratio_medio": 5.0,
+   "por_mes": {
+    "09": 3
+   },
+   "por_provincia": {
+    "16": 1,
+    "19": 2
+   },
+   "por_idioma": {
+    "sin_perfil": 3
+   },
+   "bolsa_ordinaria": null,
+   "bolsa_por_mes": {},
+   "bolsa_max": null,
+   "bolsa_reserva_max": {
+    "posicion": 47,
+    "fecha": "2026-09-11"
+   },
+   "ordinaria_sin_disponibles_desde": null,
+   "reserva_sin_disponibles_desde": null,
+   "bolsa_reordenada_26_27": false
+  },
+  {
+   "cuerpo": "0590",
+   "especialidad": "Procesos Sanitarios",
+   "plazas_total": 2,
+   "adjudicadas_total": 2,
+   "desiertas_total": 0,
+   "ratio_medio": 3.0,
+   "por_mes": {
+    "09": 2
+   },
+   "por_provincia": {
+    "02": 1,
+    "16": 1
+   },
+   "por_idioma": {
+    "sin_perfil": 2
+   },
+   "bolsa_ordinaria": {
+    "min": 15,
+    "mediana": 15,
+    "max": 15
+   },
+   "bolsa_por_mes": {
+    "09": 15
+   },
+   "bolsa_max": {
+    "posicion": 15,
+    "fecha": "2026-09-11"
+   },
+   "bolsa_reserva_max": null,
+   "ordinaria_sin_disponibles_desde": null,
+   "reserva_sin_disponibles_desde": null,
+   "bolsa_reordenada_26_27": false
+  },
+  {
+   "cuerpo": "0590",
+   "especialidad": "Procesos de Gestión Administrativa",
+   "plazas_total": 4,
+   "adjudicadas_total": 4,
+   "desiertas_total": 0,
+   "ratio_medio": 6.5,
+   "por_mes": {
+    "09": 4
+   },
+   "por_provincia": {
+    "13": 3,
+    "19": 1
+   },
+   "por_idioma": {
+    "sin_perfil": 4
+   },
+   "bolsa_ordinaria": null,
+   "bolsa_por_mes": {},
+   "bolsa_max": null,
+   "bolsa_reserva_max": {
+    "posicion": 71,
+    "fecha": "2026-09-11"
+   },
+   "ordinaria_sin_disponibles_desde": "2026-09-11",
+   "reserva_sin_disponibles_desde": null,
+   "bolsa_reordenada_26_27": false
+  },
+  {
+   "cuerpo": "0590",
+   "especialidad": "Servicios a la Comunidad",
+   "plazas_total": 2,
+   "adjudicadas_total": 2,
+   "desiertas_total": 0,
+   "ratio_medio": 10.5,
+   "por_mes": {
+    "09": 2
+   },
+   "por_provincia": {
+    "13": 1,
+    "16": 1
+   },
+   "por_idioma": {
+    "sin_perfil": 2
+   },
+   "bolsa_ordinaria": null,
+   "bolsa_por_mes": {},
+   "bolsa_max": null,
+   "bolsa_reserva_max": {
+    "posicion": 5,
+    "fecha": "2026-09-11"
+   },
+   "ordinaria_sin_disponibles_desde": null,
+   "reserva_sin_disponibles_desde": null,
+   "bolsa_reordenada_26_27": false
+  },
+  {
+   "cuerpo": "0590",
+   "especialidad": "Sistemas Electrotecnicos y Automaticos",
+   "plazas_total": 0,
+   "adjudicadas_total": 1,
+   "desiertas_total": 0,
+   "ratio_medio": null,
+   "por_mes": {},
+   "por_provincia": {},
+   "por_idioma": {},
+   "bolsa_ordinaria": null,
+   "bolsa_por_mes": {},
+   "bolsa_max": null,
+   "bolsa_reserva_max": null,
+   "ordinaria_sin_disponibles_desde": null,
+   "reserva_sin_disponibles_desde": null,
+   "bolsa_reordenada_26_27": false
+  },
+  {
+   "cuerpo": "0590",
+   "especialidad": "Sistemas y Aplicaciones Informáticas",
+   "plazas_total": 1,
+   "adjudicadas_total": 1,
+   "desiertas_total": 0,
+   "ratio_medio": 4.0,
+   "por_mes": {
+    "09": 1
+   },
+   "por_provincia": {
+    "13": 1
+   },
+   "por_idioma": {
+    "sin_perfil": 1
+   },
+   "bolsa_ordinaria": null,
+   "bolsa_por_mes": {},
+   "bolsa_max": null,
+   "bolsa_reserva_max": {
+    "posicion": 12,
+    "fecha": "2026-09-11"
+   },
+   "ordinaria_sin_disponibles_desde": null,
+   "reserva_sin_disponibles_desde": null,
+   "bolsa_reordenada_26_27": false
+  },
+  {
+   "cuerpo": "0590",
+   "especialidad": "Tecnología",
+   "plazas_total": 8,
+   "adjudicadas_total": 6,
+   "desiertas_total": 2,
+   "ratio_medio": 1.9,
+   "por_mes": {
+    "09": 8
+   },
+   "por_provincia": {
+    "02": 2,
+    "13": 1,
+    "16": 3,
+    "19": 1,
+    "45": 1
+   },
+   "por_idioma": {
+    "sin_perfil": 8
+   },
+   "bolsa_ordinaria": {
+    "min": 3349,
+    "mediana": 3349,
+    "max": 3349
+   },
+   "bolsa_por_mes": {
+    "09": 3349
+   },
+   "bolsa_max": {
+    "posicion": 3349,
+    "fecha": "2026-09-11"
+   },
+   "bolsa_reserva_max": {
+    "posicion": 13,
+    "fecha": "2026-09-11"
+   },
+   "ordinaria_sin_disponibles_desde": null,
+   "reserva_sin_disponibles_desde": null,
+   "bolsa_reordenada_26_27": false
+  },
+  {
+   "cuerpo": "0591",
+   "especialidad": "Estetica",
+   "plazas_total": 1,
+   "adjudicadas_total": 1,
+   "desiertas_total": 0,
+   "ratio_medio": 3.0,
+   "por_mes": {
+    "09": 1
+   },
+   "por_provincia": {
+    "16": 1
+   },
+   "por_idioma": {
+    "sin_perfil": 1
+   },
+   "bolsa_ordinaria": null,
+   "bolsa_por_mes": {},
+   "bolsa_max": null,
+   "bolsa_reserva_max": null,
+   "ordinaria_sin_disponibles_desde": "2026-09-11",
+   "reserva_sin_disponibles_desde": null,
+   "bolsa_reordenada_26_27": false
+  },
+  {
+   "cuerpo": "0591",
+   "especialidad": "Instalacion y Mantenimiento de Equipos Termicos y de Fluidos",
+   "plazas_total": 1,
+   "adjudicadas_total": 1,
+   "desiertas_total": 0,
+   "ratio_medio": 3.0,
+   "por_mes": {
+    "09": 1
+   },
+   "por_provincia": {
+    "13": 1
+   },
+   "por_idioma": {
+    "sin_perfil": 1
+   },
+   "bolsa_ordinaria": null,
+   "bolsa_por_mes": {},
+   "bolsa_max": null,
+   "bolsa_reserva_max": null,
+   "ordinaria_sin_disponibles_desde": null,
+   "reserva_sin_disponibles_desde": null,
+   "bolsa_reordenada_26_27": false
+  },
+  {
+   "cuerpo": "0591",
+   "especialidad": "Operaciones de Producción Agraria",
+   "plazas_total": 1,
+   "adjudicadas_total": 1,
+   "desiertas_total": 0,
+   "ratio_medio": 4.0,
+   "por_mes": {
+    "09": 1
+   },
+   "por_provincia": {
+    "13": 1
+   },
+   "por_idioma": {
+    "sin_perfil": 1
+   },
+   "bolsa_ordinaria": null,
+   "bolsa_por_mes": {},
+   "bolsa_max": null,
+   "bolsa_reserva_max": null,
+   "ordinaria_sin_disponibles_desde": null,
+   "reserva_sin_disponibles_desde": null,
+   "bolsa_reordenada_26_27": false
+  },
+  {
+   "cuerpo": "0592",
+   "especialidad": "Francés",
+   "plazas_total": 1,
+   "adjudicadas_total": 1,
+   "desiertas_total": 0,
+   "ratio_medio": 1.0,
+   "por_mes": {
+    "09": 1
+   },
+   "por_provincia": {
+    "02": 1
+   },
+   "por_idioma": {
+    "sin_perfil": 1
+   },
+   "bolsa_ordinaria": {
+    "min": 76,
+    "mediana": 76,
+    "max": 76
+   },
+   "bolsa_por_mes": {
+    "09": 76
+   },
+   "bolsa_max": {
+    "posicion": 76,
+    "fecha": "2026-09-11"
+   },
+   "bolsa_reserva_max": null,
+   "ordinaria_sin_disponibles_desde": null,
+   "reserva_sin_disponibles_desde": null,
+   "bolsa_reordenada_26_27": false
+  },
+  {
+   "cuerpo": "0592",
+   "especialidad": "Italiano",
+   "plazas_total": 1,
+   "adjudicadas_total": 1,
+   "desiertas_total": 0,
+   "ratio_medio": 3.0,
+   "por_mes": {
+    "09": 1
+   },
+   "por_provincia": {
+    "13": 1
+   },
+   "por_idioma": {
+    "sin_perfil": 1
+   },
+   "bolsa_ordinaria": null,
+   "bolsa_por_mes": {},
+   "bolsa_max": null,
+   "bolsa_reserva_max": null,
+   "ordinaria_sin_disponibles_desde": null,
+   "reserva_sin_disponibles_desde": null,
+   "bolsa_reordenada_26_27": false
+  },
+  {
+   "cuerpo": "0594",
+   "especialidad": "Clarinete",
+   "plazas_total": 1,
+   "adjudicadas_total": 1,
+   "desiertas_total": 0,
+   "ratio_medio": 3.0,
+   "por_mes": {
+    "09": 1
+   },
+   "por_provincia": {
+    "02": 1
+   },
+   "por_idioma": {
+    "sin_perfil": 1
+   },
+   "bolsa_ordinaria": null,
+   "bolsa_por_mes": {},
+   "bolsa_max": null,
+   "bolsa_reserva_max": null,
+   "ordinaria_sin_disponibles_desde": null,
+   "reserva_sin_disponibles_desde": null,
+   "bolsa_reordenada_26_27": false
+  },
+  {
+   "cuerpo": "0594",
+   "especialidad": "Danza Contemporánea",
+   "plazas_total": 1,
+   "adjudicadas_total": 1,
+   "desiertas_total": 0,
+   "ratio_medio": 1.0,
+   "por_mes": {
+    "09": 1
+   },
+   "por_provincia": {
+    "13": 1
+   },
+   "por_idioma": {
+    "sin_perfil": 1
+   },
+   "bolsa_ordinaria": null,
+   "bolsa_por_mes": {},
+   "bolsa_max": null,
+   "bolsa_reserva_max": null,
+   "ordinaria_sin_disponibles_desde": null,
+   "reserva_sin_disponibles_desde": null,
+   "bolsa_reordenada_26_27": false
+  },
+  {
+   "cuerpo": "0594",
+   "especialidad": "Lenguaje Musical",
+   "plazas_total": 1,
+   "adjudicadas_total": 0,
+   "desiertas_total": 1,
+   "ratio_medio": 1.0,
+   "por_mes": {
+    "09": 1
+   },
+   "por_provincia": {
+    "02": 1
+   },
+   "por_idioma": {
+    "sin_perfil": 1
+   },
+   "bolsa_ordinaria": null,
+   "bolsa_por_mes": {},
+   "bolsa_max": null,
+   "bolsa_reserva_max": null,
+   "ordinaria_sin_disponibles_desde": null,
+   "reserva_sin_disponibles_desde": null,
+   "bolsa_reordenada_26_27": false
+  },
+  {
+   "cuerpo": "0594",
+   "especialidad": "Piano",
+   "plazas_total": 1,
+   "adjudicadas_total": 0,
+   "desiertas_total": 1,
+   "ratio_medio": 0.0,
+   "por_mes": {
+    "09": 1
+   },
+   "por_provincia": {
+    "13": 1
+   },
+   "por_idioma": {
+    "sin_perfil": 1
+   },
+   "bolsa_ordinaria": null,
+   "bolsa_por_mes": {},
+   "bolsa_max": null,
+   "bolsa_reserva_max": null,
+   "ordinaria_sin_disponibles_desde": null,
+   "reserva_sin_disponibles_desde": null,
+   "bolsa_reordenada_26_27": false
+  },
+  {
+   "cuerpo": "0595",
+   "especialidad": "Dibujo Artistico y Color",
+   "plazas_total": 1,
+   "adjudicadas_total": 1,
+   "desiertas_total": 0,
+   "ratio_medio": 2.0,
+   "por_mes": {
+    "09": 1
+   },
+   "por_provincia": {
+    "19": 1
+   },
+   "por_idioma": {
+    "sin_perfil": 1
+   },
+   "bolsa_ordinaria": null,
+   "bolsa_por_mes": {},
+   "bolsa_max": null,
+   "bolsa_reserva_max": null,
+   "ordinaria_sin_disponibles_desde": null,
+   "reserva_sin_disponibles_desde": null,
+   "bolsa_reordenada_26_27": false
+  },
+  {
+   "cuerpo": "0595",
+   "especialidad": "Diseño Grafico",
+   "plazas_total": 1,
+   "adjudicadas_total": 1,
+   "desiertas_total": 0,
+   "ratio_medio": 8.0,
+   "por_mes": {
+    "09": 1
+   },
+   "por_provincia": {
+    "13": 1
+   },
+   "por_idioma": {
+    "sin_perfil": 1
+   },
+   "bolsa_ordinaria": null,
+   "bolsa_por_mes": {},
+   "bolsa_max": null,
+   "bolsa_reserva_max": null,
+   "ordinaria_sin_disponibles_desde": null,
+   "reserva_sin_disponibles_desde": null,
+   "bolsa_reordenada_26_27": false
+  },
+  {
+   "cuerpo": "0595",
+   "especialidad": "Medios Informaticos",
+   "plazas_total": 2,
+   "adjudicadas_total": 2,
+   "desiertas_total": 0,
+   "ratio_medio": 2.0,
+   "por_mes": {
+    "09": 2
+   },
+   "por_provincia": {
+    "16": 2
+   },
+   "por_idioma": {
+    "sin_perfil": 2
+   },
+   "bolsa_ordinaria": null,
+   "bolsa_por_mes": {},
+   "bolsa_max": null,
+   "bolsa_reserva_max": null,
+   "ordinaria_sin_disponibles_desde": null,
+   "reserva_sin_disponibles_desde": null,
+   "bolsa_reordenada_26_27": false
+  },
+  {
+   "cuerpo": "0595",
+   "especialidad": "Organización Industrial y Legislacion",
+   "plazas_total": 1,
+   "adjudicadas_total": 0,
+   "desiertas_total": 1,
+   "ratio_medio": 6.0,
+   "por_mes": {
+    "09": 1
+   },
+   "por_provincia": {
+    "16": 1
+   },
+   "por_idioma": {
+    "sin_perfil": 1
+   },
+   "bolsa_ordinaria": null,
+   "bolsa_por_mes": {},
+   "bolsa_max": null,
+   "bolsa_reserva_max": null,
+   "ordinaria_sin_disponibles_desde": null,
+   "reserva_sin_disponibles_desde": null,
+   "bolsa_reordenada_26_27": false
+  },
+  {
+   "cuerpo": "0597",
+   "especialidad": "Audición y Lenguaje",
+   "plazas_total": 14,
+   "adjudicadas_total": 14,
+   "desiertas_total": 0,
+   "ratio_medio": 29.1,
+   "por_mes": {
+    "09": 14
+   },
+   "por_provincia": {
+    "02": 3,
+    "13": 6,
+    "45": 5
+   },
+   "por_idioma": {
+    "sin_perfil": 14
+   },
+   "bolsa_ordinaria": {
+    "min": 4141,
+    "mediana": 4141,
+    "max": 4141
+   },
+   "bolsa_por_mes": {
+    "09": 4141
+   },
+   "bolsa_max": {
+    "posicion": 4141,
+    "fecha": "2026-09-11"
+   },
+   "bolsa_reserva_max": null,
+   "ordinaria_sin_disponibles_desde": null,
+   "reserva_sin_disponibles_desde": null,
+   "bolsa_reordenada_26_27": true
+  },
+  {
+   "cuerpo": "0597",
+   "especialidad": "Educación Física",
+   "plazas_total": 29,
+   "adjudicadas_total": 29,
+   "desiertas_total": 0,
+   "ratio_medio": 29.9,
+   "por_mes": {
+    "09": 29
+   },
+   "por_provincia": {
+    "02": 4,
+    "13": 5,
+    "16": 6,
+    "19": 5,
+    "45": 9
+   },
+   "por_idioma": {
+    "sin_perfil": 24,
+    "Inglés": 5
+   },
+   "bolsa_ordinaria": {
+    "min": 3421,
+    "mediana": 3421,
+    "max": 3421
+   },
+   "bolsa_por_mes": {
+    "09": 3421
+   },
+   "bolsa_max": {
+    "posicion": 3421,
+    "fecha": "2026-09-11"
+   },
+   "bolsa_reserva_max": null,
+   "ordinaria_sin_disponibles_desde": null,
+   "reserva_sin_disponibles_desde": null,
+   "bolsa_reordenada_26_27": true
+  },
+  {
+   "cuerpo": "0597",
+   "especialidad": "Educación Infantil",
+   "plazas_total": 63,
+   "adjudicadas_total": 63,
+   "desiertas_total": 0,
+   "ratio_medio": 36.9,
+   "por_mes": {
+    "09": 63
+   },
+   "por_provincia": {
+    "02": 11,
+    "13": 12,
+    "16": 7,
+    "19": 6,
+    "45": 27
+   },
+   "por_idioma": {
+    "sin_perfil": 46,
+    "Inglés": 17
+   },
+   "bolsa_ordinaria": {
+    "min": 3110,
+    "mediana": 3110,
+    "max": 3110
+   },
+   "bolsa_por_mes": {
+    "09": 3110
+   },
+   "bolsa_max": {
+    "posicion": 3110,
+    "fecha": "2026-09-11"
+   },
+   "bolsa_reserva_max": null,
+   "ordinaria_sin_disponibles_desde": null,
+   "reserva_sin_disponibles_desde": null,
+   "bolsa_reordenada_26_27": true
+  },
+  {
+   "cuerpo": "0597",
+   "especialidad": "Educación Primaria",
+   "plazas_total": 52,
+   "adjudicadas_total": 52,
+   "desiertas_total": 0,
+   "ratio_medio": 68.3,
+   "por_mes": {
+    "09": 52
+   },
+   "por_provincia": {
+    "02": 5,
+    "13": 3,
+    "16": 6,
+    "19": 6,
+    "45": 32
+   },
+   "por_idioma": {
+    "sin_perfil": 45,
+    "Inglés": 7
+   },
+   "bolsa_ordinaria": {
+    "min": 3277,
+    "mediana": 3277,
+    "max": 3277
+   },
+   "bolsa_por_mes": {
+    "09": 3277
+   },
+   "bolsa_max": {
+    "posicion": 3277,
+    "fecha": "2026-09-11"
+   },
+   "bolsa_reserva_max": null,
+   "ordinaria_sin_disponibles_desde": null,
+   "reserva_sin_disponibles_desde": null,
+   "bolsa_reordenada_26_27": true
+  },
+  {
+   "cuerpo": "0597",
+   "especialidad": "Lengua Extranjera: Inglés",
+   "plazas_total": 51,
+   "adjudicadas_total": 51,
+   "desiertas_total": 0,
+   "ratio_medio": 14.7,
+   "por_mes": {
+    "09": 51
+   },
+   "por_provincia": {
+    "02": 6,
+    "13": 7,
+    "16": 8,
+    "19": 10,
+    "45": 20
+   },
+   "por_idioma": {
+    "sin_perfil": 51
+   },
+   "bolsa_ordinaria": {
+    "min": 4396,
+    "mediana": 4396,
+    "max": 4396
+   },
+   "bolsa_por_mes": {
+    "09": 4396
+   },
+   "bolsa_max": {
+    "posicion": 4396,
+    "fecha": "2026-09-11"
+   },
+   "bolsa_reserva_max": null,
+   "ordinaria_sin_disponibles_desde": null,
+   "reserva_sin_disponibles_desde": null,
+   "bolsa_reordenada_26_27": true
+  },
+  {
+   "cuerpo": "0597",
+   "especialidad": "Música",
+   "plazas_total": 13,
+   "adjudicadas_total": 13,
+   "desiertas_total": 0,
+   "ratio_medio": 22.8,
+   "por_mes": {
+    "09": 13
+   },
+   "por_provincia": {
+    "13": 3,
+    "16": 4,
+    "19": 2,
+    "45": 4
+   },
+   "por_idioma": {
+    "sin_perfil": 12,
+    "Inglés": 1
+   },
+   "bolsa_ordinaria": {
+    "min": 4312,
+    "mediana": 4312,
+    "max": 4312
+   },
+   "bolsa_por_mes": {
+    "09": 4312
+   },
+   "bolsa_max": {
+    "posicion": 4312,
+    "fecha": "2026-09-11"
+   },
+   "bolsa_reserva_max": null,
+   "ordinaria_sin_disponibles_desde": null,
+   "reserva_sin_disponibles_desde": null,
+   "bolsa_reordenada_26_27": true
+  },
+  {
+   "cuerpo": "0597",
+   "especialidad": "Pedagogía Terapeutica",
+   "plazas_total": 28,
+   "adjudicadas_total": 28,
+   "desiertas_total": 0,
+   "ratio_medio": 41.3,
+   "por_mes": {
+    "09": 28
+   },
+   "por_provincia": {
+    "02": 5,
+    "13": 6,
+    "16": 1,
+    "19": 6,
+    "45": 10
+   },
+   "por_idioma": {
+    "sin_perfil": 28
+   },
+   "bolsa_ordinaria": {
+    "min": 3392,
+    "mediana": 3392,
+    "max": 3392
+   },
+   "bolsa_por_mes": {
+    "09": 3392
+   },
+   "bolsa_max": {
+    "posicion": 3392,
+    "fecha": "2026-09-11"
+   },
+   "bolsa_reserva_max": null,
+   "ordinaria_sin_disponibles_desde": null,
+   "reserva_sin_disponibles_desde": null,
+   "bolsa_reordenada_26_27": true
+  },
+  {
+   "cuerpo": "0598",
+   "especialidad": "Mantenimiento de Vehiculos",
+   "plazas_total": 1,
+   "adjudicadas_total": 1,
+   "desiertas_total": 0,
+   "ratio_medio": 20.0,
+   "por_mes": {
+    "09": 1
+   },
+   "por_provincia": {
+    "16": 1
+   },
+   "por_idioma": {
+    "sin_perfil": 1
+   },
+   "bolsa_ordinaria": null,
+   "bolsa_por_mes": {},
+   "bolsa_max": null,
+   "bolsa_reserva_max": null,
+   "ordinaria_sin_disponibles_desde": "2026-09-11",
+   "reserva_sin_disponibles_desde": null,
+   "bolsa_reordenada_26_27": false
+  },
+  {
+   "cuerpo": "0598",
+   "especialidad": "Mecanizado y Mantenimiento de Maquinas",
+   "plazas_total": 1,
+   "adjudicadas_total": 1,
+   "desiertas_total": 0,
+   "ratio_medio": 6.0,
+   "por_mes": {
+    "09": 1
+   },
+   "por_provincia": {
+    "19": 1
+   },
+   "por_idioma": {
+    "sin_perfil": 1
+   },
+   "bolsa_ordinaria": {
+    "min": 27,
+    "mediana": 27,
+    "max": 27
+   },
+   "bolsa_por_mes": {
+    "09": 27
+   },
+   "bolsa_max": {
+    "posicion": 27,
+    "fecha": "2026-09-11"
+   },
+   "bolsa_reserva_max": null,
+   "ordinaria_sin_disponibles_desde": null,
+   "reserva_sin_disponibles_desde": null,
+   "bolsa_reordenada_26_27": false
+  }
+ ]
+}

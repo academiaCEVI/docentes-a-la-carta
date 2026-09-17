@@ -1,0 +1,4719 @@
+{
+ "estadisticas": {
+  "fecha": "2026-09-11",
+  "cuerpos": [
+   "0590",
+   "0591",
+   "0592",
+   "0593",
+   "0594",
+   "0595",
+   "0596",
+   "0597",
+   "0598"
+  ],
+  "por_especialidad": [
+   {
+    "cuerpo": "0590",
+    "especialidad": "Administración de Empresas",
+    "disponibles": 48,
+    "disponibles_ordinaria": 3,
+    "disponibles_reserva": 43,
+    "plazas": 2,
+    "adjudicadas": 2,
+    "desiertas": 0,
+    "bolsa_ordinaria_llego_a": null,
+    "bolsa_reserva_llego_a": 10,
+    "por_tipo_bolsa": {
+     "7ZB": 1,
+     "91": 1
+    },
+    "preferentes": {
+     "mayor55": 0,
+     "nota8": 0
+    },
+    "disponibles_por_provincia": {
+     "16": 17,
+     "13": 31,
+     "45": 23,
+     "02": 20,
+     "19": 5
+    },
+    "disponibles_por_idioma": {
+     "Inglés": 3,
+     "Francés": 0,
+     "Alemán": 0,
+     "Italiano": 0
+    },
+    "plazas_por_idioma": {
+     "sin_perfil": 2
+    },
+    "plazas_por_provincia": {
+     "16": 1,
+     "45": 1
+    },
+    "ratio": 24.0,
+    "ratio_por_idioma": {
+     "sin_perfil": 24.0
+    }
+   },
+   {
+    "cuerpo": "0590",
+    "especialidad": "Alemán",
+    "disponibles": 3,
+    "disponibles_ordinaria": 0,
+    "disponibles_reserva": 0,
+    "plazas": 0,
+    "adjudicadas": 0,
+    "desiertas": 0,
+    "bolsa_ordinaria_llego_a": null,
+    "bolsa_reserva_llego_a": null,
+    "por_tipo_bolsa": {},
+    "preferentes": {
+     "mayor55": 0,
+     "nota8": 0
+    },
+    "disponibles_por_provincia": {
+     "13": 2,
+     "45": 2,
+     "02": 3,
+     "16": 2,
+     "19": 1
+    },
+    "disponibles_por_idioma": {
+     "Inglés": 1,
+     "Francés": 0,
+     "Alemán": 3,
+     "Italiano": 1
+    },
+    "plazas_por_idioma": {},
+    "plazas_por_provincia": {},
+    "ratio": null,
+    "ratio_por_idioma": {},
+    "sin_oferta": true
+   },
+   {
+    "cuerpo": "0590",
+    "especialidad": "Analisis y Química Industrial",
+    "disponibles": 2,
+    "disponibles_ordinaria": 0,
+    "disponibles_reserva": 0,
+    "plazas": 0,
+    "adjudicadas": 0,
+    "desiertas": 0,
+    "bolsa_ordinaria_llego_a": null,
+    "bolsa_reserva_llego_a": null,
+    "por_tipo_bolsa": {},
+    "preferentes": {
+     "mayor55": 0,
+     "nota8": 0
+    },
+    "disponibles_por_provincia": {
+     "16": 1,
+     "02": 2
+    },
+    "disponibles_por_idioma": {
+     "Inglés": 1,
+     "Francés": 0,
+     "Alemán": 0,
+     "Italiano": 0
+    },
+    "plazas_por_idioma": {},
+    "plazas_por_provincia": {},
+    "ratio": null,
+    "ratio_por_idioma": {},
+    "sin_oferta": true
+   },
+   {
+    "cuerpo": "0590",
+    "especialidad": "Asesoria y Procesos de Imagen Personal",
+    "disponibles": 5,
+    "disponibles_ordinaria": 0,
+    "disponibles_reserva": 4,
+    "plazas": 0,
+    "adjudicadas": 0,
+    "desiertas": 0,
+    "bolsa_ordinaria_llego_a": null,
+    "bolsa_reserva_llego_a": null,
+    "por_tipo_bolsa": {},
+    "preferentes": {
+     "mayor55": 0,
+     "nota8": 0
+    },
+    "disponibles_por_provincia": {
+     "16": 3,
+     "02": 2,
+     "45": 2,
+     "13": 1,
+     "19": 1
+    },
+    "disponibles_por_idioma": {
+     "Inglés": 1,
+     "Francés": 0,
+     "Alemán": 0,
+     "Italiano": 0
+    },
+    "plazas_por_idioma": {},
+    "plazas_por_provincia": {},
+    "ratio": null,
+    "ratio_por_idioma": {},
+    "sin_oferta": true
+   },
+   {
+    "cuerpo": "0590",
+    "especialidad": "Biología y Geología",
+    "disponibles": 100,
+    "disponibles_ordinaria": 18,
+    "disponibles_reserva": 81,
+    "plazas": 9,
+    "adjudicadas": 9,
+    "desiertas": 0,
+    "bolsa_ordinaria_llego_a": 396,
+    "bolsa_reserva_llego_a": 39,
+    "por_tipo_bolsa": {
+     "0": 5,
+     "91": 4
+    },
+    "preferentes": {
+     "mayor55": 0,
+     "nota8": 0
+    },
+    "disponibles_por_provincia": {
+     "13": 46,
+     "02": 48,
+     "16": 30,
+     "45": 44,
+     "19": 23
+    },
+    "disponibles_por_idioma": {
+     "Inglés": 20,
+     "Francés": 1,
+     "Alemán": 0,
+     "Italiano": 1
+    },
+    "plazas_por_idioma": {
+     "sin_perfil": 8,
+     "Inglés": 1
+    },
+    "plazas_por_provincia": {
+     "13": 3,
+     "16": 1,
+     "19": 2,
+     "45": 3
+    },
+    "ratio": 11.1,
+    "ratio_por_idioma": {
+     "sin_perfil": 12.5,
+     "Inglés": 20.0
+    }
+   },
+   {
+    "cuerpo": "0590",
+    "especialidad": "Construcciones Civiles y Edificacion",
+    "disponibles": 2,
+    "disponibles_ordinaria": 0,
+    "disponibles_reserva": 0,
+    "plazas": 0,
+    "adjudicadas": 0,
+    "desiertas": 0,
+    "bolsa_ordinaria_llego_a": null,
+    "bolsa_reserva_llego_a": null,
+    "por_tipo_bolsa": {},
+    "preferentes": {
+     "mayor55": 0,
+     "nota8": 0
+    },
+    "disponibles_por_provincia": {
+     "16": 1,
+     "02": 1
+    },
+    "disponibles_por_idioma": {
+     "Inglés": 0,
+     "Francés": 0,
+     "Alemán": 0,
+     "Italiano": 0
+    },
+    "plazas_por_idioma": {},
+    "plazas_por_provincia": {},
+    "ratio": null,
+    "ratio_por_idioma": {},
+    "sin_oferta": true
+   },
+   {
+    "cuerpo": "0590",
+    "especialidad": "Dibujo",
+    "disponibles": 70,
+    "disponibles_ordinaria": 8,
+    "disponibles_reserva": 57,
+    "plazas": 17,
+    "adjudicadas": 17,
+    "desiertas": 0,
+    "bolsa_ordinaria_llego_a": 285,
+    "bolsa_reserva_llego_a": 72,
+    "por_tipo_bolsa": {
+     "0": 3,
+     "91": 11,
+     "7ZB": 3
+    },
+    "preferentes": {
+     "mayor55": 0,
+     "nota8": 0
+    },
+    "disponibles_por_provincia": {
+     "16": 44,
+     "02": 38,
+     "45": 41,
+     "13": 38,
+     "19": 33
+    },
+    "disponibles_por_idioma": {
+     "Inglés": 3,
+     "Francés": 0,
+     "Alemán": 1,
+     "Italiano": 0
+    },
+    "plazas_por_idioma": {
+     "sin_perfil": 17
+    },
+    "plazas_por_provincia": {
+     "02": 4,
+     "13": 2,
+     "16": 1,
+     "19": 2,
+     "45": 8
+    },
+    "ratio": 4.1,
+    "ratio_por_idioma": {
+     "sin_perfil": 4.1
+    }
+   },
+   {
+    "cuerpo": "0590",
+    "especialidad": "Economía",
+    "disponibles": 18,
+    "disponibles_ordinaria": 6,
+    "disponibles_reserva": 9,
+    "plazas": 1,
+    "adjudicadas": 1,
+    "desiertas": 0,
+    "bolsa_ordinaria_llego_a": 7,
+    "bolsa_reserva_llego_a": null,
+    "por_tipo_bolsa": {
+     "0": 1
+    },
+    "preferentes": {
+     "mayor55": 0,
+     "nota8": 0
+    },
+    "disponibles_por_provincia": {
+     "02": 13,
+     "16": 4,
+     "13": 4,
+     "19": 1,
+     "45": 1
+    },
+    "disponibles_por_idioma": {
+     "Inglés": 0,
+     "Francés": 0,
+     "Alemán": 0,
+     "Italiano": 0
+    },
+    "plazas_por_idioma": {
+     "sin_perfil": 1
+    },
+    "plazas_por_provincia": {
+     "02": 1
+    },
+    "ratio": 18.0,
+    "ratio_por_idioma": {
+     "sin_perfil": 18.0
+    }
+   },
+   {
+    "cuerpo": "0590",
+    "especialidad": "Educación Física",
+    "disponibles": 232,
+    "disponibles_ordinaria": 49,
+    "disponibles_reserva": 181,
+    "plazas": 10,
+    "adjudicadas": 9,
+    "desiertas": 1,
+    "bolsa_ordinaria_llego_a": 361,
+    "bolsa_reserva_llego_a": 78,
+    "por_tipo_bolsa": {
+     "7ZB": 2,
+     "0": 6,
+     "91": 1
+    },
+    "preferentes": {
+     "mayor55": 0,
+     "nota8": 0
+    },
+    "disponibles_por_provincia": {
+     "02": 174,
+     "13": 170,
+     "45": 182,
+     "16": 154,
+     "19": 139
+    },
+    "disponibles_por_idioma": {
+     "Inglés": 5,
+     "Francés": 1,
+     "Alemán": 0,
+     "Italiano": 0
+    },
+    "plazas_por_idioma": {
+     "Inglés": 4,
+     "sin_perfil": 6
+    },
+    "plazas_por_provincia": {
+     "13": 5,
+     "16": 1,
+     "19": 3,
+     "45": 1
+    },
+    "ratio": 23.2,
+    "ratio_por_idioma": {
+     "Inglés": 1.2,
+     "sin_perfil": 38.7
+    }
+   },
+   {
+    "cuerpo": "0590",
+    "especialidad": "Filosofía",
+    "disponibles": 6,
+    "disponibles_ordinaria": 2,
+    "disponibles_reserva": 1,
+    "plazas": 4,
+    "adjudicadas": 3,
+    "desiertas": 1,
+    "bolsa_ordinaria_llego_a": null,
+    "bolsa_reserva_llego_a": 2,
+    "por_tipo_bolsa": {
+     "91": 1,
+     "7ZB": 2
+    },
+    "preferentes": {
+     "mayor55": 0,
+     "nota8": 0
+    },
+    "disponibles_por_provincia": {
+     "02": 4,
+     "45": 4,
+     "16": 2,
+     "13": 2,
+     "19": 2
+    },
+    "disponibles_por_idioma": {
+     "Inglés": 0,
+     "Francés": 1,
+     "Alemán": 0,
+     "Italiano": 0
+    },
+    "plazas_por_idioma": {
+     "sin_perfil": 4
+    },
+    "plazas_por_provincia": {
+     "13": 1,
+     "16": 1,
+     "19": 1,
+     "45": 1
+    },
+    "ratio": 1.5,
+    "ratio_por_idioma": {
+     "sin_perfil": 1.5
+    }
+   },
+   {
+    "cuerpo": "0590",
+    "especialidad": "Formación y Orientación Laboral",
+    "disponibles": 92,
+    "disponibles_ordinaria": 4,
+    "disponibles_reserva": 87,
+    "plazas": 11,
+    "adjudicadas": 11,
+    "desiertas": 0,
+    "bolsa_ordinaria_llego_a": 215,
+    "bolsa_reserva_llego_a": 79,
+    "por_tipo_bolsa": {
+     "91": 7,
+     "0": 3,
+     "7ZB": 1
+    },
+    "preferentes": {
+     "mayor55": 0,
+     "nota8": 0
+    },
+    "disponibles_por_provincia": {
+     "02": 36,
+     "45": 36,
+     "13": 54,
+     "16": 40,
+     "19": 18
+    },
+    "disponibles_por_idioma": {
+     "Inglés": 2,
+     "Francés": 0,
+     "Alemán": 1,
+     "Italiano": 0
+    },
+    "plazas_por_idioma": {
+     "sin_perfil": 11
+    },
+    "plazas_por_provincia": {
+     "02": 3,
+     "13": 3,
+     "19": 4,
+     "45": 1
+    },
+    "ratio": 8.4,
+    "ratio_por_idioma": {
+     "sin_perfil": 8.4
+    }
+   },
+   {
+    "cuerpo": "0590",
+    "especialidad": "Francés",
+    "disponibles": 14,
+    "disponibles_ordinaria": 5,
+    "disponibles_reserva": 6,
+    "plazas": 6,
+    "adjudicadas": 6,
+    "desiertas": 0,
+    "bolsa_ordinaria_llego_a": 148,
+    "bolsa_reserva_llego_a": 4,
+    "por_tipo_bolsa": {
+     "0": 2,
+     "7ZB": 1,
+     "91": 3
+    },
+    "preferentes": {
+     "mayor55": 0,
+     "nota8": 0
+    },
+    "disponibles_por_provincia": {
+     "02": 10,
+     "16": 7,
+     "13": 9,
+     "45": 7,
+     "19": 4
+    },
+    "disponibles_por_idioma": {
+     "Inglés": 6,
+     "Francés": 9,
+     "Alemán": 0,
+     "Italiano": 0
+    },
+    "plazas_por_idioma": {
+     "sin_perfil": 6
+    },
+    "plazas_por_provincia": {
+     "13": 3,
+     "16": 2,
+     "45": 1
+    },
+    "ratio": 2.3,
+    "ratio_por_idioma": {
+     "sin_perfil": 2.3
+    }
+   },
+   {
+    "cuerpo": "0590",
+    "especialidad": "Física y Química",
+    "disponibles": 53,
+    "disponibles_ordinaria": 12,
+    "disponibles_reserva": 35,
+    "plazas": 16,
+    "adjudicadas": 16,
+    "desiertas": 0,
+    "bolsa_ordinaria_llego_a": 404,
+    "bolsa_reserva_llego_a": 138,
+    "por_tipo_bolsa": {
+     "0": 7,
+     "91": 7,
+     "7ZB": 2
+    },
+    "preferentes": {
+     "mayor55": 0,
+     "nota8": 0
+    },
+    "disponibles_por_provincia": {
+     "16": 14,
+     "13": 32,
+     "02": 15,
+     "45": 16,
+     "19": 5
+    },
+    "disponibles_por_idioma": {
+     "Inglés": 7,
+     "Francés": 0,
+     "Alemán": 1,
+     "Italiano": 0
+    },
+    "plazas_por_idioma": {
+     "sin_perfil": 16
+    },
+    "plazas_por_provincia": {
+     "02": 2,
+     "13": 4,
+     "16": 4,
+     "19": 1,
+     "45": 5
+    },
+    "ratio": 3.3,
+    "ratio_por_idioma": {
+     "sin_perfil": 3.3
+    }
+   },
+   {
+    "cuerpo": "0590",
+    "especialidad": "Geografía e Historia",
+    "disponibles": 393,
+    "disponibles_ordinaria": 31,
+    "disponibles_reserva": 360,
+    "plazas": 7,
+    "adjudicadas": 7,
+    "desiertas": 0,
+    "bolsa_ordinaria_llego_a": 530,
+    "bolsa_reserva_llego_a": null,
+    "por_tipo_bolsa": {
+     "0": 7
+    },
+    "preferentes": {
+     "mayor55": 0,
+     "nota8": 0
+    },
+    "disponibles_por_provincia": {
+     "13": 301,
+     "16": 274,
+     "02": 276,
+     "45": 335,
+     "19": 257
+    },
+    "disponibles_por_idioma": {
+     "Inglés": 37,
+     "Francés": 2,
+     "Alemán": 1,
+     "Italiano": 2
+    },
+    "plazas_por_idioma": {
+     "sin_perfil": 7
+    },
+    "plazas_por_provincia": {
+     "02": 2,
+     "13": 1,
+     "19": 1,
+     "45": 3
+    },
+    "ratio": 56.1,
+    "ratio_por_idioma": {
+     "sin_perfil": 56.1
+    }
+   },
+   {
+    "cuerpo": "0590",
+    "especialidad": "Griego",
+    "disponibles": 1,
+    "disponibles_ordinaria": 0,
+    "disponibles_reserva": 0,
+    "plazas": 1,
+    "adjudicadas": 0,
+    "desiertas": 1,
+    "bolsa_ordinaria_llego_a": null,
+    "bolsa_reserva_llego_a": null,
+    "por_tipo_bolsa": {},
+    "preferentes": {
+     "mayor55": 0,
+     "nota8": 0
+    },
+    "disponibles_por_provincia": {
+     "13": 1
+    },
+    "disponibles_por_idioma": {
+     "Inglés": 0,
+     "Francés": 0,
+     "Alemán": 0,
+     "Italiano": 1
+    },
+    "plazas_por_idioma": {
+     "sin_perfil": 1
+    },
+    "plazas_por_provincia": {
+     "19": 1
+    },
+    "ratio": 1.0,
+    "ratio_por_idioma": {
+     "sin_perfil": 1.0
+    }
+   },
+   {
+    "cuerpo": "0590",
+    "especialidad": "Hostelería y Turismo",
+    "disponibles": 7,
+    "disponibles_ordinaria": 0,
+    "disponibles_reserva": 5,
+    "plazas": 1,
+    "adjudicadas": 1,
+    "desiertas": 0,
+    "bolsa_ordinaria_llego_a": 178,
+    "bolsa_reserva_llego_a": null,
+    "por_tipo_bolsa": {
+     "0": 1
+    },
+    "preferentes": {
+     "mayor55": 0,
+     "nota8": 0
+    },
+    "disponibles_por_provincia": {
+     "13": 3,
+     "02": 1,
+     "45": 4,
+     "19": 2
+    },
+    "disponibles_por_idioma": {
+     "Inglés": 2,
+     "Francés": 0,
+     "Alemán": 0,
+     "Italiano": 1
+    },
+    "plazas_por_idioma": {
+     "sin_perfil": 1
+    },
+    "plazas_por_provincia": {
+     "16": 1
+    },
+    "ratio": 7.0,
+    "ratio_por_idioma": {
+     "sin_perfil": 7.0
+    }
+   },
+   {
+    "cuerpo": "0590",
+    "especialidad": "Informática",
+    "disponibles": 3,
+    "disponibles_ordinaria": 2,
+    "disponibles_reserva": 0,
+    "plazas": 4,
+    "adjudicadas": 2,
+    "desiertas": 2,
+    "bolsa_ordinaria_llego_a": 370,
+    "bolsa_reserva_llego_a": 181,
+    "por_tipo_bolsa": {
+     "0": 1,
+     "91": 1
+    },
+    "preferentes": {
+     "mayor55": 0,
+     "nota8": 0
+    },
+    "disponibles_por_provincia": {
+     "02": 2,
+     "13": 1
+    },
+    "disponibles_por_idioma": {
+     "Inglés": 1,
+     "Francés": 0,
+     "Alemán": 0,
+     "Italiano": 0
+    },
+    "plazas_por_idioma": {
+     "sin_perfil": 3,
+     "Inglés": 1
+    },
+    "plazas_por_provincia": {
+     "16": 4
+    },
+    "ratio": 0.8,
+    "ratio_por_idioma": {
+     "sin_perfil": 1.0,
+     "Inglés": 1.0
+    }
+   },
+   {
+    "cuerpo": "0590",
+    "especialidad": "Inglés",
+    "disponibles": 156,
+    "disponibles_ordinaria": 22,
+    "disponibles_reserva": 132,
+    "plazas": 32,
+    "adjudicadas": 32,
+    "desiertas": 0,
+    "bolsa_ordinaria_llego_a": 634,
+    "bolsa_reserva_llego_a": 131,
+    "por_tipo_bolsa": {
+     "0": 10,
+     "91": 21,
+     "7ZB": 1
+    },
+    "preferentes": {
+     "mayor55": 0,
+     "nota8": 0
+    },
+    "disponibles_por_provincia": {
+     "13": 99,
+     "02": 73,
+     "16": 68,
+     "45": 90,
+     "19": 55
+    },
+    "disponibles_por_idioma": {
+     "Inglés": 103,
+     "Francés": 3,
+     "Alemán": 1,
+     "Italiano": 0
+    },
+    "plazas_por_idioma": {
+     "sin_perfil": 32
+    },
+    "plazas_por_provincia": {
+     "02": 10,
+     "16": 2,
+     "19": 2,
+     "45": 17,
+     "13": 1
+    },
+    "ratio": 4.9,
+    "ratio_por_idioma": {
+     "sin_perfil": 4.9
+    }
+   },
+   {
+    "cuerpo": "0590",
+    "especialidad": "Instalaciones Electrotecnicas",
+    "disponibles": 1,
+    "disponibles_ordinaria": 0,
+    "disponibles_reserva": 1,
+    "plazas": 0,
+    "adjudicadas": 0,
+    "desiertas": 0,
+    "bolsa_ordinaria_llego_a": null,
+    "bolsa_reserva_llego_a": null,
+    "por_tipo_bolsa": {},
+    "preferentes": {
+     "mayor55": 0,
+     "nota8": 0
+    },
+    "disponibles_por_provincia": {
+     "13": 1
+    },
+    "disponibles_por_idioma": {
+     "Inglés": 0,
+     "Francés": 0,
+     "Alemán": 0,
+     "Italiano": 0
+    },
+    "plazas_por_idioma": {},
+    "plazas_por_provincia": {},
+    "ratio": null,
+    "ratio_por_idioma": {},
+    "sin_oferta": true
+   },
+   {
+    "cuerpo": "0590",
+    "especialidad": "Intervención Sociocomunitaria",
+    "disponibles": 5,
+    "disponibles_ordinaria": 0,
+    "disponibles_reserva": 1,
+    "plazas": 2,
+    "adjudicadas": 2,
+    "desiertas": 0,
+    "bolsa_ordinaria_llego_a": null,
+    "bolsa_reserva_llego_a": null,
+    "por_tipo_bolsa": {
+     "7Z": 1,
+     "7ZB": 1
+    },
+    "preferentes": {
+     "mayor55": 0,
+     "nota8": 0
+    },
+    "disponibles_por_provincia": {
+     "02": 3,
+     "45": 1,
+     "13": 1,
+     "16": 1
+    },
+    "disponibles_por_idioma": {
+     "Inglés": 1,
+     "Francés": 0,
+     "Alemán": 0,
+     "Italiano": 0
+    },
+    "plazas_por_idioma": {
+     "sin_perfil": 2
+    },
+    "plazas_por_provincia": {
+     "13": 1,
+     "16": 1
+    },
+    "ratio": 2.5,
+    "ratio_por_idioma": {
+     "sin_perfil": 2.5
+    }
+   },
+   {
+    "cuerpo": "0590",
+    "especialidad": "Italiano",
+    "disponibles": 4,
+    "disponibles_ordinaria": 0,
+    "disponibles_reserva": 0,
+    "plazas": 0,
+    "adjudicadas": 0,
+    "desiertas": 0,
+    "bolsa_ordinaria_llego_a": null,
+    "bolsa_reserva_llego_a": null,
+    "por_tipo_bolsa": {},
+    "preferentes": {
+     "mayor55": 0,
+     "nota8": 0
+    },
+    "disponibles_por_provincia": {
+     "13": 2,
+     "02": 2,
+     "45": 2,
+     "16": 1,
+     "19": 1
+    },
+    "disponibles_por_idioma": {
+     "Inglés": 2,
+     "Francés": 0,
+     "Alemán": 0,
+     "Italiano": 2
+    },
+    "plazas_por_idioma": {},
+    "plazas_por_provincia": {},
+    "ratio": null,
+    "ratio_por_idioma": {},
+    "sin_oferta": true
+   },
+   {
+    "cuerpo": "0590",
+    "especialidad": "Latín",
+    "disponibles": 2,
+    "disponibles_ordinaria": 0,
+    "disponibles_reserva": 1,
+    "plazas": 2,
+    "adjudicadas": 1,
+    "desiertas": 1,
+    "bolsa_ordinaria_llego_a": null,
+    "bolsa_reserva_llego_a": null,
+    "por_tipo_bolsa": {
+     "7ZB": 1
+    },
+    "preferentes": {
+     "mayor55": 0,
+     "nota8": 0
+    },
+    "disponibles_por_provincia": {
+     "13": 2,
+     "02": 2,
+     "45": 2,
+     "19": 2,
+     "16": 2
+    },
+    "disponibles_por_idioma": {
+     "Inglés": 0,
+     "Francés": 0,
+     "Alemán": 0,
+     "Italiano": 0
+    },
+    "plazas_por_idioma": {
+     "sin_perfil": 2
+    },
+    "plazas_por_provincia": {
+     "19": 1,
+     "13": 1
+    },
+    "ratio": 1.0,
+    "ratio_por_idioma": {
+     "sin_perfil": 1.0
+    }
+   },
+   {
+    "cuerpo": "0590",
+    "especialidad": "Lengua Castellana y Literatura",
+    "disponibles": 50,
+    "disponibles_ordinaria": 17,
+    "disponibles_reserva": 30,
+    "plazas": 14,
+    "adjudicadas": 14,
+    "desiertas": 0,
+    "bolsa_ordinaria_llego_a": 515,
+    "bolsa_reserva_llego_a": 86,
+    "por_tipo_bolsa": {
+     "0": 10,
+     "7ZB": 1,
+     "91": 3
+    },
+    "preferentes": {
+     "mayor55": 0,
+     "nota8": 0
+    },
+    "disponibles_por_provincia": {
+     "02": 33,
+     "16": 14,
+     "13": 21,
+     "45": 9,
+     "19": 4
+    },
+    "disponibles_por_idioma": {
+     "Inglés": 1,
+     "Francés": 2,
+     "Alemán": 1,
+     "Italiano": 1
+    },
+    "plazas_por_idioma": {
+     "sin_perfil": 14
+    },
+    "plazas_por_provincia": {
+     "02": 4,
+     "13": 3,
+     "16": 3,
+     "45": 4
+    },
+    "ratio": 3.6,
+    "ratio_por_idioma": {
+     "sin_perfil": 3.6
+    }
+   },
+   {
+    "cuerpo": "0590",
+    "especialidad": "Matemáticas",
+    "disponibles": 53,
+    "disponibles_ordinaria": 6,
+    "disponibles_reserva": 38,
+    "plazas": 19,
+    "adjudicadas": 16,
+    "desiertas": 3,
+    "bolsa_ordinaria_llego_a": 429,
+    "bolsa_reserva_llego_a": 207,
+    "por_tipo_bolsa": {
+     "0": 5,
+     "91": 8,
+     "7ZB": 3
+    },
+    "preferentes": {
+     "mayor55": 0,
+     "nota8": 0
+    },
+    "disponibles_por_provincia": {
+     "13": 18,
+     "02": 34,
+     "16": 11,
+     "45": 5,
+     "19": 1
+    },
+    "disponibles_por_idioma": {
+     "Inglés": 1,
+     "Francés": 1,
+     "Alemán": 0,
+     "Italiano": 0
+    },
+    "plazas_por_idioma": {
+     "sin_perfil": 19
+    },
+    "plazas_por_provincia": {
+     "02": 2,
+     "13": 6,
+     "16": 3,
+     "19": 3,
+     "45": 5
+    },
+    "ratio": 2.8,
+    "ratio_por_idioma": {
+     "sin_perfil": 2.8
+    }
+   },
+   {
+    "cuerpo": "0590",
+    "especialidad": "Música",
+    "disponibles": 9,
+    "disponibles_ordinaria": 0,
+    "disponibles_reserva": 0,
+    "plazas": 6,
+    "adjudicadas": 3,
+    "desiertas": 3,
+    "bolsa_ordinaria_llego_a": null,
+    "bolsa_reserva_llego_a": null,
+    "por_tipo_bolsa": {
+     "7Z": 1,
+     "7ZB": 1,
+     "7X": 1
+    },
+    "preferentes": {
+     "mayor55": 0,
+     "nota8": 0
+    },
+    "disponibles_por_provincia": {
+     "16": 1,
+     "02": 7,
+     "13": 1
+    },
+    "disponibles_por_idioma": {
+     "Inglés": 1,
+     "Francés": 1,
+     "Alemán": 1,
+     "Italiano": 0
+    },
+    "plazas_por_idioma": {
+     "sin_perfil": 4,
+     "Inglés": 2
+    },
+    "plazas_por_provincia": {
+     "02": 1,
+     "13": 2,
+     "16": 1,
+     "19": 1,
+     "45": 1
+    },
+    "ratio": 1.5,
+    "ratio_por_idioma": {
+     "sin_perfil": 2.2,
+     "Inglés": 0.5
+    }
+   },
+   {
+    "cuerpo": "0590",
+    "especialidad": "Organización y Gestión Comercial",
+    "disponibles": 10,
+    "disponibles_ordinaria": 1,
+    "disponibles_reserva": 3,
+    "plazas": 1,
+    "adjudicadas": 1,
+    "desiertas": 0,
+    "bolsa_ordinaria_llego_a": null,
+    "bolsa_reserva_llego_a": null,
+    "por_tipo_bolsa": {
+     "7Z": 1
+    },
+    "preferentes": {
+     "mayor55": 0,
+     "nota8": 0
+    },
+    "disponibles_por_provincia": {
+     "16": 1,
+     "02": 5,
+     "19": 2,
+     "45": 3,
+     "13": 4
+    },
+    "disponibles_por_idioma": {
+     "Inglés": 1,
+     "Francés": 0,
+     "Alemán": 0,
+     "Italiano": 0
+    },
+    "plazas_por_idioma": {
+     "sin_perfil": 1
+    },
+    "plazas_por_provincia": {
+     "02": 1
+    },
+    "ratio": 10.0,
+    "ratio_por_idioma": {
+     "sin_perfil": 10.0
+    }
+   },
+   {
+    "cuerpo": "0590",
+    "especialidad": "Organización y Procesos de Mantenimiento de Vehiculos",
+    "disponibles": 1,
+    "disponibles_ordinaria": 0,
+    "disponibles_reserva": 1,
+    "plazas": 0,
+    "adjudicadas": 0,
+    "desiertas": 0,
+    "bolsa_ordinaria_llego_a": null,
+    "bolsa_reserva_llego_a": null,
+    "por_tipo_bolsa": {},
+    "preferentes": {
+     "mayor55": 0,
+     "nota8": 0
+    },
+    "disponibles_por_provincia": {
+     "13": 1
+    },
+    "disponibles_por_idioma": {
+     "Inglés": 0,
+     "Francés": 0,
+     "Alemán": 0,
+     "Italiano": 0
+    },
+    "plazas_por_idioma": {},
+    "plazas_por_provincia": {},
+    "ratio": null,
+    "ratio_por_idioma": {},
+    "sin_oferta": true
+   },
+   {
+    "cuerpo": "0590",
+    "especialidad": "Organización y Proyectos de Fabricacion Mecanica",
+    "disponibles": 2,
+    "disponibles_ordinaria": 0,
+    "disponibles_reserva": 0,
+    "plazas": 1,
+    "adjudicadas": 0,
+    "desiertas": 1,
+    "bolsa_ordinaria_llego_a": null,
+    "bolsa_reserva_llego_a": null,
+    "por_tipo_bolsa": {},
+    "preferentes": {
+     "mayor55": 0,
+     "nota8": 0
+    },
+    "disponibles_por_provincia": {
+     "45": 1,
+     "13": 1
+    },
+    "disponibles_por_idioma": {
+     "Inglés": 1,
+     "Francés": 0,
+     "Alemán": 0,
+     "Italiano": 0
+    },
+    "plazas_por_idioma": {
+     "Inglés": 1
+    },
+    "plazas_por_provincia": {
+     "19": 1
+    },
+    "ratio": 2.0,
+    "ratio_por_idioma": {
+     "Inglés": 1.0
+    }
+   },
+   {
+    "cuerpo": "0590",
+    "especialidad": "Organización y Proyectos de Sistemas Energeticos",
+    "disponibles": 5,
+    "disponibles_ordinaria": 0,
+    "disponibles_reserva": 0,
+    "plazas": 1,
+    "adjudicadas": 0,
+    "desiertas": 1,
+    "bolsa_ordinaria_llego_a": null,
+    "bolsa_reserva_llego_a": null,
+    "por_tipo_bolsa": {},
+    "preferentes": {
+     "mayor55": 0,
+     "nota8": 0
+    },
+    "disponibles_por_provincia": {
+     "45": 2,
+     "02": 2,
+     "13": 2
+    },
+    "disponibles_por_idioma": {
+     "Inglés": 2,
+     "Francés": 0,
+     "Alemán": 0,
+     "Italiano": 0
+    },
+    "plazas_por_idioma": {
+     "sin_perfil": 1
+    },
+    "plazas_por_provincia": {
+     "13": 1
+    },
+    "ratio": 5.0,
+    "ratio_por_idioma": {
+     "sin_perfil": 5.0
+    }
+   },
+   {
+    "cuerpo": "0590",
+    "especialidad": "Orientación Educativa",
+    "disponibles": 131,
+    "disponibles_ordinaria": 34,
+    "disponibles_reserva": 97,
+    "plazas": 16,
+    "adjudicadas": 16,
+    "desiertas": 0,
+    "bolsa_ordinaria_llego_a": 430,
+    "bolsa_reserva_llego_a": 44,
+    "por_tipo_bolsa": {
+     "0": 9,
+     "91": 7
+    },
+    "preferentes": {
+     "mayor55": 0,
+     "nota8": 0
+    },
+    "disponibles_por_provincia": {
+     "02": 63,
+     "13": 62,
+     "45": 64,
+     "16": 47,
+     "19": 34
+    },
+    "disponibles_por_idioma": {
+     "Inglés": 8,
+     "Francés": 1,
+     "Alemán": 0,
+     "Italiano": 0
+    },
+    "plazas_por_idioma": {
+     "sin_perfil": 16
+    },
+    "plazas_por_provincia": {
+     "02": 2,
+     "13": 1,
+     "16": 4,
+     "19": 3,
+     "45": 6
+    },
+    "ratio": 8.2,
+    "ratio_por_idioma": {
+     "sin_perfil": 8.2
+    }
+   },
+   {
+    "cuerpo": "0590",
+    "especialidad": "Procedimientos Sanitarios y Asistenciales",
+    "disponibles": 5,
+    "disponibles_ordinaria": 1,
+    "disponibles_reserva": 4,
+    "plazas": 1,
+    "adjudicadas": 1,
+    "desiertas": 0,
+    "bolsa_ordinaria_llego_a": 408,
+    "bolsa_reserva_llego_a": null,
+    "por_tipo_bolsa": {
+     "0": 1
+    },
+    "preferentes": {
+     "mayor55": 0,
+     "nota8": 0
+    },
+    "disponibles_por_provincia": {
+     "02": 4,
+     "16": 1,
+     "45": 1
+    },
+    "disponibles_por_idioma": {
+     "Inglés": 0,
+     "Francés": 0,
+     "Alemán": 0,
+     "Italiano": 0
+    },
+    "plazas_por_idioma": {
+     "sin_perfil": 1
+    },
+    "plazas_por_provincia": {
+     "16": 1
+    },
+    "ratio": 5.0,
+    "ratio_por_idioma": {
+     "sin_perfil": 5.0
+    }
+   },
+   {
+    "cuerpo": "0590",
+    "especialidad": "Procedimientos de Diagnostico Clinico y Ortoprotesico",
+    "disponibles": 41,
+    "disponibles_ordinaria": 1,
+    "disponibles_reserva": 39,
+    "plazas": 1,
+    "adjudicadas": 1,
+    "desiertas": 0,
+    "bolsa_ordinaria_llego_a": null,
+    "bolsa_reserva_llego_a": 28,
+    "por_tipo_bolsa": {
+     "91": 1
+    },
+    "preferentes": {
+     "mayor55": 0,
+     "nota8": 0
+    },
+    "disponibles_por_provincia": {
+     "02": 33,
+     "16": 14,
+     "45": 10,
+     "19": 8,
+     "13": 14
+    },
+    "disponibles_por_idioma": {
+     "Inglés": 4,
+     "Francés": 1,
+     "Alemán": 0,
+     "Italiano": 0
+    },
+    "plazas_por_idioma": {
+     "sin_perfil": 1
+    },
+    "plazas_por_provincia": {
+     "02": 1
+    },
+    "ratio": 41.0,
+    "ratio_por_idioma": {
+     "sin_perfil": 41.0
+    }
+   },
+   {
+    "cuerpo": "0590",
+    "especialidad": "Procesos Comerciales",
+    "disponibles": 15,
+    "disponibles_ordinaria": 3,
+    "disponibles_reserva": 12,
+    "plazas": 3,
+    "adjudicadas": 3,
+    "desiertas": 0,
+    "bolsa_ordinaria_llego_a": null,
+    "bolsa_reserva_llego_a": 47,
+    "por_tipo_bolsa": {
+     "91": 3
+    },
+    "preferentes": {
+     "mayor55": 0,
+     "nota8": 0
+    },
+    "disponibles_por_provincia": {
+     "02": 7,
+     "13": 7,
+     "16": 5,
+     "45": 2,
+     "19": 1
+    },
+    "disponibles_por_idioma": {
+     "Inglés": 0,
+     "Francés": 0,
+     "Alemán": 0,
+     "Italiano": 0
+    },
+    "plazas_por_idioma": {
+     "sin_perfil": 3
+    },
+    "plazas_por_provincia": {
+     "16": 1,
+     "19": 2
+    },
+    "ratio": 5.0,
+    "ratio_por_idioma": {
+     "sin_perfil": 5.0
+    }
+   },
+   {
+    "cuerpo": "0590",
+    "especialidad": "Procesos Sanitarios",
+    "disponibles": 6,
+    "disponibles_ordinaria": 1,
+    "disponibles_reserva": 1,
+    "plazas": 2,
+    "adjudicadas": 2,
+    "desiertas": 0,
+    "bolsa_ordinaria_llego_a": 15,
+    "bolsa_reserva_llego_a": null,
+    "por_tipo_bolsa": {
+     "0": 1,
+     "7ZB": 1
+    },
+    "preferentes": {
+     "mayor55": 0,
+     "nota8": 0
+    },
+    "disponibles_por_provincia": {
+     "02": 3,
+     "16": 2,
+     "45": 2
+    },
+    "disponibles_por_idioma": {
+     "Inglés": 1,
+     "Francés": 0,
+     "Alemán": 0,
+     "Italiano": 0
+    },
+    "plazas_por_idioma": {
+     "sin_perfil": 2
+    },
+    "plazas_por_provincia": {
+     "02": 1,
+     "16": 1
+    },
+    "ratio": 3.0,
+    "ratio_por_idioma": {
+     "sin_perfil": 3.0
+    }
+   },
+   {
+    "cuerpo": "0590",
+    "especialidad": "Procesos de Gestión Administrativa",
+    "disponibles": 26,
+    "disponibles_ordinaria": 0,
+    "disponibles_reserva": 23,
+    "plazas": 4,
+    "adjudicadas": 4,
+    "desiertas": 0,
+    "bolsa_ordinaria_llego_a": null,
+    "bolsa_reserva_llego_a": 71,
+    "por_tipo_bolsa": {
+     "91": 4
+    },
+    "preferentes": {
+     "mayor55": 0,
+     "nota8": 0
+    },
+    "disponibles_por_provincia": {
+     "16": 5,
+     "02": 10,
+     "45": 12,
+     "19": 5,
+     "13": 6
+    },
+    "disponibles_por_idioma": {
+     "Inglés": 1,
+     "Francés": 0,
+     "Alemán": 0,
+     "Italiano": 0
+    },
+    "plazas_por_idioma": {
+     "sin_perfil": 4
+    },
+    "plazas_por_provincia": {
+     "13": 3,
+     "19": 1
+    },
+    "ratio": 6.5,
+    "ratio_por_idioma": {
+     "sin_perfil": 6.5
+    }
+   },
+   {
+    "cuerpo": "0590",
+    "especialidad": "Procesos de Producción Agraria",
+    "disponibles": 4,
+    "disponibles_ordinaria": 0,
+    "disponibles_reserva": 0,
+    "plazas": 0,
+    "adjudicadas": 0,
+    "desiertas": 0,
+    "bolsa_ordinaria_llego_a": null,
+    "bolsa_reserva_llego_a": null,
+    "por_tipo_bolsa": {},
+    "preferentes": {
+     "mayor55": 0,
+     "nota8": 0
+    },
+    "disponibles_por_provincia": {
+     "02": 2,
+     "16": 1,
+     "45": 1,
+     "13": 1
+    },
+    "disponibles_por_idioma": {
+     "Inglés": 1,
+     "Francés": 0,
+     "Alemán": 0,
+     "Italiano": 1
+    },
+    "plazas_por_idioma": {},
+    "plazas_por_provincia": {},
+    "ratio": null,
+    "ratio_por_idioma": {},
+    "sin_oferta": true
+   },
+   {
+    "cuerpo": "0590",
+    "especialidad": "Procesos en la Industria Alimentaria",
+    "disponibles": 1,
+    "disponibles_ordinaria": 0,
+    "disponibles_reserva": 0,
+    "plazas": 0,
+    "adjudicadas": 0,
+    "desiertas": 0,
+    "bolsa_ordinaria_llego_a": null,
+    "bolsa_reserva_llego_a": null,
+    "por_tipo_bolsa": {},
+    "preferentes": {
+     "mayor55": 0,
+     "nota8": 0
+    },
+    "disponibles_por_provincia": {
+     "13": 1
+    },
+    "disponibles_por_idioma": {
+     "Inglés": 0,
+     "Francés": 0,
+     "Alemán": 0,
+     "Italiano": 0
+    },
+    "plazas_por_idioma": {},
+    "plazas_por_provincia": {},
+    "ratio": null,
+    "ratio_por_idioma": {},
+    "sin_oferta": true
+   },
+   {
+    "cuerpo": "0590",
+    "especialidad": "Procesos y Medios de Comunicación",
+    "disponibles": 1,
+    "disponibles_ordinaria": 0,
+    "disponibles_reserva": 0,
+    "plazas": 0,
+    "adjudicadas": 0,
+    "desiertas": 0,
+    "bolsa_ordinaria_llego_a": null,
+    "bolsa_reserva_llego_a": null,
+    "por_tipo_bolsa": {},
+    "preferentes": {
+     "mayor55": 0,
+     "nota8": 0
+    },
+    "disponibles_por_provincia": {
+     "02": 1
+    },
+    "disponibles_por_idioma": {
+     "Inglés": 0,
+     "Francés": 0,
+     "Alemán": 0,
+     "Italiano": 0
+    },
+    "plazas_por_idioma": {},
+    "plazas_por_provincia": {},
+    "ratio": null,
+    "ratio_por_idioma": {},
+    "sin_oferta": true
+   },
+   {
+    "cuerpo": "0590",
+    "especialidad": "Procesos y Productos de Textil, Confeccion y Piel",
+    "disponibles": 2,
+    "disponibles_ordinaria": 0,
+    "disponibles_reserva": 0,
+    "plazas": 0,
+    "adjudicadas": 0,
+    "desiertas": 0,
+    "bolsa_ordinaria_llego_a": null,
+    "bolsa_reserva_llego_a": null,
+    "por_tipo_bolsa": {},
+    "preferentes": {
+     "mayor55": 0,
+     "nota8": 0
+    },
+    "disponibles_por_provincia": {
+     "02": 1,
+     "13": 1
+    },
+    "disponibles_por_idioma": {
+     "Inglés": 1,
+     "Francés": 0,
+     "Alemán": 0,
+     "Italiano": 0
+    },
+    "plazas_por_idioma": {},
+    "plazas_por_provincia": {},
+    "ratio": null,
+    "ratio_por_idioma": {},
+    "sin_oferta": true
+   },
+   {
+    "cuerpo": "0590",
+    "especialidad": "Procesos y Productos en Madera y Mueble",
+    "disponibles": 4,
+    "disponibles_ordinaria": 0,
+    "disponibles_reserva": 0,
+    "plazas": 0,
+    "adjudicadas": 0,
+    "desiertas": 0,
+    "bolsa_ordinaria_llego_a": null,
+    "bolsa_reserva_llego_a": null,
+    "por_tipo_bolsa": {},
+    "preferentes": {
+     "mayor55": 0,
+     "nota8": 0
+    },
+    "disponibles_por_provincia": {
+     "02": 2,
+     "13": 1,
+     "45": 1
+    },
+    "disponibles_por_idioma": {
+     "Inglés": 1,
+     "Francés": 0,
+     "Alemán": 0,
+     "Italiano": 0
+    },
+    "plazas_por_idioma": {},
+    "plazas_por_provincia": {},
+    "ratio": null,
+    "ratio_por_idioma": {},
+    "sin_oferta": true
+   },
+   {
+    "cuerpo": "0590",
+    "especialidad": "Servicios a la Comunidad",
+    "disponibles": 21,
+    "disponibles_ordinaria": 3,
+    "disponibles_reserva": 7,
+    "plazas": 2,
+    "adjudicadas": 2,
+    "desiertas": 0,
+    "bolsa_ordinaria_llego_a": null,
+    "bolsa_reserva_llego_a": 5,
+    "por_tipo_bolsa": {
+     "7ZB": 1,
+     "91": 1
+    },
+    "preferentes": {
+     "mayor55": 0,
+     "nota8": 0
+    },
+    "disponibles_por_provincia": {
+     "13": 8,
+     "45": 7,
+     "02": 9,
+     "16": 5,
+     "19": 3
+    },
+    "disponibles_por_idioma": {
+     "Inglés": 3,
+     "Francés": 0,
+     "Alemán": 0,
+     "Italiano": 0
+    },
+    "plazas_por_idioma": {
+     "sin_perfil": 2
+    },
+    "plazas_por_provincia": {
+     "13": 1,
+     "16": 1
+    },
+    "ratio": 10.5,
+    "ratio_por_idioma": {
+     "sin_perfil": 10.5
+    }
+   },
+   {
+    "cuerpo": "0590",
+    "especialidad": "Sistemas Electrotecnicos y Automaticos",
+    "disponibles": 1,
+    "disponibles_ordinaria": 0,
+    "disponibles_reserva": 0,
+    "plazas": 0,
+    "adjudicadas": 1,
+    "desiertas": 0,
+    "bolsa_ordinaria_llego_a": null,
+    "bolsa_reserva_llego_a": null,
+    "por_tipo_bolsa": {
+     "7ZB": 1
+    },
+    "preferentes": {
+     "mayor55": 0,
+     "nota8": 0
+    },
+    "disponibles_por_provincia": {
+     "02": 1
+    },
+    "disponibles_por_idioma": {
+     "Inglés": 0,
+     "Francés": 0,
+     "Alemán": 0,
+     "Italiano": 0
+    },
+    "plazas_por_idioma": {},
+    "plazas_por_provincia": {},
+    "ratio": null,
+    "ratio_por_idioma": {},
+    "sin_oferta": true
+   },
+   {
+    "cuerpo": "0590",
+    "especialidad": "Sistemas y Aplicaciones Informáticas",
+    "disponibles": 4,
+    "disponibles_ordinaria": 2,
+    "disponibles_reserva": 2,
+    "plazas": 1,
+    "adjudicadas": 1,
+    "desiertas": 0,
+    "bolsa_ordinaria_llego_a": null,
+    "bolsa_reserva_llego_a": 12,
+    "por_tipo_bolsa": {
+     "91": 1
+    },
+    "preferentes": {
+     "mayor55": 0,
+     "nota8": 0
+    },
+    "disponibles_por_provincia": {
+     "02": 2,
+     "45": 1,
+     "13": 1
+    },
+    "disponibles_por_idioma": {
+     "Inglés": 0,
+     "Francés": 0,
+     "Alemán": 0,
+     "Italiano": 0
+    },
+    "plazas_por_idioma": {
+     "sin_perfil": 1
+    },
+    "plazas_por_provincia": {
+     "13": 1
+    },
+    "ratio": 4.0,
+    "ratio_por_idioma": {
+     "sin_perfil": 4.0
+    }
+   },
+   {
+    "cuerpo": "0590",
+    "especialidad": "Tecnología",
+    "disponibles": 15,
+    "disponibles_ordinaria": 2,
+    "disponibles_reserva": 2,
+    "plazas": 8,
+    "adjudicadas": 6,
+    "desiertas": 2,
+    "bolsa_ordinaria_llego_a": 3349,
+    "bolsa_reserva_llego_a": 13,
+    "por_tipo_bolsa": {
+     "0": 2,
+     "7Z": 1,
+     "7ZB": 2,
+     "91": 1
+    },
+    "preferentes": {
+     "mayor55": 0,
+     "nota8": 0
+    },
+    "disponibles_por_provincia": {
+     "02": 13,
+     "16": 4,
+     "13": 2
+    },
+    "disponibles_por_idioma": {
+     "Inglés": 3,
+     "Francés": 0,
+     "Alemán": 0,
+     "Italiano": 0
+    },
+    "plazas_por_idioma": {
+     "sin_perfil": 8
+    },
+    "plazas_por_provincia": {
+     "02": 2,
+     "13": 1,
+     "16": 3,
+     "19": 1,
+     "45": 1
+    },
+    "ratio": 1.9,
+    "ratio_por_idioma": {
+     "sin_perfil": 1.9
+    }
+   },
+   {
+    "cuerpo": "0591",
+    "especialidad": "Equipos Electrónicos",
+    "disponibles": 2,
+    "disponibles_ordinaria": 0,
+    "disponibles_reserva": 0,
+    "plazas": 0,
+    "adjudicadas": 0,
+    "desiertas": 0,
+    "bolsa_ordinaria_llego_a": null,
+    "bolsa_reserva_llego_a": null,
+    "por_tipo_bolsa": {},
+    "preferentes": {
+     "mayor55": 0,
+     "nota8": 0
+    },
+    "disponibles_por_provincia": {
+     "13": 2,
+     "02": 1,
+     "16": 1
+    },
+    "disponibles_por_idioma": {
+     "Inglés": 0,
+     "Francés": 0,
+     "Alemán": 0,
+     "Italiano": 0
+    },
+    "plazas_por_idioma": {},
+    "plazas_por_provincia": {},
+    "ratio": null,
+    "ratio_por_idioma": {},
+    "sin_oferta": true
+   },
+   {
+    "cuerpo": "0591",
+    "especialidad": "Estetica",
+    "disponibles": 3,
+    "disponibles_ordinaria": 0,
+    "disponibles_reserva": 2,
+    "plazas": 1,
+    "adjudicadas": 1,
+    "desiertas": 0,
+    "bolsa_ordinaria_llego_a": null,
+    "bolsa_reserva_llego_a": null,
+    "por_tipo_bolsa": {
+     "7Z": 1
+    },
+    "preferentes": {
+     "mayor55": 0,
+     "nota8": 0
+    },
+    "disponibles_por_provincia": {
+     "13": 2,
+     "45": 2,
+     "16": 1,
+     "02": 1
+    },
+    "disponibles_por_idioma": {
+     "Inglés": 0,
+     "Francés": 0,
+     "Alemán": 0,
+     "Italiano": 0
+    },
+    "plazas_por_idioma": {
+     "sin_perfil": 1
+    },
+    "plazas_por_provincia": {
+     "16": 1
+    },
+    "ratio": 3.0,
+    "ratio_por_idioma": {
+     "sin_perfil": 3.0
+    }
+   },
+   {
+    "cuerpo": "0591",
+    "especialidad": "Instalacion y Mantenimiento de Equipos Termicos y de Fluidos",
+    "disponibles": 3,
+    "disponibles_ordinaria": 0,
+    "disponibles_reserva": 0,
+    "plazas": 1,
+    "adjudicadas": 1,
+    "desiertas": 0,
+    "bolsa_ordinaria_llego_a": null,
+    "bolsa_reserva_llego_a": null,
+    "por_tipo_bolsa": {
+     "83": 1
+    },
+    "preferentes": {
+     "mayor55": 0,
+     "nota8": 0
+    },
+    "disponibles_por_provincia": {
+     "02": 1,
+     "13": 2,
+     "45": 1
+    },
+    "disponibles_por_idioma": {
+     "Inglés": 1,
+     "Francés": 0,
+     "Alemán": 0,
+     "Italiano": 0
+    },
+    "plazas_por_idioma": {
+     "sin_perfil": 1
+    },
+    "plazas_por_provincia": {
+     "13": 1
+    },
+    "ratio": 3.0,
+    "ratio_por_idioma": {
+     "sin_perfil": 3.0
+    }
+   },
+   {
+    "cuerpo": "0591",
+    "especialidad": "Instalaciones y Equipos de Cria y Cultivo",
+    "disponibles": 7,
+    "disponibles_ordinaria": 0,
+    "disponibles_reserva": 0,
+    "plazas": 0,
+    "adjudicadas": 0,
+    "desiertas": 0,
+    "bolsa_ordinaria_llego_a": null,
+    "bolsa_reserva_llego_a": null,
+    "por_tipo_bolsa": {},
+    "preferentes": {
+     "mayor55": 0,
+     "nota8": 0
+    },
+    "disponibles_por_provincia": {
+     "13": 6,
+     "02": 2,
+     "45": 2,
+     "16": 1,
+     "19": 1
+    },
+    "disponibles_por_idioma": {
+     "Inglés": 3,
+     "Francés": 1,
+     "Alemán": 0,
+     "Italiano": 0
+    },
+    "plazas_por_idioma": {},
+    "plazas_por_provincia": {},
+    "ratio": null,
+    "ratio_por_idioma": {},
+    "sin_oferta": true
+   },
+   {
+    "cuerpo": "0591",
+    "especialidad": "Laboratorio",
+    "disponibles": 10,
+    "disponibles_ordinaria": 0,
+    "disponibles_reserva": 0,
+    "plazas": 0,
+    "adjudicadas": 0,
+    "desiertas": 0,
+    "bolsa_ordinaria_llego_a": null,
+    "bolsa_reserva_llego_a": null,
+    "por_tipo_bolsa": {},
+    "preferentes": {
+     "mayor55": 0,
+     "nota8": 0
+    },
+    "disponibles_por_provincia": {
+     "16": 3,
+     "02": 7,
+     "13": 5,
+     "45": 4,
+     "19": 2
+    },
+    "disponibles_por_idioma": {
+     "Inglés": 6,
+     "Francés": 0,
+     "Alemán": 0,
+     "Italiano": 0
+    },
+    "plazas_por_idioma": {},
+    "plazas_por_provincia": {},
+    "ratio": null,
+    "ratio_por_idioma": {},
+    "sin_oferta": true
+   },
+   {
+    "cuerpo": "0591",
+    "especialidad": "Oficina de Proyectos de Construcción",
+    "disponibles": 4,
+    "disponibles_ordinaria": 0,
+    "disponibles_reserva": 0,
+    "plazas": 0,
+    "adjudicadas": 0,
+    "desiertas": 0,
+    "bolsa_ordinaria_llego_a": null,
+    "bolsa_reserva_llego_a": null,
+    "por_tipo_bolsa": {},
+    "preferentes": {
+     "mayor55": 0,
+     "nota8": 0
+    },
+    "disponibles_por_provincia": {
+     "16": 3,
+     "02": 1
+    },
+    "disponibles_por_idioma": {
+     "Inglés": 1,
+     "Francés": 0,
+     "Alemán": 0,
+     "Italiano": 0
+    },
+    "plazas_por_idioma": {},
+    "plazas_por_provincia": {},
+    "ratio": null,
+    "ratio_por_idioma": {},
+    "sin_oferta": true
+   },
+   {
+    "cuerpo": "0591",
+    "especialidad": "Operaciones de Procesos",
+    "disponibles": 3,
+    "disponibles_ordinaria": 0,
+    "disponibles_reserva": 0,
+    "plazas": 0,
+    "adjudicadas": 0,
+    "desiertas": 0,
+    "bolsa_ordinaria_llego_a": null,
+    "bolsa_reserva_llego_a": null,
+    "por_tipo_bolsa": {},
+    "preferentes": {
+     "mayor55": 0,
+     "nota8": 0
+    },
+    "disponibles_por_provincia": {
+     "45": 2,
+     "02": 1,
+     "13": 2
+    },
+    "disponibles_por_idioma": {
+     "Inglés": 3,
+     "Francés": 0,
+     "Alemán": 0,
+     "Italiano": 0
+    },
+    "plazas_por_idioma": {},
+    "plazas_por_provincia": {},
+    "ratio": null,
+    "ratio_por_idioma": {},
+    "sin_oferta": true
+   },
+   {
+    "cuerpo": "0591",
+    "especialidad": "Operaciones de Producción Agraria",
+    "disponibles": 4,
+    "disponibles_ordinaria": 0,
+    "disponibles_reserva": 0,
+    "plazas": 1,
+    "adjudicadas": 1,
+    "desiertas": 0,
+    "bolsa_ordinaria_llego_a": null,
+    "bolsa_reserva_llego_a": null,
+    "por_tipo_bolsa": {
+     "7Z": 1
+    },
+    "preferentes": {
+     "mayor55": 0,
+     "nota8": 0
+    },
+    "disponibles_por_provincia": {
+     "13": 3,
+     "45": 2,
+     "02": 2,
+     "16": 1,
+     "19": 1
+    },
+    "disponibles_por_idioma": {
+     "Inglés": 1,
+     "Francés": 0,
+     "Alemán": 0,
+     "Italiano": 0
+    },
+    "plazas_por_idioma": {
+     "sin_perfil": 1
+    },
+    "plazas_por_provincia": {
+     "13": 1
+    },
+    "ratio": 4.0,
+    "ratio_por_idioma": {
+     "sin_perfil": 4.0
+    }
+   },
+   {
+    "cuerpo": "0591",
+    "especialidad": "Operaciones y Equipos de Elaboracion de Productos Alimentarios",
+    "disponibles": 6,
+    "disponibles_ordinaria": 0,
+    "disponibles_reserva": 0,
+    "plazas": 0,
+    "adjudicadas": 0,
+    "desiertas": 0,
+    "bolsa_ordinaria_llego_a": null,
+    "bolsa_reserva_llego_a": null,
+    "por_tipo_bolsa": {},
+    "preferentes": {
+     "mayor55": 0,
+     "nota8": 0
+    },
+    "disponibles_por_provincia": {
+     "13": 5,
+     "02": 1,
+     "45": 1
+    },
+    "disponibles_por_idioma": {
+     "Inglés": 2,
+     "Francés": 1,
+     "Alemán": 0,
+     "Italiano": 0
+    },
+    "plazas_por_idioma": {},
+    "plazas_por_provincia": {},
+    "ratio": null,
+    "ratio_por_idioma": {},
+    "sin_oferta": true
+   },
+   {
+    "cuerpo": "0591",
+    "especialidad": "Patronaje y Confeccion",
+    "disponibles": 3,
+    "disponibles_ordinaria": 0,
+    "disponibles_reserva": 0,
+    "plazas": 0,
+    "adjudicadas": 0,
+    "desiertas": 0,
+    "bolsa_ordinaria_llego_a": null,
+    "bolsa_reserva_llego_a": null,
+    "por_tipo_bolsa": {},
+    "preferentes": {
+     "mayor55": 0,
+     "nota8": 0
+    },
+    "disponibles_por_provincia": {
+     "13": 2,
+     "45": 2,
+     "02": 3,
+     "16": 2,
+     "19": 2
+    },
+    "disponibles_por_idioma": {
+     "Inglés": 0,
+     "Francés": 0,
+     "Alemán": 0,
+     "Italiano": 0
+    },
+    "plazas_por_idioma": {},
+    "plazas_por_provincia": {},
+    "ratio": null,
+    "ratio_por_idioma": {},
+    "sin_oferta": true
+   },
+   {
+    "cuerpo": "0591",
+    "especialidad": "Servicios de Restauracion",
+    "disponibles": 4,
+    "disponibles_ordinaria": 0,
+    "disponibles_reserva": 0,
+    "plazas": 0,
+    "adjudicadas": 0,
+    "desiertas": 0,
+    "bolsa_ordinaria_llego_a": null,
+    "bolsa_reserva_llego_a": null,
+    "por_tipo_bolsa": {},
+    "preferentes": {
+     "mayor55": 0,
+     "nota8": 0
+    },
+    "disponibles_por_provincia": {
+     "02": 2,
+     "13": 2,
+     "16": 1
+    },
+    "disponibles_por_idioma": {
+     "Inglés": 0,
+     "Francés": 0,
+     "Alemán": 0,
+     "Italiano": 0
+    },
+    "plazas_por_idioma": {},
+    "plazas_por_provincia": {},
+    "ratio": null,
+    "ratio_por_idioma": {},
+    "sin_oferta": true
+   },
+   {
+    "cuerpo": "0591",
+    "especialidad": "Soldadura",
+    "disponibles": 2,
+    "disponibles_ordinaria": 0,
+    "disponibles_reserva": 0,
+    "plazas": 0,
+    "adjudicadas": 0,
+    "desiertas": 0,
+    "bolsa_ordinaria_llego_a": null,
+    "bolsa_reserva_llego_a": null,
+    "por_tipo_bolsa": {},
+    "preferentes": {
+     "mayor55": 0,
+     "nota8": 0
+    },
+    "disponibles_por_provincia": {
+     "02": 1,
+     "13": 1
+    },
+    "disponibles_por_idioma": {
+     "Inglés": 1,
+     "Francés": 0,
+     "Alemán": 0,
+     "Italiano": 0
+    },
+    "plazas_por_idioma": {},
+    "plazas_por_provincia": {},
+    "ratio": null,
+    "ratio_por_idioma": {},
+    "sin_oferta": true
+   },
+   {
+    "cuerpo": "0591",
+    "especialidad": "Tecnicas y Procedimientos de Imagen y Sonido",
+    "disponibles": 1,
+    "disponibles_ordinaria": 0,
+    "disponibles_reserva": 0,
+    "plazas": 0,
+    "adjudicadas": 0,
+    "desiertas": 0,
+    "bolsa_ordinaria_llego_a": null,
+    "bolsa_reserva_llego_a": null,
+    "por_tipo_bolsa": {},
+    "preferentes": {
+     "mayor55": 0,
+     "nota8": 0
+    },
+    "disponibles_por_provincia": {
+     "02": 1,
+     "16": 1
+    },
+    "disponibles_por_idioma": {
+     "Inglés": 0,
+     "Francés": 0,
+     "Alemán": 0,
+     "Italiano": 0
+    },
+    "plazas_por_idioma": {},
+    "plazas_por_provincia": {},
+    "ratio": null,
+    "ratio_por_idioma": {},
+    "sin_oferta": true
+   },
+   {
+    "cuerpo": "0592",
+    "especialidad": "Alemán",
+    "disponibles": 2,
+    "disponibles_ordinaria": 0,
+    "disponibles_reserva": 0,
+    "plazas": 0,
+    "adjudicadas": 0,
+    "desiertas": 0,
+    "bolsa_ordinaria_llego_a": null,
+    "bolsa_reserva_llego_a": null,
+    "por_tipo_bolsa": {},
+    "preferentes": {
+     "mayor55": 0,
+     "nota8": 0
+    },
+    "disponibles_por_provincia": {
+     "13": 2,
+     "19": 2,
+     "02": 2,
+     "45": 2,
+     "16": 2
+    },
+    "disponibles_por_idioma": {
+     "Inglés": 1,
+     "Francés": 1,
+     "Alemán": 2,
+     "Italiano": 0
+    },
+    "plazas_por_idioma": {},
+    "plazas_por_provincia": {},
+    "ratio": null,
+    "ratio_por_idioma": {},
+    "sin_oferta": true
+   },
+   {
+    "cuerpo": "0592",
+    "especialidad": "Español Para Extranjeros",
+    "disponibles": 2,
+    "disponibles_ordinaria": 0,
+    "disponibles_reserva": 0,
+    "plazas": 0,
+    "adjudicadas": 0,
+    "desiertas": 0,
+    "bolsa_ordinaria_llego_a": null,
+    "bolsa_reserva_llego_a": null,
+    "por_tipo_bolsa": {},
+    "preferentes": {
+     "mayor55": 0,
+     "nota8": 0
+    },
+    "disponibles_por_provincia": {
+     "13": 2
+    },
+    "disponibles_por_idioma": {
+     "Inglés": 1,
+     "Francés": 0,
+     "Alemán": 0,
+     "Italiano": 0
+    },
+    "plazas_por_idioma": {},
+    "plazas_por_provincia": {},
+    "ratio": null,
+    "ratio_por_idioma": {},
+    "sin_oferta": true
+   },
+   {
+    "cuerpo": "0592",
+    "especialidad": "Francés",
+    "disponibles": 1,
+    "disponibles_ordinaria": 0,
+    "disponibles_reserva": 0,
+    "plazas": 1,
+    "adjudicadas": 1,
+    "desiertas": 0,
+    "bolsa_ordinaria_llego_a": 76,
+    "bolsa_reserva_llego_a": null,
+    "por_tipo_bolsa": {
+     "0": 1
+    },
+    "preferentes": {
+     "mayor55": 0,
+     "nota8": 0
+    },
+    "disponibles_por_provincia": {
+     "13": 1
+    },
+    "disponibles_por_idioma": {
+     "Inglés": 1,
+     "Francés": 1,
+     "Alemán": 1,
+     "Italiano": 0
+    },
+    "plazas_por_idioma": {
+     "sin_perfil": 1
+    },
+    "plazas_por_provincia": {
+     "02": 1
+    },
+    "ratio": 1.0,
+    "ratio_por_idioma": {
+     "sin_perfil": 1.0
+    }
+   },
+   {
+    "cuerpo": "0592",
+    "especialidad": "Inglés",
+    "disponibles": 7,
+    "disponibles_ordinaria": 0,
+    "disponibles_reserva": 0,
+    "plazas": 0,
+    "adjudicadas": 0,
+    "desiertas": 0,
+    "bolsa_ordinaria_llego_a": null,
+    "bolsa_reserva_llego_a": null,
+    "por_tipo_bolsa": {},
+    "preferentes": {
+     "mayor55": 0,
+     "nota8": 0
+    },
+    "disponibles_por_provincia": {
+     "45": 5,
+     "02": 5,
+     "13": 5,
+     "19": 4,
+     "16": 4
+    },
+    "disponibles_por_idioma": {
+     "Inglés": 4,
+     "Francés": 1,
+     "Alemán": 0,
+     "Italiano": 0
+    },
+    "plazas_por_idioma": {},
+    "plazas_por_provincia": {},
+    "ratio": null,
+    "ratio_por_idioma": {},
+    "sin_oferta": true
+   },
+   {
+    "cuerpo": "0592",
+    "especialidad": "Italiano",
+    "disponibles": 3,
+    "disponibles_ordinaria": 0,
+    "disponibles_reserva": 0,
+    "plazas": 1,
+    "adjudicadas": 1,
+    "desiertas": 0,
+    "bolsa_ordinaria_llego_a": null,
+    "bolsa_reserva_llego_a": null,
+    "por_tipo_bolsa": {
+     "7V": 1
+    },
+    "preferentes": {
+     "mayor55": 0,
+     "nota8": 0
+    },
+    "disponibles_por_provincia": {
+     "13": 3,
+     "45": 1,
+     "19": 1,
+     "02": 1,
+     "16": 1
+    },
+    "disponibles_por_idioma": {
+     "Inglés": 1,
+     "Francés": 0,
+     "Alemán": 0,
+     "Italiano": 3
+    },
+    "plazas_por_idioma": {
+     "sin_perfil": 1
+    },
+    "plazas_por_provincia": {
+     "13": 1
+    },
+    "ratio": 3.0,
+    "ratio_por_idioma": {
+     "sin_perfil": 3.0
+    }
+   },
+   {
+    "cuerpo": "0592",
+    "especialidad": "Portugues",
+    "disponibles": 1,
+    "disponibles_ordinaria": 0,
+    "disponibles_reserva": 0,
+    "plazas": 0,
+    "adjudicadas": 0,
+    "desiertas": 0,
+    "bolsa_ordinaria_llego_a": null,
+    "bolsa_reserva_llego_a": null,
+    "por_tipo_bolsa": {},
+    "preferentes": {
+     "mayor55": 0,
+     "nota8": 0
+    },
+    "disponibles_por_provincia": {
+     "45": 1
+    },
+    "disponibles_por_idioma": {
+     "Inglés": 1,
+     "Francés": 0,
+     "Alemán": 0,
+     "Italiano": 0
+    },
+    "plazas_por_idioma": {},
+    "plazas_por_provincia": {},
+    "ratio": null,
+    "ratio_por_idioma": {},
+    "sin_oferta": true
+   },
+   {
+    "cuerpo": "0593",
+    "especialidad": "Composicion",
+    "disponibles": 2,
+    "disponibles_ordinaria": 0,
+    "disponibles_reserva": 0,
+    "plazas": 0,
+    "adjudicadas": 0,
+    "desiertas": 0,
+    "bolsa_ordinaria_llego_a": null,
+    "bolsa_reserva_llego_a": null,
+    "por_tipo_bolsa": {},
+    "preferentes": {
+     "mayor55": 0,
+     "nota8": 0
+    },
+    "disponibles_por_provincia": {
+     "02": 2
+    },
+    "disponibles_por_idioma": {
+     "Inglés": 0,
+     "Francés": 0,
+     "Alemán": 0,
+     "Italiano": 0
+    },
+    "plazas_por_idioma": {},
+    "plazas_por_provincia": {},
+    "ratio": null,
+    "ratio_por_idioma": {},
+    "sin_oferta": true
+   },
+   {
+    "cuerpo": "0593",
+    "especialidad": "Guitarra",
+    "disponibles": 1,
+    "disponibles_ordinaria": 0,
+    "disponibles_reserva": 0,
+    "plazas": 0,
+    "adjudicadas": 0,
+    "desiertas": 0,
+    "bolsa_ordinaria_llego_a": null,
+    "bolsa_reserva_llego_a": null,
+    "por_tipo_bolsa": {},
+    "preferentes": {
+     "mayor55": 0,
+     "nota8": 0
+    },
+    "disponibles_por_provincia": {
+     "02": 1
+    },
+    "disponibles_por_idioma": {
+     "Inglés": 0,
+     "Francés": 0,
+     "Alemán": 0,
+     "Italiano": 0
+    },
+    "plazas_por_idioma": {},
+    "plazas_por_provincia": {},
+    "ratio": null,
+    "ratio_por_idioma": {},
+    "sin_oferta": true
+   },
+   {
+    "cuerpo": "0593",
+    "especialidad": "Historia de la Música",
+    "disponibles": 1,
+    "disponibles_ordinaria": 0,
+    "disponibles_reserva": 0,
+    "plazas": 0,
+    "adjudicadas": 0,
+    "desiertas": 0,
+    "bolsa_ordinaria_llego_a": null,
+    "bolsa_reserva_llego_a": null,
+    "por_tipo_bolsa": {},
+    "preferentes": {
+     "mayor55": 0,
+     "nota8": 0
+    },
+    "disponibles_por_provincia": {
+     "02": 1
+    },
+    "disponibles_por_idioma": {
+     "Inglés": 0,
+     "Francés": 0,
+     "Alemán": 0,
+     "Italiano": 0
+    },
+    "plazas_por_idioma": {},
+    "plazas_por_provincia": {},
+    "ratio": null,
+    "ratio_por_idioma": {},
+    "sin_oferta": true
+   },
+   {
+    "cuerpo": "0593",
+    "especialidad": "Lengua Inglesa",
+    "disponibles": 1,
+    "disponibles_ordinaria": 0,
+    "disponibles_reserva": 0,
+    "plazas": 0,
+    "adjudicadas": 0,
+    "desiertas": 0,
+    "bolsa_ordinaria_llego_a": null,
+    "bolsa_reserva_llego_a": null,
+    "por_tipo_bolsa": {},
+    "preferentes": {
+     "mayor55": 0,
+     "nota8": 0
+    },
+    "disponibles_por_provincia": {
+     "02": 1
+    },
+    "disponibles_por_idioma": {
+     "Inglés": 1,
+     "Francés": 0,
+     "Alemán": 0,
+     "Italiano": 0
+    },
+    "plazas_por_idioma": {},
+    "plazas_por_provincia": {},
+    "ratio": null,
+    "ratio_por_idioma": {},
+    "sin_oferta": true
+   },
+   {
+    "cuerpo": "0593",
+    "especialidad": "Percusion",
+    "disponibles": 1,
+    "disponibles_ordinaria": 0,
+    "disponibles_reserva": 0,
+    "plazas": 0,
+    "adjudicadas": 0,
+    "desiertas": 0,
+    "bolsa_ordinaria_llego_a": null,
+    "bolsa_reserva_llego_a": null,
+    "por_tipo_bolsa": {},
+    "preferentes": {
+     "mayor55": 0,
+     "nota8": 0
+    },
+    "disponibles_por_provincia": {
+     "02": 1
+    },
+    "disponibles_por_idioma": {
+     "Inglés": 0,
+     "Francés": 0,
+     "Alemán": 0,
+     "Italiano": 0
+    },
+    "plazas_por_idioma": {},
+    "plazas_por_provincia": {},
+    "ratio": null,
+    "ratio_por_idioma": {},
+    "sin_oferta": true
+   },
+   {
+    "cuerpo": "0593",
+    "especialidad": "Saxofon",
+    "disponibles": 1,
+    "disponibles_ordinaria": 0,
+    "disponibles_reserva": 0,
+    "plazas": 0,
+    "adjudicadas": 0,
+    "desiertas": 0,
+    "bolsa_ordinaria_llego_a": null,
+    "bolsa_reserva_llego_a": null,
+    "por_tipo_bolsa": {},
+    "preferentes": {
+     "mayor55": 0,
+     "nota8": 0
+    },
+    "disponibles_por_provincia": {
+     "02": 1
+    },
+    "disponibles_por_idioma": {
+     "Inglés": 0,
+     "Francés": 0,
+     "Alemán": 0,
+     "Italiano": 0
+    },
+    "plazas_por_idioma": {},
+    "plazas_por_provincia": {},
+    "ratio": null,
+    "ratio_por_idioma": {},
+    "sin_oferta": true
+   },
+   {
+    "cuerpo": "0594",
+    "especialidad": "Canto",
+    "disponibles": 3,
+    "disponibles_ordinaria": 0,
+    "disponibles_reserva": 0,
+    "plazas": 0,
+    "adjudicadas": 0,
+    "desiertas": 0,
+    "bolsa_ordinaria_llego_a": null,
+    "bolsa_reserva_llego_a": null,
+    "por_tipo_bolsa": {},
+    "preferentes": {
+     "mayor55": 0,
+     "nota8": 0
+    },
+    "disponibles_por_provincia": {
+     "45": 3,
+     "13": 2,
+     "02": 2,
+     "19": 1,
+     "16": 1
+    },
+    "disponibles_por_idioma": {
+     "Inglés": 0,
+     "Francés": 0,
+     "Alemán": 0,
+     "Italiano": 1
+    },
+    "plazas_por_idioma": {},
+    "plazas_por_provincia": {},
+    "ratio": null,
+    "ratio_por_idioma": {},
+    "sin_oferta": true
+   },
+   {
+    "cuerpo": "0594",
+    "especialidad": "Clarinete",
+    "disponibles": 3,
+    "disponibles_ordinaria": 0,
+    "disponibles_reserva": 0,
+    "plazas": 1,
+    "adjudicadas": 1,
+    "desiertas": 0,
+    "bolsa_ordinaria_llego_a": null,
+    "bolsa_reserva_llego_a": null,
+    "por_tipo_bolsa": {
+     "7W": 1
+    },
+    "preferentes": {
+     "mayor55": 0,
+     "nota8": 0
+    },
+    "disponibles_por_provincia": {
+     "02": 3,
+     "13": 3,
+     "16": 3,
+     "45": 3,
+     "19": 2
+    },
+    "disponibles_por_idioma": {
+     "Inglés": 0,
+     "Francés": 0,
+     "Alemán": 0,
+     "Italiano": 0
+    },
+    "plazas_por_idioma": {
+     "sin_perfil": 1
+    },
+    "plazas_por_provincia": {
+     "02": 1
+    },
+    "ratio": 3.0,
+    "ratio_por_idioma": {
+     "sin_perfil": 3.0
+    }
+   },
+   {
+    "cuerpo": "0594",
+    "especialidad": "Contrabajo",
+    "disponibles": 2,
+    "disponibles_ordinaria": 0,
+    "disponibles_reserva": 0,
+    "plazas": 0,
+    "adjudicadas": 0,
+    "desiertas": 0,
+    "bolsa_ordinaria_llego_a": null,
+    "bolsa_reserva_llego_a": null,
+    "por_tipo_bolsa": {},
+    "preferentes": {
+     "mayor55": 0,
+     "nota8": 0
+    },
+    "disponibles_por_provincia": {
+     "02": 2,
+     "13": 1,
+     "19": 1,
+     "16": 1,
+     "45": 1
+    },
+    "disponibles_por_idioma": {
+     "Inglés": 0,
+     "Francés": 0,
+     "Alemán": 0,
+     "Italiano": 0
+    },
+    "plazas_por_idioma": {},
+    "plazas_por_provincia": {},
+    "ratio": null,
+    "ratio_por_idioma": {},
+    "sin_oferta": true
+   },
+   {
+    "cuerpo": "0594",
+    "especialidad": "Danza Aplicada al Arte Dramático",
+    "disponibles": 1,
+    "disponibles_ordinaria": 0,
+    "disponibles_reserva": 0,
+    "plazas": 0,
+    "adjudicadas": 0,
+    "desiertas": 0,
+    "bolsa_ordinaria_llego_a": null,
+    "bolsa_reserva_llego_a": null,
+    "por_tipo_bolsa": {},
+    "preferentes": {
+     "mayor55": 0,
+     "nota8": 0
+    },
+    "disponibles_por_provincia": {
+     "16": 1
+    },
+    "disponibles_por_idioma": {
+     "Inglés": 0,
+     "Francés": 0,
+     "Alemán": 0,
+     "Italiano": 0
+    },
+    "plazas_por_idioma": {},
+    "plazas_por_provincia": {},
+    "ratio": null,
+    "ratio_por_idioma": {},
+    "sin_oferta": true
+   },
+   {
+    "cuerpo": "0594",
+    "especialidad": "Danza Contemporánea",
+    "disponibles": 1,
+    "disponibles_ordinaria": 0,
+    "disponibles_reserva": 0,
+    "plazas": 1,
+    "adjudicadas": 1,
+    "desiertas": 0,
+    "bolsa_ordinaria_llego_a": null,
+    "bolsa_reserva_llego_a": null,
+    "por_tipo_bolsa": {
+     "7ZB": 1
+    },
+    "preferentes": {
+     "mayor55": 0,
+     "nota8": 0
+    },
+    "disponibles_por_provincia": {
+     "02": 1,
+     "13": 1
+    },
+    "disponibles_por_idioma": {
+     "Inglés": 0,
+     "Francés": 0,
+     "Alemán": 0,
+     "Italiano": 0
+    },
+    "plazas_por_idioma": {
+     "sin_perfil": 1
+    },
+    "plazas_por_provincia": {
+     "13": 1
+    },
+    "ratio": 1.0,
+    "ratio_por_idioma": {
+     "sin_perfil": 1.0
+    }
+   },
+   {
+    "cuerpo": "0594",
+    "especialidad": "Dicción y Expresión Oral",
+    "disponibles": 1,
+    "disponibles_ordinaria": 0,
+    "disponibles_reserva": 0,
+    "plazas": 0,
+    "adjudicadas": 0,
+    "desiertas": 0,
+    "bolsa_ordinaria_llego_a": null,
+    "bolsa_reserva_llego_a": null,
+    "por_tipo_bolsa": {},
+    "preferentes": {
+     "mayor55": 0,
+     "nota8": 0
+    },
+    "disponibles_por_provincia": {
+     "16": 1
+    },
+    "disponibles_por_idioma": {
+     "Inglés": 0,
+     "Francés": 0,
+     "Alemán": 0,
+     "Italiano": 0
+    },
+    "plazas_por_idioma": {},
+    "plazas_por_provincia": {},
+    "ratio": null,
+    "ratio_por_idioma": {},
+    "sin_oferta": true
+   },
+   {
+    "cuerpo": "0594",
+    "especialidad": "Fagot",
+    "disponibles": 2,
+    "disponibles_ordinaria": 0,
+    "disponibles_reserva": 0,
+    "plazas": 0,
+    "adjudicadas": 0,
+    "desiertas": 0,
+    "bolsa_ordinaria_llego_a": null,
+    "bolsa_reserva_llego_a": null,
+    "por_tipo_bolsa": {},
+    "preferentes": {
+     "mayor55": 0,
+     "nota8": 0
+    },
+    "disponibles_por_provincia": {
+     "45": 1,
+     "19": 1,
+     "02": 1
+    },
+    "disponibles_por_idioma": {
+     "Inglés": 0,
+     "Francés": 0,
+     "Alemán": 0,
+     "Italiano": 0
+    },
+    "plazas_por_idioma": {},
+    "plazas_por_provincia": {},
+    "ratio": null,
+    "ratio_por_idioma": {},
+    "sin_oferta": true
+   },
+   {
+    "cuerpo": "0594",
+    "especialidad": "Flauta Travesera",
+    "disponibles": 4,
+    "disponibles_ordinaria": 0,
+    "disponibles_reserva": 0,
+    "plazas": 0,
+    "adjudicadas": 0,
+    "desiertas": 0,
+    "bolsa_ordinaria_llego_a": null,
+    "bolsa_reserva_llego_a": null,
+    "por_tipo_bolsa": {},
+    "preferentes": {
+     "mayor55": 0,
+     "nota8": 0
+    },
+    "disponibles_por_provincia": {
+     "19": 2,
+     "45": 3,
+     "16": 2,
+     "02": 2,
+     "13": 1
+    },
+    "disponibles_por_idioma": {
+     "Inglés": 0,
+     "Francés": 0,
+     "Alemán": 0,
+     "Italiano": 0
+    },
+    "plazas_por_idioma": {},
+    "plazas_por_provincia": {},
+    "ratio": null,
+    "ratio_por_idioma": {},
+    "sin_oferta": true
+   },
+   {
+    "cuerpo": "0594",
+    "especialidad": "Guitarra",
+    "disponibles": 1,
+    "disponibles_ordinaria": 0,
+    "disponibles_reserva": 0,
+    "plazas": 0,
+    "adjudicadas": 0,
+    "desiertas": 0,
+    "bolsa_ordinaria_llego_a": null,
+    "bolsa_reserva_llego_a": null,
+    "por_tipo_bolsa": {},
+    "preferentes": {
+     "mayor55": 0,
+     "nota8": 0
+    },
+    "disponibles_por_provincia": {
+     "02": 1,
+     "13": 1,
+     "19": 1,
+     "45": 1,
+     "16": 1
+    },
+    "disponibles_por_idioma": {
+     "Inglés": 0,
+     "Francés": 0,
+     "Alemán": 0,
+     "Italiano": 0
+    },
+    "plazas_por_idioma": {},
+    "plazas_por_provincia": {},
+    "ratio": null,
+    "ratio_por_idioma": {},
+    "sin_oferta": true
+   },
+   {
+    "cuerpo": "0594",
+    "especialidad": "Guitarra Flamenca",
+    "disponibles": 1,
+    "disponibles_ordinaria": 0,
+    "disponibles_reserva": 0,
+    "plazas": 0,
+    "adjudicadas": 0,
+    "desiertas": 0,
+    "bolsa_ordinaria_llego_a": null,
+    "bolsa_reserva_llego_a": null,
+    "por_tipo_bolsa": {},
+    "preferentes": {
+     "mayor55": 0,
+     "nota8": 0
+    },
+    "disponibles_por_provincia": {
+     "13": 1,
+     "02": 1,
+     "45": 1,
+     "16": 1,
+     "19": 1
+    },
+    "disponibles_por_idioma": {
+     "Inglés": 0,
+     "Francés": 0,
+     "Alemán": 0,
+     "Italiano": 0
+    },
+    "plazas_por_idioma": {},
+    "plazas_por_provincia": {},
+    "ratio": null,
+    "ratio_por_idioma": {},
+    "sin_oferta": true
+   },
+   {
+    "cuerpo": "0594",
+    "especialidad": "Historia de la Música",
+    "disponibles": 3,
+    "disponibles_ordinaria": 0,
+    "disponibles_reserva": 0,
+    "plazas": 0,
+    "adjudicadas": 0,
+    "desiertas": 0,
+    "bolsa_ordinaria_llego_a": null,
+    "bolsa_reserva_llego_a": null,
+    "por_tipo_bolsa": {},
+    "preferentes": {
+     "mayor55": 0,
+     "nota8": 0
+    },
+    "disponibles_por_provincia": {
+     "13": 2,
+     "45": 2,
+     "19": 3,
+     "16": 2,
+     "02": 2
+    },
+    "disponibles_por_idioma": {
+     "Inglés": 1,
+     "Francés": 0,
+     "Alemán": 0,
+     "Italiano": 0
+    },
+    "plazas_por_idioma": {},
+    "plazas_por_provincia": {},
+    "ratio": null,
+    "ratio_por_idioma": {},
+    "sin_oferta": true
+   },
+   {
+    "cuerpo": "0594",
+    "especialidad": "Lenguaje Musical",
+    "disponibles": 1,
+    "disponibles_ordinaria": 0,
+    "disponibles_reserva": 0,
+    "plazas": 1,
+    "adjudicadas": 0,
+    "desiertas": 1,
+    "bolsa_ordinaria_llego_a": null,
+    "bolsa_reserva_llego_a": null,
+    "por_tipo_bolsa": {},
+    "preferentes": {
+     "mayor55": 0,
+     "nota8": 0
+    },
+    "disponibles_por_provincia": {
+     "13": 1
+    },
+    "disponibles_por_idioma": {
+     "Inglés": 0,
+     "Francés": 0,
+     "Alemán": 0,
+     "Italiano": 0
+    },
+    "plazas_por_idioma": {
+     "sin_perfil": 1
+    },
+    "plazas_por_provincia": {
+     "02": 1
+    },
+    "ratio": 1.0,
+    "ratio_por_idioma": {
+     "sin_perfil": 1.0
+    }
+   },
+   {
+    "cuerpo": "0594",
+    "especialidad": "Oboe",
+    "disponibles": 1,
+    "disponibles_ordinaria": 0,
+    "disponibles_reserva": 0,
+    "plazas": 0,
+    "adjudicadas": 0,
+    "desiertas": 0,
+    "bolsa_ordinaria_llego_a": null,
+    "bolsa_reserva_llego_a": null,
+    "por_tipo_bolsa": {},
+    "preferentes": {
+     "mayor55": 0,
+     "nota8": 0
+    },
+    "disponibles_por_provincia": {
+     "02": 1,
+     "13": 1,
+     "16": 1,
+     "19": 1,
+     "45": 1
+    },
+    "disponibles_por_idioma": {
+     "Inglés": 0,
+     "Francés": 0,
+     "Alemán": 0,
+     "Italiano": 0
+    },
+    "plazas_por_idioma": {},
+    "plazas_por_provincia": {},
+    "ratio": null,
+    "ratio_por_idioma": {},
+    "sin_oferta": true
+   },
+   {
+    "cuerpo": "0594",
+    "especialidad": "Orquesta",
+    "disponibles": 1,
+    "disponibles_ordinaria": 0,
+    "disponibles_reserva": 0,
+    "plazas": 0,
+    "adjudicadas": 0,
+    "desiertas": 0,
+    "bolsa_ordinaria_llego_a": null,
+    "bolsa_reserva_llego_a": null,
+    "por_tipo_bolsa": {},
+    "preferentes": {
+     "mayor55": 0,
+     "nota8": 0
+    },
+    "disponibles_por_provincia": {
+     "45": 1,
+     "02": 1,
+     "13": 1,
+     "16": 1,
+     "19": 1
+    },
+    "disponibles_por_idioma": {
+     "Inglés": 0,
+     "Francés": 0,
+     "Alemán": 0,
+     "Italiano": 0
+    },
+    "plazas_por_idioma": {},
+    "plazas_por_provincia": {},
+    "ratio": null,
+    "ratio_por_idioma": {},
+    "sin_oferta": true
+   },
+   {
+    "cuerpo": "0594",
+    "especialidad": "Percusión",
+    "disponibles": 3,
+    "disponibles_ordinaria": 0,
+    "disponibles_reserva": 0,
+    "plazas": 0,
+    "adjudicadas": 0,
+    "desiertas": 0,
+    "bolsa_ordinaria_llego_a": null,
+    "bolsa_reserva_llego_a": null,
+    "por_tipo_bolsa": {},
+    "preferentes": {
+     "mayor55": 0,
+     "nota8": 0
+    },
+    "disponibles_por_provincia": {
+     "13": 3,
+     "45": 2,
+     "02": 3,
+     "16": 3,
+     "19": 2
+    },
+    "disponibles_por_idioma": {
+     "Inglés": 1,
+     "Francés": 0,
+     "Alemán": 0,
+     "Italiano": 0
+    },
+    "plazas_por_idioma": {},
+    "plazas_por_provincia": {},
+    "ratio": null,
+    "ratio_por_idioma": {},
+    "sin_oferta": true
+   },
+   {
+    "cuerpo": "0594",
+    "especialidad": "Piano",
+    "disponibles": 0,
+    "disponibles_ordinaria": 0,
+    "disponibles_reserva": 0,
+    "plazas": 1,
+    "adjudicadas": 0,
+    "desiertas": 1,
+    "bolsa_ordinaria_llego_a": null,
+    "bolsa_reserva_llego_a": null,
+    "por_tipo_bolsa": {},
+    "preferentes": {
+     "mayor55": 0,
+     "nota8": 0
+    },
+    "disponibles_por_provincia": {},
+    "disponibles_por_idioma": {
+     "Inglés": 0,
+     "Francés": 0,
+     "Alemán": 0,
+     "Italiano": 0
+    },
+    "plazas_por_idioma": {
+     "sin_perfil": 1
+    },
+    "plazas_por_provincia": {
+     "13": 1
+    },
+    "ratio": 0.0,
+    "ratio_por_idioma": {
+     "sin_perfil": 0.0
+    }
+   },
+   {
+    "cuerpo": "0594",
+    "especialidad": "Saxofón",
+    "disponibles": 3,
+    "disponibles_ordinaria": 0,
+    "disponibles_reserva": 0,
+    "plazas": 0,
+    "adjudicadas": 0,
+    "desiertas": 0,
+    "bolsa_ordinaria_llego_a": null,
+    "bolsa_reserva_llego_a": null,
+    "por_tipo_bolsa": {},
+    "preferentes": {
+     "mayor55": 0,
+     "nota8": 0
+    },
+    "disponibles_por_provincia": {
+     "02": 3,
+     "13": 2,
+     "45": 2,
+     "16": 2,
+     "19": 2
+    },
+    "disponibles_por_idioma": {
+     "Inglés": 0,
+     "Francés": 0,
+     "Alemán": 0,
+     "Italiano": 0
+    },
+    "plazas_por_idioma": {},
+    "plazas_por_provincia": {},
+    "ratio": null,
+    "ratio_por_idioma": {},
+    "sin_oferta": true
+   },
+   {
+    "cuerpo": "0594",
+    "especialidad": "Trombón",
+    "disponibles": 3,
+    "disponibles_ordinaria": 0,
+    "disponibles_reserva": 0,
+    "plazas": 0,
+    "adjudicadas": 0,
+    "desiertas": 0,
+    "bolsa_ordinaria_llego_a": null,
+    "bolsa_reserva_llego_a": null,
+    "por_tipo_bolsa": {},
+    "preferentes": {
+     "mayor55": 0,
+     "nota8": 0
+    },
+    "disponibles_por_provincia": {
+     "02": 3,
+     "16": 2,
+     "13": 2,
+     "45": 2,
+     "19": 1
+    },
+    "disponibles_por_idioma": {
+     "Inglés": 1,
+     "Francés": 0,
+     "Alemán": 0,
+     "Italiano": 0
+    },
+    "plazas_por_idioma": {},
+    "plazas_por_provincia": {},
+    "ratio": null,
+    "ratio_por_idioma": {},
+    "sin_oferta": true
+   },
+   {
+    "cuerpo": "0594",
+    "especialidad": "Trompa",
+    "disponibles": 2,
+    "disponibles_ordinaria": 0,
+    "disponibles_reserva": 0,
+    "plazas": 0,
+    "adjudicadas": 0,
+    "desiertas": 0,
+    "bolsa_ordinaria_llego_a": null,
+    "bolsa_reserva_llego_a": null,
+    "por_tipo_bolsa": {},
+    "preferentes": {
+     "mayor55": 0,
+     "nota8": 0
+    },
+    "disponibles_por_provincia": {
+     "02": 2,
+     "16": 2,
+     "13": 2,
+     "45": 2,
+     "19": 1
+    },
+    "disponibles_por_idioma": {
+     "Inglés": 0,
+     "Francés": 0,
+     "Alemán": 0,
+     "Italiano": 0
+    },
+    "plazas_por_idioma": {},
+    "plazas_por_provincia": {},
+    "ratio": null,
+    "ratio_por_idioma": {},
+    "sin_oferta": true
+   },
+   {
+    "cuerpo": "0594",
+    "especialidad": "Trompeta",
+    "disponibles": 1,
+    "disponibles_ordinaria": 0,
+    "disponibles_reserva": 0,
+    "plazas": 0,
+    "adjudicadas": 0,
+    "desiertas": 0,
+    "bolsa_ordinaria_llego_a": null,
+    "bolsa_reserva_llego_a": null,
+    "por_tipo_bolsa": {},
+    "preferentes": {
+     "mayor55": 0,
+     "nota8": 0
+    },
+    "disponibles_por_provincia": {
+     "13": 1,
+     "45": 1,
+     "02": 1,
+     "16": 1,
+     "19": 1
+    },
+    "disponibles_por_idioma": {
+     "Inglés": 0,
+     "Francés": 0,
+     "Alemán": 0,
+     "Italiano": 0
+    },
+    "plazas_por_idioma": {},
+    "plazas_por_provincia": {},
+    "ratio": null,
+    "ratio_por_idioma": {},
+    "sin_oferta": true
+   },
+   {
+    "cuerpo": "0594",
+    "especialidad": "Tuba",
+    "disponibles": 3,
+    "disponibles_ordinaria": 0,
+    "disponibles_reserva": 0,
+    "plazas": 0,
+    "adjudicadas": 0,
+    "desiertas": 0,
+    "bolsa_ordinaria_llego_a": null,
+    "bolsa_reserva_llego_a": null,
+    "por_tipo_bolsa": {},
+    "preferentes": {
+     "mayor55": 0,
+     "nota8": 0
+    },
+    "disponibles_por_provincia": {
+     "13": 2,
+     "45": 2,
+     "19": 2,
+     "02": 2,
+     "16": 1
+    },
+    "disponibles_por_idioma": {
+     "Inglés": 0,
+     "Francés": 0,
+     "Alemán": 0,
+     "Italiano": 0
+    },
+    "plazas_por_idioma": {},
+    "plazas_por_provincia": {},
+    "ratio": null,
+    "ratio_por_idioma": {},
+    "sin_oferta": true
+   },
+   {
+    "cuerpo": "0594",
+    "especialidad": "Viola",
+    "disponibles": 5,
+    "disponibles_ordinaria": 0,
+    "disponibles_reserva": 0,
+    "plazas": 0,
+    "adjudicadas": 0,
+    "desiertas": 0,
+    "bolsa_ordinaria_llego_a": null,
+    "bolsa_reserva_llego_a": null,
+    "por_tipo_bolsa": {},
+    "preferentes": {
+     "mayor55": 0,
+     "nota8": 0
+    },
+    "disponibles_por_provincia": {
+     "02": 5,
+     "13": 3,
+     "45": 2,
+     "16": 2,
+     "19": 2
+    },
+    "disponibles_por_idioma": {
+     "Inglés": 2,
+     "Francés": 0,
+     "Alemán": 0,
+     "Italiano": 0
+    },
+    "plazas_por_idioma": {},
+    "plazas_por_provincia": {},
+    "ratio": null,
+    "ratio_por_idioma": {},
+    "sin_oferta": true
+   },
+   {
+    "cuerpo": "0594",
+    "especialidad": "Violin",
+    "disponibles": 3,
+    "disponibles_ordinaria": 0,
+    "disponibles_reserva": 0,
+    "plazas": 0,
+    "adjudicadas": 0,
+    "desiertas": 0,
+    "bolsa_ordinaria_llego_a": null,
+    "bolsa_reserva_llego_a": null,
+    "por_tipo_bolsa": {},
+    "preferentes": {
+     "mayor55": 0,
+     "nota8": 0
+    },
+    "disponibles_por_provincia": {
+     "02": 2,
+     "16": 2,
+     "13": 1,
+     "45": 1,
+     "19": 1
+    },
+    "disponibles_por_idioma": {
+     "Inglés": 0,
+     "Francés": 0,
+     "Alemán": 0,
+     "Italiano": 0
+    },
+    "plazas_por_idioma": {},
+    "plazas_por_provincia": {},
+    "ratio": null,
+    "ratio_por_idioma": {},
+    "sin_oferta": true
+   },
+   {
+    "cuerpo": "0594",
+    "especialidad": "Violoncello",
+    "disponibles": 2,
+    "disponibles_ordinaria": 0,
+    "disponibles_reserva": 0,
+    "plazas": 0,
+    "adjudicadas": 0,
+    "desiertas": 0,
+    "bolsa_ordinaria_llego_a": null,
+    "bolsa_reserva_llego_a": null,
+    "por_tipo_bolsa": {},
+    "preferentes": {
+     "mayor55": 0,
+     "nota8": 0
+    },
+    "disponibles_por_provincia": {
+     "16": 2,
+     "13": 2,
+     "45": 2,
+     "02": 2,
+     "19": 2
+    },
+    "disponibles_por_idioma": {
+     "Inglés": 0,
+     "Francés": 0,
+     "Alemán": 0,
+     "Italiano": 0
+    },
+    "plazas_por_idioma": {},
+    "plazas_por_provincia": {},
+    "ratio": null,
+    "ratio_por_idioma": {},
+    "sin_oferta": true
+   },
+   {
+    "cuerpo": "0595",
+    "especialidad": "Dibujo Artistico y Color",
+    "disponibles": 2,
+    "disponibles_ordinaria": 0,
+    "disponibles_reserva": 0,
+    "plazas": 1,
+    "adjudicadas": 1,
+    "desiertas": 0,
+    "bolsa_ordinaria_llego_a": null,
+    "bolsa_reserva_llego_a": null,
+    "por_tipo_bolsa": {
+     "7ZB": 1
+    },
+    "preferentes": {
+     "mayor55": 0,
+     "nota8": 0
+    },
+    "disponibles_por_provincia": {
+     "45": 1,
+     "13": 1
+    },
+    "disponibles_por_idioma": {
+     "Inglés": 1,
+     "Francés": 0,
+     "Alemán": 0,
+     "Italiano": 0
+    },
+    "plazas_por_idioma": {
+     "sin_perfil": 1
+    },
+    "plazas_por_provincia": {
+     "19": 1
+    },
+    "ratio": 2.0,
+    "ratio_por_idioma": {
+     "sin_perfil": 2.0
+    }
+   },
+   {
+    "cuerpo": "0595",
+    "especialidad": "Diseño Grafico",
+    "disponibles": 8,
+    "disponibles_ordinaria": 1,
+    "disponibles_reserva": 0,
+    "plazas": 1,
+    "adjudicadas": 1,
+    "desiertas": 0,
+    "bolsa_ordinaria_llego_a": null,
+    "bolsa_reserva_llego_a": null,
+    "por_tipo_bolsa": {
+     "84": 1
+    },
+    "preferentes": {
+     "mayor55": 0,
+     "nota8": 0
+    },
+    "disponibles_por_provincia": {
+     "02": 4,
+     "16": 2,
+     "13": 4,
+     "45": 4,
+     "19": 2
+    },
+    "disponibles_por_idioma": {
+     "Inglés": 3,
+     "Francés": 1,
+     "Alemán": 0,
+     "Italiano": 0
+    },
+    "plazas_por_idioma": {
+     "sin_perfil": 1
+    },
+    "plazas_por_provincia": {
+     "13": 1
+    },
+    "ratio": 8.0,
+    "ratio_por_idioma": {
+     "sin_perfil": 8.0
+    }
+   },
+   {
+    "cuerpo": "0595",
+    "especialidad": "Diseño de Interiores",
+    "disponibles": 6,
+    "disponibles_ordinaria": 0,
+    "disponibles_reserva": 0,
+    "plazas": 0,
+    "adjudicadas": 0,
+    "desiertas": 0,
+    "bolsa_ordinaria_llego_a": null,
+    "bolsa_reserva_llego_a": null,
+    "por_tipo_bolsa": {},
+    "preferentes": {
+     "mayor55": 0,
+     "nota8": 0
+    },
+    "disponibles_por_provincia": {
+     "02": 4,
+     "13": 4,
+     "16": 2,
+     "45": 4,
+     "19": 2
+    },
+    "disponibles_por_idioma": {
+     "Inglés": 4,
+     "Francés": 1,
+     "Alemán": 0,
+     "Italiano": 0
+    },
+    "plazas_por_idioma": {},
+    "plazas_por_provincia": {},
+    "ratio": null,
+    "ratio_por_idioma": {},
+    "sin_oferta": true
+   },
+   {
+    "cuerpo": "0595",
+    "especialidad": "Diseño de Producto",
+    "disponibles": 1,
+    "disponibles_ordinaria": 0,
+    "disponibles_reserva": 0,
+    "plazas": 0,
+    "adjudicadas": 0,
+    "desiertas": 0,
+    "bolsa_ordinaria_llego_a": null,
+    "bolsa_reserva_llego_a": null,
+    "por_tipo_bolsa": {},
+    "preferentes": {
+     "mayor55": 0,
+     "nota8": 0
+    },
+    "disponibles_por_provincia": {
+     "45": 1
+    },
+    "disponibles_por_idioma": {
+     "Inglés": 1,
+     "Francés": 0,
+     "Alemán": 0,
+     "Italiano": 0
+    },
+    "plazas_por_idioma": {},
+    "plazas_por_provincia": {},
+    "ratio": null,
+    "ratio_por_idioma": {},
+    "sin_oferta": true
+   },
+   {
+    "cuerpo": "0595",
+    "especialidad": "Fotografia",
+    "disponibles": 6,
+    "disponibles_ordinaria": 0,
+    "disponibles_reserva": 0,
+    "plazas": 0,
+    "adjudicadas": 0,
+    "desiertas": 0,
+    "bolsa_ordinaria_llego_a": null,
+    "bolsa_reserva_llego_a": null,
+    "por_tipo_bolsa": {},
+    "preferentes": {
+     "mayor55": 0,
+     "nota8": 0
+    },
+    "disponibles_por_provincia": {
+     "02": 6,
+     "16": 5,
+     "13": 3,
+     "45": 4,
+     "19": 4
+    },
+    "disponibles_por_idioma": {
+     "Inglés": 3,
+     "Francés": 0,
+     "Alemán": 0,
+     "Italiano": 0
+    },
+    "plazas_por_idioma": {},
+    "plazas_por_provincia": {},
+    "ratio": null,
+    "ratio_por_idioma": {},
+    "sin_oferta": true
+   },
+   {
+    "cuerpo": "0595",
+    "especialidad": "Historia del Arte",
+    "disponibles": 2,
+    "disponibles_ordinaria": 0,
+    "disponibles_reserva": 0,
+    "plazas": 0,
+    "adjudicadas": 0,
+    "desiertas": 0,
+    "bolsa_ordinaria_llego_a": null,
+    "bolsa_reserva_llego_a": null,
+    "por_tipo_bolsa": {},
+    "preferentes": {
+     "mayor55": 0,
+     "nota8": 0
+    },
+    "disponibles_por_provincia": {
+     "45": 2,
+     "19": 2,
+     "16": 2,
+     "02": 2,
+     "13": 2
+    },
+    "disponibles_por_idioma": {
+     "Inglés": 0,
+     "Francés": 0,
+     "Alemán": 0,
+     "Italiano": 0
+    },
+    "plazas_por_idioma": {},
+    "plazas_por_provincia": {},
+    "ratio": null,
+    "ratio_por_idioma": {},
+    "sin_oferta": true
+   },
+   {
+    "cuerpo": "0595",
+    "especialidad": "Medios Informaticos",
+    "disponibles": 4,
+    "disponibles_ordinaria": 0,
+    "disponibles_reserva": 0,
+    "plazas": 2,
+    "adjudicadas": 2,
+    "desiertas": 0,
+    "bolsa_ordinaria_llego_a": null,
+    "bolsa_reserva_llego_a": null,
+    "por_tipo_bolsa": {
+     "7W": 1,
+     "7ZA": 1
+    },
+    "preferentes": {
+     "mayor55": 0,
+     "nota8": 0
+    },
+    "disponibles_por_provincia": {
+     "02": 3,
+     "13": 2,
+     "19": 1,
+     "45": 1
+    },
+    "disponibles_por_idioma": {
+     "Inglés": 2,
+     "Francés": 0,
+     "Alemán": 0,
+     "Italiano": 0
+    },
+    "plazas_por_idioma": {
+     "sin_perfil": 2
+    },
+    "plazas_por_provincia": {
+     "16": 2
+    },
+    "ratio": 2.0,
+    "ratio_por_idioma": {
+     "sin_perfil": 2.0
+    }
+   },
+   {
+    "cuerpo": "0595",
+    "especialidad": "Organización Industrial y Legislacion",
+    "disponibles": 6,
+    "disponibles_ordinaria": 0,
+    "disponibles_reserva": 0,
+    "plazas": 1,
+    "adjudicadas": 0,
+    "desiertas": 1,
+    "bolsa_ordinaria_llego_a": null,
+    "bolsa_reserva_llego_a": null,
+    "por_tipo_bolsa": {},
+    "preferentes": {
+     "mayor55": 0,
+     "nota8": 0
+    },
+    "disponibles_por_provincia": {
+     "13": 6,
+     "02": 1,
+     "16": 1,
+     "45": 1,
+     "19": 1
+    },
+    "disponibles_por_idioma": {
+     "Inglés": 2,
+     "Francés": 0,
+     "Alemán": 0,
+     "Italiano": 0
+    },
+    "plazas_por_idioma": {
+     "sin_perfil": 1
+    },
+    "plazas_por_provincia": {
+     "16": 1
+    },
+    "ratio": 6.0,
+    "ratio_por_idioma": {
+     "sin_perfil": 6.0
+    }
+   },
+   {
+    "cuerpo": "0595",
+    "especialidad": "Volumen",
+    "disponibles": 1,
+    "disponibles_ordinaria": 0,
+    "disponibles_reserva": 0,
+    "plazas": 0,
+    "adjudicadas": 0,
+    "desiertas": 0,
+    "bolsa_ordinaria_llego_a": null,
+    "bolsa_reserva_llego_a": null,
+    "por_tipo_bolsa": {},
+    "preferentes": {
+     "mayor55": 0,
+     "nota8": 0
+    },
+    "disponibles_por_provincia": {
+     "02": 1
+    },
+    "disponibles_por_idioma": {
+     "Inglés": 0,
+     "Francés": 0,
+     "Alemán": 0,
+     "Italiano": 0
+    },
+    "plazas_por_idioma": {},
+    "plazas_por_provincia": {},
+    "ratio": null,
+    "ratio_por_idioma": {},
+    "sin_oferta": true
+   },
+   {
+    "cuerpo": "0596",
+    "especialidad": "Fotografia y Procesos de Reproduccion",
+    "disponibles": 2,
+    "disponibles_ordinaria": 0,
+    "disponibles_reserva": 0,
+    "plazas": 0,
+    "adjudicadas": 0,
+    "desiertas": 0,
+    "bolsa_ordinaria_llego_a": null,
+    "bolsa_reserva_llego_a": null,
+    "por_tipo_bolsa": {},
+    "preferentes": {
+     "mayor55": 0,
+     "nota8": 0
+    },
+    "disponibles_por_provincia": {
+     "16": 1,
+     "13": 1
+    },
+    "disponibles_por_idioma": {
+     "Inglés": 1,
+     "Francés": 0,
+     "Alemán": 0,
+     "Italiano": 0
+    },
+    "plazas_por_idioma": {},
+    "plazas_por_provincia": {},
+    "ratio": null,
+    "ratio_por_idioma": {},
+    "sin_oferta": true
+   },
+   {
+    "cuerpo": "0596",
+    "especialidad": "Talla en Piedra y Madera",
+    "disponibles": 7,
+    "disponibles_ordinaria": 0,
+    "disponibles_reserva": 0,
+    "plazas": 0,
+    "adjudicadas": 0,
+    "desiertas": 0,
+    "bolsa_ordinaria_llego_a": null,
+    "bolsa_reserva_llego_a": null,
+    "por_tipo_bolsa": {},
+    "preferentes": {
+     "mayor55": 0,
+     "nota8": 0
+    },
+    "disponibles_por_provincia": {
+     "45": 6,
+     "13": 4,
+     "02": 6,
+     "19": 5,
+     "16": 5
+    },
+    "disponibles_por_idioma": {
+     "Inglés": 4,
+     "Francés": 0,
+     "Alemán": 0,
+     "Italiano": 0
+    },
+    "plazas_por_idioma": {},
+    "plazas_por_provincia": {},
+    "ratio": null,
+    "ratio_por_idioma": {},
+    "sin_oferta": true
+   },
+   {
+    "cuerpo": "0596",
+    "especialidad": "Tecnicas Ceramicas",
+    "disponibles": 6,
+    "disponibles_ordinaria": 0,
+    "disponibles_reserva": 0,
+    "plazas": 0,
+    "adjudicadas": 0,
+    "desiertas": 0,
+    "bolsa_ordinaria_llego_a": null,
+    "bolsa_reserva_llego_a": null,
+    "por_tipo_bolsa": {},
+    "preferentes": {
+     "mayor55": 0,
+     "nota8": 0
+    },
+    "disponibles_por_provincia": {
+     "13": 4,
+     "45": 2,
+     "02": 4,
+     "19": 2,
+     "16": 3
+    },
+    "disponibles_por_idioma": {
+     "Inglés": 5,
+     "Francés": 0,
+     "Alemán": 0,
+     "Italiano": 0
+    },
+    "plazas_por_idioma": {},
+    "plazas_por_provincia": {},
+    "ratio": null,
+    "ratio_por_idioma": {},
+    "sin_oferta": true
+   },
+   {
+    "cuerpo": "0596",
+    "especialidad": "Tecnicas de Grabado y Estampacion",
+    "disponibles": 7,
+    "disponibles_ordinaria": 0,
+    "disponibles_reserva": 0,
+    "plazas": 0,
+    "adjudicadas": 0,
+    "desiertas": 0,
+    "bolsa_ordinaria_llego_a": null,
+    "bolsa_reserva_llego_a": null,
+    "por_tipo_bolsa": {},
+    "preferentes": {
+     "mayor55": 0,
+     "nota8": 0
+    },
+    "disponibles_por_provincia": {
+     "13": 4,
+     "16": 4,
+     "45": 2,
+     "19": 2,
+     "02": 3
+    },
+    "disponibles_por_idioma": {
+     "Inglés": 4,
+     "Francés": 0,
+     "Alemán": 0,
+     "Italiano": 0
+    },
+    "plazas_por_idioma": {},
+    "plazas_por_provincia": {},
+    "ratio": null,
+    "ratio_por_idioma": {},
+    "sin_oferta": true
+   },
+   {
+    "cuerpo": "0596",
+    "especialidad": "Tecnicas del Metal",
+    "disponibles": 7,
+    "disponibles_ordinaria": 0,
+    "disponibles_reserva": 0,
+    "plazas": 0,
+    "adjudicadas": 0,
+    "desiertas": 0,
+    "bolsa_ordinaria_llego_a": null,
+    "bolsa_reserva_llego_a": null,
+    "por_tipo_bolsa": {},
+    "preferentes": {
+     "mayor55": 0,
+     "nota8": 0
+    },
+    "disponibles_por_provincia": {
+     "13": 5,
+     "45": 2,
+     "02": 4,
+     "19": 2,
+     "16": 3
+    },
+    "disponibles_por_idioma": {
+     "Inglés": 6,
+     "Francés": 0,
+     "Alemán": 0,
+     "Italiano": 0
+    },
+    "plazas_por_idioma": {},
+    "plazas_por_provincia": {},
+    "ratio": null,
+    "ratio_por_idioma": {},
+    "sin_oferta": true
+   },
+   {
+    "cuerpo": "0597",
+    "especialidad": "Audición y Lenguaje",
+    "disponibles": 408,
+    "disponibles_ordinaria": 221,
+    "disponibles_reserva": 187,
+    "plazas": 14,
+    "adjudicadas": 14,
+    "desiertas": 0,
+    "bolsa_ordinaria_llego_a": 4141,
+    "bolsa_reserva_llego_a": null,
+    "por_tipo_bolsa": {
+     "0": 14
+    },
+    "preferentes": {
+     "mayor55": 0,
+     "nota8": 0
+    },
+    "disponibles_por_provincia": {
+     "02": 271,
+     "13": 304,
+     "16": 273,
+     "45": 308,
+     "19": 235
+    },
+    "disponibles_por_idioma": {
+     "Inglés": 96,
+     "Francés": 2,
+     "Alemán": 0,
+     "Italiano": 0
+    },
+    "plazas_por_idioma": {
+     "sin_perfil": 14
+    },
+    "plazas_por_provincia": {
+     "02": 3,
+     "13": 6,
+     "45": 5
+    },
+    "ratio": 29.1,
+    "ratio_por_idioma": {
+     "sin_perfil": 29.1
+    }
+   },
+   {
+    "cuerpo": "0597",
+    "especialidad": "Ciencias Sociales",
+    "disponibles": 6,
+    "disponibles_ordinaria": 0,
+    "disponibles_reserva": 0,
+    "plazas": 0,
+    "adjudicadas": 0,
+    "desiertas": 0,
+    "bolsa_ordinaria_llego_a": null,
+    "bolsa_reserva_llego_a": null,
+    "por_tipo_bolsa": {},
+    "preferentes": {
+     "mayor55": 0,
+     "nota8": 0
+    },
+    "disponibles_por_provincia": {
+     "13": 4,
+     "02": 3,
+     "45": 3,
+     "16": 2,
+     "19": 2
+    },
+    "disponibles_por_idioma": {
+     "Inglés": 0,
+     "Francés": 1,
+     "Alemán": 0,
+     "Italiano": 0
+    },
+    "plazas_por_idioma": {},
+    "plazas_por_provincia": {},
+    "ratio": null,
+    "ratio_por_idioma": {},
+    "sin_oferta": true
+   },
+   {
+    "cuerpo": "0597",
+    "especialidad": "Educación Física",
+    "disponibles": 868,
+    "disponibles_ordinaria": 432,
+    "disponibles_reserva": 436,
+    "plazas": 29,
+    "adjudicadas": 29,
+    "desiertas": 0,
+    "bolsa_ordinaria_llego_a": 3421,
+    "bolsa_reserva_llego_a": null,
+    "por_tipo_bolsa": {
+     "0": 29
+    },
+    "preferentes": {
+     "mayor55": 0,
+     "nota8": 0
+    },
+    "disponibles_por_provincia": {
+     "13": 714,
+     "02": 684,
+     "16": 659,
+     "45": 743,
+     "19": 625
+    },
+    "disponibles_por_idioma": {
+     "Inglés": 252,
+     "Francés": 9,
+     "Alemán": 0,
+     "Italiano": 1
+    },
+    "plazas_por_idioma": {
+     "sin_perfil": 24,
+     "Inglés": 5
+    },
+    "plazas_por_provincia": {
+     "02": 4,
+     "13": 5,
+     "16": 6,
+     "19": 5,
+     "45": 9
+    },
+    "ratio": 29.9,
+    "ratio_por_idioma": {
+     "sin_perfil": 36.2,
+     "Inglés": 50.4
+    }
+   },
+   {
+    "cuerpo": "0597",
+    "especialidad": "Educación Infantil",
+    "disponibles": 2322,
+    "disponibles_ordinaria": 1252,
+    "disponibles_reserva": 1070,
+    "plazas": 63,
+    "adjudicadas": 63,
+    "desiertas": 0,
+    "bolsa_ordinaria_llego_a": 3110,
+    "bolsa_reserva_llego_a": null,
+    "por_tipo_bolsa": {
+     "0": 63
+    },
+    "preferentes": {
+     "mayor55": 0,
+     "nota8": 0
+    },
+    "disponibles_por_provincia": {
+     "13": 1710,
+     "02": 1632,
+     "45": 1861,
+     "16": 1550,
+     "19": 1445
+    },
+    "disponibles_por_idioma": {
+     "Inglés": 654,
+     "Francés": 20,
+     "Alemán": 2,
+     "Italiano": 6
+    },
+    "plazas_por_idioma": {
+     "sin_perfil": 46,
+     "Inglés": 17
+    },
+    "plazas_por_provincia": {
+     "02": 11,
+     "13": 12,
+     "16": 7,
+     "19": 6,
+     "45": 27
+    },
+    "ratio": 36.9,
+    "ratio_por_idioma": {
+     "sin_perfil": 50.5,
+     "Inglés": 38.5
+    }
+   },
+   {
+    "cuerpo": "0597",
+    "especialidad": "Educación Primaria",
+    "disponibles": 3550,
+    "disponibles_ordinaria": 1857,
+    "disponibles_reserva": 1693,
+    "plazas": 52,
+    "adjudicadas": 52,
+    "desiertas": 0,
+    "bolsa_ordinaria_llego_a": 3277,
+    "bolsa_reserva_llego_a": null,
+    "por_tipo_bolsa": {
+     "0": 52
+    },
+    "preferentes": {
+     "mayor55": 0,
+     "nota8": 0
+    },
+    "disponibles_por_provincia": {
+     "13": 2614,
+     "02": 2523,
+     "45": 2781,
+     "16": 2370,
+     "19": 2218
+    },
+    "disponibles_por_idioma": {
+     "Inglés": 1179,
+     "Francés": 51,
+     "Alemán": 3,
+     "Italiano": 6
+    },
+    "plazas_por_idioma": {
+     "sin_perfil": 45,
+     "Inglés": 7
+    },
+    "plazas_por_provincia": {
+     "02": 5,
+     "13": 3,
+     "16": 6,
+     "19": 6,
+     "45": 32
+    },
+    "ratio": 68.3,
+    "ratio_por_idioma": {
+     "sin_perfil": 78.9,
+     "Inglés": 168.4
+    }
+   },
+   {
+    "cuerpo": "0597",
+    "especialidad": "Filologia: Lengua Castellana",
+    "disponibles": 3,
+    "disponibles_ordinaria": 0,
+    "disponibles_reserva": 0,
+    "plazas": 0,
+    "adjudicadas": 0,
+    "desiertas": 0,
+    "bolsa_ordinaria_llego_a": null,
+    "bolsa_reserva_llego_a": null,
+    "por_tipo_bolsa": {},
+    "preferentes": {
+     "mayor55": 0,
+     "nota8": 0
+    },
+    "disponibles_por_provincia": {
+     "02": 1,
+     "45": 2
+    },
+    "disponibles_por_idioma": {
+     "Inglés": 0,
+     "Francés": 3,
+     "Alemán": 0,
+     "Italiano": 0
+    },
+    "plazas_por_idioma": {},
+    "plazas_por_provincia": {},
+    "ratio": null,
+    "ratio_por_idioma": {},
+    "sin_oferta": true
+   },
+   {
+    "cuerpo": "0597",
+    "especialidad": "Lengua Extranjera: Francés",
+    "disponibles": 32,
+    "disponibles_ordinaria": 21,
+    "disponibles_reserva": 11,
+    "plazas": 0,
+    "adjudicadas": 0,
+    "desiertas": 0,
+    "bolsa_ordinaria_llego_a": null,
+    "bolsa_reserva_llego_a": null,
+    "por_tipo_bolsa": {},
+    "preferentes": {
+     "mayor55": 0,
+     "nota8": 0
+    },
+    "disponibles_por_provincia": {
+     "02": 21,
+     "16": 17,
+     "45": 21,
+     "13": 20,
+     "19": 17
+    },
+    "disponibles_por_idioma": {
+     "Inglés": 10,
+     "Francés": 28,
+     "Alemán": 0,
+     "Italiano": 1
+    },
+    "plazas_por_idioma": {},
+    "plazas_por_provincia": {},
+    "ratio": null,
+    "ratio_por_idioma": {},
+    "sin_oferta": true
+   },
+   {
+    "cuerpo": "0597",
+    "especialidad": "Lengua Extranjera: Inglés",
+    "disponibles": 749,
+    "disponibles_ordinaria": 412,
+    "disponibles_reserva": 337,
+    "plazas": 51,
+    "adjudicadas": 51,
+    "desiertas": 0,
+    "bolsa_ordinaria_llego_a": 4396,
+    "bolsa_reserva_llego_a": null,
+    "por_tipo_bolsa": {
+     "0": 51
+    },
+    "preferentes": {
+     "mayor55": 0,
+     "nota8": 0
+    },
+    "disponibles_por_provincia": {
+     "13": 502,
+     "02": 467,
+     "16": 426,
+     "45": 569,
+     "19": 417
+    },
+    "disponibles_por_idioma": {
+     "Inglés": 685,
+     "Francés": 17,
+     "Alemán": 1,
+     "Italiano": 2
+    },
+    "plazas_por_idioma": {
+     "sin_perfil": 51
+    },
+    "plazas_por_provincia": {
+     "02": 6,
+     "13": 7,
+     "16": 8,
+     "19": 10,
+     "45": 20
+    },
+    "ratio": 14.7,
+    "ratio_por_idioma": {
+     "sin_perfil": 14.7
+    }
+   },
+   {
+    "cuerpo": "0597",
+    "especialidad": "Matemáticas y Ciencias de la Naturaleza",
+    "disponibles": 10,
+    "disponibles_ordinaria": 0,
+    "disponibles_reserva": 0,
+    "plazas": 0,
+    "adjudicadas": 0,
+    "desiertas": 0,
+    "bolsa_ordinaria_llego_a": null,
+    "bolsa_reserva_llego_a": null,
+    "por_tipo_bolsa": {},
+    "preferentes": {
+     "mayor55": 0,
+     "nota8": 0
+    },
+    "disponibles_por_provincia": {
+     "19": 4,
+     "16": 4,
+     "13": 4,
+     "02": 3,
+     "45": 1
+    },
+    "disponibles_por_idioma": {
+     "Inglés": 0,
+     "Francés": 0,
+     "Alemán": 0,
+     "Italiano": 0
+    },
+    "plazas_por_idioma": {},
+    "plazas_por_provincia": {},
+    "ratio": null,
+    "ratio_por_idioma": {},
+    "sin_oferta": true
+   },
+   {
+    "cuerpo": "0597",
+    "especialidad": "Música",
+    "disponibles": 296,
+    "disponibles_ordinaria": 135,
+    "disponibles_reserva": 161,
+    "plazas": 13,
+    "adjudicadas": 13,
+    "desiertas": 0,
+    "bolsa_ordinaria_llego_a": 4312,
+    "bolsa_reserva_llego_a": null,
+    "por_tipo_bolsa": {
+     "0": 13
+    },
+    "preferentes": {
+     "mayor55": 0,
+     "nota8": 0
+    },
+    "disponibles_por_provincia": {
+     "13": 212,
+     "45": 230,
+     "02": 198,
+     "16": 187,
+     "19": 179
+    },
+    "disponibles_por_idioma": {
+     "Inglés": 78,
+     "Francés": 4,
+     "Alemán": 0,
+     "Italiano": 0
+    },
+    "plazas_por_idioma": {
+     "sin_perfil": 12,
+     "Inglés": 1
+    },
+    "plazas_por_provincia": {
+     "13": 3,
+     "16": 4,
+     "19": 2,
+     "45": 4
+    },
+    "ratio": 22.8,
+    "ratio_por_idioma": {
+     "sin_perfil": 24.7,
+     "Inglés": 78.0
+    }
+   },
+   {
+    "cuerpo": "0597",
+    "especialidad": "Pedagogía Terapeutica",
+    "disponibles": 1157,
+    "disponibles_ordinaria": 708,
+    "disponibles_reserva": 449,
+    "plazas": 28,
+    "adjudicadas": 28,
+    "desiertas": 0,
+    "bolsa_ordinaria_llego_a": 3392,
+    "bolsa_reserva_llego_a": null,
+    "por_tipo_bolsa": {
+     "0": 28
+    },
+    "preferentes": {
+     "mayor55": 0,
+     "nota8": 0
+    },
+    "disponibles_por_provincia": {
+     "02": 828,
+     "13": 828,
+     "45": 897,
+     "16": 781,
+     "19": 713
+    },
+    "disponibles_por_idioma": {
+     "Inglés": 300,
+     "Francés": 9,
+     "Alemán": 1,
+     "Italiano": 3
+    },
+    "plazas_por_idioma": {
+     "sin_perfil": 28
+    },
+    "plazas_por_provincia": {
+     "02": 5,
+     "13": 6,
+     "16": 1,
+     "19": 6,
+     "45": 10
+    },
+    "ratio": 41.3,
+    "ratio_por_idioma": {
+     "sin_perfil": 41.3
+    }
+   },
+   {
+    "cuerpo": "0598",
+    "especialidad": "Cocina y Pasteleria",
+    "disponibles": 16,
+    "disponibles_ordinaria": 3,
+    "disponibles_reserva": 11,
+    "plazas": 0,
+    "adjudicadas": 0,
+    "desiertas": 0,
+    "bolsa_ordinaria_llego_a": null,
+    "bolsa_reserva_llego_a": null,
+    "por_tipo_bolsa": {},
+    "preferentes": {
+     "mayor55": 0,
+     "nota8": 0
+    },
+    "disponibles_por_provincia": {
+     "13": 7,
+     "45": 10,
+     "02": 7,
+     "16": 7,
+     "19": 5
+    },
+    "disponibles_por_idioma": {
+     "Inglés": 4,
+     "Francés": 0,
+     "Alemán": 0,
+     "Italiano": 0
+    },
+    "plazas_por_idioma": {},
+    "plazas_por_provincia": {},
+    "ratio": null,
+    "ratio_por_idioma": {},
+    "sin_oferta": true
+   },
+   {
+    "cuerpo": "0598",
+    "especialidad": "Mantenimiento de Vehiculos",
+    "disponibles": 20,
+    "disponibles_ordinaria": 0,
+    "disponibles_reserva": 17,
+    "plazas": 1,
+    "adjudicadas": 1,
+    "desiertas": 0,
+    "bolsa_ordinaria_llego_a": null,
+    "bolsa_reserva_llego_a": null,
+    "por_tipo_bolsa": {
+     "7ZB": 1
+    },
+    "preferentes": {
+     "mayor55": 0,
+     "nota8": 0
+    },
+    "disponibles_por_provincia": {
+     "13": 13,
+     "45": 18,
+     "02": 11,
+     "16": 10,
+     "19": 6
+    },
+    "disponibles_por_idioma": {
+     "Inglés": 0,
+     "Francés": 0,
+     "Alemán": 0,
+     "Italiano": 0
+    },
+    "plazas_por_idioma": {
+     "sin_perfil": 1
+    },
+    "plazas_por_provincia": {
+     "16": 1
+    },
+    "ratio": 20.0,
+    "ratio_por_idioma": {
+     "sin_perfil": 20.0
+    }
+   },
+   {
+    "cuerpo": "0598",
+    "especialidad": "Mecanizado y Mantenimiento de Maquinas",
+    "disponibles": 6,
+    "disponibles_ordinaria": 1,
+    "disponibles_reserva": 4,
+    "plazas": 1,
+    "adjudicadas": 1,
+    "desiertas": 0,
+    "bolsa_ordinaria_llego_a": 27,
+    "bolsa_reserva_llego_a": null,
+    "por_tipo_bolsa": {
+     "0": 1
+    },
+    "preferentes": {
+     "mayor55": 0,
+     "nota8": 0
+    },
+    "disponibles_por_provincia": {
+     "13": 3,
+     "45": 5,
+     "02": 5,
+     "16": 4,
+     "19": 3
+    },
+    "disponibles_por_idioma": {
+     "Inglés": 0,
+     "Francés": 0,
+     "Alemán": 0,
+     "Italiano": 0
+    },
+    "plazas_por_idioma": {
+     "sin_perfil": 1
+    },
+    "plazas_por_provincia": {
+     "19": 1
+    },
+    "ratio": 6.0,
+    "ratio_por_idioma": {
+     "sin_perfil": 6.0
+    }
+   },
+   {
+    "cuerpo": "0598",
+    "especialidad": "Peluqueria",
+    "disponibles": 11,
+    "disponibles_ordinaria": 1,
+    "disponibles_reserva": 6,
+    "plazas": 0,
+    "adjudicadas": 0,
+    "desiertas": 0,
+    "bolsa_ordinaria_llego_a": null,
+    "bolsa_reserva_llego_a": null,
+    "por_tipo_bolsa": {},
+    "preferentes": {
+     "mayor55": 0,
+     "nota8": 0
+    },
+    "disponibles_por_provincia": {
+     "02": 11,
+     "13": 8,
+     "16": 9,
+     "45": 7,
+     "19": 6
+    },
+    "disponibles_por_idioma": {
+     "Inglés": 0,
+     "Francés": 0,
+     "Alemán": 0,
+     "Italiano": 0
+    },
+    "plazas_por_idioma": {},
+    "plazas_por_provincia": {},
+    "ratio": null,
+    "ratio_por_idioma": {},
+    "sin_oferta": true
+   }
+  ],
+  "plazas_desiertas": [
+   {
+    "centro_cod": "02004616",
+    "cuerpo": "0594",
+    "especialidad": "Lenguaje Musical"
+   },
+   {
+    "centro_cod": "13003798",
+    "cuerpo": "0590",
+    "especialidad": "Organización y Proyectos de Sistemas Energeticos"
+   },
+   {
+    "centro_cod": "13004341",
+    "cuerpo": "0594",
+    "especialidad": "Piano"
+   },
+   {
+    "centro_cod": "13004687",
+    "cuerpo": "0590",
+    "especialidad": "Música"
+   },
+   {
+    "centro_cod": "16000991",
+    "cuerpo": "0590",
+    "especialidad": "Filosofía"
+   },
+   {
+    "centro_cod": "16004534",
+    "cuerpo": "0590",
+    "especialidad": "Informática"
+   },
+   {
+    "centro_cod": "16004534",
+    "cuerpo": "0590",
+    "especialidad": "Informática"
+   },
+   {
+    "centro_cod": "16008667",
+    "cuerpo": "0595",
+    "especialidad": "Organización Industrial y Legislacion"
+   },
+   {
+    "centro_cod": "19002597",
+    "cuerpo": "0590",
+    "especialidad": "Latín"
+   },
+   {
+    "centro_cod": "19002597",
+    "cuerpo": "0590",
+    "especialidad": "Música"
+   },
+   {
+    "centro_cod": "19002743",
+    "cuerpo": "0590",
+    "especialidad": "Organización y Proyectos de Fabricacion Mecanica"
+   },
+   {
+    "centro_cod": "19003450",
+    "cuerpo": "0590",
+    "especialidad": "Matemáticas"
+   },
+   {
+    "centro_cod": "19003462",
+    "cuerpo": "0590",
+    "especialidad": "Tecnología"
+   },
+   {
+    "centro_cod": "19003917",
+    "cuerpo": "0590",
+    "especialidad": "Griego"
+   },
+   {
+    "centro_cod": "19003929",
+    "cuerpo": "0590",
+    "especialidad": "Educación Física"
+   },
+   {
+    "centro_cod": "19008113",
+    "cuerpo": "0590",
+    "especialidad": "Matemáticas"
+   },
+   {
+    "centro_cod": "19010028",
+    "cuerpo": "0590",
+    "especialidad": "Matemáticas"
+   },
+   {
+    "centro_cod": "45004788",
+    "cuerpo": "0590",
+    "especialidad": "Música"
+   },
+   {
+    "centro_cod": "45014393",
+    "cuerpo": "0590",
+    "especialidad": "Tecnología"
+   }
+  ]
+ }
+}
